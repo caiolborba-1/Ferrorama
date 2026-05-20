@@ -43,6 +43,14 @@
     padding: 35px;
 }
 
+.cinza{
+    background-color: rgba(148, 148, 148, 0.863);
+    width: 900px;
+    justify-content: space-around;
+    border-radius: 51px;
+    padding: 35px;
+}
+
 .q{
     display: grid;
     grid-auto-flow: column;
