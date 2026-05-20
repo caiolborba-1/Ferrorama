@@ -1,4 +1,4 @@
-![alt text](image-4.png)
+![alt text](<assets/img/Captura de tela 2026-05-20 121000.png>)
 
 ## Este site está sendo desenvolvido em função de uma Situação de Aprendizagem por:
 
