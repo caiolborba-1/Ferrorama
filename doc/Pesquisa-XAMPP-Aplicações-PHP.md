@@ -26,6 +26,9 @@
 
     phpMyAdmin: Uma interface web que facilita a administração do banco de dados (MariaDB/MySQL). Permite criar, remover e alterar tabelas, além de executar comandos SQL visualmente
 
+**Resumo Geral**
+O XAMPP é um pacote de software livre que cria um servidor web local na sua máquina, simulando um ambiente real. Ele é ideal para desenvolvedores testarem sites e aplicativos (como WordPress ou Joomla) antes de publicá-los
+
 **Download e Instalação**
 
     Acesse a página oficial de Downloads do XAMPP e escolha a versão correspondente ao seu sistema operacional (Windows, Linux ou macOS).
