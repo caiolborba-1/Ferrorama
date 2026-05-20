@@ -32,6 +32,5 @@ entendimento do cliente e fazendo uma rápida e eficaz associação das duas coi
 
 Para uma boa organização, este projeto conta com um video de apresentação das funções de cada membro do grupo, e sobre possiveis mudanças ou funcionalidades em desenvolvimento:
 
-- [Link do video explicativo e extremamente legal] ( https://drive.google.com/file/d/1D3_xM4opO2J9nc-3J7p02BV_X7f0zz1o/view?usp=drive_link )
-- [Video]<video controls src="Reunião do Projeto Ferrorama.mp4" title="Title">Video Magnifico</video>
+- [Link do video explicativo e extremamente legal] ( https://youtu.be/J_wqYzwryt4 )
 
