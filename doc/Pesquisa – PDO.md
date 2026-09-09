@@ -60,3 +60,14 @@ Uma conexão utilizando PDO funciona criando uma instância da classe nativa PDO
  para conectar o PHP a diferentes bancos de dados usando uma sintaxe consistente
 
 Como Funciona a Estrutura da ConexãoDSN (Data Source Name): Informa o driver do banco de dados, o endereço do servidor (host) e o nome do banco (dbname).Credenciais: Recebe o  nome de usuário e a senha de acesso ao SGBD.
+
+# Diferenças entre PDO e MySQLi;
+
+A principal diferença entre PDO e MySQLi no PHP está na compatibilidade com bancos de dados e no estilo de programação. O PDO suporta 12 sistemas de banco de dados diferentes, como PostgreSQL, SQLite e SQL Server, permitindo trocar o SGBD apenas alterando a string de conexão. O MySQLi  é uma extensão criada exclusivamente para trabalhar com o banco de dados MySQL, não oferecendo suporte a outros sistemas.
+No estilo de código, o PDO é totalmente orientado a objetos, exigindo o uso de classes e métodos padrão. O MySQLi oferece uma abordagem dual, permitindo que o desenvolvedor escolha entre o estilo orientado a objetos e o estilo procedural, que utiliza funções tradicionais do PHP.
+
+# Vantagens e desvantagens de utilizar PDO
+
+A principal vantagem de utilizar o PDO no PHP é a sua portabilidade e abstração, já que ele suporta diversos sistemas de banco de dados, permitindo alterar a base de dados da aplicação apenas ajustando a string de conexão, sem a necessidade de reescrever todas as consultas SQL. Além disso, o PDO oferece um sistema de Prepared Statements extremamente seguro e prático, permitindo o uso de parâmetros nomeados que tornam o código mais legível e fácil de manter, prevenindo ataques de SQL Injection de forma simples. Outro ponto forte é o tratamento de erros unificado por meio de exceções configuráveis, garantindo maior controle sobre as falhas de execução no sistema.
+
+Por outro lado, a principal desvantagem do PDO é que ele pode apresentar um desempenho ligeiramente inferior ao de soluções dedicadas como o MySQLi, pois adiciona uma camada extra de abstração na comunicação com o banco de dados. O PDO também não aproveita recursos extremamente específicos ou avançados de um SGBD em particular, focando em uma sintaxe mais universal. Por fim, a biblioteca é exclusivamente orientada a objetos, o que impede seu uso em projetos legados que dependem puramente de rotinas procedurais.
