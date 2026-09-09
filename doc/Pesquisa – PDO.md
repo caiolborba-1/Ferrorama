@@ -59,3 +59,4 @@ Tratamento de Erros: Permite configurar exceções do tipo PDOException para cap
 Uma conexão utilizando PDO funciona criando uma instância da classe nativa PDO, que atua como uma camada de abstração
  para conectar o PHP a diferentes bancos de dados usando uma sintaxe consistente
 
+Como Funciona a Estrutura da ConexãoDSN (Data Source Name): Informa o driver do banco de dados, o endereço do servidor (host) e o nome do banco (dbname).Credenciais: Recebe o  nome de usuário e a senha de acesso ao SGBD.
