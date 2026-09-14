@@ -8,9 +8,19 @@
     <title>Inicio de Administrador</title>
 </head>
 
-<body class="a">
+<header>
 
-    <img src="../assets/img/trem (2).png" alt="" class="">
+    <div class = "cabecalho" >
+        <img src="../assets/img/trem (2).png" alt="" class="logo_cabecalho">
+        <h1><B>VOLTAR</B></h1>
+        <h1><B>INICIO</B></h1>
+        <h1><B>PERFIL</B></h1>
+        <h1><B>TRENS</B></h1>
+    </div>
+
+</header>
+
+<body class="a">
 
     <div class="">
 
@@ -19,62 +29,55 @@
         </div>
 
 
-        <div class="q">
-            <div class="c">
-                <a href="sensores_velocidade.html"><button type="button" class="">
-                        <h2>Velocidade</h2>
-                    </button></a>
+        <div class="">
+            <div class="">
+                <button type="button" class="botao">
+                        Velocidade
+                </button>
 
-                <a href="sensores_falhas.html"><button type="button" class="">
-                        <h2>falhas</h2>
-                    </button></a>
+                <button type="button" class="botao">
+                        falhas
+                    </button>
 
-                <a href="sensores_pressao_oleo.html"><button type="button" class="">
-                        <h2>pressão do óleo</h2>
-                    </button></a>
+                <button type="button" class="botao">
+                        pressão do óleo
+                </button>
 
-                <a href="cadastrar_sensor.html"><button type="button" class="">
-                        <h4>cadastrar sensor</h4>
-                    </button></a>
+                <button type="button" class="botao">
+                        cadastrar sensor
+                </button>
 
             </div>
 
             <div class="">
-                <a href="sensores_temperatura.html"><button type="button" class="">
-                        <h2>temperatura</h2>
-                    </button></a>
+                <button type="button" class="botao">
+                    temperatura
+                </button>
 
-                <a href="sensores_combustivel.html"><button type="button" class="">
-                        <h2>combustivel</h2>
-                    </button></a>
+                <button type="button" class="botao">
+                    combustivel
+                </button>
 
-                <a href="sensores_frenagem.html"><button type="button" class="">
-                        <h2>frenagem</h2>
-                    </button></a>
+                <button type="button" class="botao">
+                    frenagem
+                </button>
 
-                <a href="visualizar_cadastro.html"><button type="button" class="">
-                        <h4> <br>Usuários Cadastrados<br>
-                            <p class="">*Apenas para adiministradores*</p>
-                        </h4>
-                    </button></a>
+                <button type="button" class="botao">
+                     Usuários Cadastrados
+                </button>
 
+                <button type="button" class="botao">
+                     Sensores Cadastrados
+                </button>
             </div>
 
         </div>
 
-        <div class="a"><a href="visualizar sensores_cadastrados.html"><button type="button" class="qbranco">
-                    <h4>Sensores Cadastrados</h4>
-                </button></a>
-        </div>
-
     </div>
 
 
     </div>
     </div>
-
-    <a href="../index.html"><button class="botao_voltar"><img id="botao" src="../assets/img/voltar.png"
-                alt="botao voltar"></button></a>
 
 
 </body>
