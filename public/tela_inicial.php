@@ -9,34 +9,27 @@
 
 <body class="">
 
-    <img src="../assets/img/trem (2).png" alt="" class="">
+    
 
-    <div class="">
-        
-          <div class=""><h1><b>Usuario</b></h1></div>
+    <br>
+  
+<div class="duas_colunas">
 
-
-        <div class="">
-            <div class="">
-               
-
-                <a href="horarios_trens.html"><button type="button" class=""><h3>Ver Horário dos Trens </h3></button></a>
-
-                
-        </div>
-
-        <div class="">
-
-
-                <a href="trem_usuario.html" ><button type="button" class=""><h3>Ver Localização dos Trens</h3></button></a>
-        </div>
-
-    </div>  
-
-        </div>
+    <div class=""> 
+        <div class="botao"></div>
+        <div class="botao"></div>
     </div>
+   
+    <div>
+        <div class="botao"></div>
+        <div class="botao"></div>
+    </div>
+   
 
-    <a href="../index.html"><button class=""><img id="botao" src="../assets/img/voltar.png" alt="botao voltar"></button></a>
+</div>
+
+
+   
 
 </body>
 

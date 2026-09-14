@@ -58,3 +58,11 @@ body{
     display: flex;
     justify-content: center;
 }
+
+.duas_colunas{
+     display: flex;
+    columns: 2;
+    justify-content: center;
+    gap: 100px;
+    
+}
