@@ -65,8 +65,8 @@ body{
      display: flex;
     columns: 2;
     justify-content: center;
-    gap: 100px;
-    
+    gap: 150px;
+ 
 }
 
 .align-items-center{

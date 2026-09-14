@@ -17,13 +17,13 @@
   
 <div class="duas_colunas">
 
-    <div class=""> 
-        <div class="botao"></div>
+    <div class=" justify-content: center"> 
+        <div class="botao"></div> <br>
         <div class="botao"></div>
     </div>
    
-    <div>
-        <div class="botao"></div>
+    <div  justify-content: center>
+        <div class="botao"></a></div> <br>
         <div class="botao"></div>
     </div>
    
