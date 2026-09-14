@@ -67,7 +67,7 @@
                     </div>
 
 
-                    <a href="../public/tela_inicial.html"><button id="button" type="submit"
+                    <a href="../public/tela_inicial.php"><button id="button" type="submit"
                             class="btn btn-primary w-100">Entrar</button> </a>
                 </form>
 
@@ -83,7 +83,7 @@
 
         <script src="../scripts/cadastro_usuario.js"></script>
 
-        <a href="../index.html">
+        <a href="../index.php">
             <button class="botao_voltar_login">
                 <img id="botao" src="../assets/img/voltar.png" alt="botao voltar">
             </button>
