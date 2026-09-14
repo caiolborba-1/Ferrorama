@@ -1,10 +1,4 @@
-<?php
 
-    include "../infra/conexao.php";
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 

@@ -8,7 +8,7 @@
     </head>
     <body class="">
         
-        <img src="assets/img/trem (2).png" alt="" class="">
+        <img src="assets/img/Trens certo.png" alt="" class="">
 
         <div>
 
@@ -18,10 +18,14 @@
             <div class="j">
     
         
-                <a href="public/login_adm.html"> <button class=""><h3>Como Administrador</h3></button></a>
+                <a href="public/login_adm.html"> <button class="botao"><h3>Como Administrador</h3></button></a>
         
         
-                <a href="public/cadastro_usuario.html"><button class=""><h3>Como Usuario</h3></button></a> 
+<<<<<<< HEAD
+                <a href="public/cadastro_usuario.html"><button class="botao"><h3>Como Usuario</h3></button></a> 
+=======
+                <a href="public/cadastro_usuario.php"><button class=""><h3>Como Usuario</h3></button></a> 
+>>>>>>> d8a5d130fbd05cfe306273e39c490b7e64a6fbe5
         
 
             </div>
