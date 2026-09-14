@@ -2,9 +2,8 @@
 
     include "../infra/conexao.php";
 
-
-
 ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,14 +12,16 @@
      <link rel="stylesheet" href="../assets/styles/styles.css">
     <title>Sensor de Velocidade </title>
 </head>
-<body class="a">
+<body class="">
+
+ <?php include 'navbar.php'; ?>
     
-    <img src="../assets/img/trem (2).png" alt="" class="">
-
     <div class="">
-       <div class=""> <div><h1>Velocidade</h1></div></div>
+        <br>
+       <div class=""> <div><h1>Velocidade</h1></div></div> <br><br>
 
-        <div class="">
+
+        <div class="display-flex align-items-center gap-5 ">
             <div>
                 <h1>ID: Trem 1</h1> <br> 
                 <h1>ID: Trem 2</h1> <br>
@@ -40,7 +41,7 @@
 
     </div>
   
-    <a href="tela_inicial_adm.html"><button class=""><img id="botao" src="../assets/img/voltar.png" alt="botao voltar"></button></a>
+
 
 
 
