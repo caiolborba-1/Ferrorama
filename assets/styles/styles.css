@@ -63,3 +63,15 @@ body{
     display: flex;
     align-items: center;
 }
+
+.padding20 {
+    padding: 20px;
+}
+
+/* Index inico */
+.index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Index fim */
