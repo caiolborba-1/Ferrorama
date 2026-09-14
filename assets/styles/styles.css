@@ -59,6 +59,7 @@ body{
     justify-content: center;
 }
 
+<<<<<<< HEAD
 .duas_colunas{
      display: flex;
     columns: 2;
@@ -66,3 +67,27 @@ body{
     gap: 100px;
     
 }
+=======
+.align-items-center{
+    display: flex;
+    align-items: center;
+}
+
+.padding20 {
+    padding: 20px;
+}
+
+/* Index inico */
+.index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Index Inicio */
+.A {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+/* Fim */
+>>>>>>> fa5c6f00a08713abe49d67d3c5329764193024d5
