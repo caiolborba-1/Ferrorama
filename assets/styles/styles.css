@@ -60,6 +60,15 @@ body{
     justify-content: center;
 }
 
+<<<<<<< HEAD
+.duas_colunas{
+     display: flex;
+    columns: 2;
+    justify-content: center;
+    gap: 100px;
+    
+}
+=======
 .align-items-center{
     display: flex;
     align-items: center;
@@ -82,3 +91,4 @@ body{
     justify-content: space-around;
 }
 /* Fim */
+
