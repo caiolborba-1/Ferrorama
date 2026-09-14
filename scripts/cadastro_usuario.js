@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (salva === senha) {
                 mensagem.innerHTML = "<div class='sucesso'>Logado com sucesso!</div>";
                  setTimeout(() => {
-        window.location.href = "../public/tela_inicial.html";
+        window.location.href = "../public/tela_inicial.php";
     }, 1000);
             } else {
                 mensagem.innerHTML = "<div class='erro'>Dados incorretos!</div>";
