@@ -20,7 +20,7 @@
 
 </header>
 
-<body class="a">
+<body class="">
 
     <div class="">
 
@@ -29,46 +29,59 @@
         </div>
 
 
-        <div class="">
+        <div class="tres_colunas">
             <div class="">
-                <button type="button" class="botao">
+                <button type="submit" class="botao">
                         Velocidade
                 </button>
-
-                <button type="button" class="botao">
+ <br>
+                <button type="submit" class="botao">
                         falhas
                     </button>
-
-                <button type="button" class="botao">
+ <br>
+                    <button type="button" class="botao">
                         pressão do óleo
                 </button>
 
-                <button type="button" class="botao">
-                        cadastrar sensor
-                </button>
-
+ <br>
             </div>
 
             <div class="">
-                <button type="button" class="botao">
+                <button type="submit" class="botao">
                     temperatura
                 </button>
-
-                <button type="button" class="botao">
+ <br>
+                <button type="submit" class="botao">
                     combustivel
                 </button>
-
-                <button type="button" class="botao">
+ <br>
+                <button type="submit" class="botao">
                     frenagem
                 </button>
+ <br>
+                
 
-                <button type="button" class="botao">
+
+</div>
+
+            <div class="">
+                    
+                <button type="submit" class="botao">
                      Usuários Cadastrados
                 </button>
-
-                <button type="button" class="botao">
+ <br>
+                <button type="submit" class="botao">
                      Sensores Cadastrados
                 </button>
+
+<br>
+                <button type="submit" class="botao">
+                        cadastrar sensor
+                </button>
+
+                </div>
+                
+                </div>
             </div>
 
         </div>

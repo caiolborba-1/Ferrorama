@@ -21,7 +21,7 @@
                 <a href="public/login_adm.html"> <button class=""><h3>Como Administrador</h3></button></a>
         
         
-                <a href="public/cadastro_usuario.php"><button class=""><h3>Como Usuario</h3></button></a> 
+                <a href="public/cadastro_usuario.html"><button class=""><h3>Como Usuario</h3></button></a> 
         
 
             </div>
