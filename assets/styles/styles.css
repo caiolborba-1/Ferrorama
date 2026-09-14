@@ -43,6 +43,7 @@ body{
     background: linear-gradient(180deg, #9db6ee 0%, #E3EDFC 100%);
 }
 
+<<<<<<< HEAD
 .display_flex{
     display: flex;
 }
@@ -58,3 +59,5 @@ body{
     display: flex;
     justify-content: center;
 }
+=======
+>>>>>>> 8eeae5de3262b8184c3a402f7a7b8573a16b2ee8
