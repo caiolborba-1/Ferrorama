@@ -13,6 +13,12 @@
 .logo_cabecalho{
     height: 130px;
     width: 200px;
+    transition: transform 0.5s ease;
+}
+
+.logo_cabecalho:hover{
+    transform: scale(0.96);
+     transform: rotate(360deg);
 }
 
 .botao{
