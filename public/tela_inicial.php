@@ -18,13 +18,13 @@
 <div class="duas_colunas">
 
     <div class=" justify-content: center"> 
-        <div class="botao">Trem 1 <br> Brasil - Japão</div> <br>
-        <div class="botao">Trem 3 <br> China - Malásia</div>
+        <div class="botao">TREM 1 <br> BRASIL - JAPÃO</div> <br>
+        <div class="botao">TREM 3 <br> CHINA - MALÁSIA</div>
     </div>
    
     <div  justify-content: center>
-        <div class="botao">Trem 2 <br> Peru - Equador</a></div> <br>
-        <div class="botao">Trem 4 <br> Maranhão - Rio</div>
+        <div class="botao">TREM 2 <br> PERU - EQUADOR</a></div> <br>
+        <div class="botao">TREM 4 <br> MARANHÃO - RIO</div>
     </div>
    
 
