@@ -98,3 +98,9 @@ body{
 }
 /* Fim */
 
+/* Animação de afundar quando passar o mouse em cima */
+
+.afundar:hover{
+    transform: scale(0.90);
+    cursor: pointer;
+}
