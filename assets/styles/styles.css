@@ -1,3 +1,13 @@
+.erro {
+    color: #f0283c;
+    font-weight: bold;
+}
+
+.sucesso {
+    color: #38e76c;
+    font-weight: bold;
+}
+
 .cabecalho {
     background-color: rgba(120, 130, 214, 0.863);
     height: 130px;

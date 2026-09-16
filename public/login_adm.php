@@ -7,17 +7,7 @@
         <title>Login & Cadastro - Ferrorama</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../assets/styles/styles.css">
-        <style>
-            .erro {
-                color: #f0283c;
-                font-weight: bold;
-            }
-
-            .sucesso {
-                color: #38e76c;
-                font-weight: bold;
-            }
-        </style>
+        
     </head>
 
     <body class="bg-light">
