@@ -1,10 +1,4 @@
-<?php
 
-    include "../infra/conexao.php";
-
-
-
-?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,14 +7,16 @@
      <link rel="stylesheet" href="../assets/styles/styles.css">
     <title>Sensor de Temperatura </title>
 </head>
-<body class="a">
+<header><?php include 'navbar.php'; ?></header>
+
+<body class="">
     
-    <img src="../assets/img/trem (2).png" alt="" class="">
+    
 
-    <div class="">
-       <div class=""> <div><h1>Temperatura</h1></div></div>
+    <div class="diplay2">
+       <div class=""> <br><div><h1>Temperatura</h1></div></div><br><br>
 
-        <div class="">
+        <div class="display-flex align-items-center gap-5 TabelaVelocidade">
             <div>
                 <h1>ID: Trem 1</h1> <br> 
                 <h1>ID: Trem 2</h1> <br>
@@ -39,10 +35,6 @@
         </div>
 
     </div>
-  
-
-    <a href="tela_inicial_adm.html"><button class=""><img id="botao" src="../assets/img/voltar.png" alt="botao voltar"></button></a>
-
    
 
 </body>
