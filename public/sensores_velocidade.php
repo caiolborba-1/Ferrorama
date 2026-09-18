@@ -1,8 +1,4 @@
-<?php
 
-    include "../infra/conexao.php";
-
-?>
 
 <html lang="en">
 <head>
@@ -16,26 +12,28 @@
 
  <?php include 'navbar.php'; ?>
     
-    <div class="">
-        <br>
-       <div class=""> <div><h1>Velocidade</h1></div></div> <br><br>
-
-
-        <div class="display-flex align-items-center gap-5 ">
-            <div>
-                <h1>ID: Trem 1</h1> <br> 
-                <h1>ID: Trem 2</h1> <br>
-                <h1>ID: Trem 3</h1> <br>
-                <h1>ID: Trem 4</h1> <br>
-            </div>
-
-            <div>
-                <h1>Velocidade: X km/h</h1> <br> 
-                <h1>Velocidade: X km/h</h1> <br> 
-                <h1>Velocidade: X km/h</h1> <br> 
-                <h1>Velocidade: X km/h</h1> <br> 
+    <div class="diplay2">
+            <br>
+                <h1>Velocidade</h1>
                 
-            </div>
+            <br><br>
+
+
+        <div class="display-flex align-items-center gap-5 TabelaVelocidade">
+                <div>
+                    <h1>ID: Trem 1</h1> <br> 
+                    <h1>ID: Trem 2</h1> <br>
+                    <h1>ID: Trem 3</h1> <br>
+                    <h1>ID: Trem 4</h1> <br>
+                </div>
+
+                <div>
+                    <h1>Velocidade: X km/h</h1> <br> 
+                    <h1>Velocidade: X km/h</h1> <br> 
+                    <h1>Velocidade: X km/h</h1> <br> 
+                    <h1>Velocidade: X km/h</h1> <br> 
+                    
+                </div>
 
         </div>
 
