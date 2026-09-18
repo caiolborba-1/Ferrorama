@@ -114,3 +114,11 @@ body{
     transform: scale(0.90);
     cursor: pointer;
 }
+
+.tela_inicial{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
