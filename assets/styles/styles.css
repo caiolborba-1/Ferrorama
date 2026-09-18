@@ -114,3 +114,38 @@ body{
     transform: scale(0.90);
     cursor: pointer;
 }
+
+<<<<<<< HEAD
+.tela_inicial{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+=======
+/* sensores_velocidade */
+
+.TabelaVelocidade {
+    background-color:  rgba(120, 130, 214, 0.863);;
+appearance: none;
+    border: none;
+    height: 480px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    color: white;
+    font-size: clamp(14px, 8cqw, 28px); 
+    box-shadow: -12px 12px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 3px;
+}
+
+.diplay2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+>>>>>>> b1f4a378b7f714ab8dd4db86574684d936d44a70
