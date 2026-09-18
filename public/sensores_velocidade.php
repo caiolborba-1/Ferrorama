@@ -4,45 +4,52 @@
     <title>Velocidade</title>
     <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
+<header><?php include 'navbar.php'; ?></header>
 
 <body class="">
 
-    <?php include 'navbar.php'; ?>
-
     <div class="display2">
+
         <div>
-        <br>
 
-        <h1>Velocidade</h1>
+            <br>
 
-        <br><br>
+            <div class="justify-content-center"><h1>Velocidade</h1></div>
 
-        <div class="display-flex align-items-center gap-5 TabelaVelocidade">
+            <br>
+            <br>
+            <div class="spacearound">
 
-            <div>
-                <h2>ID: Trem 1</h2>
-                <h2>ID: Trem 2</h2>
-                <h2>ID: Trem 3</h2>
-                <h2>ID: Trem 4</h2>
+                <div class="TabelaVelocidade" >
+
+                    <div>
+                        <h2>ID: Trem 1</h2>
+                        <h2>ID: Trem 2</h2>
+                        <h2>ID: Trem 3</h2>
+                        <h2>ID: Trem 4</h2>
+                    </div>
+
+                    <div>
+                        <h2>Velocidade: X km/h</h2>
+                        <h2>Velocidade: X km/h</h2>
+                        <h2>Velocidade: X km/h</h2>
+                        <h2>Velocidade: X km/h</h2>
+                    </div>
+
+                </div>
+
+                <br>
+                <br>
+
+            
+            
+                <div style="width: 80%; max-width: 900px;">
+                    <canvas id="graficoVelocidade"></canvas>
+                </div>
+
             </div>
 
-            <div>
-                <h2>Velocidade: X km/h</h2>
-                <h2>Velocidade: X km/h</h2>
-                <h2>Velocidade: X km/h</h2>
-                <h2>Velocidade: X km/h</h2>
-            </div>
-
-        </div>
-
-        <br><br>
-        <div class="display_flex">
-        
-            <div style="width: 80%; max-width: 900px;">
-                <canvas id="graficoVelocidade"></canvas>
-            </div>
-
-        
+            <script scr="../scripts/links_paginas.js"></script>
 
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -117,8 +124,9 @@
                 });
 
             </script>
-            
-        </div></div>
+        
+        </div>
+
     </div>
 </body>
 </html>
