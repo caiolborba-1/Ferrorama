@@ -27,7 +27,7 @@
 
         <div class="tres_colunas">
             <div class="">
-                <button type="submit" class="botao">
+                <button id="botao_velocidade" type="submit" class="botao">
                         Velocidade
                 </button>
  <br>
