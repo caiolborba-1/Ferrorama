@@ -30,7 +30,10 @@
 <div class="duas_colunas">
 
     <div class=" justify-content: center"> 
-        <div class="botao">TREM 1 <br> BRASIL - JAPÃO</div> <br>
+        <a href="tela_localização_trem1.php">
+            <div class="botao">TREM 1 <br> BRASIL - JAPÃO</div>
+        </a> 
+            <br>
         <div class="botao">TREM 3 <br> CHINA - MALÁSIA</div>
     </div>
    
