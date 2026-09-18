@@ -115,7 +115,10 @@ body{
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f8bc30aaac3b7aaf1684cb9ff99d6021965a60f9
 .tela_inicial{
     justify-content: center;
     align-items: center;
@@ -123,7 +126,6 @@ body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-=======
 /* sensores_velocidade */
 
 .TabelaVelocidade {
@@ -149,3 +151,10 @@ appearance: none;
     align-items: center;
 }
 
+<<<<<<< HEAD
+=======
+.spacearound {
+    display: flex;
+    justify-content: space-around;
+}
+>>>>>>> f8bc30aaac3b7aaf1684cb9ff99d6021965a60f9
