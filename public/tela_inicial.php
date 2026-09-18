@@ -13,8 +13,20 @@
     include "navbar.php"
     ?>
 
-    <br>
-  
+    <br><br>
+
+    <div class= "tela_inicial">
+         <h1>Bem- Vindo!</h1>
+    </div>
+
+    <br><br><br>
+    
+  <style>
+    .duas_colunas .botao{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+  </style>
+
 <div class="duas_colunas">
 
     <div class=" justify-content: center"> 
@@ -22,7 +34,7 @@
         <div class="botao">TREM 3 <br> CHINA - MALÁSIA</div>
     </div>
    
-    <div  justify-content: center>
+    <div  class="justify-content: center,">
         <div class="botao">TREM 2 <br> PERU - EQUADOR</a></div> <br>
         <div class="botao">TREM 4 <br> MARANHÃO - RIO</div>
     </div>
