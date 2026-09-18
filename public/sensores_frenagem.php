@@ -22,8 +22,11 @@
         <div class="">
             <?php include 'navbar.php'; ?>
             <div class="">
+                <br>
+                <br>
                 <div>
                     <h1>Frenagem</h1>
+                    <br><br>
                 </div>
             </div>
 

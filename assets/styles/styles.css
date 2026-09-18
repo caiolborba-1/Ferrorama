@@ -149,3 +149,14 @@ appearance: none;
     align-items: center;
 }
 >>>>>>> b1f4a378b7f714ab8dd4db86574684d936d44a70
+.TabelaFrenagem {
+                    display: flex;
+                    align-items: center;
+                    gap: 5rem;
+                    background-color: rgba(120, 130, 214, 0.863);
+                    padding: 1rem;
+                    border-radius: 3px;
+                    margin: 4rem;
+                    box-shadow: -12px 12px 15px rgba(0, 0, 0, 0.35);
+                    width: fit-content;
+                }s

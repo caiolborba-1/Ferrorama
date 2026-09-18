@@ -18,27 +18,46 @@
         <title>Sensor de Combustivel</title>
     </head>
 
-    <body class="aling-items-center">
+    <body class="">
 
         <?php include 'navbar.php'; ?>
 
-        <div class="container">
+        <div class="display-flex align-items-center gap-5">
 
-            <div>
-                <br>
-                <br>
-                <h1>Combustivel</h1>
-                <br><br>
+            
+
+            <div class="display-flex align-items-center gap-5 TabelaFrenagem">
+
+                <div>
+                    <h1>ID: Trem 1</h1> <br>
+                    <h1>ID: Trem 2</h1> <br>
+                    <h1>ID: Trem 3</h1> <br>
+                    <h1>ID: Trem 4</h1> <br>
+                </div>
+
+                <div>
+                    <h1>Frenagem: S/N</h1> <br>
+                    <h1>Frenagem: S/N</h1> <br>
+                    <h1>Frenagem: S/N</h1> <br>
+                    <h1>Frenagem: S/N</h1> <br>
+                </div>
+
             </div>
 
-            <div style="width: 80%; margin: auto;">
+
+            <div style="width: 45%; margin: auto; padding: 2rem; border-radius: 2px;">
+
                 <canvas id="graficoCombustivel"></canvas>
+
             </div>
+
 
             <script>
+
                 const ctx = document.getElementById('graficoCombustivel');
 
                 new Chart(ctx, {
+
                     type: 'bar',
 
                     data: {
@@ -51,14 +70,110 @@
                     },
 
                     options: {
+
                         scales: {
+
                             y: {
                                 beginAtZero: true
                             }
+
                         }
+
                     }
+
                 });
+
             </script>
+
+        </div>
+
+
+        <div class="display-flex gap-5">
+
+
+            <div class="TabelaFrenagem">
+
+                <div>
+                    <h1>Combustível Máximo</h1> <br>
+                    <h1>Combustível Mínimo</h1> <br>
+                    <h1>Combustível Médio</h1> <br>
+                </div>
+
+                <div>
+                    <h1>800 L</h1> <br>
+                    <h1>500 L</h1> <br>
+                    <h1>650 L</h1> <br>
+                </div>
+
+            </div>
+
+
+            <div class="TabelaFrenagem">
+
+                <div>
+
+                    <h1>Tabela de Informações</h1>
+
+                    <table class="table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Trem</th>
+                                <th>Combustível</th>
+                                <th>Capacidade</th>
+                                <th>Nível</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+                                <td>Trem 1</td>
+                                <td>800 L</td>
+                                <td>1200 L</td>
+                                <td>66%</td>
+                                <td>Normal</td>
+                            </tr>
+
+                            <tr>
+                                <td>Trem 2</td>
+                                <td>500 L</td>
+                                <td>1200 L</td>
+                                <td>41%</td>
+                                <td>Atenção</td>
+                            </tr>
+
+                            <tr>
+                                <td>Trem 3</td>
+                                <td>1000 L</td>
+                                <td>1200 L</td>
+                                <td>83%</td>
+                                <td>Normal</td>
+                            </tr>
+
+                            <tr>
+                                <td>Trem 4</td>
+                                <td>650 L</td>
+                                <td>1200 L</td>
+                                <td>54%</td>
+                                <td>Normal</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+
+                    <p>Última atualização: 18/09/2026 11:58</p>
+
+                </div>
+
+            </div>
+
 
         </div>
 
