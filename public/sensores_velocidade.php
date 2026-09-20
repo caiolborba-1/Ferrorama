@@ -1,12 +1,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="../scripts/relogio_navbar.js"></script>
     <title>Velocidade</title>
     <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
-<header><?php include 'navbar.php'; ?></header>
+
 
 <body class="">
+
+    <header><?php include 'navbar.php'; ?></header>
 
     <div class="display2">
 
