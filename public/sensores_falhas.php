@@ -114,16 +114,36 @@
 
                 options: {
 
-                    scales: {
+    scales: {
 
-                        r: {
-                            beginAtZero: true,
-                            max: 100
-                        }
+        r: {
 
-                    }
+            beginAtZero: true,
+            max: 100,
 
+            grid: {
+                color: '#555555',
+                lineWidth: 1
+            },
+
+            angleLines: {
+                color: '#555555',
+                lineWidth: 1
+            },
+
+            pointLabels: {
+                color: '#000000',
+                font: {
+                    size: 11,
+                    weight: 'bold'
                 }
+            }
+
+        }
+
+    }
+
+}
 
             });
 
