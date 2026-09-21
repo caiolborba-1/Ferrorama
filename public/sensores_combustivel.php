@@ -12,103 +12,23 @@
         <title>Sensor de Combustivel</title>
     </head>
 
+    
+
     <body class="">
 
         <?php include 'navbar.php'; ?>
 
-        <div class="display-flex align-items-center gap-5">
+       
 
-            
+        <div class="display_flex align-items-center gap-5">
 
-            <div class="display-flex align-items-center gap-5 TabelaFrenagem">
+         <div class="TabelaFrenagem">
 
-                <div>
-                    <h1>ID: Trem 1</h1> <br>
-                    <h1>ID: Trem 2</h1> <br>
-                    <h1>ID: Trem 3</h1> <br>
-                    <h1>ID: Trem 4</h1> <br>
-                </div>
-
-                <div>
-                    <h1>Frenagem: S/N</h1> <br>
-                    <h1>Frenagem: S/N</h1> <br>
-                    <h1>Frenagem: S/N</h1> <br>
-                    <h1>Frenagem: S/N</h1> <br>
-                </div>
-
-            </div>
-
-
-            <div style="width: 45%; margin: auto; padding: 2rem; border-radius: 2px;">
-
-                <canvas id="graficoCombustivel"></canvas>
-
-            </div>
-
-
-            <script>
-
-                const ctx = document.getElementById('graficoCombustivel');
-
-                new Chart(ctx, {
-
-                    type: 'bar',
-
-                    data: {
-                        labels: ['Trem 1', 'Trem 2', 'Trem 3', 'Trem 4'],
-
-                        datasets: [{
-                            label: 'Combustível (L)',
-                            data: [800, 500, 1000, 650]
-                        }]
-                    },
-
-                    options: {
-
-                        scales: {
-
-                            y: {
-                                beginAtZero: true
-                            }
-
-                        }
-
-                    }
-
-                });
-
-            </script>
-
-        </div>
-
-
-        <div class="display-flex gap-5">
-
-
-            <div class="TabelaFrenagem">
-
-                <div>
-                    <h1>Combustível Máximo</h1> <br>
-                    <h1>Combustível Mínimo</h1> <br>
-                    <h1>Combustível Médio</h1> <br>
-                </div>
-
-                <div>
-                    <h1>800 L</h1> <br>
-                    <h1>500 L</h1> <br>
-                    <h1>650 L</h1> <br>
-                </div>
-
-            </div>
-
-
-            <div class="TabelaFrenagem">
-
-                <div>
+                <div class="">
 
                     <h1>Tabela de Informações</h1>
 
-                    <table class="table">
+                    <table class="table  tabela_informacoes">
 
                         <thead>
 
@@ -162,11 +82,78 @@
                     </table>
 
 
-                    <p>Última atualização: 18/09/2026 11:58</p>
+                
 
                 </div>
 
             </div>
+
+
+
+            <div style="width: 50%; margin: auto; padding: 2rem; border-radius: 2px;">
+
+                <canvas id="graficoCombustivel"></canvas>
+
+            </div>
+
+
+            <script>
+
+                const ctx = document.getElementById('graficoCombustivel');
+
+                new Chart(ctx, {
+
+                    type: 'bar',
+
+                    data: {
+                        labels: ['Trem 1', 'Trem 2', 'Trem 3', 'Trem 4'],
+
+                        datasets: [{
+                            label: 'Combustível (L)',
+                            data: [800, 500, 1000, 650]
+                        }]
+                    },
+
+                    options: {
+
+                        scales: {
+
+                            y: {
+                                beginAtZero: true
+                            }
+
+                        }
+
+                    }
+
+                });
+
+            </script>
+
+        </div>
+
+
+        <div class="display_flex gap-5">
+
+
+            <div class="TabelaFrenagem">
+
+                <div>
+                    <h1>Combustível Máximo:</h1> <br>
+                    <h1>Combustível Mínimo:</h1> <br>
+                    <h1>Combustível Médio:</h1> <br>
+                </div>
+
+                <div>
+                    <h1>1000 L</h1> <br>
+                    <h1>500 L</h1> <br>
+                    <h1>650 L</h1> <br>
+                </div>
+
+            </div>
+
+
+           
 
 
         </div>

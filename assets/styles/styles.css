@@ -433,3 +433,17 @@ appearance: none;
 
 /* Fim do Visualização de Cadastros */
 >>>>>>> 1ce463fdfaecf2773d29f4135692cb2dc96d3d59
+
+.tabela_informacoes {
+    width: 40%;
+}
+
+.tabela_informacoes h1 {
+    font-size: 32px;
+}
+
+.tabela_informacoes th,
+.tabela_informacoes td {
+    padding: 15px 20px;
+    font-size: 19px;
+}
