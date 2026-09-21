@@ -200,12 +200,11 @@ appearance: none;
     justify-content: space-around;
 }
 
-<<<<<<< HEAD
 
 
 
 
-=======
+
 .TabelaPressao {
     display: flex;
     align-items: center;
@@ -431,6 +430,7 @@ appearance: none;
   color: #64748b;
 }
 
+<<<<<<< HEAD
 /* Fim do Visualização de Cadastros */
 >>>>>>> 1ce463fdfaecf2773d29f4135692cb2dc96d3d59
 
@@ -447,3 +447,25 @@ appearance: none;
     padding: 15px 20px;
     font-size: 19px;
 }
+=======
+.tela_trem_1{
+     display: flex;
+    width: 150%;
+    min-height: 150vh;
+}
+
+.lado_esquerdo{
+    width: 50%;
+    padding: 50px;
+  
+}
+
+.lado_direito{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+>>>>>>> 0fda465dcdc26abc0649ac0be267129bbc9a84e6
