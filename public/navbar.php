@@ -4,4 +4,6 @@
         <h1 class="afundar"><B>INICIO</B></h1>
         <h1 class="afundar"><B>PERFIL</B></h1>
         <h1 class="afundar"><B>TRENS</B></h1>
+
+        <div id="relogio" class="relogio">00:00:00</div>
 </div>
