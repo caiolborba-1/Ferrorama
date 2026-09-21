@@ -13,6 +13,14 @@
 
     </head>
 
+    <header>
+
+     <?php
+        include "navbar_login.php";
+     ?>
+
+    </header>
+
     <body class="bg-light">
 
         <img src="assets/img/trem (2).png" alt="" class="">
@@ -58,11 +66,7 @@
 
         <script src="../scripts/cadastro_usuario.js"></script>
 
-        <a href="../index.html">
-            <button class="botao_voltar_login">
-                <img id="botao" src="../assets/img/voltar.png" alt="botao voltar">
-            </button>
-        </a>
+        
 
     </body>
 
