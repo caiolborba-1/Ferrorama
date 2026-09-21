@@ -14,16 +14,19 @@
     <?php
     include "navbar.php"
     ?>
-<br><br>
-<div class="display_flex">
 
-    <h2>Localização do Trem</h2>
-    <h3>Horários brasil - Japão</h3>
-</div>
-   
-    <div class="botao">08:00</div>
-    <div class="botao">20:00</div>
-    
+<br><br>
+
+<div class="spacearound">
+    <div class="">
+        <h2>Localização do Trem</h2>
+        <h3>Horários brasil - Japão</h3>
+
+
+        <div class="botao">08:00</div>
+        <div class="botao">20:00</div>
+    </div>
+</div>  
     
 
 
