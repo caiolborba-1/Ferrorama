@@ -35,7 +35,7 @@
             <div class="botao">TREM 1 <br> BRASIL - ARGENTINA</div>
         </a> 
             <br>
-        <div class="botao">TREM 3 <br> COREIA S - COREIA N</div>
+        <div class="botao">TREM 3 <br> NEPAL - UZBEQUISTÃO</div>
     </div>
    
     <div  class="justify-content: center,">
