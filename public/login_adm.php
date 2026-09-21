@@ -10,6 +10,14 @@
         
     </head>
 
+    <header>
+
+     <?php
+        include "navbar_login.php";
+     ?>
+
+    </header>
+
     <body class="bg-light">
         <img src="assets/img/trem (2).png" alt="" class="">
         <div class="container d-flex justify-content-center align-items-center vh-100">
