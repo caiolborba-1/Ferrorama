@@ -431,22 +431,34 @@ appearance: none;
 }
 
 .tela_trem_1{
-     display: flex;
-    width: 150%;
-    min-height: 150vh;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    gap:0px;
 }
 
-.lado_esquerdo{
-    width: 50%;
-    padding: 50px;
-  
+  .lado_esquerdo {
+  width: 50%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-150px);
+    text-align: center;
+    
 }
 
 .lado_direito{
     width: 50%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 85%;
+    max-height: 550%;
+    object-fit: contain;
+     transform: translateY(-100px);
 }
-
-
