@@ -23,16 +23,16 @@
  
     <div class="lado_esquerdo">
         <h2>Localização do Trem</h2>
-        <h3>Horários Nepal - Uzbeqsuistão</h3>
+        <h3>Horários Peru - Equador</h3>
 
         <div class="botoes_trem1">
-            <div class="botao">07:00</div>
-            <div class="botao">14:00</div>
+            <div class="botao">09:00</div>
+            <div class="botao">11:30</div>
         </div>
     </div>
    
     <div class="lado_direito">
-     <img id="trilhos" src="../assets/img/nepal-uzbequistão.png" alt="">
+     <img id="trilhos" src="../assets/img/peru-equador.png" alt="">
 </div>
 
 
