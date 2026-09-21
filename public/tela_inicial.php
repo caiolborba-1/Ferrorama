@@ -31,16 +31,15 @@
 <div class="duas_colunas">
 
     <div class=" justify-content: center"> 
-        <a href="tela_localização_trem1.php">
-            <div class="botao">TREM 1 <br> BRASIL - ARGENTINA</div>
-        </a> 
+        <a href="tela_localização_trem1.php"><div class="botao">TREM 1 <br> BRASIL - ARGENTINA</div></a> 
             <br>
-        <div class="botao">TREM 3 <br> NEPAL - UZBEQUISTÃO</div>
+        <a href="tela_localização_trem3.php"><div class="botao">TREM 3 <br> NEPAL - UZBEQUISTÃO</div></a>
     </div>
    
     <div  class="justify-content: center,">
-        <div class="botao">TREM 2 <br> PERU - EQUADOR</a></div> <br>
-        <div class="botao">TREM 4 <br> MARANHÃO - RIO</div>
+        <a href="tela_localização_trem2.php"><div class="botao">TREM 2 <br> PERU - EQUADOR</a></div></a> 
+            <br>
+        <a href="tela_localização_trem4.php"><div class="botao">TREM 4 <br> MARANHÃO - RIO</div></a>
     </div>
    
 
