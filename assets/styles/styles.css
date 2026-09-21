@@ -199,12 +199,11 @@ appearance: none;
     justify-content: space-around;
 }
 
-<<<<<<< HEAD
 
 
 
 
-=======
+
 .TabelaPressao {
     display: flex;
     align-items: center;
@@ -430,5 +429,3 @@ appearance: none;
   color: #64748b;
 }
 
-/* Fim do Visualização de Cadastros */
->>>>>>> 1ce463fdfaecf2773d29f4135692cb2dc96d3d59
