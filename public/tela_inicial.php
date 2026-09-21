@@ -32,10 +32,10 @@
 
     <div class=" justify-content: center"> 
         <a href="tela_localização_trem1.php">
-            <div class="botao">TREM 1 <br> BRASIL - JAPÃO</div>
+            <div class="botao">TREM 1 <br> BRASIL - ARGENTINA</div>
         </a> 
             <br>
-        <div class="botao">TREM 3 <br> CHINA - MALÁSIA</div>
+        <div class="botao">TREM 3 <br> COREIA S - COREIA N</div>
     </div>
    
     <div  class="justify-content: center,">
