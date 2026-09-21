@@ -32,7 +32,7 @@
     </div> 
    
     <div class="lado_direito">
-     <img id="trilhos" src="../assets/img/trilhosreal.webp" alt="">
+     <img id="trilhos" src="../assets/img/maranhão-rio.png" alt="">
 </div>
 
 

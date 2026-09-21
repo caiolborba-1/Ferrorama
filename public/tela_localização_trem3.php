@@ -23,7 +23,7 @@
  
     <div class="lado_esquerdo">
         <h2>Localização do Trem</h2>
-        <h3>Horários China - Malásia</h3>
+        <h3>Horários Nepal - Uzbeqsuistão</h3>
 
         <div class="botoes_trem1">
             <div class="botao">07:00</div>
@@ -32,7 +32,7 @@
     </div>
    
     <div class="lado_direito">
-     <img id="trilhos" src="../assets/img/trilhosreal.webp" alt="">
+     <img id="trilhos" src="../assets/img/nepal-uzbequistão.png" alt="">
 </div>
 
 

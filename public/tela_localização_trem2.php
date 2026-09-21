@@ -32,7 +32,7 @@
     </div>
    
     <div class="lado_direito">
-     <img id="trilhos" src="../assets/img/trilhosreal.webp" alt="">
+     <img id="trilhos" src="../assets/img/peru-equador.png" alt="">
 </div>
 
 
