@@ -23,11 +23,11 @@
  
     <div class="lado_esquerdo">
         <h2>Localização do Trem</h2>
-        <h3>Horários brasil - Japão</h3>
+        <h3>Horários Peru - Equador</h3>
 
         <div class="botoes_trem1">
-            <div class="botao">08:00</div>
-            <div class="botao">20:00</div>
+            <div class="botao">09:00</div>
+            <div class="botao">11:30</div>
         </div>
     </div>
    

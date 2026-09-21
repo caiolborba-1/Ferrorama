@@ -46,7 +46,6 @@
             
         </div>
 
-        <img src="../assets/img/sale-fulbito.webp" alt="Sale-fulbito">
 
     </div>
         <div class="Justify-content-center"> <div><h1>Detalhe das falhas</h1></div></div>

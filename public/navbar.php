@@ -8,19 +8,6 @@
         <div id="relogio" class="relogio">00:00:00</div>
 </div>
 
-<style>
-        .botao_cabecalho{
-                background-color: transparent;
-                transition: background-color 0.3s;
-                border: none;
-                color: white;
-        }
-
-        .botao_cabecalho:hover{
-                 background-color: rgba(103, 117, 241, 0.863);
-        }
-</style>
-
      <div id="conteudo-do-sistema">
     
 </div>

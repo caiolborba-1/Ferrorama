@@ -36,6 +36,18 @@ body{
 
 }
 
+ .botao_cabecalho{
+                background-color: transparent;
+                transition: background-color 0.3s;
+                border: none;
+                color: white;
+        }
+
+        .botao_cabecalho:hover{
+                 background-color: rgba(103, 117, 241, 0.863);
+        }
+
+
 .logo_cabecalho{
     height: 130px;
     width: 200px;
@@ -430,9 +442,7 @@ appearance: none;
   color: #64748b;
 }
 
-<<<<<<< HEAD
 /* Fim do Visualização de Cadastros */
->>>>>>> 1ce463fdfaecf2773d29f4135692cb2dc96d3d59
 
 .tabela_informacoes {
     width: 40%;
@@ -447,25 +457,53 @@ appearance: none;
     padding: 15px 20px;
     font-size: 19px;
 }
-=======
+
 .tela_trem_1{
-     display: flex;
-    width: 150%;
-    min-height: 150vh;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    gap:0px;
 }
 
-.lado_esquerdo{
-    width: 50%;
-    padding: 50px;
-  
+  .lado_esquerdo {
+  width: 50%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-150px);
+    text-align: center;
+    
 }
 
 .lado_direito{
     width: 50%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 85%;
+    max-height: 550%;
+    object-fit: contain;
+     transform: translateY(-100px);
 }
 
 
->>>>>>> 0fda465dcdc26abc0649ac0be267129bbc9a84e6
+/* sale-fulbito */
+.foto_ronaldo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999; 
+        background-size: cover;          
+        background-position: center;    
+        background-repeat: no-repeat;    
+        height: 100vh;                
+        width: 100vw; 
+        cursor: none;
+    }
+ /* Fim sale-fulbito */
+
