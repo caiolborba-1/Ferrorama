@@ -7,7 +7,7 @@ botao.addEventListener("click", function() {
 const botao_usuario = document.getElementById("inicio_usuario");
 
 botao_usuario.addEventListener("click", function() {
-    window.location.href = "public/cadastro_usuario.html";
+    window.location.href = "public/cadastro_usuario.php";
 });
 
 function pagina_velocidade(event) {

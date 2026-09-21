@@ -21,7 +21,7 @@
     <body class="bg-light">
         <img src="assets/img/trem (2).png" alt="" class="">
         <div class="container d-flex justify-content-center align-items-center vh-100">
-            <div id="" class="card shadow p-4" style="width: 100%; max-width: 400px;">
+            <div id="" class=" card shadow p-4" style="width: 100%; max-width: 400px;">
 
                 <h3 class="text-center mb-4" id="titulo">Login</h3>
 
@@ -47,8 +47,7 @@
 
         <script src="../scripts/script.js"></script>
 
-        <a href="../index.html"><button class=""><img id="botao" src="../assets/img/voltar.png"
-                    alt="botao voltar"></button></a>
+        
     </body>
 
 </html>
