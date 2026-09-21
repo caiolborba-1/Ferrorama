@@ -23,13 +23,13 @@
  
     <div class="lado_esquerdo">
         <h2>Localização do Trem</h2>
-        <h3>Horários brasil - Japão</h3>
+        <h3>Horários Maranhão - Rio de Janeiro</h3>
 
         <div class="botoes_trem1">
-            <div class="botao">08:00</div>
-            <div class="botao">20:00</div>
+            <div class="botao">07:00</div>
+            <div class="botao">10:105</div>
         </div>
-    </div>
+    </div> 
    
     <div class="lado_direito">
      <img id="trilhos" src="../assets/img/trilhosreal.webp" alt="">
