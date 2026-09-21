@@ -133,23 +133,24 @@
         </div>
 
 
-        <div class="display_flex gap-5">
+        <div class="display_flex gap-5 ">
 
 
-            <div class="TabelaFrenagem">
+            <div class="TabelaFrenagem ">
 
-                <div>
-                    <h1>Combustível Máximo:</h1> <br>
-                    <h1>Combustível Mínimo:</h1> <br>
-                    <h1>Combustível Médio:</h1> <br>
+                <div class="display_flex gap-5">
+                   <div>
+                         <h1> Combustível Máximo: 1000 L <br></h1>
+                  </div> 
+                    <div>
+                        <h1> Combustível Mínimo: 500 L </h1>
+                    </div>
+                    <div>
+                        <h1> Combustível Médio: 650 L </h1>
+                    </div>
                 </div>
 
-                <div>
-                    <h1>1000 L</h1> <br>
-                    <h1>500 L</h1> <br>
-                    <h1>650 L</h1> <br>
-                </div>
-
+             
             </div>
 
 
