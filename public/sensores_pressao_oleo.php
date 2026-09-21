@@ -59,10 +59,10 @@
 
                 new Chart(ctx, {
 
-                    type: 'bar',
+                    type: 'line',
 
                     data: {
-                        labels: ['Trem 1', 'Trem 2', 'Trem 3', 'Trem 4'],
+                        labels: ['08:00', '09:00', '10:00', '11:00'],
 
                         datasets: [{
                             label: 'Pressão do Óleo (PSI)',

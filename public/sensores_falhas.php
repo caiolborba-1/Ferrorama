@@ -32,28 +32,69 @@
     
         <div class="spacearound">
 
-            <div class="display-flex align-items-center gap-5 TabelaFrenagem margin">
+             <div class="display2">
+        <br>
+       <div class="justify-content-center"> 
 
-                <div>
-                    <h2>ID: Trem 1</h2> <br> 
-                    <h2>ID: Trem 2</h2> <br>
-                    <h2>ID: Trem 3</h2> <br>
-                    <h2>ID: Trem 4</h2> <br>
+    
+       <div class="justify-content-center">
+
+        <div class="TabelaFrenagem" >
+
+                <table class="custom-table">
+                    <thead>
+                    <tr>
+                        <th>Nome do Trem</th>
+                        <th>Estatística</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>Trem 1</td>
+                        <td>Falhas Ativas: S/N</td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td>Trem 2</td>
+                        <td>Falhas Ativas: S/N</td>
+                    </tr>
+
+                    <tr>
+                        <td>Trem 3</td>
+                        <td>Falhas Ativas: S/N</td>
+                    </tr>
+
+                    <tr>
+                        <td>Trem 4</td>
+                        <td>Falhas Ativas: S/N</td>
+                    </tr>
+                    </tbody>
+                </table>    
+
                 </div>
 
-                <div>
-                    <h2>Falhas Ativas: S/N</h2> <br>
-                    <h2>Falhas Ativas: 2</h2> <br>
-                    <h2>Falhas Ativas: 1</h2> <br>
-                    <h2>Falhas Ativas: 4</h2> <br> 
-                </div>
+        <style>
+            .tabela-falhas {
+             display: flex;
+             align-items: center;
+             gap: 5rem;
+            background-color: rgba(120, 130, 214, 0.863);
+            padding: 15px;
+            border-radius: 3px;
+            margin-left: 200px;
+            margin-bottom: 4rem;
+            margin-top: 4rem;
+            box-shadow: -12px 12px 15px rgba(0, 0, 0, 0.35);
+                
+            }
 
-            </div>
 
-
+        </style>
           
 
-            <div class="TabelaFrenagem">
+            <div class="tabela-falhas">
 
                 <div style="width: 500px;">
 
@@ -150,46 +191,10 @@
         </script>
 
 
-        <div class="Justify-content-center">
-            <div>
-                <h1>Detalhe das falhas</h1>
-            </div>
-        </div>
+       
             
     
-        <div class="painel-oleo">
-
-            <div class="escala-esquerda">
-                <span>80 PSI</span>
-                <span>50 PSI</span>
-                <span>20 PSI</span>
-                <span>0 PSI</span>
-            </div>
-
-            <div class="dados-direita">
-                <span class="valor-atual">48</span>
-                <span class="unidade">PSI Óleo</span>
-            </div>
-
-            <svg viewBox="0 0 1000 150" preserveAspectRatio="none">
-
-                <line x1="0" y1="37.5" x2="1000" y2="37.5" stroke="#222834" stroke-width="1" />
-
-                <line x1="0" y1="75" x2="1000" y2="75" stroke="#222834" stroke-width="1" />
-
-                <line x1="0" y1="112.5" x2="1000" y2="112.5" stroke="#222834" stroke-width="1" />
-                
-                <line x1="0" y1="115" x2="1000" y2="115" stroke="#ff3333" stroke-width="2" stroke-dasharray="5,5" />
-                
-                <path d="M0,70 L150,68 L300,75 L450,50 L600,55 L750,72 L900,60 L1000,65" 
-                    fill="none" 
-                    stroke="#00e676" 
-                    stroke-width="3" 
-                    stroke-linecap="round" />
-
-            </svg>
-
-        </div>
+        
     
     </div>
 
