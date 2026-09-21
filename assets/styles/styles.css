@@ -16,6 +16,7 @@ body{
 #toggle {
     cursor: pointer;
     color: blue;
+}
 
 .cabecalho {
     background-color: rgba(120, 130, 214, 0.863)!important;
