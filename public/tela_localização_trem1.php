@@ -17,16 +17,25 @@
 
 <br><br>
 
-<div class="spacearound">
-    <div class="">
+<div class="tela_trem_1">
+  
+
+ 
+    <div class="lado_esquerdo justify-content: center;">
         <h2>Localização do Trem</h2>
         <h3>Horários brasil - Japão</h3>
 
-
-        <div class="botao">08:00</div>
-        <div class="botao">20:00</div>
+        <div class="botoes_trem1">
+            <div class="botao">08:00</div>
+            <div class="botao">20:00</div>
+        </div>
     </div>
+   
 </div>  
+
+<div class="lado_direito">
+    <img src="" alt="">
+</div>
     
 
 
