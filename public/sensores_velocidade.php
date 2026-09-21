@@ -24,49 +24,63 @@
 
             <br>
             <br>
-            <div class="justify-content-center ">
 
-                <div class="TabelaVelocidade" >
+            <div class="justify-content-center">
 
-                <table class="custom-table">
-                    <thead>
-                    <tr>
-                        <th>Nome do Trem</th>
-                        <th>Estatística</th>
-                    </tr>
-                    </thead>
+                <div class="TabelaVelocidade">
 
-                    <tbody>
-                    <tr>
-                        <td>Trem 1</td>
-                        <td>Velocidade: X Km/h</td>
-                        
-                    </tr>
+                    <table class="custom-table">
 
-                    <tr>
-                        <td>Trem 2</td>
-                        <td>Velocidade: X Km/h</td>
-                    </tr>
+                        <thead>
 
-                    <tr>
-                        <td>Trem 3</td>
-                        <td>Velocidade: X Km/h</td>
-                    </tr>
+                            <tr>
+                                <th>Trem</th>
+                                <th>Velocidade Atual</th>
+                                <th>Limite</th>
+                                <th>Situação</th>
+                            </tr>
 
-                    <tr>
-                        <td>Trem 4</td>
-                        <td>Velocidade: X Km/h</td>
-                    </tr>
-                    </tbody>
-                </table>    
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Trem 1</td>
+                                <td>154 km/h</td>
+                                <td>160 km/h</td>
+                                <td>Normal</td>
+                            </tr>
+
+                            <tr>
+                                <td>Trem 2</td>
+                                <td>123 km/h</td>
+                                <td>160 km/h</td>
+                                <td>Normal</td>
+                            </tr>
+
+                            <tr>
+                                <td>Trem 3</td>
+                                <td>105 km/h</td>
+                                <td>160 km/h</td>
+                                <td>Baixa</td>
+                            </tr>
+
+                            <tr>
+                                <td>Trem 4</td>
+                                <td>130 km/h</td>
+                                <td>160 km/h</td>
+                                <td>Normal</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
 
                 </div>
 
                 <br>
                 <br>
 
-            
-            
                 <div style="width: 80%; max-width: 900px;">
                     <canvas id="graficoVelocidade"></canvas>
                 </div>
@@ -75,72 +89,72 @@
 
             <script scr="../scripts/links_paginas.js"></script>
 
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-            <script>
-
-                const grafico = document.getElementById('graficoVelocidade');
-
-                new Chart(grafico, {
-                    type: 'line',
-
-                    data: {
-                        labels: [
-                            'Trem 1', 'Trem2', 'trem 3', 'trem4'
-                        ],
-
-                        datasets: [{
-                            label: 'Velocidade Média',
-
-                            data: [
-                                154,
-                                123,
-                                105,
-                                130
-                            ],
-
-                            borderWidth: 2,
-
-                            pointRadius: 4,
-
-                            tension: 0
-                        }]
-                    },
-
-                    options: {
-                        responsive: true,
-
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Velocidade dos Trens'
-                            }
-                        },
-
-                        scales: {
-                            x: {
-                                title: {
-                                    display: true,
-                                    text: ''
-                                }
-                            },
-
-                            y: {
-                                beginAtZero: true,
-
-                                title: {
-                                    display: true,
-                                    text: 'Velocidade Média (km/h)'
-                                }
-                            }
-                        }
-                    }
-                });
-
-            </script>
-        
-        </div>
-
-    </div>
-</body>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+ 
+            <script> 
+ 
+                const grafico = document.getElementById('graficoVelocidade'); 
+ 
+                new Chart(grafico, { 
+                    type: 'line', 
+ 
+                    data: { 
+                        labels: [ 
+                            'Trem 1', 'Trem2', 'trem 3', 'trem4' 
+                        ], 
+ 
+                        datasets: [{ 
+                            label: 'Velocidade Média', 
+ 
+                            data: [ 
+                                154, 
+                                123, 
+                                105, 
+                                130 
+                            ], 
+ 
+                            borderWidth: 2, 
+ 
+                            pointRadius: 4, 
+ 
+                            tension: 0 
+                        }] 
+                    }, 
+ 
+                    options: { 
+                        responsive: true, 
+ 
+                        plugins: { 
+                            title: { 
+                                display: true, 
+                                text: 'Velocidade dos Trens' 
+                            } 
+                        }, 
+ 
+                        scales: { 
+                            x: { 
+                                title: { 
+                                    display: true, 
+                                    text: '' 
+                                } 
+                            }, 
+ 
+                            y: { 
+                                beginAtZero: true, 
+ 
+                                title: { 
+                                    display: true, 
+                                    text: 'Velocidade Média (km/h)' 
+                                } 
+                            } 
+                        } 
+                    } 
+                }); 
+ 
+            </script> 
+         
+        </div> 
+ 
+    </div> 
+</body> 
 </html>

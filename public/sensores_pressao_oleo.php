@@ -27,24 +27,41 @@
     
        <div class="spacearound">
 
-         <div class="display-flex align-items-center gap-5 TabelaFrenagem margin">
-            <div>
-                <h2>ID: Trem 1</h2> <br> 
-                <h2>ID: Trem 2</h2> <br>
-                <h2>ID: Trem 3</h2> <br>
-                <h2>ID: Trem 4</h2> <br>
-            </div>
+        <div class="display-flex align-items-center gap-5 TabelaFrenagem margin" >
 
-            <div>
-                <h2>pressão: X PSI</h2> <br> 
-                <h2>pressão: X PSI</h2> <br> 
-                <h2>pressão: X PSI</h2> <br> 
-                <h2>pressão: X PSI</h2> <br> 
-                
-            </div>
+                <table class="custom-table">
+                    <thead>
+                    <tr>
+                        <th>Nome do Trem</th>
+                        <th>Estatística</th>
+                    </tr>
+                    </thead>
 
-            
-        </div>
+                    <tbody>
+                    <tr>
+                        <td>Trem 1</td>
+                        <td>pressão: X PSI</td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td>Trem 2</td>
+                        <td>pressão: X PSI</td>
+                    </tr>
+
+                    <tr>
+                        <td>Trem 3</td>
+                        <td>pressão: X PSI</td>
+                    </tr>
+
+                    <tr>
+                        <td>Trem 4</td>
+                        <td>pressão: X PSI</td>
+                    </tr>
+                    </tbody>
+                </table>    
+
+                </div>
 
         <div style="width: 45%; margin: auto; padding: 2rem; border-radius: 2px;">
 
