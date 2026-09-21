@@ -24,23 +24,41 @@
 
             <br>
             <br>
-            <div class="spacearound">
+            <div class="justify-content-center ">
 
                 <div class="TabelaVelocidade" >
 
-                    <div>
-                        <h2>ID: Trem 1</h2>
-                        <h2>ID: Trem 2</h2>
-                        <h2>ID: Trem 3</h2>
-                        <h2>ID: Trem 4</h2>
-                    </div>
+                <table class="custom-table">
+                    <thead>
+                    <tr>
+                        <th>Nome do Trem</th>
+                        <th>Estatística</th>
+                    </tr>
+                    </thead>
 
-                    <div>
-                        <h2>Velocidade: X km/h</h2>
-                        <h2>Velocidade: X km/h</h2>
-                        <h2>Velocidade: X km/h</h2>
-                        <h2>Velocidade: X km/h</h2>
-                    </div>
+                    <tbody>
+                    <tr>
+                        <td>Trem 1</td>
+                        <td>Velocidade: X Km/h</td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td>Trem 2</td>
+                        <td>Velocidade: X Km/h</td>
+                    </tr>
+
+                    <tr>
+                        <td>Trem 3</td>
+                        <td>Velocidade: X Km/h</td>
+                    </tr>
+
+                    <tr>
+                        <td>Trem 4</td>
+                        <td>Velocidade: X Km/h</td>
+                    </tr>
+                    </tbody>
+                </table>    
 
                 </div>
 
