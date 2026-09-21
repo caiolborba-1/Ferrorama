@@ -36,6 +36,18 @@ body{
 
 }
 
+ .botao_cabecalho{
+                background-color: transparent;
+                transition: background-color 0.3s;
+                border: none;
+                color: white;
+        }
+
+        .botao_cabecalho:hover{
+                 background-color: rgba(103, 117, 241, 0.863);
+        }
+
+
 .logo_cabecalho{
     height: 130px;
     width: 200px;
@@ -430,6 +442,22 @@ appearance: none;
   color: #64748b;
 }
 
+/* Fim do Visualização de Cadastros */
+
+.tabela_informacoes {
+    width: 40%;
+}
+
+.tabela_informacoes h1 {
+    font-size: 32px;
+}
+
+.tabela_informacoes th,
+.tabela_informacoes td {
+    padding: 15px 20px;
+    font-size: 19px;
+}
+
 .tela_trem_1{
     display: flex;
     width: 100%;
@@ -462,3 +490,21 @@ appearance: none;
     object-fit: contain;
      transform: translateY(-100px);
 }
+<<<<<<< HEAD
+=======
+
+/* sale-fulbito */
+.foto_ronaldo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999; 
+        background-size: cover;          
+        background-position: center;    
+        background-repeat: no-repeat;    
+        height: 100vh;                
+        width: 100vw; 
+        cursor: none;
+    }
+ /* Fim sale-fulbito */
+>>>>>>> b5d952e865e2f152a4cba4045f099e25545c9e48

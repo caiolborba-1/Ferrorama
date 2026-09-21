@@ -68,27 +68,17 @@
 
                     data: {
                         labels: [
-                            '0', '1', '2', '3',
-                            '4', '5', '6', '7',
-                            '8', '9', '10', '11'
+                            'Trem 1', 'Trem2', 'trem 3', 'trem4'
                         ],
 
                         datasets: [{
-                            label: 'Velocidade',
+                            label: 'Velocidade Média',
 
                             data: [
-                                30,
-                                70,
+                                154,
+                                123,
                                 105,
-                                130,
-                                145,
-                                175,
-                                135,
-                                148,
-                                217,
-                                195,
-                                95,
-                                55
+                                130
                             ],
 
                             borderWidth: 2,
@@ -113,7 +103,7 @@
                             x: {
                                 title: {
                                     display: true,
-                                    text: 'Tempo'
+                                    text: ''
                                 }
                             },
 
@@ -122,7 +112,7 @@
 
                                 title: {
                                     display: true,
-                                    text: 'Velocidade (km/h)'
+                                    text: 'Velocidade Média (km/h)'
                                 }
                             }
                         }
