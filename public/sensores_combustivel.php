@@ -34,6 +34,12 @@
 
     <div class="display_flex ">
 
+<<<<<<< HEAD
+=======
+            
+
+
+>>>>>>> 112f2c7ce35c628ebc9ab942df6a116b134884c7
 
         <div class="Tabela_combustivel_1">
 
