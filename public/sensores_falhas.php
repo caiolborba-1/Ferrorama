@@ -86,7 +86,7 @@
             </style>
           
 
-            <div class="tabela-falhas">
+            <div class="TabelaPressao">
 
                 <div style="width: 500px;">
 
