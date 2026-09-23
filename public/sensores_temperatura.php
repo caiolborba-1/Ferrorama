@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-     <script src="../scripts/termometro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../scripts/termometro.js"></script>
     <script src="../scripts/relogio_navbar.js"></script>
     <link rel="stylesheet" href="../assets/styles/styles.css">
 
@@ -28,27 +28,49 @@
     
        <div class="spacearound">
 
-         <div class="display-flex align-items-center gap-5 TabelaFrenagem margin">
-            <div>
-                <h2>ID: Trem 1</h2> <br> 
-                <h2>ID: Trem 2</h2> <br>
-                <h2>ID: Trem 3</h2> <br>
-                <h2>ID: Trem 4</h2> <br>
-            </div>
+        <div class="display-flex align-items-center gap-5 TabelaFrenagem margin" >
 
-            <div>
-                <h2>Temperatura: --.- °C</h2> <br>
-                <h2>Temperatura: 75.2 °C</h2> <br>
-                <h2>Temperatura: 68.5 °C</h2> <br>
-                <h2>Temperatura: 89.1 °C</h2> <br>
-            </div>
+                <table class="custom-table">
+                    <thead>
+                    <tr>
+                        <th>Nome do Trem</th>
+                        <th>Estatística</th>
+                    </tr>
+                    </thead>
 
-            
-        </div>
+                    <tbody>
+                    <tr>
+                        <td>Trem 1</td>
+                        <td>Temperatura: 64.1 °C</td>
+                        
+                    </tr>
 
+                    <tr>
+                        <td>Trem 2</td>
+                        <td>Temperatura: 75.2 °C</td>
+                    </tr>
+
+                    <tr>
+                        <td>Trem 3</td>
+                        <td>Temperatura: 68.5 °C</td>
+                    </tr>
+
+                    <tr>
+                        <td>Trem 4</td>
+                        <td>Temperatura: 89.1 °C</td>
+                    </tr>
+                    </tbody>
+                </table>    
+
+                </div>
+
+
+                <div class="grafico_termperatura">
+                    <canvas id="graficoSensores"></canvas>
+                </div> 
 
     </div>
-        <div class="Justify-content-center"> <div><h1>Detalhe das falhas</h1></div></div>
+        <div class="Justify-content-center"> <div><h1>Termômetro Digital</h1></div></div>
       
         <div class="justify-content-center">
             <div class="painel-container">
@@ -63,18 +85,20 @@
 
                 <!-- Régua de Graus (Modificável conforme seu limite máximo) -->
                 <div class="escala-container">
-                    <div class="escala-ponto" style="width: 0;">0°C</div>
+                    <div class="escala-ponto"  0;">0°C</div>
                     <div class="escala-ponto">20°</div>
                     <div class="escala-ponto">40°</div>
                     <div class="escala-ponto">60°</div>
                     <div class="escala-ponto">80°</div>
                     <div class="escala-ponto">100°</div>
-                    <div class="escala-ponto" style="width: 0; text-align: right;">120°C</div>
+                    <div class="escala-ponto" ">120°C</div>
                 </div>
             </div>
         
     
     </div>
+
+    <script src="../scripts/grafico_temperatura.js"></script>
 
 </body>
 
