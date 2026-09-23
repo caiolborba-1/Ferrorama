@@ -31,19 +31,19 @@
 
         <div class="tres_colunas">
             <div class="">
-                <button onclick="pagina_velocidade(event)" class="botao">
+                <a href=""><button class="botao">
                         Velocidade
-                </button>
+                </button></a>
  <br>
 
   
-                <button onclick="pagina_falhas(event)" class="botao">
+                <a href=""><button class="botao">
                         falhas
-                    </button>
+                    </button></a>
  <br>
-                    <button onclick="pagina_pressao(event)" class="botao">
+                    <a href=""><button class="botao">
                         pressão do óleo
-                </button>
+                </button></a>
 
  <br>
             </div>
@@ -94,7 +94,6 @@
     </div>
     </div>
 
-     <script src="../scripts/links_paginas.js"></script>
 </body>
 
 </html>
