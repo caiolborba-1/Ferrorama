@@ -29,23 +29,18 @@
     width: fit-content;
         }
     </style>
-
+<br>
+    <div class="justify-content-center"><br> <h1>Monitoramento dos Sensores de Combustivel</h1> <br></div>
 
     <div class="display_flex ">
 
-        
+
         <div class="Tabela_combustivel_1">
 
             <div class="" >
 
-                <div><h1>Tabela de Informações</h1></div>
 
-            </div>
-
-        
-
-            <div class="TabelaVelocidade">
-                
+            </div>  
 
                 <table class="custom-table">
 
@@ -99,7 +94,6 @@
 
                 </table>
 
-            </div>
 
         </div>
 
