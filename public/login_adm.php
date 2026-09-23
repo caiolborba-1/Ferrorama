@@ -10,6 +10,9 @@
         
     </head>
 
+    
+
+    <body class="bg-light">
     <header>
 
      <?php
@@ -17,33 +20,27 @@
      ?>
 
     </header>
-
-    <body class="bg-light">
-        <img src="assets/img/trem (2).png" alt="" class="">
-        <div class="container d-flex justify-content-center align-items-center vh-100">
-            <div id="" class=" card shadow p-4" style="width: 100%; max-width: 400px;">
-
-                <h3 class="text-center mb-4" id="titulo">Login</h3>
-
-                <form id="form-login">
-                    <div class="mb-3">
-                        <label class="form-label" id="l_nome_usuario">Nome de Usuário</label>
-                        <input type="text" id="nome_usuario" class="form-control" placeholder="Digite seu nome" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label" id="l-senha">Senha</label>
-                        <input type="password" id="senha" class="form-control" placeholder="Digite sua senha" required>
-                    </div>
-
-                    <button id="b" type="submit" class="btn btn-primary w-100">Entrar</button>
-                </form>
-
-                <div id="mensagem" class="text-center mt-3"></div>
-
-
+    
+        <main class="mn_login">
+            <img src="assets/img/trem (2).png" alt="" class="">
+            <div class="container d-flex justify-content-center align-items-center vh-100">
+                <div id="" class=" card shadow p-4" style="width: 100%; max-width: 400px;">
+                    <h3 class="text-center mb-4" id="titulo">Login</h3>
+                    <form id="form-login">
+                        <div class="mb-3">
+                            <label class="form-label" id="l_nome_usuario">Nome de Usuário</label>
+                            <input type="text" id="nome_usuario" class="form-control" placeholder="Digite seu nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" id="l-senha">Senha</label>
+                            <input type="password" id="senha" class="form-control" placeholder="Digite sua senha" required>
+                        </div>
+                        <button id="b" type="submit" class="btn btn-primary w-100">Entrar</button>
+                    </form>
+                    <div id="mensagem" class="text-center mt-3"></div>
+                </div>
             </div>
-        </div>
+        </main>
 
         <script src="../scripts/script.js"></script>
         <script src="../scripts/relogio_navbar.js"></script>
