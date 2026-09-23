@@ -31,17 +31,17 @@
 
         <div class="tres_colunas">
             <div class="">
-                <a href=""><button class="botao">
+                <a href="../public/sensores_velocidade.php"><button class="botao">
                         Velocidade
                 </button></a>
  <br>
 
   
-                <a href=""><button class="botao">
+                <a href="../public/sensores_falhas.php"><button class="botao">
                         falhas
                     </button></a>
  <br>
-                    <a href=""><button class="botao">
+                    <a href="../public/sensores_pressao_oleo.php"><button class="botao">
                         pressão do óleo
                 </button></a>
 
@@ -49,17 +49,17 @@
             </div>
 
             <div class="">
-                <button onclick="pagina_temperatura(event)" class="botao">
+                <a href="../public/sensores_temperatura.php"><button class="botao">
                     Temperatura
-                </button>
+                </button></a>
  <br>
-                <button onclick="pagina_combustivel(event)" class="botao">
+                <a href="../public/sensores_combustivel.php"><button class="botao">
                     Combustível
-                </button>
+                </button></a>
  <br>
-                <button onclick="pagina_frenagem(event)" class="botao">
+                <a href="../public/sensores_frenagem.php"><button class="botao">
                     Frenagem
-                </button>
+                </button></a>
  <br>
                 
 
@@ -68,16 +68,16 @@
 
             <div class="">
                     
-                <button onclick="pagina_usuarios(event)" class="botao">
+                <a href="../public/"><button class="botao"></a>
                      Usuários Cadastrados
                 </button>
  <br>
-                <button onclick="pagina_sensores(event)" class="botao">
+                <a href="../public/"><button class="botao"></a>
                      Sensores Cadastrados
                 </button>
 
 <br>
-                <button onclick="pagina_cadastrar_sensor(event)" class="botao">
+                <a href="../public/"><button class="botao"></a>
                         cadastrar sensor
                 </button>
 
