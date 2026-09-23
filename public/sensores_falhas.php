@@ -81,20 +81,7 @@
         
 
            <style>
-            .tabela-falhas {
-             display: flex;
-             align-items: center;
-             gap: 5rem;
-            background-color: rgba(120, 130, 214, 0.863);
-            padding: 15px;
-            border-radius: 3px;
-            margin-left: 200px;
-            margin-bottom: 4rem;
-            margin-top: 4rem;
-            box-shadow: -12px 12px 15px rgba(0, 0, 0, 0.35);
-                
-            }
-
+            
 
             </style>
           
@@ -203,21 +190,7 @@
     
     </div>
 
-    <style>
-
-.grafico-bobina {
-    width: 100%;
-    height: 250px;
-    margin-top: 30px;
-    padding: 10px 30px;
-}
-
-.grafico-bobina canvas {
-    width: 100% !important;
-    height: 200px !important;
-}
-
-</style>
+  
 
 
 <div class="grafico-bobina">
