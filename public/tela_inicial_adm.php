@@ -68,18 +68,18 @@
 
             <div class="">
                     
-                <a href="../public/"><button class="botao"></a>
+                <a href="../public/visualizar_cadastro.php"><button class="botao">
                      Usuários Cadastrados
-                </button>
+                </button></a>
  <br>
-                <a href="../public/"><button class="botao"></a>
+                <a href="../public/visualizar_sensores_cadastrados.php"><button class="botao">
                      Sensores Cadastrados
-                </button>
+                </button></a>
 
 <br>
-                <a href="../public/"><button class="botao"></a>
+                <a href="../public/cadastrar_sensor.php"><button class="botao">
                         cadastrar sensor
-                </button>
+                </button></a>
 
                 </div>
                 
