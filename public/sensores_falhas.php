@@ -20,26 +20,26 @@
 
     </header>
 
-    <div class="display2">
+    <div class=" display2">
         <br>
 
-        <div class="justify-content-center">
-            <div>
-                <h1>Sensor de Falhas</h1>
-            </div>
+        <div class=" justify-content-center" >
+
+                  <div><h1>Sensor de Falhas</h1></div>
+
         </div>
+        
 
-    
-        <div class="spacearound">
+        
 
-             <div class="display2">
-        <br>
-       <div class="justify-content-center"> 
+        <div class="display_flex justify-content-center gap-5 align-items-center" >
 
-    
-       <div class="justify-content-center">
+            
+               
 
-        <div class="TabelaFrenagem" >
+            <div class="TabelaVelocidade">
+            
+               
 
                 <table class="custom-table">
                     <thead>
@@ -73,9 +73,14 @@
                     </tbody>
                 </table>    
 
-                </div>
+            </div>
 
-        <style>
+
+
+
+        
+
+           <style>
             .tabela-falhas {
              display: flex;
              align-items: center;
@@ -91,7 +96,7 @@
             }
 
 
-        </style>
+            </style>
           
 
             <div class="tabela-falhas">
@@ -196,6 +201,151 @@
     
         
     
+    </div>
+
+    <style>
+
+.grafico-bobina {
+    width: 100%;
+    height: 250px;
+    margin-top: 30px;
+    padding: 10px 30px;
+}
+
+.grafico-bobina canvas {
+    width: 100% !important;
+    height: 200px !important;
+}
+
+</style>
+
+
+<div class="grafico-bobina">
+
+    <canvas id="grafico-bobina"></canvas>
+
+</div>
+
+
+<script>
+
+const ctxBobina = document.getElementById('grafico-bobina');
+
+new Chart(ctxBobina, {
+
+    type: 'line',
+
+    data: {
+
+        labels: [
+            '0',
+            '1',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6',
+            '7',
+            '8',
+            '9',
+            '10',
+            '11',
+            '12',
+            '13',
+            '14',
+            '15',
+            '16',
+            '17',
+            '18',
+            '19'
+        ],
+
+        datasets: [{
+
+            label: 'Sinal da Bobina',
+
+            data: [
+                0,
+                0,
+                0,
+                0,
+                0,
+                -80,
+                -40,
+                -25,
+                -20,
+                -15,
+                -10,
+                90,
+                55,
+                45,
+                40,
+                35,
+                50,
+                10,
+                0,
+                0
+            ],
+
+            borderColor: '#00ff00',
+
+            backgroundColor: 'transparent',
+
+            borderWidth: 2,
+
+            pointRadius: 0,
+
+            tension: 0.1
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: false,
+
+        scales: {
+
+            x: {
+
+                title: {
+                    display: true,
+                    text: 'Tempo'
+                }
+
+            },
+
+            y: {
+
+                title: {
+                    display: true,
+                    text: 'Amplitude'
+                },
+
+                min: -100,
+                max: 100
+
+            }
+
+        },
+
+        plugins: {
+
+            legend: {
+                display: true
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+
     </div>
 
 </body>
