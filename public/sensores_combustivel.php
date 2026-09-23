@@ -30,18 +30,13 @@
         }
     </style>
 <br>
+
+
     <div class="justify-content-center"><br> <h1>Monitoramento dos Sensores de Combustivel</h1> <br></div>
 
     <div class="display_flex ">
 
-<<<<<<< HEAD
-=======
-            
-
-
->>>>>>> 112f2c7ce35c628ebc9ab942df6a116b134884c7
-
-        <div class="Tabela_combustivel_1">
+        <div class="tabelaVelocidade">
 
             <div class="" >
 

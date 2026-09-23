@@ -23,12 +23,12 @@
 
     <div class="display2">
         <br>
-       <div class="justify-content-center"> <div><h1>Sensor de Temperatura</h1></div></div>
+       <div class="justify-content-center"> <div><h1>Sensor de Temperatura</h1></div></div> <br>
 
     
-       <div class="spacearound">
+       <div class="justify-content-center">
 
-        <div class="display-flex align-items-center gap-5 TabelaFrenagem margin" >
+        <div class="tabelaVelocidade" >
 
                 <table class="custom-table">
                     <thead>
