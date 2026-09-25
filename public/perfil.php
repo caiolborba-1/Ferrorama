@@ -5,7 +5,7 @@
     <title>Perfil</title>
     <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
-<body>
+<body class="a">
     <?php
     include "navbar.php"
     ?>
@@ -13,7 +13,7 @@
     <div class="justify-content-center align-items-center">
 
             <div class="card-container">
-        <h1>Sensores Cadastrados</h1>
+        <h1>Perfil de Usuario</h1>
 
         <table class="custom-table">
             <thead>
@@ -32,14 +32,6 @@
                 <td>Estação Norte</td>
                 <td>Velocímetro</td>
                 <td>Trem 1</td>
-                <td><button class="edit-button">Editar</button></td>
-                <td><button class="delete-button">Excluir</button></td>
-            </tr>
-            <tr>
-                <td>Sensor 2</td>
-                <td>Estação Sul</td>
-                <td>Pressão</td>
-                <td>Trem 2</td>
                 <td><button class="edit-button">Editar</button></td>
                 <td><button class="delete-button">Excluir</button></td>
             </tr>
