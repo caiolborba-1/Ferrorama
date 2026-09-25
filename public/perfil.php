@@ -10,6 +10,9 @@
     include "navbar.php"
     ?>
 
-    
+    <div class="display_flex branco">
+
+    </div>
+
 </body>
 </html>
