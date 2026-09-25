@@ -11,5 +11,3 @@
      <div id="conteudo-do-sistema">
     
 </div>
-
-<script src="../scripts/tela_cheia.js"></script>
