@@ -12,7 +12,7 @@
 
 <body class="">
 
-    <header><?php include 'navbar.php'; ?></header>
+    <header><?php include 'navbar_adm.php'; ?></header>
 
     <div class="display2">
 

@@ -14,7 +14,7 @@
         <header class="position-absolute">
 
          <?php
-            include "navbar.php";
+            include "navbar_adm.php";
          ?>
 
         </header>

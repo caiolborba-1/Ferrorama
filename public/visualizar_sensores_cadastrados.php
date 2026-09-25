@@ -11,7 +11,7 @@
 
 <body class="a">
 
-   <header class="position-absolute"> <?php include "navbar.php"; ?> </header>
+   <header class="position-absolute"> <?php include "navbar_adm.php"; ?> </header>
 
         <div class="justify-content-center align-items-center">
 
