@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
 <body class="a">
-
 <header>
     <?php
     include "navbar.php"
     ?>
 </header>
+
     <div class="justify-content-center align-items-center">
 
             <div class="card-container">
