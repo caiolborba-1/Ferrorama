@@ -11,7 +11,7 @@
 <body class="">
 
     <?php
-    include "navbar.php"
+    include "navbar_adm.php"
     ?>
 
     <br><br>
