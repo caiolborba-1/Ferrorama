@@ -1,4 +1,8 @@
+<?php
 
+include '../infra/conexao.php'
+
+?>
 
 
 
@@ -43,13 +47,13 @@
 
                     <div class="mb-3">
                         <label class="form-label">E-mail</label>
-                        <input type="email" id="email" class="form-control" placeholder="Digite seu e-mail" required>
+                        <input type="email" id="email_usuario" class="form-control" placeholder="Digite seu e-mail" required>
                     </div>
 
                 
                     <div class="mb-3">
                         <label class="form-label">Senha</label>
-                        <input type="password" id="senha" class="form-control" placeholder="Digite sua senha" required>
+                        <input type="password" id="senha_usuario" class="form-control" placeholder="Digite sua senha" required>
                     </div>
 
 
