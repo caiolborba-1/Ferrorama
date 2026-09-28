@@ -2,12 +2,12 @@
 
 include "../infra/conexao.php";
 
-$nome = $_POST["nome"];
-$email = $_POST["email"];
-$senha = $_POST["senha"];
+$nome_usuario = $_POST["nome_usuario"];
+$email_usuario = $_POST["email_usuario"];
+$senha_usuario = $_POST["senha_usuario"];
 
-$sql = "INSERT INTO livros (nome, email, senha) VALUES (?, ?, ?)";
+$sql = "INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario) VALUES (?, ?, ?)";
 
-header("Location: ../tela_inicial.php");
+header("Location: login_usuario.php");
 exit();
 ?>
