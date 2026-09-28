@@ -1,8 +1,8 @@
 <div class = "cabecalho" >
-        <a href="ronaldo.html" onclick="carregarPagina('ronaldo.html'); return false;"><img src="../assets/img/Trens certo.png" alt="" class="logo_cabecalho"></a>
+        <a href="ronaldo.html" onclick="carregarPagina('ronaldo.html'); return false;"><img src="../assets/img/Logo Atual.png" alt="" class="logo_cabecalho"></a>
         <button onclick="history.back()" class = "botao_cabecalho afundar"><b>VOLTAR</b></button>
         <button onclick="location.href='tela_inicial_adm.php'" class = "botao_cabecalho afundar"><b>INÍCIO</b></button>
-        <h1 class="afundar"><B>TRENS</B></h1>
+        <button onclick="location.href='tela_dos_trens_adm.php'" class = "botao_cabecalho afundar"><b>TRENS</b></button>
 
         <div id="relogio" class="relogio">00:00:00</div>
 </div>

@@ -11,13 +11,13 @@
 <body class="">
 
     <?php
-    include "navbar.php"
+    include "navbar_adm.php"
     ?>
 
     <br><br>
 
     <div class= "tela_inicial">
-         <h1>Bem - Vindo!</h1>
+         <h1>Trens</h1>
     </div>
 
     <br><br><br>
@@ -31,15 +31,15 @@
 <div class="duas_colunas">
 
     <div class=" justify-content: center"> 
-        <button class="botao" onclick="location.href='tela_localização_trem1.php'" ><div >TREM 1 <br> BRASIL - ARGENTINA</div></button>
+        <button onclick="location.href='tela_localização_trem1.php'" ><div class="botao">TREM 1 <br> BRASIL - ARGENTINA</div></button>
             <br>
-        <button class="botao" onclick="location.href='tela_localização_trem3.php'" ><div >TREM 3 <br> NEPAL - UZBEQUISTÃO</div></button>
+        <button onclick="location.href='tela_localização_trem3.php'" ><div class="botao">TREM 3 <br> NEPAL - UZBEQUISTÃO</div></button>
     </div>
    
     <div  class="justify-content: center,">
-        <button class="botao" onclick="location.href='tela_localização_trem2.php'" ><div >TREM 2 <br> PERU - EQUADOR</a></div></button>
+        <button onclick="location.href='tela_localização_trem2.php'" ><div class="botao">TREM 2 <br> PERU - EQUADOR</a></div></button>
             <br>
-        <button class="botao" sonclick="location.href='tela_localização_trem4.php'" ><div >TREM 4 <br> MARANHÃO - RIO</div></button>
+        <button onclick="location.href='tela_localização_trem4.php'" ><div class="botao">TREM 4 <br> MARANHÃO - RIO</div></button>
     </div>
    
 
