@@ -17,7 +17,7 @@
     <br><br>
 
     <div class= "tela_inicial">
-         <h1>Bem- Vindo!</h1>
+         <h1>Bem - Vindo!</h1>
     </div>
 
     <br><br><br>
