@@ -31,33 +31,33 @@
 
         <div class="tres_colunas">
             <div class="">
-                <a href="../public/sensores_velocidade.php"><button class="botao">
-                        Velocidade
-                </button></a>
+                <button onclick="location.href='sensores_velocidade.php'" class="botao">
+                    Velocidade
+                </button>
  <br>
 
   
-                <a href="../public/sensores_falhas.php"><button class="botao">
-                        falhas
-                    </button></a>
+                <button onclick="location.href='sensores_falhas.php'" class="botao">
+                    falhas
+                    </button>
  <br>
-                    <a href="../public/sensores_pressao_oleo.php"><button class="botao">
-                        pressão do óleo
+                <button onclick="location.href='sensores_pressao_oleo.php'" class="botao">
+                    pressão do óleo
                 </button></a>
 
  <br>
             </div>
 
             <div class="">
-                <a href="../public/sensores_temperatura.php"><button class="botao">
+                <button onclick="location.href='sensores_temperatura.php'" class="botao">
                     Temperatura
                 </button></a>
  <br>
-                <a href="../public/sensores_combustivel.php"><button class="botao">
+                <button onclick="location.href='sensores_combustivel.php'" class="botao">
                     Combustível
                 </button></a>
  <br>
-                <a href="../public/sensores_frenagem.php"><button class="botao">
+                <button onclick="location.href='sensores_frenagem.php'" class="botao">
                     Frenagem
                 </button></a>
  <br>
@@ -68,17 +68,17 @@
 
             <div class="">
                     
-                <a href="../public/visualizar_cadastro.php"><button class="botao">
-                     Usuários Cadastrados
+                <button onclick="location.href='visualizar_cadastro.php'" class="botao">
+                    Usuários Cadastrados
                 </button></a>
  <br>
-                <a href="../public/visualizar_sensores_cadastrados.php"><button class="botao">
-                     Sensores Cadastrados
+                <button onclick="location.href='visualizar_sensores_cadastrados.php'" class="botao">
+                    Sensores Cadastrados
                 </button></a>
 
 <br>
-                <a href="../public/cadastrar_sensor.php"><button class="botao">
-                        cadastrar sensor
+                <button onclick="location.href='cadastrar_sensor.php'" class="botao">
+                    Cadastrar sensor
                 </button></a>
 
                 </div>
