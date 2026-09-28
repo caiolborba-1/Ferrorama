@@ -1,4 +1,4 @@
-![alt text](<assets/img/Captura de tela 2026-05-20 121000.png>)
+![alt text](<assets/img/Logo fundo branco.png>)
 
 ## **Este site está sendo desenvolvido em função de uma Situação de Aprendizagem**
 
@@ -22,7 +22,9 @@
 
 *O tema principal do sistemas são os Trens então, usamos a inicial “T” como elemento principal*
 
-*E a conectamos com o nome de um dos fundadores e um querido membro da nossa equipe, o Tomczak, usando o “T” como inicial de ambos, e diferenciando o “omczak” com a cor de identidade da marca, facilitando o entendimento do cliente e fazendo uma rápida e eficaz associação das duas coisas.*
+*E a conectamos com o nome de um dos fundadores e um querido membro da nossa equipe, o Tomczak, usando o “T” como inicial de ambos, e começando o “omczak” na letra T por escolha estetica, assim facilitando o entendimento do cliente e fazendo uma rápida e eficaz associação das duas coisas*
+
+*Abaixo incluimos um trilho de trem ondulado, para deixar claro ao cliente do que se trata, e associar com o "Trens".*
 
 <<<<<<< HEAD
 
