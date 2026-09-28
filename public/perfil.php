@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
 <body class="a">
-<header>
+<header class="position-absolute">
     <?php
     include "navbar.php"
     ?>
@@ -30,10 +30,10 @@
             </thead>
             <tbody>
             <tr>
-                <td>Sensor 1</td>
-                <td>Estação Norte</td>
-                <td>Velocímetro</td>
-                <td>Trem 1</td>
+                <td>1</td>
+                <td>Nome</td>
+                <td>E-mail</td>
+                <td>Senha</td>
                 <td><button class="edit-button">Editar</button></td>
                 <td><button class="delete-button">Excluir</button></td>
             </tr>
