@@ -26,4 +26,4 @@ trem_alocado_sensor varchar(100) NOT NULL
 
 );
 
-INSERT INTO administrador (nome_adm, email_adm, senha_adm) VALUES ('Caio', 'caio@example.com', 'trem');
+INSERT INTO administrador (nome_adm, email_adm, senha_adm) VALUES ('Caio', 'caio@gmail.com', 'trem');
