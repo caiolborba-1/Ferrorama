@@ -79,7 +79,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 placeholder="Digite seu nome"
                                 required
                             >
-
                         </div>
 
                         <div class="mb-3">

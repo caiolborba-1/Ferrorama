@@ -58,6 +58,7 @@
             <button id="botao_cadastrar" type="submit" class="btn btn-primary w-100">Cadastrar</button>
 
         </div>
+       
 
         <script src="../scripts/Cadastro_sensor.js"></script>
     </body>
