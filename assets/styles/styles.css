@@ -552,3 +552,11 @@ appearance: none;
 .branco {
  background-color: white;
 }
+
+.pad {
+    padding-top: 130px;
+}
+
+.br {
+    border-radius: 1000px;
+}
