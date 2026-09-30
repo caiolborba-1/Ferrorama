@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    //vai ter que puxar  id para fazer a query que puxa a tabela correspondente a aquele id.
+
+    $sql = "SELECT * FROM usuarios WHERE id = $id"
+?>
+
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,9 +34,13 @@
         
             
         <div>
-        <h1>Nome: *****</h1>
-        <h1>E-mail: *****</h1>
-        <h1>Senha: *****</h1>
+        <?php while ($usuario = $resultado->fetch_assoc()) { ?>
+
+            <h1>Nome: <?php echo htmlspecialchars($usuario ['nome_usuario'])?></h1>
+            <h1>E-mail: <?php echo htmlspecialchars($usuario ['email_usuario'])?></h1>
+            <h1>Senha: <?php echo htmlspecialchars($usuario ['senha_usuario'])?></h1>
+                        
+        <?php } ?>
         </div>
 
     </div>
