@@ -4,7 +4,7 @@ USE ferrorama;
 CREATE TABLE administrador(
 id INT AUTO_INCREMENT PRIMARY KEY,
 nome_adm VARCHAR(100) NOT NULL,
-email_adm VARCHAR(100) NOT NULL UNIQUE,
+email_adm VARCHAR(100) NOT NULL,
 senha_adm VARCHAR(100) NOT NULL
 
 );
@@ -12,7 +12,7 @@ senha_adm VARCHAR(100) NOT NULL
 CREATE TABLE usuario(
 id INT AUTO_INCREMENT PRIMARY KEY,
 nome_usuario VARCHAR(100) NOT NULL,
-email_usuario VARCHAR(100) NOT NULL UNIQUE,
+email_usuario VARCHAR(100) NOT NULL,
 senha_usuario VARCHAR(100) NOT NULL
 
 );
