@@ -1,3 +1,10 @@
+
+<?php include ('../infra/conexao.php');
+
+$sql = "SELECT * FROM usuario";
+
+$resultado = mysqli_query($conn, $sql);
+?>
 <html lang="en">
 
 <head>
@@ -18,6 +25,9 @@
     <div class="card-container">
   <h1>Usuários Cadastrados</h1>
 
+
+
+
   <table class="custom-table">
     <thead>
       <tr>
@@ -30,22 +40,15 @@
       </tr>
     </thead>
     <tbody>
+      <?php while ($usuario = $resultado->fetch_assoc()) {?>
       <tr>
-        <td>Matheus Tomczak</td>
-        <td>matheus.tomczak@sim.com</td>
-        <td>123-456-7890</td>
-        <td class="password-mask">********</td>
-        <td><button class="edit-button">Editar</button></td>
-        <td><button class="delete-button">Excluir</button></td>
-      </tr>
-      <tr>
-        <td>José Daniel</td>
-        <td>jose.daniel1998@messi.com</td>
-        <td>098-765-4321</td>
+        <td><?php echo htmlspecialchars($usuario ['nome_usuario'])?></td>
+        <td><?php echo htmlspecialchars($usuario['email_usuario'])?></td>
         <td class="password-mask">******</td>
         <td><button class="edit-button">Editar</button></td>
         <td><button class="delete-button">Excluir</button></td>
       </tr>
+      <?php } ?>
     </tbody>
   </table>
 </div>
