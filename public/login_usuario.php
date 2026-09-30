@@ -6,6 +6,7 @@ include '../infra/conexao.php';
 
 
 
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -42,18 +43,18 @@ include '../infra/conexao.php';
 
                     <div class="mb-3">
                         <label class="form-label">Nome de Usuário</label>
-                        <input type="text" id="nome_usuario" class="form-control" placeholder="Digite seu nome">
+                        <input type="text" id="nome_usuario" name="nome_usuario" class="form-control" placeholder="Digite seu nome">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">E-mail</label>
-                        <input type="email" id="email_usuario" class="form-control" placeholder="Digite seu e-mail" required>
+                        <input type="email" id="email_usuario" name="email_usuario" class="form-control" placeholder="Digite seu e-mail" required>
                     </div>
 
                 
                     <div class="mb-3">
                         <label class="form-label">Senha</label>
-                        <input type="password" id="senha_usuario" class="form-control" placeholder="Digite sua senha" required>
+                        <input type="password" id="senha_usuario" name="senha_usuario" class="form-control" placeholder="Digite sua senha" required>
                     </div>
 
 

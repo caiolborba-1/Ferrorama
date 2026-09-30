@@ -1,5 +1,27 @@
 <?php
 include '../infra/conexao.php';
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nome_usuario  = trim($_POST["nome_usuario"] ?? '');
+    $email_usuario = trim($_POST["email_usuario"] ?? '');
+    $senha_usuario = $_POST["senha_usuario"] ?? '';
+
+    if (!empty($nome_usuario) && !empty($email_usuario) && !empty($senha_usuario)) {
+
+        $sql = "INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+
+        if ($stmt->execute([$nome_usuario, $email_usuario, $senha_usuario])) {
+            header("Location: login_usuario.php");
+            exit();
+        } else {
+            echo "Erro ao cadastrar usuário.";
+        }
+    } else {
+        echo "Por favor, preencha todos os campos.";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +50,7 @@ include '../infra/conexao.php';
 
             <h3 class="text-center mb-4" id="titulo">Cadastro</h3>
 
-            <form id="form-login" action="validar_cadastro_usuario.php" method="POST">
+            <form id="form-login" method="POST">
 
                 <div class="mb-3">
                     <label class="form-label">Nome de Usuário</label>
