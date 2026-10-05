@@ -1,7 +1,11 @@
 <?php
     session_start();
+    include "../infra/conexao.php";
 
-    $sql = "SELECT * FROM usuarios WHERE id = $id"
+    $id = $_SESSION['id'];
+    $sql = "SELECT * FROM usuarios WHERE id = $id";
+    $resultado = $conn->query($sql);
+    
 ?>
 
 
