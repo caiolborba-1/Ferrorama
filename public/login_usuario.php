@@ -6,7 +6,7 @@ $nome = $_POST['nome_usuario'];
 $email = $_POST['email_usuario'];
 $senha = $_POST['senha_usuario'];
 
-$sql = "SELECT * FROM usuarios WHERE nome_usuario = '$nome' AND email_usuario = '$email' AND senha_usuario = '$senha'";
+$sql = "SELECT * FROM usuario WHERE nome_usuario = '$nome' AND email_usuario = '$email' AND senha_usuario = '$senha'";
 $resultado = $conn->query($sql);
 
 if ($resultado ->num_rows > 0) {

@@ -561,3 +561,18 @@ appearance: none;
 .br {
     border-radius: 1000px;
 }
+
+.space-evenly {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.abcdee {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+}
