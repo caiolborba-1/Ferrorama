@@ -1,4 +1,46 @@
 <?php
+include '../infra/conexao.php';
+
+$mensagem = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $nome_usuario  = trim($_POST["nome_usuario"] ?? '');
+    $email_usuario = trim($_POST["email_usuario"] ?? '');
+    $senha_usuario = $_POST["senha_usuario"] ?? '';
+
+    if (!empty($nome_usuario) && !empty($email_usuario) && !empty($senha_usuario)) {
+
+        // Verifica se o e-mail já existe
+        $verificar = $conn->prepare("SELECT id FROM usuario WHERE email_usuario = ?");
+        $verificar->bind_param("s", $email_usuario);
+        $verificar->execute();
+
+        $resultado = $verificar->get_result();
+
+        if ($resultado->num_rows > 0) {
+
+            $mensagem = "Este e-mail já está cadastrado!";
+
+        } else {
+
+            $sql = "INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario) VALUES (?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bind_param("sss", $nome_usuario, $email_usuario, $senha_usuario);
+
+            if ($stmt->execute()) {
+                header("Location: login_usuario.php");
+                exit();
+            } else {
+                $mensagem = "Erro ao cadastrar usuário.";
+            }
+        }
+
+    } else {
+        $mensagem = "Por favor, preencha todos os campos.";
+    }
+}
 ?>
 <html lang="en">
 
@@ -14,16 +56,17 @@
         <div class="">
             <img src="assets/img/Logo Atual.png" alt="" class="">
         </div>
-        
-        <div class="" style="background-color: white;padding: 20px; border-radius: 8px; width: 100%; max-width: 400px;">
 
-            <h3 class="" id="">Login</h3>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div id="a" class="card shadow p-4" style="width: 100%; max-width: 400px;">
 
-            <form id="" action="autenticar_usuario.php" method="POST">
+            <h3 class="text-center mb-4" id="titulo">Cadastro</h3>
 
-                <div class="">
+            <form id="form-login" method="POST">
+
+                <div class="mb-3">
                     <label class="form-label">Nome de Usuário</label>
-                    <input type="text" id="nome_usuario" name="nome_usuario" class="form-control" placeholder="Digite seu nome">
+                    <input type="text" id="nome_usuario" name="nome_usuario" class="form-control" placeholder="Digite seu nome" required>
                 </div>
 
                 <div class="mb-3">
@@ -36,14 +79,20 @@
                     <input type="password" id="senha_usuario" name="senha_usuario" class="form-control" placeholder="Digite sua senha" required>
                 </div>
 
-                <button id="button" type="submit" class="btn btn-primary w-100">Entrar</button>
+                <button id="button" type="submit" class="btn btn-primary w-100">Cadastrar</button>
             </form>
 
-            <div id="mensagem" class="text-center mt-3"></div>
+            <div id="mensagem" class="text-center mt-3">
+                <?ph echo $mensagem; ?>
+            </div>
 
-            <div class=""><a href="cadastro_usuario.php">Não tem conta? Cadastre-se!</a></div>
+            <div class="text-center mt-2">
+                <a href="login_usuario.php">Já tem conta? Entre!</a>
+            </div>
 
         </div>
+    </div>
+
 
        <script src="scripts/links_paginas.js"></script>
 

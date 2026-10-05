@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-<?php ?>
-=======
+
 <?php
 session_set_cookie_params(2592000);
 
 session_start();
-<<<<<<< HEAD
 include '../infra/conexao.php';
 
 $nome = $_POST['nome_usuario'];
@@ -18,8 +15,7 @@ $resultado = $conn->query($sql);
 if ($resultado ->num_rows > 0) {
     $usuario = $resultado->fetch_assoc();
     $_SESSION['usuario'] = $usuario['email_usuario'];
-=======
->>>>>>> 37825b361f6aa4e70ca61e8d1b291464aaff24d3
+    }
 
 if (isset($_SESSION["usuario_id"])) {
     header("Location: tela_inicial.php");
@@ -30,7 +26,6 @@ include '../infra/conexao.php';
 
 ?>
 
->>>>>>> 227dca962bf476ff0c75d59fb65c1c54dc0f0742
 
 <!DOCTYPE html>
 <html lang="pt-br">
