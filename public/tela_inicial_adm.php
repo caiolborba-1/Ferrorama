@@ -17,7 +17,11 @@
 
 </header>
 
+
+
 <body class="">
+
+
 
     <div class="">
 
@@ -25,6 +29,14 @@
 
         <div class="justify-content-center">
             <h1><b>SENSORES</b></h1>
+
+             <div class="pad display_flex justify-content-center padding ">
+       
+
+            <button class="btn btn-danger botao_sair_perfil" onclick="window.location.href='logout.php'">Sair</button>
+     
+       
+    </div>
         </div>
 
     <br>

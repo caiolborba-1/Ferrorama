@@ -26,23 +26,6 @@ $resultado = $conn->query($sql);
 </head>
 
 
-
-<style>
-
-    .botao_sair_perfil {
-    position: fixed;
-    background-color: #ff4d4d;
-    color: white;
-    top: 150px;
-    right: 20px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 9999;
-    shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-</style>
-
 <body>
 
 <header class="position-absolute">
@@ -58,7 +41,7 @@ $resultado = $conn->query($sql);
        
             <h1>Perfil de Usuario</h1>
 
-            <button class="btn btn-danger botao_sair_perfil" onclick="window.location.href='../index.html'">Sair</button>
+            <button class="btn btn-danger botao_sair_perfil" onclick="window.location.href='logout.php'">Sair</button>
      
        
     </div>
