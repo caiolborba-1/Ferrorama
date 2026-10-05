@@ -1,5 +1,5 @@
 <?php
-include '../infra/conexao.php';
+include 'infra/conexao.php';
 
 $mensagem = "";
 
@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (!empty($nome_usuario) && !empty($email_usuario) && !empty($senha_usuario)) {
 
-        // Verifica se o e-mail já existe
         $verificar = $conn->prepare("SELECT id FROM usuario WHERE email_usuario = ?");
         $verificar->bind_param("s", $email_usuario);
         $verificar->execute();
