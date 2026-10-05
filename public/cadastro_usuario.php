@@ -1,27 +1,46 @@
 <?php
 include '../infra/conexao.php';
 
+$mensagem = "";
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
     $nome_usuario  = trim($_POST["nome_usuario"] ?? '');
     $email_usuario = trim($_POST["email_usuario"] ?? '');
     $senha_usuario = $_POST["senha_usuario"] ?? '';
 
     if (!empty($nome_usuario) && !empty($email_usuario) && !empty($senha_usuario)) {
 
-        $sql = "INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario) VALUES (?, ?, ?)";
-        $stmt = $conn->prepare($sql);
+        // Verifica se o e-mail já existe
+        $verificar = $conn->prepare("SELECT id FROM usuario WHERE email_usuario = ?");
+        $verificar->bind_param("s", $email_usuario);
+        $verificar->execute();
 
-        if ($stmt->execute([$nome_usuario, $email_usuario, $senha_usuario])) {
-            header("Location: login_usuario.php");
-            exit();
+        $resultado = $verificar->get_result();
+
+        if ($resultado->num_rows > 0) {
+
+            $mensagem = "Este e-mail já está cadastrado!";
+
         } else {
-            echo "Erro ao cadastrar usuário.";
+
+            $sql = "INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario) VALUES (?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bind_param("sss", $nome_usuario, $email_usuario, $senha_usuario);
+
+            if ($stmt->execute()) {
+                header("Location: login_usuario.php");
+                exit();
+            } else {
+                $mensagem = "Erro ao cadastrar usuário.";
+            }
         }
+
     } else {
-        echo "Por favor, preencha todos os campos.";
+        $mensagem = "Por favor, preencha todos os campos.";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +91,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <button id="button" type="submit" class="btn btn-primary w-100">Cadastrar</button>
             </form>
 
-            <div id="mensagem" class="text-center mt-3"></div>
+            <div id="mensagem" class="text-center mt-3">
+                <?ph echo $mensagem; ?>
+            </div>
 
             <div class="text-center mt-2">
                 <a href="login_usuario.php">Já tem conta? Entre!</a>
