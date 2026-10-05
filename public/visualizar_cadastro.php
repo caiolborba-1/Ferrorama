@@ -49,7 +49,7 @@ $resultado = mysqli_query($conn, $sql);
 
 <td>
     <a 
-        href="excluir_usuario.php?id=<?php echo $usuario['id']; ?>" class="delete-button" 
+        href="excluir.php?id=<?php echo $usuario['id']; ?>" class="delete-button" 
         onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir
     </a>
 </td>
