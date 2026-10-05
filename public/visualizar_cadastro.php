@@ -45,6 +45,7 @@ $resultado = mysqli_query($conn, $sql);
         <td><?php echo htmlspecialchars($usuario ['nome_usuario'])?></td>
         <td><?php echo htmlspecialchars($usuario['email_usuario'])?></td>
         <td class="password-mask">******</td>
+        <td class="password-mask">******</td>
         <td><button class="edit-button">Editar</button></td>       
 
 <td>
