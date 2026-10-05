@@ -15,7 +15,7 @@
             <img src="assets/img/Logo Atual.png" alt="" class="">
         </div>
         
-        <div class="display_flex" style="background-color: white;padding: 20px; border-radius: 8px; width: 100%; max-width: 400px;">
+        <div class="" style="background-color: white;padding: 20px; border-radius: 8px; width: 100%; max-width: 400px;">
 
             <h3 class="" id="">Login</h3>
 
