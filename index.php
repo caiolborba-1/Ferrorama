@@ -42,29 +42,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
+<html lang="en">
 
-<!DOCTYPE html>
-<html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Usuário</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/styles/styles.css">
+        <title>Tela inicial</title>
+    </head>
+    <body class="display_flex align-items-center A">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../scripts/relogio_navbar.js" defer></script>
-    <link rel="stylesheet" href="../assets/styles/styles.css">
-</head>
-
-<body class="bg-light">
-
-    <header>
-        <?php include "navbar_login.php"; ?>
-    </header>
-
-    
-
-    <img src="assets/img/trem (2).png" alt="" class="">
+        <div class="">
+            <img src="assets/img/Logo Atual.png" alt="" class="">
+        </div>
 
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div id="a" class="card shadow p-4" style="width: 100%; max-width: 400px;">
@@ -102,5 +93,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
     </div>
 
-</body>
+
+       <script src="scripts/links_paginas.js"></script>
+
+    </body>
 </html>
