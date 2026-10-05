@@ -1,6 +1,5 @@
 <?php
     session_start();
-    //vai ter que puxar  id para fazer a query que puxa a tabela correspondente a aquele id.
 
     $sql = "SELECT * FROM usuarios WHERE id = $id"
 ?>
@@ -22,12 +21,24 @@
     ?>
 </header>
 
+<style>
+    .botao_voltar_perfil {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+</style>
 <body class="">
+
+    <div class="botao_voltar_perfil">
+        <a href="tela_inicial.php" class="btn btn-secondary">Voltar</a>
+    </div>
 
     <div class="pad display_flex justify-content-center">
         <h1>Perfil de Usuario</h1>
     </div>
-    <div class="A">
+    <div class="">
 
         
         <img src="../assets/img/zuka.png" alt="" class="br">
