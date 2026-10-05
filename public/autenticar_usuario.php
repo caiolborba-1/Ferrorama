@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $resultado = $stmt->get_result();
     $usuario = $resultado->fetch_assoc();
 
-    if ($usuario && $senha_usuario === $usuario['senha_usuario']) {
+    if ($usuario && password_verify($senha_usuario, $usuario['senha_usuario'])) {
         session_regenerate_id(true);
 
         $_SESSION['usuario_id']   = $usuario['id'];
