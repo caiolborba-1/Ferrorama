@@ -1,6 +1,12 @@
 <?php
 
+session_set_cookie_params(2592000);
 session_start();
+
+if (isset($_SESSION["administrador_id"])) {
+    header("Location: tela_inicial_adm.php");
+    exit;
+}
 
 include("../infra/conexao.php");
 
@@ -17,7 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($resultado->num_rows > 0) {
 
-        $_SESSION["administrador"] = $nome;
+        $administrador = $resultado->fetch_assoc();
+
+        $_SESSION["administrador_id"] = $administrador["id"];
+        $_SESSION["administrador"] = $administrador["nome_adm"];
 
         header("Location: tela_inicial_adm.php");
         exit;
@@ -79,6 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 placeholder="Digite seu nome"
                                 required
                             >
+
                         </div>
 
                         <div class="mb-3">
