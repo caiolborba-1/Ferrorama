@@ -1,3 +1,17 @@
+<?php
+session_set_cookie_params(2592000);
+
+session_start();
+
+if (isset($_SESSION["usuario_id"])) {
+    header("Location: tela_inicial.php");
+    exit;
+}
+
+include '../infra/conexao.php';
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">

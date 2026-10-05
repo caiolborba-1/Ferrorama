@@ -58,7 +58,7 @@ $resultado = $conn->query($sql);
        
             <h1>Perfil de Usuario</h1>
 
-            <button class="btn btn-danger botao_sair_perfil" onclick="window.location.href='../index.html'">Sair</button>
+            <button class="btn btn-danger botao_sair_perfil" onclick="window.location.href='logout.php'">Sair</button>
      
        
     </div>
