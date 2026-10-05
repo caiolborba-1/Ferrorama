@@ -33,7 +33,7 @@ $resultado = mysqli_query($conn, $sql);
       <tr>
         <th>Nome de Usuário</th>
         <th>E-mail</th>
-        <th>Telefone</th>
+       
         <th>Senha</th>
         <th>Editar</th>
         <th>Excluir</th>
@@ -44,13 +44,13 @@ $resultado = mysqli_query($conn, $sql);
       <tr>
         <td><?php echo htmlspecialchars($usuario ['nome_usuario'])?></td>
         <td><?php echo htmlspecialchars($usuario['email_usuario'])?></td>
+       
         <td class="password-mask">******</td>
-        <td class="password-mask">******</td>
-        <td><button class="edit-button">Editar</button></td>       
+        <td><button class="edit-button" border-1>Editar</button></td>       
 
 <td>
     <a 
-        href="excluir.php?id=<?php echo $usuario['id']; ?>" class="delete-button" 
+        href="excluir.php?id=<?php echo $usuario['id']; ?>" class="delete-button"  
         onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir
     </a>
 </td>
