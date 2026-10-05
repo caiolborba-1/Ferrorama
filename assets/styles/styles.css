@@ -94,6 +94,10 @@ body{
 
 body{
     background: linear-gradient(180deg, #9db6ee 0%, #E3EDFC 100%);
+     min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .display_flex{
@@ -572,4 +576,15 @@ appearance: none;
     border-radius: 5px;
     z-index: 9999;
     shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tela_inteira {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

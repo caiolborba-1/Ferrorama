@@ -46,7 +46,9 @@ $resultado = mysqli_query($conn, $sql);
         <td><?php echo htmlspecialchars($usuario['email_usuario'])?></td>
        
         <td class="password-mask">******</td>
-        <td><button class="edit-button" border-1>Editar</button></td>       
+        <td>
+            <a href="editar_usuario.php?id=<?php echo $usuario['id']; ?>" class="btn btn-primary">Editar</a>
+        </td>
 
 <td>
     <a 
