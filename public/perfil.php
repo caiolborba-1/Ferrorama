@@ -25,6 +25,26 @@ $resultado = $conn->query($sql);
 
 </head>
 
+
+
+<style>
+
+    .botao_sair_perfil {
+    position: fixed;
+    background-color: #ff4d4d;
+    color: white;
+    top: 150px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 9999;
+    shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+</style>
+
+<body>
+
 <header class="position-absolute">
 
     <?php
@@ -32,32 +52,18 @@ $resultado = $conn->query($sql);
     ?>
 
 </header>
+    
 
-<style>
+    <div class="pad display_flex justify-content-center padding ">
+       
+            <h1>Perfil de Usuario</h1>
 
-    .botao_voltar_perfil {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-    }
-
-</style>
-
-<body>
-
-    <div class="botao_voltar_perfil">
-
-        <a href="tela_inicial.php" class="btn btn-secondary">
-            Voltar
-        </a>
-
+            <button class="btn btn-danger botao_sair_perfil" onclick="window.location.href='../index.html'">Sair</button>
+     
+       
     </div>
 
-    <div class="pad display_flex justify-content-center">
-
-        <h1>Perfil de Usuario</h1>
-
-    </div>
+    
 
     <div>
 
