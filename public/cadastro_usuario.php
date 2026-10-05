@@ -9,9 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email_usuario = trim($_POST["email_usuario"] ?? '');
     $senha_usuario = $_POST["senha_usuario"] ?? '';
 
+    $senha_usuario = password_hash("$senha_usuario", PASSWORD_DEFAULT);
+
     if (!empty($nome_usuario) && !empty($email_usuario) && !empty($senha_usuario)) {
 
-        // Verifica se o e-mail já existe
+        
         $verificar = $conn->prepare("SELECT id FROM usuario WHERE email_usuario = ?");
         $verificar->bind_param("s", $email_usuario);
         $verificar->execute();
@@ -25,8 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } else {
 
             $sql = "INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario) VALUES (?, ?, ?)";
-            $stmt = $conn->prepare($sql);
 
+            $stmt = $conn->prepare($sql);
             $stmt->bind_param("sss", $nome_usuario, $email_usuario, $senha_usuario);
 
             if ($stmt->execute()) {
