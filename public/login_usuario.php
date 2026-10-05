@@ -1,7 +1,23 @@
 <?php
-
+session_start();
 include '../infra/conexao.php';
 
+$nome = $_POST['nome_usuario'];
+$email = $_POST['email_usuario'];
+$senha = $_POST['senha_usuario'];
+
+$sql = "SELECT * FROM usuarios WHERE nome_usuario = '$nome' AND email_usuario = '$email' AND senha_usuario = '$senha'";
+$resultado = $conn->query($sql);
+
+if ($resultado ->num_rows > 0) {
+    $usuario = $resultado->fetch_assoc();
+    $_SESSION['usuario'] = $usuario['email_usuario'];
+
+    header("Location: tela_inicial.php");
+    exit;
+}else {
+    echo "Nome de usuário, e-mail ou senha incorretos";
+}
 ?>
 
 
