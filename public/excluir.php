@@ -16,7 +16,7 @@ if (isset($_GET['id'])) {
 
         if (mysqli_stmt_execute($stmt)) {
 
-            header("Location: visualizacao.php");
+            header("Location: visualizar_cadastro.php");
             exit;
 
         } else {
