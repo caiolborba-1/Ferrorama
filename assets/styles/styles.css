@@ -603,3 +603,14 @@ appearance: none;
     justify-content: center;
     align-items: center;
 }
+
+.fundo_branco {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 96%;
+    height: 77%;  
+    margin-top: 150px;
+    margin-left: 1%;
+}

@@ -27,7 +27,7 @@
 
         <br>
 
-        <div class="justify-content-center">
+        <div class="justify-content-center align-items-center">
             <h1><b>SENSORES</b></h1>
 
              <div class="pad display_flex justify-content-center padding ">

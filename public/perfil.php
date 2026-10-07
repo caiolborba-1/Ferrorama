@@ -37,8 +37,8 @@ $resultado = $conn->query($sql);
 
 </header>
     
-
-    <div class="pad display_flex justify-content-center padding ">
+    <div class="fundo_branco">
+    <div class=" display_flex justify-content-center ">
        
             <h1>Perfil de Usuario</h1>
 
@@ -49,11 +49,11 @@ $resultado = $conn->query($sql);
 
     
 
-    <div>
+    <div class="duas_colunas">
 
         <img src="../assets/img/zuka.png" alt="" class="br">
 
-        <div>
+        <div class="">
 
             <?php while ($usuario = $resultado->fetch_assoc()) { ?>
 
@@ -75,6 +75,7 @@ $resultado = $conn->query($sql);
 
     </div>
 
+    </div>
 </body>
 
 </html>

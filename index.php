@@ -2,9 +2,12 @@
 session_start();
 include 'infra/conexao.php';
 
-if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] != 'adm') {
-    header('Location: home.php');
+if (isset($_SESSION['usuario']) && $_SESSION['tipo'] !== 'adm') {
+    header('Location: public/tela_inicial.php');
     exit();
+}elseif (isset($_SESSION['usuario'])) {
+    header('Location: public/tela_inicial_adm.php');
+    exit();;
 }
 
 $mensagem = "";
