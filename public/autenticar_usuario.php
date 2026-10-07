@@ -5,12 +5,13 @@ require_once '../infra/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $nome_usuario  = trim($_POST['nome_usuario'] ?? '');
-    $email_usuario = trim($_POST['email_usuario'] ?? '');
-    $senha_usuario = $_POST["senha_usuario"] ?? '';
+    $login_identificador = trim($_POST['login_identificador'] ?? '');
+    $senha_usuario       = $_POST['senha_usuario'] ?? '';
 
-    if ((empty($nome_usuario) && empty($email_usuario)) || empty($senha_usuario)) {
-        die("Preencha o e-mail (ou nome de usuário) e a senha.");
+    if (empty($login_identificador) || empty($senha_usuario)) {
+        $_SESSION['login_erro'] = "Preencha todos os campos.";
+        header("Location: login_usuario.php");
+        exit;
     }
 
     $sql = "SELECT id, nome_usuario, senha_usuario 
@@ -18,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             WHERE email_usuario = ? OR nome_usuario = ?";
             
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $email_usuario, $nome_usuario);
+    $stmt->bind_param("ss", $login_identificador, $login_identificador);
     $stmt->execute();
 
     $resultado = $stmt->get_result();
@@ -33,6 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: tela_inicial.php");
         exit;
     } else {
-        echo "Usuário/E-mail ou senha incorretos.";
+        $_SESSION['login_erro'] = "Usuário/E-mail ou senha incorretos.";
+        header("Location: login_usuario.php");
+        exit;
     }
+} else {
+    header("Location: login_usuario.php");
+    exit;
 }

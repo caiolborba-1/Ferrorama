@@ -18,6 +18,7 @@ $resultado = $conn->query($sql);
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../scripts/relogio_navbar.js"></script>
 
     <title>Perfil</title>
 
