@@ -1,19 +1,12 @@
 CREATE DATABASE ferrorama;
 USE ferrorama;
 
-CREATE TABLE administrador(
-id INT AUTO_INCREMENT PRIMARY KEY,
-nome_adm VARCHAR(100) NOT NULL,
-email_adm VARCHAR(100) NOT NULL,
-senha_adm VARCHAR(100) NOT NULL
-
-);
-
 CREATE TABLE usuario(
 id INT AUTO_INCREMENT PRIMARY KEY,
 nome_usuario VARCHAR(100) NOT NULL,
 email_usuario VARCHAR(100) NOT NULL,
-senha_usuario VARCHAR(100) NOT NULL
+senha_usuario VARCHAR(100) NOT NULL,
+acesso VARCHAR(100) NOT NULL default 'usuario'
 
 );
 
@@ -25,5 +18,3 @@ tipo_sensor VARCHAR(50) NOT NULL,
 trem_alocado_sensor varchar(100) NOT NULL
 
 );
-
-INSERT INTO administrador (nome_adm, email_adm, senha_adm) VALUES ('Caio', 'caio@gmail.com', 'trem');
