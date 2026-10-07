@@ -2,6 +2,11 @@
 session_start();
 include 'infra/conexao.php';
 
+if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] != 'adm') {
+    header('Location: home.php');
+    exit();
+}
+
 $mensagem = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
