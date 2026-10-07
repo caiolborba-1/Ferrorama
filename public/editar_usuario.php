@@ -42,6 +42,12 @@ $usuario =mysqli_fetch_assoc($resultado);
                     <label for="senha_usuario">Senha:</label>
                     <input type="password" name="senha_usuario" value="<?php echo $usuario["senha_usuario"]?>">
                     <br>
+                    <label for="cargo">Cargo:</label>
+                    <select name="cargo">
+                        <option value="usuario" <?php echo ($usuario["cargo"] == 'usuario') ? 'selected' : ''; ?>>Usuário</option>
+                        <option value="adm" <?php echo ($usuario["cargo"] == 'adm') ? 'selected' : ''; ?>>Administrador</option>
+                    </select>
+                    <br>
                     <button type="submit">Atualizar</button>
                 </form>
         </div>
