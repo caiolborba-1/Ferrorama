@@ -47,10 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/styles/styles.css">
         <title>Tela inicial</title>
     </head>
-    <body class="display_flex align-items-center A">
+    <body class="A margin">
 
         <div class="">
             <img src="assets/img/Logo Atual.png" alt="" class="">
@@ -82,11 +83,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </form>
 
             <div id="mensagem" class="text-center mt-3">
-                <?ph echo $mensagem; ?>
+                <?php echo $mensagem; ?>
             </div>
 
             <div class="text-center mt-2">
-                <a href="login_usuario.php">Já tem conta? Entre!</a>
+                <a href="public/login_usuario.php">Já tem conta? Entre!</a>
             </div>
 
         </div>
