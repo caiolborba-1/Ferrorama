@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    $sql = "SELECT id, nome_usuario, senha_usuario 
+    $sql = "SELECT id, nome_usuario, senha_usuario, cargo 
             FROM usuario
             WHERE email_usuario = ? OR nome_usuario = ?";
             
@@ -30,8 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $_SESSION['usuario_id']   = $usuario['id'];
         $_SESSION['usuario_nome'] = $usuario['nome_usuario'];
+        $_SESSION['usuario']      = $usuario['nome_usuario'];
+        $_SESSION['cargo']        = $usuario['cargo'];
 
-        header("Location: tela_inicial.php");
+        if ($_SESSION['cargo'] === 'adm') {
+            header("Location: tela_inicial_adm.php");
+        } else {
+            header("Location: tela_inicial.php");
+        }
         exit;
     } else {
         $_SESSION['login_erro'] = "Usuário/E-mail ou senha incorretos.";

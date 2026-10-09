@@ -21,9 +21,7 @@ if (!isset($_SESSION['usuario'])) {
 
 <header>
 
-    <?php
-    include "navbar_adm.php";
-    ?>
+    <?php include 'navbar.php'; ?>
 
 </header>
 
@@ -43,7 +41,7 @@ if (!isset($_SESSION['usuario'])) {
              <div class="pad display_flex justify-content-center padding ">
        
 
-            <button class="btn btn-danger botao_sair_perfil" onclick="window.location.href='logout.php'">Sair</button>
+          
      
        
     </div>

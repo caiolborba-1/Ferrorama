@@ -2,11 +2,11 @@
 session_start();
 include 'infra/conexao.php';
 
-if (isset($_SESSION['usuario']) && $_SESSION['tipo'] !== 'adm') {
-    header('Location: public/tela_inicial.php');
-    exit();
-}elseif (isset($_SESSION['usuario'])) {
+if (isset($_SESSION['usuario_id']) && $_SESSION['cargo'] == 'adm') {
     header('Location: public/tela_inicial_adm.php');
+    exit();
+}elseif (isset($_SESSION['usuario_id']) && $_SESSION['cargo'] == 'usuario') {
+    header('Location: public/tela_inicial.php');
     exit();;
 }
 
