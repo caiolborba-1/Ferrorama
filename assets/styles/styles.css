@@ -122,7 +122,7 @@ body{
     columns: 2;
     justify-content: center;
     gap: 150px;
- 
+    align-items: center;
 }
 
 .align-items-center{
@@ -564,6 +564,9 @@ appearance: none;
 
 .br {
     border-radius: 1000px;
+    width: 300px;
+    height: 300px;
+    padding-right: 200px;
 }
 
 .space-evenly {
@@ -613,4 +616,13 @@ appearance: none;
     height: 77%;  
     margin-top: 150px;
     margin-left: 1%;
+}
+
+.quadrado_perfil {
+    width: 1300px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
 }

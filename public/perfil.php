@@ -27,7 +27,7 @@ $resultado = $conn->query($sql);
 </head>
 
 
-<body>
+<body class="align-items-center justify-content-center">
 
 <header class="position-absolute">
 
@@ -37,7 +37,7 @@ $resultado = $conn->query($sql);
 
 </header>
     
-    <div class="fundo_branco">
+    <div class="fundo_branco quadrado_perfil display_flex">
     <div class=" display_flex justify-content-center ">
        
             <h1>Perfil de Usuario</h1>
@@ -51,7 +51,7 @@ $resultado = $conn->query($sql);
 
     <div class="duas_colunas">
 
-        <img src="../assets/img/zuka.png" alt="" class="br">
+        <img src="../assets/img/usu.png" alt="" class="br">
 
         <div class="">
 
