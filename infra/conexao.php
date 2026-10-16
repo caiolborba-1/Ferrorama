@@ -4,7 +4,7 @@
     $user = "root";
     $password = "";
     $database = "ferrorama";
-    $conn = mysqli_connect($host, $user, $password, $database);
+    $conn = mysqli_connect($host, $user, $password, $database, 6608);
 
 
     
