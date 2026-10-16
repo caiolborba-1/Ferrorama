@@ -21,5 +21,15 @@ trem_alocado_sensor varchar(100) NOT NULL
 
 );
 
+<<<<<<< HEAD
+=======
+CREATE TABLE trens(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_trem VARCHAR(100) NOT NULL,
+    destino_trem VARCHAR(100) NOT NULL,
+    horario_partida TIME NOT NULL,
+    horario_chegada TIME NOT NULL
+);
+>>>>>>> 2302af6308e1246754a7e2b29de620fdf6ae21f8
 
 insert into usuario (nome_usuario, email_usuario, senha_usuario, cargo) values ('Caio', 'Caio@pentelho.com','12345','adm');
