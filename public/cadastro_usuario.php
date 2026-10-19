@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body class="bg-light">
 
     <header>
-        <?php include "navbar_login.php"; ?>
+        <?php include "navbar.php"; ?>
     </header>
 
     

@@ -18,7 +18,7 @@ $resultado = mysqli_query($conn, $sql);
 
 <body class="justify-content-center align-items-center">
 
-    <header class="position-absolute"> <?php include "navbar_adm.php"; ?> </header>
+    <header class="position-absolute"> <?php include "navbar.php"; ?> </header>
 
   <div class="justify-content-center align-items-center">
 
