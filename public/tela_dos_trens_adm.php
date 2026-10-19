@@ -37,7 +37,7 @@
 <body class="">
 
     <?php
-    include "navbar_adm.php"
+    include "navbar.php"
     ?>
 
 

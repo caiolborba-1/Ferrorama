@@ -16,7 +16,7 @@
     <header>
 
      <?php
-        include "navbar_adm.php";
+        include "navbar.php";
      ?>
 
     </header>
