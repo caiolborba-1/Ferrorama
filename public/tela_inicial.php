@@ -39,7 +39,7 @@
     <div  class="justify-content: center,">
         <button class="botao" onclick="location.href='tela_localização_trem2.php'" ><div >TREM 2 <br> PERU - EQUADOR</a></div></button>
             <br>
-        <button class="botao" sonclick="location.href='tela_localização_trem4.php'" ><div >TREM 4 <br> MARANHÃO - RIO</div></button>
+        <button class="botao" onclick="location.href='tela_localização_trem4.php'" ><div >TREM 4 <br> MARANHÃO - RIO</div></button>
     </div>
    
 
