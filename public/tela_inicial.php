@@ -37,10 +37,12 @@
 
 <div class="duas_colunas">
 
+
     <?php while ($trem = mysqli_fetch_assoc($resultado)) { ?>
 
+
         <button class="botao"
-            onclick="location.href=' ?id=<?php echo $trem['id']; ?>'">
+            onclick="location.href='tela_informacoes_trem.php?id=<?php echo $trem['id']; ?>'">
 
             <?php echo htmlspecialchars($trem['nome_trem']); ?>
 
