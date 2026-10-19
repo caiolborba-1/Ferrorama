@@ -13,6 +13,13 @@
     <?php
     include "navbar.php"
     ?>
+    <?php
+        include "../infra/conexao.php";
+    $sql = "SELECT * FROM trens";
+    $resultado = mysqli_query($conn, $sql);
+
+    ?>
+
 
     <br><br>
 
@@ -30,19 +37,24 @@
 
 <div class="duas_colunas">
 
-    <div class=" justify-content: center"> 
-        <button class="botao" onclick="location.href='tela_localização_trem1.php'" ><div >TREM 1 <br> BRASIL - ARGENTINA</div></button>
-            <br>
-        <button class="botao" onclick="location.href='tela_localização_trem3.php'" ><div >TREM 3 <br> NEPAL - UZBEQUISTÃO</div></button>
-    </div>
-   
-    <div  class="justify-content: center,">
-        <button class="botao" onclick="location.href='tela_localização_trem2.php'" ><div >TREM 2 <br> PERU - EQUADOR</a></div></button>
-            <br>
-        <button class="botao" sonclick="location.href='tela_localização_trem4.php'" ><div >TREM 4 <br> MARANHÃO - RIO</div></button>
-    </div>
-   
+    <?php while ($trem = mysqli_fetch_assoc($resultado)) { ?>
 
+        <button class="botao"
+            onclick="location.href=' ?id=<?php echo $trem['id']; ?>'">
+
+            <?php echo htmlspecialchars($trem['nome_trem']); ?>
+
+            <br>
+
+            <?php echo htmlspecialchars($trem['destino_trem']); ?>
+
+            <br>
+
+            <small>Ver informações</small>
+
+        </button>
+
+    <?php } ?>
 </div>
 
 

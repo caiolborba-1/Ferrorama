@@ -1,3 +1,29 @@
+<?php
+    
+    include "../infra/conexao.php";
+
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $nome_trem = $_POST["nome_trem"];
+        $destino_trem = $_POST["destino_trem"];
+        $horario_partida = $_POST["horario_partida"];
+        $horario_chegada = $_POST["horario_chegada"];
+
+        
+        $stmt = mysqli_prepare($conn, "INSERT INTO trens (nome_trem, destino_trem, horario_partida, horario_chegada) VALUES (?, ?, ?, ?)");
+        mysqli_stmt_bind_param($stmt, "ssss", $nome_trem, $destino_trem, $horario_partida, $horario_chegada);
+
+        if (mysqli_stmt_execute($stmt)) {
+            echo "<script>alert('Trem cadastrado com sucesso!');</script>";
+        } else {
+            echo "<script>alert('Erro ao cadastrar o trem: " . mysqli_error($conn) . "');</script>";
+        }
+
+        mysqli_stmt_close($stmt);
+    }
+
+?>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,10 +40,6 @@
     include "navbar_adm.php"
     ?>
 
-
-    <div class= "tela_inicial">
-         <h1>Trens</h1>
-    </div>
 
 
     
