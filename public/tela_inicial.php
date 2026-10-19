@@ -30,6 +30,21 @@
     <br><br><br>
     
  <style>
+    .duas_colunas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.duas_colunas .botao {
+    width: 100%;
+    min-height: 100px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
   </style>
 
 <div class="duas_colunas">
