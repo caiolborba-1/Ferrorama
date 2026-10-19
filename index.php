@@ -3,12 +3,14 @@ session_set_cookie_params(2592000);
 session_start();
 include 'infra/conexao.php';
 
-if (isset($_SESSION['usuario_id']) && $_SESSION['cargo'] == 'adm') {
+$cargo = $_SESSION['cargo'] ?? '';
+
+if (isset($_SESSION['usuario_id']) && $cargo === 'adm') {
     header('Location: public/tela_inicial_adm.php');
     exit();
-}elseif (isset($_SESSION['usuario_id']) && $_SESSION['cargo'] == 'usuario') {
+} elseif (isset($_SESSION['usuario_id']) && $cargo === 'usuario') {
     header('Location: public/tela_inicial.php');
-    exit();;
+    exit();
 }
 
 $mensagem = "";
