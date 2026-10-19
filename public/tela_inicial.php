@@ -64,7 +64,7 @@
 
             <br>
 
-            <?php echo substr($trem['horario_partida'], 0, 5); ?>
+            <?php echo substr($trem['horario_partida'], 0, 5); ?> - <?php echo substr($trem['horario_chegada'], 0, 5); ?>
 
         </button>
 
