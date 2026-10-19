@@ -21,7 +21,7 @@ if (!isset($_SESSION['usuario'])) {
 
 <header>
 
-    <?php include 'navbar.php'; ?>
+
 
 </header>
 
@@ -29,91 +29,35 @@ if (!isset($_SESSION['usuario'])) {
 
 <body class="">
 
+    <div class="justify-content-center align-items-center display_flex gap-200 tela_inteira">
 
-
-    <div class="">
-
-        <br>
-
-        <div class="justify-content-center align-items-center">
-            <h1><b>SENSORES</b></h1>
-
-             <div class="pad display_flex justify-content-center padding ">
-       
-
-          
-     
-       
-    </div>
+        <div class="text-center mt-3">
+            <img src="../assets/img/Logo Atual.png" alt="Logo" class="">
         </div>
 
-    <br>
-
-        <div class="tres_colunas">
-            <div class="">
-                <button onclick="location.href='sensores_velocidade.php'" class="botao">
-                    Velocidade
-                </button>
- <br>
-
-  
-                <button onclick="location.href='sensores_falhas.php'" class="botao">
-                    falhas
-                    </button>
- <br>
-                <button onclick="location.href='sensores_pressao_oleo.php'" class="botao">
-                    pressão do óleo
-                </button></a>
-
- <br>
+        <div class="">
+            <div class="justify-content-center">
+                <h1><b>Bem Vindo Administrador!<br></b></h1>
             </div>
 
-            <div class="">
-                <button onclick="location.href='sensores_temperatura.php'" class="botao">
-                    Temperatura
-                </button></a>
- <br>
-                <button onclick="location.href='sensores_combustivel.php'" class="botao">
-                    Combustível
-                </button></a>
- <br>
-                <button onclick="location.href='sensores_frenagem.php'" class="botao">
-                    Frenagem
-                </button></a>
- <br>
-                
+            <div class="justify-content-center  gap-5">
+                <button onclick="location.href='tela_dos_trens_adm.php'" class="botao afundar"><b>TRENS</b></button>
+                <button onclick="location.href='visualizar_sensores.php'" class="botao afundar"><b>SENSORES</b></button>
+            </div>
 
-
-</div>
-
-            <div class="">
-                    
+            <div class="justify-content-center gap-5">
+                 <button onclick="location.href='perfil.php'" class="botao afundar"><b>PERFIL</b></button>
+                                     
                 <button onclick="location.href='visualizar_cadastro.php'" class="botao">
                     Usuários Cadastrados
                 </button></a>
- <br>
-                <button onclick="location.href='visualizar_sensores_cadastrados.php'" class="botao">
-                    Sensores Cadastrados
-                </button></a>
-
-<br>
-                <button onclick="location.href='cadastrar_sensor.php'" class="botao">
-                    Cadastrar sensor
-                </button></a>
-
-                </div>
-                
-                </div>
             </div>
 
-        </div>
+        
 
     </div>
 
-
-    </div>
-    </div>
-
+    <script src="../scripts/links_paginas.js"></script>
 </body>
 
 </html>

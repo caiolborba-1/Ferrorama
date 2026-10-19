@@ -94,7 +94,7 @@ body{
 
 body{
     background: linear-gradient(180deg, #9db6ee 0%, #E3EDFC 100%);
-     min-height: 100vh;
+    min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -248,6 +248,10 @@ appearance: none;
 
 .margin{
     margin-left: 200px;
+}
+
+.margin-top{
+    margin-top: 200px;
 }
 
 .tabela_larga{
@@ -635,4 +639,8 @@ appearance: none;
     align-items: center;
     flex-direction: column;
     
+}
+
+.gap-200 {
+    gap: 200px;
 }
