@@ -23,7 +23,7 @@ $usuario =mysqli_fetch_assoc($resultado);
 <body>
     <header>
         
-       <?php include "navbar_adm.php"; ?>
+       <?php include "navbar.php"; ?>
 
     </header>
     <main class="justify-content-center tela_inteira">

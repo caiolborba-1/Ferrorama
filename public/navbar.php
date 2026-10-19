@@ -21,16 +21,14 @@ $cargo = $_SESSION['cargo'] ?? '';
         <button onclick="location.href='tela_inicial_adm.php'" class="botao_cabecalho afundar"><b>INÍCIO ADM</b></button>
         <button onclick="location.href='tela_dos_trens_adm.php'" class="botao_cabecalho afundar"><b>TRENS</b></button>
         <button onclick="location.href='visualizar_sensores_cadastrados.php'" class="botao_cabecalho afundar"><b>SENSORES</b></button>
+        <button onclick="location.href='perfil.php'" class="botao_cabecalho afundar"><b>PERFIL</b></button>
+        <button onclick="location.href='logout.php'" class="botao_cabecalho afundar" style="color: #ff4d4d;"><b>SAIR</b></button>
 
     <?php elseif ($cargo === 'usuario'): ?>
         <button onclick="location.href='tela_inicial.php'" class="botao_cabecalho afundar"><b>INÍCIO</b></button>
-        
-    <?php endif; ?>
-
-   
-    <?php if ($cargo === 'adm' || $cargo === 'usuario'): ?>
         <button onclick="location.href='perfil.php'" class="botao_cabecalho afundar"><b>PERFIL</b></button>
         <button onclick="location.href='logout.php'" class="botao_cabecalho afundar" style="color: #ff4d4d;"><b>SAIR</b></button>
+
     <?php endif; ?>
 
     
