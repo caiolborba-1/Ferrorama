@@ -15,7 +15,7 @@
 
 <body>
 
-    <?php include 'navbar_adm.php'; ?>
+    <?php include 'navbar.php'; ?>
 
     <style>
         .tabela_combustivel_1 {
