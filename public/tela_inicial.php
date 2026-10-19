@@ -29,10 +29,22 @@
 
     <br><br><br>
     
-  <style>
-    .duas_colunas .botao{
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
+ <style>
+    .duas_colunas {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.duas_colunas .botao {
+    width: 100%;
+    min-height: 100px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
   </style>
 
 <div class="duas_colunas">
@@ -52,7 +64,7 @@
 
             <br>
 
-            <small>Ver informações</small>
+            <?php echo substr($trem['horario_partida'], 0, 5); ?> - <?php echo substr($trem['horario_chegada'], 0, 5); ?>
 
         </button>
 
