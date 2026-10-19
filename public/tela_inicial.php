@@ -29,10 +29,7 @@
 
     <br><br><br>
     
-  <style>
-    .duas_colunas .botao{
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
+ <style>
   </style>
 
 <div class="duas_colunas">
