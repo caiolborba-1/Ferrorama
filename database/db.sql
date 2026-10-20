@@ -9,7 +9,6 @@ CREATE TABLE usuario (
     email_usuario VARCHAR(100) NOT NULL,
     senha_usuario VARCHAR(100) NOT NULL,
     cargo ENUM('usuario', 'adm') NOT NULL
-    cargo ENUM('adm', 'usuario') NOT NULL
 
 );
 

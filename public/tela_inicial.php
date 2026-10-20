@@ -85,11 +85,6 @@
 
             <button onclick="location.href='visualizar_trem_cadastrado.php'" class="botao_adicionar_trem afundar"><b>Trens Cadastrados</b></button>
         </div>
-        
-
-
-        <div class="tela_inicial"><button onclick="location.href='tela_dos_trens_adm.php'" class="botao_adicionar_trem afundar"><b>Adicionar Trem</b></button></div>
-         
 
         <br>
    <?php endif; ?>
