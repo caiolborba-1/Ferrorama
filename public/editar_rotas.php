@@ -1,77 +1,94 @@
-```php
-<?php
 
+<?php
 include('../infra/conexao.php');
 
-if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
+if (!isset($_GET['id']) || !ctype_digit($_GET['id'])) {
     header("Location: visualizar_rotas.php");
-    exit();
+    exit;
 }
 
-$id = (int) $_GET["id"];
+$id = (int)$_GET['id'];
 
-$sql = "SELECT * FROM rotas WHERE id = ?";
-$stmt = $conn->prepare($sql);
+$stmt = $conn->prepare("SELECT * FROM rotas WHERE id = ?");
 $stmt->bind_param("i", $id);
 $stmt->execute();
+$rota = $stmt->get_result()->fetch_assoc();
 
-$resultado = $stmt->get_result();
-$rotas = $resultado->fetch_assoc();
-
-if (!$rotas) {
+if (!$rota) {
     header("Location: visualizar_rotas.php");
-    exit();
+    exit;
 }
 
+$trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editando Rota</title>
+    <title>Editar Rota</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
-
 <body>
 
-    <header>
-        <?php include "navbar.php"; ?>
-    </header>
+    <?php include "navbar.php"; ?>
 
-    <main class="justify-content-center tela_inteira">
-
-        <div>
-            <h2>Editando Rota <?php echo htmlspecialchars($rotas["nome_rota"]); ?>!</h2>
+    <main class="container py-5">
+        <div class="card shadow p-4 mx-auto" style="max-width: 600px;">
+            <h2 class="text-center mb-4">Editar Rota</h2>
 
             <form action="atualizar_rotas.php" method="POST">
+                <input type="hidden" name="id" value="<?= (int)$rota['id'] ?>">
 
-                <input type="hidden" name="id" value="<?php echo $rotas["id"]; ?>">
+                <div class="mb-3">
+                    <label class="form-label">Nome da rota</label>
+                    <input type="text" name="nome_rota" class="form-control" maxlength="100"
+                        value="<?= htmlspecialchars($rota['nome_rota']) ?>" required>
+                </div>
 
-                <label for="nome_rota">Nome da Rota:</label>
-                <input type="text" id="nome_rota" name="nome_rota" value="<?php echo htmlspecialchars($rotas["nome_rota"]); ?>" required>
-                <br>
+                <div class="mb-3">
+                    <label class="form-label">Descrição</label>
+                    <textarea name="descricao_rota" class="form-control" maxlength="100" required><?= htmlspecialchars($rota['descricao_rota']) ?></textarea>
+                </div>
 
-                <label for="descricao_rota">Descrição:</label>
-                <textarea id="descricao_rota" name="descricao_rota" rows="5" cols="33" required><?php echo htmlspecialchars($rotas["descricao_rota"]); ?></textarea>
-                <br>
+                <div class="mb-3">
+                    <label class="form-label">Distância</label>
+                    <input type="number" name="distancia_rota" class="form-control" min="0.01" step="0.01"
+                        value="<?= htmlspecialchars((string)$rota['distancia_rota']) ?>" required>
+                </div>
 
-                <label for="distancia_rota">Distância:</label>
-                <input type="number" id="distancia_rota" name="distancia_rota" min="0" step="0.01" value="<?php echo htmlspecialchars($rotas["distancia_rota"]); ?>" required>
-                <br>
+                <div class="mb-3">
+                    <label class="form-label">Trem vinculado</label>
+                    <select name="id_trens" class="form-select" required>
+                        <option value="">Selecione um trem</option>
+                        <?php while ($trem = $trens->fetch_assoc()): ?>
+                            <option value="<?= (int)$trem['id'] ?>"
+                                <?= ((int)$rota['id_trens'] === (int)$trem['id']) ? 'selected' : '' ?>>
+                                <?= htmlspecialchars($trem['nome_trem']) ?> (ID <?= (int)$trem['id'] ?>)
+                            </option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
 
-                <label for="trem_rota">Trem Vinculado:</label>
-                <input type="number" id="trem_rota" name="trem_rota" step="0.01" value="<?php echo htmlspecialchars($rotas["trem_rota"]); ?>" required>
-                <br>
+                <div class="mb-3">
+                    <label class="form-label">Duração (em horas)</label>
+                    <input type="number" name="duracao_rota" class="form-control" min="0.01" step="0.01"
+                        value="<?= htmlspecialchars((string)$rota['duracao_rota']) ?>" required>
+                </div>
 
-                <label for="duracao_rota">Tempo:</label>
-                <input type="number" id="duracao_rota" name="duracao_rota" min="0" step="0.01" value="<?php echo htmlspecialchars($rotas["duracao_rota"]); ?>" required>
-                <br>
+                <div class="mb-3">
+                    <label class="form-label">Data de criação</label>
+                    <input type="datetime-local" name="data_criacao" class="form-control"
+                        value="<?= htmlspecialchars(date('Y-m-d\TH:i', strtotime($rota['data_criacao']))) ?>" required>
+                </div>
 
-                <label for="data_criacao">Data de Criação:</label>
-                <input type="datetime-local" id="data_criacao" name="data_criacao" value="<?php echo date('Y-m-d\TH:i', strtotime($rotas["data_criacao"])); ?>" required>
-                <br>
+                <button type="submit" class="btn btn-primary w-100">Atualizar Rota</button>
+                <a href="visualizar_rotas.php" class="btn btn-secondary w-100 mt-2">Voltar</a>
+            </form>
+        </div>
+    </main>
 
-                <button type="submit">Atualizar</button
+</body>
+</html>

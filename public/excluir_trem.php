@@ -1,44 +1,42 @@
-<?php
 
+<?php
 include('../infra/conexao.php');
 
-if (isset($_GET['id'])) {
-
-    $id = $_GET['id'];
-
-    $sql = "DELETE FROM trens WHERE id = ?";
-
-    $stmt = mysqli_prepare($conn, $sql);
-
-    if ($stmt) {
-
-        mysqli_stmt_bind_param($stmt, "i", $id);
-
-        if (mysqli_stmt_execute($stmt)) {
-
-            header("Location: visualizar_trem_cadastrado.php");
-            exit;
-
-        } else {
-
-            echo "Erro ao excluir o trem.";
-
-        }
-
-        mysqli_stmt_close($stmt);
-
-    } else {
-
-        echo "Erro ao preparar a exclusão.";
-
-    }
-
-} else {
-
-    echo "ID do trem não informado.";
-
+if (
+    $_SERVER['REQUEST_METHOD'] !== 'POST' ||
+    !isset($_POST['id']) ||
+    !ctype_digit($_POST['id'])
+) {
+    header("Location: visualizar_trens.php");
+    exit;
 }
 
-mysqli_close($conn);
+$id = (int)$_POST['id'];
 
+$verificar = $conn->prepare(
+    "SELECT id FROM rotas WHERE id_trens = ? LIMIT 1"
+);
+$verificar->bind_param("i", $id);
+$verificar->execute();
+
+if ($verificar->get_result()->num_rows > 0) {
+    $verificar->close();
+    header("Location: visualizar_trens.php?erro=vinculado");
+    exit;
+}
+
+$verificar->close();
+
+$stmt = $conn->prepare("DELETE FROM trens WHERE id = ?");
+$stmt->bind_param("i", $id);
+
+if ($stmt->execute() && $stmt->affected_rows > 0) {
+    $stmt->close();
+    header("Location: visualizar_trens.php?mensagem=excluido");
+    exit;
+}
+
+$stmt->close();
+header("Location: visualizar_trens.php?erro=excluir");
+exit;
 ?>

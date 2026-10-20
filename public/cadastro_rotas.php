@@ -1,119 +1,163 @@
 
 <?php
-include '../infra/conexao.php';
+include('../infra/conexao.php');
 
-$mensagem = "";
+$mensagem = '';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nome_rota = trim($_POST['nome_rota'] ?? '');
+    $descricao_rota = trim($_POST['descricao_rota'] ?? '');
+    $distancia_rota = $_POST['distancia_rota'] ?? '';
+    $id_trens = $_POST['id_trens'] ?? '';
+    $duracao_rota = $_POST['duracao_rota'] ?? '';
+    $data_criacao = $_POST['data_criacao'] ?? '';
 
-    $nome_rota = trim($_POST["nome_rota"] ?? '');
-    $descricao_rota = trim($_POST["descricao_rota"] ?? '');
-    $distancia_rota = $_POST["distancia_rota"] ?? '';
-    $trem_rota = $_POST["trem_rota"] ?? '';
-    $duracao_rota = $_POST["duracao_rota"] ?? '';
-    $data_criacao = $_POST["data_criacao"] ?? '';
+    if (
+        $nome_rota === '' ||
+        $descricao_rota === '' ||
+        strlen($descricao_rota) > 100 ||
+        !is_numeric($distancia_rota) ||
+        (float)$distancia_rota <= 0 ||
+        !ctype_digit((string)$id_trens) ||
+        (int)$id_trens < 1 ||
+        !is_numeric($duracao_rota) ||
+        (float)$duracao_rota <= 0 ||
+        !preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/', $data_criacao)
+    ) {
+        $mensagem = 'Preencha todos os campos corretamente.';
+    } else {
+        $id_trens = (int)$id_trens;
 
-    if (!empty($nome_rota) && !empty($descricao_rota) && !empty($distancia_rota) && !empty($trem_rota) && !empty($duracao_rota) && !empty($data_criacao)) {
+        $verificar_trem = $conn->prepare("SELECT id FROM trens WHERE id = ?");
+        $verificar_trem->bind_param("i", $id_trens);
+        $verificar_trem->execute();
 
-        $verificar = $conn->prepare("SELECT id FROM rotas WHERE nome_rota = ?");
-        $verificar->bind_param("s", $nome_rota);
-        $verificar->execute();
-
-        $resultado = $verificar->get_result();
-
-        if ($resultado->num_rows > 0) {
-
-            $mensagem = "Esta rota já está cadastrada!";
-
+        if ($verificar_trem->get_result()->num_rows === 0) {
+            $mensagem = 'O trem selecionado não está cadastrado.';
         } else {
+            $verificar = $conn->prepare("SELECT id FROM rotas WHERE nome_rota = ?");
+            $verificar->bind_param("s", $nome_rota);
+            $verificar->execute();
 
-            $sql = "INSERT INTO rotas (nome_rota, descricao_rota, distancia_rota, trem_rota, duracao_rota, data_criacao) VALUES (?, ?, ?, ?, ?, ?)";
-
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssssss", $nome_rota, $descricao_rota, $distancia_rota, $trem_rota, $duracao_rota, $data_criacao);
-
-            if ($stmt->execute()) {
-                header("Location: login_usuario.php");
-                exit();
+            if ($verificar->get_result()->num_rows > 0) {
+                $mensagem = 'Esta rota já está cadastrada.';
             } else {
-                $mensagem = "Erro ao cadastrar rota.";
+                $data_formatada = str_replace('T', ' ', $data_criacao) . ':00';
+                $distancia = (float)$distancia_rota;
+                $duracao = (float)$duracao_rota;
+                $trem_rota = (string)$id_trens;
+
+                $sql = "INSERT INTO rotas
+                    (nome_rota, descricao_rota, distancia_rota, trem_rota,
+                     duracao_rota, data_criacao, id_trens)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param(
+                    "ssdsdsi",
+                    $nome_rota,
+                    $descricao_rota,
+                    $distancia,
+                    $trem_rota,
+                    $duracao,
+                    $data_formatada,
+                    $id_trens
+                );
+
+                if ($stmt->execute()) {
+                    $stmt->close();
+                    $verificar->close();
+                    $verificar_trem->close();
+                    header("Location: visualizar_rotas.php");
+                    exit;
+                }
+
+                $mensagem = 'Erro ao cadastrar a rota.';
+                $stmt->close();
             }
+
+            $verificar->close();
         }
 
-    } else {
-        $mensagem = "Por favor, preencha todos os campos.";
+        $verificar_trem->close();
     }
 }
+
+$trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Rotas</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../scripts/relogio_navbar.js" defer></script>
     <link rel="stylesheet" href="../assets/styles/styles.css">
+    <script src="../scripts/relogio_navbar.js" defer></script>
 </head>
-
 <body class="bg-light">
 
-    <header>
-        <?php include "navbar.php"; ?>
-    </header>
+    <?php include "navbar.php"; ?>
 
-    <img src="assets/img/trem (2).png" alt="" class="">
+    <main class="container py-5">
+        <div class="card shadow p-4 mx-auto" style="max-width: 600px;">
+            <h2 class="text-center mb-4">Cadastro de Rotas</h2>
 
-    <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div id="a" class="card shadow p-4" style="width: 100%; max-width: 400px;">
+            <?php if ($mensagem !== ''): ?>
+                <div class="alert alert-danger"><?= htmlspecialchars($mensagem) ?></div>
+            <?php endif; ?>
 
-            <h3 class="text-center mb-4" id="titulo">Cadastro de Rotas</h3>
+            <?php if ($trens && $trens->num_rows > 0): ?>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Nome da rota</label>
+                        <input type="text" name="nome_rota" class="form-control" maxlength="100" required>
+                    </div>
 
-            <form id="form-login" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Descrição</label>
+                        <textarea name="descricao_rota" class="form-control" maxlength="100" required></textarea>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Nome da Rota</label>
-                    <input type="text" id="nome_rota" name="nome_rota" class="form-control" placeholder="Digite o nome da rota" required>
+                    <div class="mb-3">
+                        <label class="form-label">Distância</label>
+                        <input type="number" name="distancia_rota" class="form-control" min="0.01" step="0.01" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Trem vinculado</label>
+                        <select name="id_trens" class="form-select" required>
+                            <option value="">Selecione um trem</option>
+                            <?php while ($trem = $trens->fetch_assoc()): ?>
+                                <option value="<?= (int)$trem['id'] ?>">
+                                    <?= htmlspecialchars($trem['nome_trem']) ?> (ID <?= (int)$trem['id'] ?>)
+                                </option>
+                            <?php endwhile; ?>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Duração (em horas)</label>
+                        <input type="number" name="duracao_rota" class="form-control" min="0.01" step="0.01" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Data de criação</label>
+                        <input type="datetime-local" name="data_criacao" class="form-control" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Cadastrar Rota</button>
+                </form>
+            <?php else: ?>
+                <div class="alert alert-warning">
+                    Nenhum trem cadastrado. Cadastre um trem antes de criar uma rota.
                 </div>
+            <?php endif; ?>
 
-                <div class="mb-3">
-                    <label class="form-label">Descrição</label>
-                    <textarea id="descricao_rota" name="descricao_rota" class="form-control" rows="3" placeholder="Digite a descrição da rota" required></textarea>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Distância</label>
-                    <input type="number" id="distancia_rota" name="distancia_rota" class="form-control" min="1" step="0.01" placeholder="Digite a distância" required>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Trem Vinculado</label>
-                    <input type="number" id="trem_rota" name="trem_rota" class="form-control" step="0.01" placeholder="Digite o trem vinculado" required>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Tempo</label>
-                    <input type="time" id="duracao_rota" name="duracao_rota" class="form-control" step="0.01" placeholder="Digite a duração" required>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Data de Criação</label>
-                    <input type="date" id="data_criacao" name="data_criacao" class="form-control" required>
-                </div>
-
-                <button id="button" type="submit" class="btn btn-primary w-100">Cadastrar</button>
-            </form>
-
-            <div id="mensagem" class="text-center mt-3">
-                <?php echo $mensagem; ?>
-            </div>
-
+            <a href="visualizar_rotas.php" class="btn btn-secondary mt-3">Visualizar Rotas</a>
         </div>
-    </div>
+    </main>
 
 </body>
 </html>
-```

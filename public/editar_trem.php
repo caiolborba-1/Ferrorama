@@ -1,60 +1,74 @@
+
 <?php
+include('../infra/conexao.php');
 
-include ('../infra/conexao.php');
+if (!isset($_GET['id']) || !ctype_digit($_GET['id'])) {
+    header("Location: visualizar_trens.php");
+    exit;
+}
 
-$id = $_GET["id"];
-$sql = "SELECT * FROM trens WHERE id = $id";
-$resultado = mysqli_query($conn, $sql);
+$id = (int)$_GET['id'];
 
-$trem = mysqli_fetch_assoc($resultado);
+$stmt = $conn->prepare("SELECT * FROM trens WHERE id = ?");
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$trem = $stmt->get_result()->fetch_assoc();
 
+if (!$trem) {
+    header("Location: visualizar_trens.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editando Trem</title>
+    <title>Editar Trem</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
-
 <body>
-    <header>
-        
-       <?php include "navbar.php"; ?>
 
-    </header>
-    <main class="justify-content-center tela_inteira">
-        
-        <div>
-            <h2>Editando o trem: <?php echo htmlspecialchars($trem["nome_trem"]); ?></h2>
-                <form action="atualizar_trem.php" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $trem["id"]; ?>">
+    <?php include "navbar.php"; ?>
 
-                    <label for="nome_trem">Nome do Trem:</label>
-                    <input type="text" name="nome_trem" id="nome_trem" value="<?php echo htmlspecialchars($trem["nome_trem"]); ?>" required>
-                    <br>
-                    
-                    <label for="destino_trem">Destino:</label>
-                    <input type="text" name="destino_trem" id="destino_trem" value="<?php echo htmlspecialchars($trem["destino_trem"]); ?>" required>
-                    <br>
-                    
-                    <label for="horario_partida">Horário de Partida:</label>
-                    <input type="time" name="horario_partida" id="horario_partida" value="<?php echo $trem["horario_partida"]; ?>" required>
-                    <br>
-                    
-                    <label for="horario_chegada">Horário de Chegada:</label>
-                    <input type="time" name="horario_chegada" id="horario_chegada" value="<?php echo $trem["horario_chegada"]; ?>" required>
-                    <br>
-                    
-                    <button type="submit">Atualizar Trem</button>
-                </form>
+    <main class="container py-5">
+        <div class="card shadow p-4 mx-auto" style="max-width: 500px;">
+            <h2 class="text-center mb-4">Editar Trem</h2>
+
+            <form action="atualizar_trem.php" method="POST">
+                <input type="hidden" name="id" value="<?= (int)$trem['id'] ?>">
+
+                <div class="mb-3">
+                    <label class="form-label">Nome do trem</label>
+                    <input type="text" name="nome_trem" class="form-control" maxlength="100"
+                        value="<?= htmlspecialchars($trem['nome_trem']) ?>" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Destino</label>
+                    <input type="text" name="destino_trem" class="form-control" maxlength="100"
+                        value="<?= htmlspecialchars($trem['destino_trem']) ?>" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Horário de partida</label>
+                    <input type="time" name="horario_partida" class="form-control"
+                        value="<?= htmlspecialchars(substr($trem['horario_partida'], 0, 5)) ?>" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Horário de chegada</label>
+                    <input type="time" name="horario_chegada" class="form-control"
+                        value="<?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5)) ?>" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Atualizar Trem</button>
+                <a href="visualizar_trens.php" class="btn btn-secondary w-100 mt-2">Voltar</a>
+            </form>
         </div>
-
     </main>
 
 </body>
-
 </html>
