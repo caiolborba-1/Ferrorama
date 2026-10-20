@@ -27,6 +27,10 @@
          <h1>Bem - Vindo!</h1>
     </div>
 
+    <div class="tela_inicial">
+        <h1>Veja os Horários dos Trens</h1>
+    </div>
+
     <br><br><br>
     
  <style>
@@ -47,32 +51,38 @@
 }
   </style>
 
-<div class="duas_colunas">
 
+
+
+    <?php if (mysqli_num_rows($resultado) > 0) { ?>
+
+    <div class="duas_colunas">
 
     <?php while ($trem = mysqli_fetch_assoc($resultado)) { ?>
-
-
         <button class="botao"
             onclick="location.href='tela_informacoes_trem.php?id=<?php echo $trem['id']; ?>'">
-
             <?php echo htmlspecialchars($trem['nome_trem']); ?>
-
             <br>
-
             <?php echo htmlspecialchars($trem['destino_trem']); ?>
-
             <br>
-
             <?php echo substr($trem['horario_partida'], 0, 5); ?> - <?php echo substr($trem['horario_chegada'], 0, 5); ?>
-
         </button>
-
     <?php } ?>
-</div>
 
+    </div>
+<?php } else { ?>
 
-   
+    <div class="justify-content-center"><h1>Não há nenhum trem registrado no momento</h1></div>
+
+<?php } ?>
+
+    <br> <br>
+
+    <?php if ($cargo === 'adm'): ?>
+        <div class="tela_inicial"><button onclick="location.href='tela_dos_trens_adm.php'" class="botao_adicionar_trem afundar"><b>Adicionar Trem</b></button></div>
+         
+        <br>
+   <?php endif; ?>
 
 </body>
 

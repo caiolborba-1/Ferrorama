@@ -19,7 +19,7 @@ $cargo = $_SESSION['cargo'] ?? '';
   
     <?php if ($cargo === 'adm'): ?>
         <button onclick="location.href='tela_inicial_adm.php'" class="botao_cabecalho afundar"><b>INÍCIO ADM</b></button>
-        <button onclick="location.href='tela_dos_trens_adm.php'" class="botao_cabecalho afundar"><b>TRENS</b></button>
+        <button onclick="location.href='tela_inicial.php'" class="botao_cabecalho afundar"><b>TRENS</b></button>
         <button onclick="location.href='visualizar_sensores.php'" class="botao_cabecalho afundar"><b>SENSORES</b></button>
         <button onclick="location.href='perfil.php'" class="botao_cabecalho afundar"><b>PERFIL</b></button>
 

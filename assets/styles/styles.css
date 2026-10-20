@@ -47,6 +47,25 @@ body{
                  background-color: rgba(103, 117, 241, 0.863);
         }
 
+.botao_adicionar_trem{
+    appearance: none;
+    border: none;
+    background-color: rgba(120, 130, 214, 0.863);
+    height: 60px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    color: white;
+    font-size: clamp(14px, 8cqw, 28px); 
+    box-shadow: -12px 12px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 3px;
+}
+
+.botao_adicionar_trem:hover{
+    background-color: rgba(103, 117, 241, 0.863);
+}
 
 .logo_cabecalho{
     height: 130px;

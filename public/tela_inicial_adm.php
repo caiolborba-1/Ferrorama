@@ -40,16 +40,22 @@ if (!isset($_SESSION['usuario'])) {
                 <h1><b>Bem Vindo Administrador!<br></b></h1>
             </div>
 
+            <div class="justify-content-center">
+                <h1><b>O que gostaria de Ver?<br></b></h1>
+            </div>
+
             <div class="justify-content-center  gap-5">
-                <button onclick="location.href='tela_dos_trens_adm.php'" class="botao afundar"><b>TRENS</b></button>
+                <button onclick="location.href='tela_inicial.php'" class="botao afundar"><b>TRENS</b></button>
                 <button onclick="location.href='visualizar_sensores.php'" class="botao afundar"><b>SENSORES</b></button>
             </div>
+
+            <br>
 
             <div class="justify-content-center gap-5">
                  <button onclick="location.href='perfil.php'" class="botao afundar"><b>PERFIL</b></button>
                                      
-                <button onclick="location.href='visualizar_cadastro.php'" class="botao">
-                    Usuários Cadastrados
+                <button onclick="location.href='visualizar_cadastro.php'" class="botao afundar">
+                    <b>Usuários Cadastrados</b>
                 </button></a>
             </div>
 

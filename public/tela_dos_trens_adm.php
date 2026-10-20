@@ -58,7 +58,7 @@
    </head>
    <body>
 <div class="display-flex">
-   <div class="container d-flex justify-content-center align-items-center vh-100">
+   <div class="tela_inteira">
         <div id="a" class="card shadow p-4" style="width: 100%; max-width: 400px;">
 
             <h3 class="text-center mb-4" id="titulo">Cadastro</h3>
@@ -85,8 +85,15 @@
                     <input type="time" id="horario_chegada" name="horario_chegada" class="form-control" placeholder="Digite o horário" required>
                 </div>
 
+                <div>
+                    <button id="button" type="submit" class="btn btn-primary w-100">Cadastrar</button> 
+                </div>
 
-                <button id="button" type="submit" class="btn btn-primary w-100">Cadastrar</button>
+                <br>
+                
+                <div>
+                    <a href="tela_inicial.php" class="btn btn-primary w-100">Voltar</a>
+                </div>
             </form>
 
            
