@@ -8,7 +8,7 @@ CREATE TABLE usuario (
     nome_usuario VARCHAR(100) NOT NULL,
     email_usuario VARCHAR(100) NOT NULL,
     senha_usuario VARCHAR(100) NOT NULL,
-    cargo ENUM('adm', 'usuario') NOT NULL
+    cargo ENUM('usuario', 'adm') NOT NULL
 );
 
 CREATE TABLE sensor (
