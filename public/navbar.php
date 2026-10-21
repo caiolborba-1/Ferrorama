@@ -16,7 +16,7 @@ if ($cargo === 'adm') {
 ?>
 
 <div class="cabecalho">
-<<<<<<< HEAD
+
 
     <a href="<?php echo htmlspecialchars($link_inicio); ?>">
         <img
@@ -25,11 +25,11 @@ if ($cargo === 'adm') {
             class="logo_cabecalho"
         >
     </a>
-=======
+
     
     
     <img src="../assets/img/Logo Atual.png" alt="" class="logo_cabecalho">
->>>>>>> 2cb2713f7742fb369341c7865ea014f38d568d71
+
 
     <button
         type="button"
