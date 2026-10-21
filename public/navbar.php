@@ -9,9 +9,8 @@ $cargo = $_SESSION['cargo'] ?? '';
 
 <div class="cabecalho">
     
-    <a href="ronaldo.html" onclick="carregarPagina('ronaldo.html'); return false;">
-        <img src="../assets/img/Logo Atual.png" alt="" class="logo_cabecalho">
-    </a>
+    
+    <img src="../assets/img/Logo Atual.png" alt="" class="logo_cabecalho">
 
     
     <button onclick="history.back()" class="botao_cabecalho afundar"><b>VOLTAR</b></button>
