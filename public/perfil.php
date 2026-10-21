@@ -49,7 +49,7 @@ $resultado = $conn->query($sql);
 
     
 
-    <div class="duas_colunas">
+    <div class="A">
 
         <img src="../assets/img/usu.png" alt="" class="br">
 
@@ -66,7 +66,7 @@ $resultado = $conn->query($sql);
                 </h1>
 
                 <h1>
-                    Senha: <?php echo htmlspecialchars($usuario["senha_usuario"]); ?>
+                    Senha:*****
                 </h1>
 
             <?php } ?>

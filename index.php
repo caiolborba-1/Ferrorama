@@ -1,110 +1,34 @@
-
 <?php
 session_set_cookie_params(2592000);
 session_start();
 
-require_once 'infra/conexao.php';
-
 $cargo_sessao = $_SESSION['cargo'] ?? '';
 
-if (isset($_SESSION['usuario_id']) && $cargo_sessao === 'adm') {
-    header('Location: public/tela_inicial_adm.php');
-    exit();
-}
-
-if (isset($_SESSION['usuario_id']) && $cargo_sessao === 'usuario') {
-    header('Location: public/tela_usuario.php');
-    exit();
-}
-
-$mensagem = '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nome_usuario = trim($_POST['nome_usuario'] ?? '');
-    $email_usuario = trim($_POST['email_usuario'] ?? '');
-    $senha_usuario = $_POST['senha_usuario'] ?? '';
-
-    if (
-        $nome_usuario === '' ||
-        $email_usuario === '' ||
-        $senha_usuario === ''
-    ) {
-        $mensagem = 'Por favor, preencha todos os campos.';
-    } else {
-        $verificar = $conn->prepare(
-            'SELECT id FROM usuario WHERE email_usuario = ?'
-        );
-
-        if (!$verificar) {
-            $mensagem = 'Erro ao verificar o e-mail.';
-        } else {
-            $verificar->bind_param('s', $email_usuario);
-            $verificar->execute();
-
-            $resultado = $verificar->get_result();
-
-            if ($resultado->num_rows > 0) {
-                $mensagem = 'Este e-mail já está cadastrado!';
-            } else {
-                $senha_hash = password_hash(
-                    $senha_usuario,
-                    PASSWORD_DEFAULT
-                );
-
-                // Todo cadastro feito por esta página será usuário comum.
-                $cargo = 'usuario';
-
-                $sql = "INSERT INTO usuario
-                        (nome_usuario, email_usuario, senha_usuario, cargo)
-                        VALUES (?, ?, ?, ?)";
-
-                $stmt = $conn->prepare($sql);
-
-                if (!$stmt) {
-                    $mensagem = 'Erro ao preparar o cadastro.';
-                } else {
-                    $stmt->bind_param(
-                        'ssss',
-                        $nome_usuario,
-                        $email_usuario,
-                        $senha_hash,
-                        $cargo
-                    );
-
-                    if ($stmt->execute()) {
-                        $_SESSION['sucesso_cadastro'] =
-                            'Cadastro realizado com sucesso! Faça seu login.';
-
-                        header('Location: visualizar_cadastro.php');
-                        exit();
-                    } else {
-                        $mensagem = 'Erro ao cadastrar usuário.';
-                    }
-
-                    $stmt->close();
-                }
-            }
-
-            $verificar->close();
-        }
+if (isset($_SESSION['usuario_id'])) {
+    if ($cargo_sessao === 'adm') {
+        header('Location: public/tela_inicial_adm.php');
+        exit();
+    } elseif ($cargo_sessao === 'usuario') {
+        header('Location: public/tela_usuario.php');
+        exit();
     }
 }
+
+$erro = $_SESSION['login_erro'] ?? '';
+$sucesso = $_SESSION['sucesso_cadastro'] ?? '';
+
+unset($_SESSION['login_erro'], $_SESSION['sucesso_cadastro']);
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cadastro - Ferrorama</title>
+    <title>Login - Ferrorama</title>
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
 
@@ -114,80 +38,67 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <img src="assets/img/Logo Atual.png" alt="Logo Ferrorama">
     </div>
 
-    <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+    <main class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card shadow p-4">
 
-            <h3 class="text-center mb-4" id="titulo">Cadastro</h3>
+                    <h2 class="text-center mb-4">Entrar no Ferrorama</h2>
 
-            <form id="form-cadastro" action="" method="POST">
+                    <?php if ($erro !== ''): ?>
+                        <div class="alert alert-danger">
+                            <?= htmlspecialchars($erro) ?>
+                        </div>
+                    <?php endif; ?>
 
-                <div class="mb-3">
-                    <label for="nome_usuario" class="form-label">
-                        Nome de Usuário
-                    </label>
+                    <?php if ($sucesso !== ''): ?>
+                        <div class="alert alert-success">
+                            <?= htmlspecialchars($sucesso) ?>
+                        </div>
+                    <?php endif; ?>
 
-                    <input
-                        type="text"
-                        id="nome_usuario"
-                        name="nome_usuario"
-                        class="form-control"
-                        placeholder="Digite seu nome"
-                        required
-                    >
+                    <form action="public/autenticar_usuario.php" method="POST">
+
+                        <div class="mb-3">
+                            <label for="login_identificador" class="form-label">
+                                Nome de usuário ou e-mail
+                            </label>
+
+                            <input
+                                type="text"
+                                name="login_identificador"
+                                id="login_identificador"
+                                class="form-control"
+                                autocomplete="username"
+                                required
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="senha_usuario" class="form-label">
+                                Senha
+                            </label>
+
+                            <input
+                                type="password"
+                                name="senha_usuario"
+                                id="senha_usuario"
+                                class="form-control"
+                                autocomplete="current-password"
+                                required
+                            >
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Entrar
+                        </button>
+
+                    </form>
+
                 </div>
-
-                <div class="mb-3">
-                    <label for="email_usuario" class="form-label">
-                        E-mail
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email_usuario"
-                        name="email_usuario"
-                        class="form-control"
-                        placeholder="Digite seu e-mail"
-                        required
-                    >
-                </div>
-
-                <div class="mb-3">
-                    <label for="senha_usuario" class="form-label">
-                        Senha
-                    </label>
-
-                    <input
-                        type="password"
-                        id="senha_usuario"
-                        name="senha_usuario"
-                        class="form-control"
-                        placeholder="Digite sua senha"
-                        required
-                    >
-                </div>
-
-                <button type="submit" class="btn btn-primary w-100">
-                    Cadastrar
-                </button>
-
-            </form>
-
-            <?php if ($mensagem !== ''): ?>
-                <div class="alert alert-danger text-center mt-3">
-                    <?= htmlspecialchars($mensagem) ?>
-                </div>
-            <?php endif; ?>
-
-            <div class="text-center mt-3">
-                <a href="public/login_usuario.php">
-                    Já tem conta? Entre!
-                </a>
             </div>
-
         </div>
-    </div>
-
-    <script src="scripts/links_paginas.js"></script>
+    </main>
 
 </body>
 </html>
