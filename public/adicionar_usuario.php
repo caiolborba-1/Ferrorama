@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <?php  include 'navbar.php'  ?>
 
-    <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="justify-content-center align-items-center A tela_inteira">
         <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
 
             <h3 class="text-center mb-4" id="titulo">Adição de Usuario</h3>
