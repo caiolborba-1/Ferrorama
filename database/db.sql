@@ -1,15 +1,12 @@
-
-
-CREATE DATABASE ferrorama;
+CREATE DATABASE IF NOT EXISTS ferrorama;
 USE ferrorama;
 
 CREATE TABLE usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome_usuario VARCHAR(100) NOT NULL,
-    email_usuario VARCHAR(100) NOT NULL,
-    senha_usuario VARCHAR(100) NOT NULL,
-    cargo ENUM('usuario', 'adm') NOT NULL
-
+    email_usuario VARCHAR(100) NOT NULL UNIQUE,
+    senha_usuario VARCHAR(255) NOT NULL,
+    cargo ENUM('usuario', 'adm') NOT NULL DEFAULT 'usuario'
 );
 
 CREATE TABLE sensor (
@@ -20,7 +17,7 @@ CREATE TABLE sensor (
     trem_alocado_sensor VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE trens(
+CREATE TABLE trens (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome_trem VARCHAR(100) NOT NULL,
     destino_trem VARCHAR(100) NOT NULL,
@@ -37,7 +34,7 @@ CREATE TABLE rotas (
     duracao_rota FLOAT NOT NULL,
     data_criacao DATETIME NOT NULL,
     id_trens INT NOT NULL,
-    CONSTRAINT fk_rotas_trens FOREIGN KEY (id_trens) REFERENCES trens(id)
+    CONSTRAINT fk_rotas_trens
+        FOREIGN KEY (id_trens)
+        REFERENCES trens(id)
 );
-
-insert into usuario (nome_usuario, email_usuario, senha_usuario, cargo) values ('Caio', 'Caio@pentelho.com','12345','adm');
