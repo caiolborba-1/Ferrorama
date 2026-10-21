@@ -1,46 +1,60 @@
+
 <?php
-include '../infra/conexao.php';
+session_start();
+require_once '../infra/conexao.php';
 
-$mensagem = "";
+$mensagem = '';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nome_usuario = trim($_POST['nome_usuario'] ?? '');
+    $email_usuario = trim($_POST['email_usuario'] ?? '');
+    $senha_usuario = $_POST['senha_usuario'] ?? '';
 
-    $nome_usuario  = trim($_POST["nome_usuario"] ?? '');
-    $email_usuario = trim($_POST["email_usuario"] ?? '');
-    $senha_usuario = $_POST["senha_usuario"] ?? '';
+    if ($nome_usuario === '' || $email_usuario === '' || $senha_usuario === '') {
+        $mensagem = 'Por favor, preencha todos os campos.';
+    } else {
+        $verificar = $conn->prepare(
+            "SELECT id FROM usuario WHERE email_usuario = ?"
+        );
 
-    $senha_usuario = password_hash("$senha_usuario", PASSWORD_DEFAULT);
-
-    if (!empty($nome_usuario) && !empty($email_usuario) && !empty($senha_usuario)) {
-
-        
-        $verificar = $conn->prepare("SELECT id FROM usuario WHERE email_usuario = ?");
-        $verificar->bind_param("s", $email_usuario);
+        $verificar->bind_param('s', $email_usuario);
         $verificar->execute();
 
         $resultado = $verificar->get_result();
 
         if ($resultado->num_rows > 0) {
-
-            $mensagem = "Este e-mail já está cadastrado!";
-
+            $mensagem = 'Este e-mail já está cadastrado!';
         } else {
+            $senha_criptografada = password_hash(
+                $senha_usuario,
+                PASSWORD_DEFAULT
+            );
 
-            $sql = "INSERT INTO usuario (nome_usuario, email_usuario, senha_usuario) VALUES (?, ?, ?)";
+            $sql = "INSERT INTO usuario
+                    (nome_usuario, email_usuario, senha_usuario)
+                    VALUES (?, ?, ?)";
 
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sss", $nome_usuario, $email_usuario, $senha_usuario);
+
+            $stmt->bind_param(
+                'sss',
+                $nome_usuario,
+                $email_usuario,
+                $senha_criptografada
+            );
 
             if ($stmt->execute()) {
-                header("Location: login_usuario.php");
+                $_SESSION['sucesso_cadastro'] = 'Cadastro realizado! Faça login.';
+                header('Location: login_usuario.php');
                 exit();
             } else {
-                $mensagem = "Erro ao cadastrar usuário.";
+                $mensagem = 'Erro ao cadastrar usuário.';
             }
+
+            $stmt->close();
         }
 
-    } else {
-        $mensagem = "Por favor, preencha todos os campos.";
+        $verificar->close();
     }
 }
 ?>
@@ -64,9 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php include "navbar.php"; ?>
     </header>
 
-    
-
-    <img src="assets/img/trem (2).png" alt="" class="">
+    <img src="assets/img/trem (2).png" alt="Imagem de um trem">
 
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div id="a" class="card shadow p-4" style="width: 100%; max-width: 400px;">
@@ -76,25 +88,46 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <form id="form-login" method="POST">
 
                 <div class="mb-3">
-                    <label class="form-label">Nome de Usuário</label>
-                    <input type="text" id="nome_usuario" name="nome_usuario" class="form-control" placeholder="Digite seu nome" required>
+                    <label for="nome_usuario" class="form-label">Nome de Usuário</label>
+                    <input
+                        type="text"
+                        id="nome_usuario"
+                        name="nome_usuario"
+                        class="form-control"
+                        placeholder="Digite seu nome"
+                        required>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">E-mail</label>
-                    <input type="email" id="email_usuario" name="email_usuario" class="form-control" placeholder="Digite seu e-mail" required>
+                    <label for="email_usuario" class="form-label">E-mail</label>
+                    <input
+                        type="email"
+                        id="email_usuario"
+                        name="email_usuario"
+                        class="form-control"
+                        placeholder="Digite seu e-mail"
+                        required>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Senha</label>
-                    <input type="password" id="senha_usuario" name="senha_usuario" class="form-control" placeholder="Digite sua senha" required>
+                    <label for="senha_usuario" class="form-label">Senha</label>
+                    <input
+                        type="password"
+                        id="senha_usuario"
+                        name="senha_usuario"
+                        class="form-control"
+                        placeholder="Digite sua senha"
+                        required>
                 </div>
 
-                <button id="button" type="submit" class="btn btn-primary w-100">Cadastrar</button>
+                <button id="button" type="submit" class="btn btn-primary w-100">
+                    Cadastrar
+                </button>
+
             </form>
 
             <div id="mensagem" class="text-center mt-3">
-                <?ph echo $mensagem; ?>
+                <?= htmlspecialchars($mensagem) ?>
             </div>
 
             <div class="text-center mt-2">
