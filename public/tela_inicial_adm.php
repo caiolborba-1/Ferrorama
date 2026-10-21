@@ -1,13 +1,17 @@
 
 <?php
 session_start();
-if (!isset($_SESSION['usuario'])) {
-    header("Location: login_usuario.php");
+
+if (
+    !isset($_SESSION['usuario_id']) ||
+    !isset($_SESSION['cargo']) ||
+    $_SESSION['cargo'] !== 'adm'
+) {
+    header('Location: login_usuario.php');
     exit();
 }
-
-
 ?>
+
 <html lang="en">
 
 <head>
