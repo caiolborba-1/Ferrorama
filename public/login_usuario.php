@@ -21,9 +21,11 @@ unset($_SESSION['login_erro'], $_SESSION['sucesso_cadastro']);
     <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
 
-<body class="bg-light">
+<body class="A margin">
 
-    <?php include "navbar.php"; ?>
+    <div class="text-center mt-3">
+        <img src="../assets/img/Logo Atual.png" alt="Logo Ferrorama">
+    </div>
 
     <main class="container mt-5">
         <div class="row justify-content-center">
