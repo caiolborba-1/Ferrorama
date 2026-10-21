@@ -50,19 +50,27 @@ $resultado = mysqli_query($conn, $sql);
             <a href="editar_usuario.php?id=<?php echo $usuario['id']; ?>" class="btn btn-primary">Editar</a>
         </td>
 
-<td>
-    <a 
-        href="excluir.php?id=<?php echo $usuario['id']; ?>" class="delete-button"  
-        onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir
-    </a>
-</td>
+        <td>
+            <a 
+                href="excluir.php?id=<?php echo $usuario['id']; ?>" class="delete-button"  
+                onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir
+            </a>
+        </td>
 
       </tr>
       <?php } ?>
     </tbody>
 
   </table>
+   <div class="acoes_adm">
+
+                <a href="adicionar_usuario.php" class="btn btn-success">
+                    <strong>Adicionar Usuario</strong>
+                </a>
+            </div>
 </div>
+
+  
 
   </div>
     

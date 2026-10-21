@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $_SESSION['sucesso_cadastro'] =
                             'Cadastro realizado com sucesso! Faça seu login.';
 
-                        header('Location: public/login_usuario.php');
+                        header('Location: visualizar_cadastro.php');
                         exit();
                     } else {
                         $mensagem = 'Erro ao cadastrar usuário.';
