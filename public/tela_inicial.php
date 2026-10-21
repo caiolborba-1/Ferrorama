@@ -1,6 +1,9 @@
-
+```php
 <?php
+session_start();
 include "../infra/conexao.php";
+
+$cargo = $_SESSION['cargo'] ?? '';
 
 $sql = "SELECT * FROM trens ORDER BY id DESC";
 $resultado = mysqli_query($conn, $sql);
@@ -133,7 +136,7 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
 
         <?php endif; ?>
 
-        <?php if (isset($cargo) && $cargo === 'adm'): ?>
+        <?php if ($cargo === 'adm'): ?>
 
             <div class="acoes_adm">
 
