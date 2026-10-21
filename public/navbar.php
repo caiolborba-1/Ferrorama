@@ -28,7 +28,7 @@ if ($cargo === 'adm') {
 
     
     
-    <img src="../assets/img/Logo Atual.png" alt="" class="logo_cabecalho">
+   
 
 
     <button
