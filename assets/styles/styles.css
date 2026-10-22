@@ -93,6 +93,7 @@ body{
     height: 180px;
     width: 400px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 10px;
     align-items: center;
@@ -597,9 +598,9 @@ appearance: none;
 
 .br {
     border-radius: 1000px;
-    width: 300px;
-    height: 300px;
-    padding-right: 200px;
+    width: 200px;
+    height: 200px;
+    margin-right: 40px;
 }
 
 .space-evenly {

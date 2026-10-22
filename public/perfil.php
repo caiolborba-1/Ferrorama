@@ -23,6 +23,7 @@ $resultado = $conn->query($sql);
     <title>Perfil</title>
 
     <link rel="stylesheet" href="../assets/styles/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
 
@@ -38,16 +39,13 @@ $resultado = $conn->query($sql);
 </header>
     
     <div class="fundo_branco quadrado_perfil display_flex">
-    <div class=" display_flex justify-content-center ">
+    <div class=" display_flex">
        
             <h1>Perfil de Usuario</h1>
-
-            <button class="btn btn-danger botao_sair_perfil" onclick="window.location.href='logout.php'">Sair</button>
-     
        
     </div>
 
-    
+    <br><br>
 
     <div class="A">
 
@@ -68,6 +66,8 @@ $resultado = $conn->query($sql);
                 <h1>
                     Senha:*****
                 </h1>
+
+                  <button class="btn btn-danger b" onclick="window.location.href='logout.php'">Sair da Sessão</button>
 
             <?php } ?>
 
