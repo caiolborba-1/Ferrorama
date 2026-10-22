@@ -26,10 +26,8 @@
 
 *Abaixo incluimos um trilho de trem ondulado, para deixar claro ao cliente do que se trata, e associar com o "Trens".*
 
-<<<<<<< HEAD
 
 
-=======
 ## **Desenvolvimento**
 
 *Para uma boa organização, este projeto conta com um video de apresentação das funções de cada membro do grupo, e sobre possiveis mudanças ou funcionalidades em desenvolvimento:*
@@ -40,4 +38,4 @@
 ## **Atualização README**
 
 *Será adicionado um banco de dados, para que permita que os usuários realmente realizem cadastro e login dentro do sistema, assim o cadastro de usuários deverá ser corrigido para que fique integrado com o banco de dados do ferrorama, também sera necessário uma revisão das páginas e integração da linguagem php ao projeto, juntamente com preparement statement. Faremos uma atualização do visual das páginas*
->>>>>>> 8f69c988110ac1275a32e27a9abfc723244901a8
+
