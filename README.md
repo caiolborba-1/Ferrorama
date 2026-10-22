@@ -1,41 +1,104 @@
-![alt text](<assets/img/Logo fundo branco.png>)
 
-## **Este site está sendo desenvolvido em função de uma Situação de Aprendizagem**
+![Logo do Ferrorama](assets/img/Logo%20fundo%20branco.png)
 
+# Ferrorama SA
 
+Este projeto está sendo desenvolvido como parte de uma Situação de Aprendizagem do curso Técnico em Desenvolvimento de Sistemas Integrado ao Ensino Médio.
 
-## **Função**
+## Função do sistema
 
-*O sistema tem como principal objetivo realizar o monitoramento em tempo real dos dados coletados pelos sensores IoT instalados na locomotiva e nos trilhos ferroviários, permitindo maior controle operacional, segurança e eficiência no transporte ferroviário. Porem no momento a atividade tem como foco principal apenas uma parte visual do sistema*
+O Ferrorama SA tem como objetivo monitorar, em tempo real, os dados coletados pelos sensores IoT instalados nas locomotivas e nos trilhos ferroviários, ajudando a melhorar o controle operacional, a segurança e a eficiência do transporte ferroviário.
 
-*A plataforma será responsável por receber, processar e exibir informações importantes enviadas pelos sensores, como temperatura do motor, pressão do óleo, velocidade da locomotiva, frenagem, rotação do motor, nível de combustível, vibração dos trilhos, integridade da via férrea, temperatura dos trilhos e carga por eixo.*
+Atualmente, o projeto também tem como foco o desenvolvimento visual das telas e a organização das funcionalidades do sistema.
 
-*O sistema também terá a função de identificar possíveis falhas, riscos ou comportamentos anormais nos componentes da locomotiva e na estrutura ferroviária, emitindo alertas automáticos para auxiliar na prevenção de acidentes, falhas mecânicas e problemas operacionais.*
+A plataforma foi planejada para receber, processar e exibir informações dos sensores, como:
 
-*Além do monitoramento em tempo real, a plataforma contará com funcionalidades de armazenamento e gerenciamento de dados, permitindo o cadastro de usuários, sensores e locomotivas, bem como a geração de relatórios analíticos para análise de desempenho, manutenção preventiva e tomada de decisões.*
+- Temperatura do motor;
+- Pressão do óleo;
+- Velocidade da locomotiva;
+- Frenagem;
+- Rotação do motor;
+- Nível de combustível;
+- Vibração dos trilhos;
+- Integridade da via férrea;
+- Temperatura dos trilhos;
+- Carga por eixo;
+- Localização geográfica dos trens e sensores.
 
-*A interface do sistema será moderna, responsiva e organizada, facilitando a visualização das informações e garantindo uma experiência intuitiva para os usuários. O sistema será utilizado principalmente por administradores, operadores ferroviários e equipes técnicas responsáveis pelo monitoramento e manutenção da operação ferroviária, sempre priorizando a segurança, confiabilidade e eficiência da locomotiva e da malha ferroviária.*
+O sistema também deverá identificar possíveis falhas, riscos e comportamentos anormais nos componentes das locomotivas e na estrutura ferroviária, emitindo alertas para auxiliar na prevenção de acidentes e problemas operacionais.
 
-## **Visual**
+Além do monitoramento, a plataforma contará com recursos de cadastro e gerenciamento de usuários, sensores e locomotivas, armazenamento de dados e geração de relatórios para auxiliar na análise de desempenho e no planejamento da manutenção preventiva.
 
-*Na nossa logo, optamos por uma mensagem simples e direta, algo que não ocupasse tempo, mas que fosse marcante o suficiente para lembrar*
+A interface será organizada e responsiva, facilitando a visualização das informações por administradores, operadores ferroviários e equipes técnicas.
 
-*O tema principal do sistemas são os Trens então, usamos a inicial “T” como elemento principal*
+## Identidade visual
 
-*E a conectamos com o nome de um dos fundadores e um querido membro da nossa equipe, o Tomczak, usando o “T” como inicial de ambos, e começando o “omczak” na letra T por escolha estetica, assim facilitando o entendimento do cliente e fazendo uma rápida e eficaz associação das duas coisas*
+A identidade visual do Ferrorama foi desenvolvida para representar o sistema de forma simples e fácil de reconhecer.
 
-*Abaixo incluimos um trilho de trem ondulado, para deixar claro ao cliente do que se trata, e associar com o "Trens".*
+O principal elemento da logo é a letra "T", que representa tanto o tema dos trens quanto a inicial do sobrenome Tomczak, associado a um dos integrantes da equipe.
 
+A continuação do nome a partir dessa letra foi uma escolha estética, com o objetivo de unir o nome do projeto à identidade de um dos integrantes.
 
+Também foi incluído um trilho ferroviário ondulado abaixo do nome, reforçando a relação da marca com o transporte ferroviário.
 
-## **Desenvolvimento**
+## Requisitos funcionais
 
-*Para uma boa organização, este projeto conta com um video de apresentação das funções de cada membro do grupo, e sobre possiveis mudanças ou funcionalidades em desenvolvimento:*
+Os requisitos funcionais descrevem as funcionalidades que o sistema deverá oferecer.
 
-*- [Link do video explicativo e extremamente legal] ( https://youtu.be/J_wqYzwryt4 )*
+| Código | Requisito funcional |
+|---|---|
+| RF01 | O sistema deve receber dados dos sensores IoT, incluindo temperatura do motor, pressão do óleo, velocidade, frenagem, nível de combustível e rotação. |
+| RF02 | O sistema deve receber dados dos sensores de vibração, integridade da via, carga por eixo e temperatura dos trilhos. |
+| RF03 | O sistema deve processar os dados recebidos com precisão e latência inferior a 1 segundo. |
+| RF04 | O sistema deve registrar a localização geográfica dos dados recebidos. |
+| RF05 | O sistema deve exibir em um mapa a localização dos trens e seus respectivos estados de desempenho. |
+| RF06 | O sistema deve exibir um mapa dos trilhos e suas condições atuais, destacando possíveis anomalias. |
+| RF07 | O sistema deve permitir que o usuário realize login utilizando nome e senha. |
+| RF08 | O sistema deve permitir o cadastro de sensores com nome, localização, tipo de dado monitorado e trem associado. |
 
+## Regras de negócio
 
-## **Atualização README**
+As regras de negócio definem as condições e restrições que devem ser respeitadas durante o funcionamento do sistema.
 
-*Será adicionado um banco de dados, para que permita que os usuários realmente realizem cadastro e login dentro do sistema, assim o cadastro de usuários deverá ser corrigido para que fique integrado com o banco de dados do ferrorama, também sera necessário uma revisão das páginas e integração da linguagem php ao projeto, juntamente com preparement statement. Faremos uma atualização do visual das páginas*
+| Código | Regra de negócio |
+|---|---|
+| RN01 | O sistema deve permitir acesso somente a usuários cadastrados. |
+| RN02 | Caso o nome de usuário ou a senha estejam incorretos, o acesso deve ser negado. |
+| RN03 | Somente usuários autenticados e com as permissões necessárias podem acessar as telas administrativas. |
+| RN04 | Não podem existir sensores duplicados com o mesmo nome e a mesma localização. |
+| RN05 | Todo sensor cadastrado deve estar associado a um trem. |
+| RN06 | Cada sensor deve possuir um identificador único, nome, localização e vínculo com um trem. |
+| RN07 | Após um login válido de um administrador, o sistema deve direcioná-lo para a tela inicial administrativa. |
+| RN08 | As locomotivas em operação devem permanecer sob monitoramento contínuo enquanto estiverem ativas. |
 
+## Desenvolvimento
+
+O projeto conta com um vídeo de apresentação que explica as funções de cada integrante da equipe e apresenta possíveis mudanças e funcionalidades em desenvolvimento.
+
+- [Assistir ao vídeo de apresentação do projeto](https://youtu.be/J_wqYzwryt4)
+
+## Tecnologias e recursos
+
+O projeto utiliza tecnologias de desenvolvimento web para construir a interface e implementar as funcionalidades do sistema.
+
+- HTML e CSS para a estrutura e a aparência das páginas;
+- JavaScript para funcionalidades interativas;
+- PHP para a lógica do sistema no servidor;
+- MySQL/MariaDB para o armazenamento dos dados;
+- Bootstrap para auxiliar na criação de uma interface responsiva;
+- Sensores IoT como fonte dos dados previstos para o monitoramento ferroviário.
+
+## Próximas etapas
+
+As próximas etapas do desenvolvimento incluem:
+
+- Integrar o cadastro e o login ao banco de dados do Ferrorama;
+- Revisar as páginas PHP e integrar as funcionalidades ao sistema;
+- Utilizar consultas preparadas (*prepared statements*) para executar operações no banco de dados com mais segurança;
+- Revisar e melhorar o visual das páginas;
+- Implementar o cadastro e o gerenciamento de sensores;
+- Desenvolver as telas de monitoramento dos trens e dos trilhos;
+- Preparar a exibição de alertas e relatórios de desempenho;
+- Avançar na integração dos dados dos sensores IoT.
+
+As funcionalidades descritas representam os objetivos e as etapas previstas para o projeto. Sua disponibilidade depende do andamento da implementação.
