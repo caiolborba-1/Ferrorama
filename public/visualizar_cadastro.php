@@ -21,59 +21,43 @@ $resultado = mysqli_query($conn, $sql);
 
     <header class="position-absolute"> <?php include "navbar.php"; ?> </header>
 
-  <div class="justify-content-center align-items-center">
+  <main class="container py-5">
 
-    <div class="card-container">
-  <h1>Usuários Cadastrados</h1>
+    <br> <br> <br>
 
+    <h1 class="text-center mb-4">Usuários Cadastrados</h1>
 
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nome de Usuário</th>
+                    <th>E-mail</th>
+                    <th>Senha</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($usuario = $resultado->fetch_assoc()): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($usuario['nome_usuario']) ?></td>
+                        <td><?= htmlspecialchars($usuario['email_usuario']) ?></td>
+                        <td class="password-mask">******</td>
+                        <td>
+                            <a href="editar_usuario.php?id=<?= (int)$usuario['id'] ?>" class="btn btn-primary btn-sm">Editar</a>
+                        </td>
+                        <td>
+                            <a href="excluir.php?id=<?= (int)$usuario['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir</a>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+    </div>
 
-
-  <table class="custom-table">
-    <thead>
-      <tr>
-        <th>Nome de Usuário</th>
-        <th>E-mail</th>
-       
-        <th>Senha</th>
-        <th>Editar</th>
-        <th>Excluir</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php while ($usuario = $resultado->fetch_assoc()) {?>
-      <tr>
-        <td><?php echo htmlspecialchars($usuario ['nome_usuario'])?></td>
-        <td><?php echo htmlspecialchars($usuario['email_usuario'])?></td>
-       
-        <td class="password-mask">******</td>
-        <td>
-            <a href="editar_usuario.php?id=<?php echo $usuario['id']; ?>" class="btn btn-primary">Editar</a>
-        </td>
-
-        <td>
-            <a 
-                href="excluir.php?id=<?php echo $usuario['id']; ?>" class="delete-button"  
-                onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir
-            </a>
-        </td>
-
-      </tr>
-      <?php } ?>
-    </tbody>
-
-  </table>
-   <div class="acoes_adm">
-
-                <a href="adicionar_usuario.php" class="btn btn-success">
-                    <strong>Adicionar Usuario</strong>
-                </a>
-            </div>
-</div>
-
-  
-
-  </div>
+    <a href="adicionar_usuario.php" class="btn btn-success">Adicionar Usuário</a>
+</main>
     
 
 
