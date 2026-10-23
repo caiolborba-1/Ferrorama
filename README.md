@@ -13,16 +13,11 @@ Atualmente, o projeto também tem como foco o desenvolvimento visual das telas e
 
 A plataforma foi planejada para receber, processar e exibir informações dos sensores, como:
 
-- Temperatura do motor;
+- Temperatura;
 - Pressão do óleo;
 - Velocidade da locomotiva;
 - Frenagem;
-- Rotação do motor;
 - Nível de combustível;
-- Vibração dos trilhos;
-- Integridade da via férrea;
-- Temperatura dos trilhos;
-- Carga por eixo;
 - Localização geográfica dos trens e sensores.
 
 O sistema também deverá identificar possíveis falhas, riscos e comportamentos anormais nos componentes das locomotivas e na estrutura ferroviária, emitindo alertas para auxiliar na prevenção de acidentes e problemas operacionais.
