@@ -67,10 +67,12 @@ $resultado = $conn->query($sql);
                     Senha:*****
                 </h1>
 
-                  <button class="btn btn-danger b" onclick="window.location.href='logout.php'">Sair da Sessão</button>
+                 
 
             <?php } ?>
-
+                
+            <button class="btn btn-danger b" onclick="window.location.href='logout.php'">Sair da Sessão</button>
+        
         </div>
 
     </div>
