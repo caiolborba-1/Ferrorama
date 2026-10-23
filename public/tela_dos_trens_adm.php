@@ -2,6 +2,9 @@
 <?php
 include('../infra/conexao.php');
 
+require_once __DIR__ . '/proteger_adm.php';
+
+
 $mensagem = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

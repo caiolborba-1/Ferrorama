@@ -2,6 +2,7 @@
 <?php
 include('../infra/conexao.php');
 
+
 if (!isset($_GET['id']) || !ctype_digit($_GET['id'])) {
     header("Location: visualizar_trens.php");
     exit;

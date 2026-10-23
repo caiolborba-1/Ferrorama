@@ -2,6 +2,7 @@
 
 include ('../infra/conexao.php');
 
+
 $id = $_GET["id"];
 $sql = "SELECT * FROM usuario WHERE id = $id";
 $resultado = mysqli_query($conn, $sql );

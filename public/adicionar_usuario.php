@@ -3,6 +3,7 @@
 session_set_cookie_params(2592000);
 session_start();
 
+require_once __DIR__ . '/proteger_adm.php';
 require_once '../infra/conexao.php';
 
 $mensagem = '';
@@ -60,9 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     if ($stmt->execute()) {
                         $_SESSION['sucesso_cadastro'] =
-                            'Cadastro realizado com sucesso! Faça seu login.';
+                            'Usuário cadastrado com sucesso!';
 
-                        header('Location: visualizar_cadastro.php');
+                        header('Location: adicionar_usuario.php');
                         exit();
                     } else {
                         $mensagem = 'Erro ao cadastrar usuário.';
@@ -85,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cadastro - Usuario</title>
+    <title>Adicionar Usuário</title>
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -95,14 +96,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
 
-<body class="">
+<body>
 
-    <?php  include 'navbar.php'  ?>
+    <?php include 'navbar.php'; ?>
 
     <div class="justify-content-center align-items-center A tela_inteira">
         <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
 
-            <h3 class="text-center mb-4" id="titulo">Adição de Usuario</h3>
+            <h3 class="text-center mb-4" id="titulo">
+                Adição de Usuário
+            </h3>
 
             <form id="form-cadastro" action="" method="POST">
 
@@ -156,6 +159,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </button>
 
             </form>
+
+            <?php if (isset($_SESSION['sucesso_cadastro'])): ?>
+                <div class="alert alert-success text-center mt-3">
+                    <?= htmlspecialchars($_SESSION['sucesso_cadastro']) ?>
+                </div>
+                <?php unset($_SESSION['sucesso_cadastro']); ?>
+            <?php endif; ?>
 
             <?php if ($mensagem !== ''): ?>
                 <div class="alert alert-danger text-center mt-3">

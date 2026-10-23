@@ -2,6 +2,7 @@
 <?php
 include('../infra/conexao.php');
 
+
 $resultado = $conn->query("SELECT * FROM trens ORDER BY id DESC");
 ?>
 

@@ -1,6 +1,7 @@
 
 <?php include ('../infra/conexao.php');
 
+
 $sql = "SELECT * FROM usuario";
 
 $resultado = mysqli_query($conn, $sql);

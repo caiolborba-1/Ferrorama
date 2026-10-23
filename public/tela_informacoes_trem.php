@@ -1,6 +1,7 @@
 <?php
 include("../infra/conexao.php");
 
+
 if (!isset($_GET["id"])) {
     header("Location: tela_inicial.php");
     exit;

@@ -2,6 +2,8 @@
 session_set_cookie_params(2592000);
 session_start();
 
+
+
 $cargo_sessao = $_SESSION['cargo'] ?? '';
 
 if (isset($_SESSION['usuario_id'])) {

@@ -2,6 +2,7 @@
 <?php
 include('../infra/conexao.php');
 
+
 $sql = "SELECT rotas.*, trens.nome_trem
         FROM rotas
         INNER JOIN trens ON rotas.id_trens = trens.id
