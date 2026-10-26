@@ -3,7 +3,10 @@
 
 require_once '../infra/conexao.php';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0c3e5ae593279b37a44bb94f2195a9fde44c173d
 $id = (int)$_POST["id"];
 $nome_usuario = $_POST["nome_usuario"];
 $email_usuario = $_POST["email_usuario"];
@@ -26,6 +29,7 @@ mysqli_stmt_close($stmt);
 
 header("Location: visualizar_cadastro.php");
 exit;
+<<<<<<< HEAD
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header("Location: visualizar_cadastro.php");
@@ -103,3 +107,5 @@ $stmt->close();
 
 exit("Não foi possível atualizar o usuário.");
 >>>>>>> 59a49919b9ab74e3795d4629b65abedc626aabee
+=======
+>>>>>>> 0c3e5ae593279b37a44bb94f2195a9fde44c173d
