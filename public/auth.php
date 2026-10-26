@@ -1,10 +1,13 @@
 
 <?php
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-if (!isset($_SESSION["usuario_id"])) {
-    header("Location: login_usuario.php");
+if (!isset($_SESSION['usuario_id'])) {
+    $_SESSION['login_erro'] = 'Você precisa estar logado para acessar esta página.';
+
+    header('Location: ../index.php');
     exit();
 }
