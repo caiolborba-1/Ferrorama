@@ -1,4 +1,3 @@
-
 <?php
 include('../infra/conexao.php');
 
@@ -12,12 +11,14 @@ if (
 }
 
 $id = (int)$_POST['id'];
+$id_usuario = filter_input(INPUT_POST, 'id_usuario', FILTER_VALIDATE_INT);
 $nome_trem = trim($_POST['nome_trem'] ?? '');
 $destino_trem = trim($_POST['destino_trem'] ?? '');
 $horario_partida = $_POST['horario_partida'] ?? '';
 $horario_chegada = $_POST['horario_chegada'] ?? '';
 
 if (
+    !$id_usuario ||
     $nome_trem === '' ||
     $destino_trem === '' ||
     !preg_match('/^\d{2}:\d{2}$/', $horario_partida) ||
@@ -27,7 +28,9 @@ if (
 }
 
 $sql = "UPDATE trens
-        SET nome_trem = ?,
+        SET usuario_trem = ?,
+            id_usuario = ?,
+            nome_trem = ?,
             destino_trem = ?,
             horario_partida = ?,
             horario_chegada = ?
@@ -35,7 +38,9 @@ $sql = "UPDATE trens
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param(
-    "ssssi",
+    "iissssi",
+    $id_usuario,
+    $id_usuario,
     $nome_trem,
     $destino_trem,
     $horario_partida,

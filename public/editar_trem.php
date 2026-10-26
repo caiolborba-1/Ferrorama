@@ -1,4 +1,3 @@
-
 <?php
 require_once __DIR__ . '/proteger_adm.php';
 require_once '../infra/conexao.php';
@@ -20,6 +19,9 @@ if (!$trem) {
     header("Location: visualizar_trens.php");
     exit;
 }
+
+$sql_usuarios = "SELECT id, nome_usuario FROM usuario ORDER BY nome_usuario ASC";
+$result_usuarios = $conn->query($sql_usuarios);
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +34,7 @@ if (!$trem) {
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/styles/styles.css">
+    <script src="../scripts/relogio_navbar.js" defer></script>
 </head>
 
 <body>
@@ -46,13 +49,30 @@ if (!$trem) {
                 <input type="hidden" name="id" value="<?= (int) $trem['id'] ?>">
 
                 <div class="mb-3">
+                    <label class="form-label">Usuário Responsável</label>
+                    <select name="id_usuario" class="form-select" required>
+                        <option value="">Selecione um usuário...</option>
+                        <?php if ($result_usuarios && $result_usuarios->num_rows > 0): ?>
+                            <?php while ($usuario = $result_usuarios->fetch_assoc()): ?>
+                                <option 
+                                    value="<?= $usuario['id'] ?>" 
+                                    <?= ($usuario['id'] == $trem['id_usuario']) ? 'selected' : '' ?>
+                                >
+                                    <?= htmlspecialchars($usuario['nome_usuario'], ENT_QUOTES, 'UTF-8') ?>
+                                </option>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </select>
+                </div>
+
+                <div class="mb-3">
                     <label class="form-label">Nome do trem</label>
                     <input
                         type="text"
                         name="nome_trem"
                         class="form-control"
                         maxlength="100"
-                        value="<?= htmlspecialchars($trem['nome_trem']) ?>"
+                        value="<?= htmlspecialchars($trem['nome_trem'], ENT_QUOTES, 'UTF-8') ?>"
                         required
                     >
                 </div>
@@ -64,7 +84,7 @@ if (!$trem) {
                         name="destino_trem"
                         class="form-control"
                         maxlength="100"
-                        value="<?= htmlspecialchars($trem['destino_trem']) ?>"
+                        value="<?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>"
                         required
                     >
                 </div>
@@ -75,7 +95,7 @@ if (!$trem) {
                         type="time"
                         name="horario_partida"
                         class="form-control"
-                        value="<?= htmlspecialchars(substr($trem['horario_partida'], 0, 5)) ?>"
+                        value="<?= htmlspecialchars(substr($trem['horario_partida'], 0, 5), ENT_QUOTES, 'UTF-8') ?>"
                         required
                     >
                 </div>
@@ -86,7 +106,7 @@ if (!$trem) {
                         type="time"
                         name="horario_chegada"
                         class="form-control"
-                        value="<?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5)) ?>"
+                        value="<?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5), ENT_QUOTES, 'UTF-8') ?>"
                         required
                     >
                 </div>

@@ -19,10 +19,15 @@ CREATE TABLE sensor (
 
 CREATE TABLE trens (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_trem INT NOT NULL,
     nome_trem VARCHAR(100) NOT NULL,
     destino_trem VARCHAR(100) NOT NULL,
     horario_partida TIME NOT NULL,
-    horario_chegada TIME NOT NULL
+    horario_chegada TIME NOT NULL,
+    id_usuario INT NOT NULL,
+    CONSTRAINT fk_trens_usuario
+        FOREIGN KEY (id_usuario)
+        REFERENCES usuario(id)
 );
 
 CREATE TABLE rotas (

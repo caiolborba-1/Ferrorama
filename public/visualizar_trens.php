@@ -1,9 +1,13 @@
-
 <?php
 require_once __DIR__ . '/proteger_adm.php';
 require_once '../infra/conexao.php';
 
-$resultado = $conn->query("SELECT * FROM trens ORDER BY id DESC");
+$sql = "SELECT t.*, u.nome_usuario 
+        FROM trens t 
+        INNER JOIN usuario u ON t.id_usuario = u.id 
+        ORDER BY t.id DESC";
+
+$resultado = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +39,7 @@ $resultado = $conn->query("SELECT * FROM trens ORDER BY id DESC");
                     <tr>
                         <th>ID</th>
                         <th>Nome do Trem</th>
+                        <th>Usuário Responsável</th>
                         <th>Destino</th>
                         <th>Partida</th>
                         <th>Chegada</th>
@@ -53,19 +58,23 @@ $resultado = $conn->query("SELECT * FROM trens ORDER BY id DESC");
                                 <td><?= (int) $trem['id'] ?></td>
 
                                 <td>
-                                    <?= htmlspecialchars($trem['nome_trem']) ?>
+                                    <?= htmlspecialchars($trem['nome_trem'], ENT_QUOTES, 'UTF-8') ?>
                                 </td>
 
                                 <td>
-                                    <?= htmlspecialchars($trem['destino_trem']) ?>
+                                    <?= htmlspecialchars($trem['nome_usuario'], ENT_QUOTES, 'UTF-8') ?>
                                 </td>
 
                                 <td>
-                                    <?= htmlspecialchars($trem['horario_partida']) ?>
+                                    <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>
                                 </td>
 
                                 <td>
-                                    <?= htmlspecialchars($trem['horario_chegada']) ?>
+                                    <?= htmlspecialchars($trem['horario_partida'], ENT_QUOTES, 'UTF-8') ?>
+                                </td>
+
+                                <td>
+                                    <?= htmlspecialchars($trem['horario_chegada'], ENT_QUOTES, 'UTF-8') ?>
                                 </td>
 
                                 <td>
@@ -99,7 +108,7 @@ $resultado = $conn->query("SELECT * FROM trens ORDER BY id DESC");
                     <?php else: ?>
 
                         <tr>
-                            <td colspan="7" class="text-center">
+                            <td colspan="8" class="text-center">
                                 Nenhum trem cadastrado.
                             </td>
                         </tr>
