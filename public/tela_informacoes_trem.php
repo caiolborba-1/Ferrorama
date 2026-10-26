@@ -52,9 +52,6 @@ if (!$trem) {
                 <?= htmlspecialchars($trem['nome_trem'], ENT_QUOTES, 'UTF-8') ?>
             </h3>
 
-            <p><strong>Usuário Responsável:</strong>
-                <?= htmlspecialchars($trem['usuario_trem'], ENT_QUOTES, 'UTF-8') ?></p>
-
             <p>
                 <strong>Destino:</strong>
                 <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>
