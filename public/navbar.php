@@ -11,7 +11,7 @@ if ($cargo === 'adm') {
 } elseif ($cargo === 'usuario') {
     $link_inicio = 'tela_usuario.php';
 } else {
-    $link_inicio = 'login_usuario.php';
+    $link_inicio = '../ndex.php';
 }
 ?>
 
@@ -116,7 +116,7 @@ function voltarPagina() {
     } else if (cargo === 'usuario') {
         window.location.href = 'tela_usuario.php';
     } else {
-        window.location.href = 'login_usuario.php';
+        window.location.href = '../index.php';
     }
 }
 </script>

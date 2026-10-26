@@ -6,7 +6,7 @@ if (
     !isset($_SESSION['cargo']) ||
     $_SESSION['cargo'] !== 'usuario'
 ) {
-    header('Location: login_usuario.php');
+    header('Location: ../index.php');
     exit();
 }
 
