@@ -26,7 +26,6 @@ body{
     gap: 150px;
     align-items: center;
     color: white;
-    box-shadow: 0 0 15px 5px rgba(126, 86, 1, 0.7);
     position: sticky;
     top: 0px;
     left: 0px;
@@ -72,14 +71,18 @@ body{
 }
 
 .logo_cabecalho{
-    height: 130px;
-    width: 200px;
+    height: 80px;
+    width: 130px;
     transition: transform 0.5s ease;
 }
 
 .logo_cabecalho:hover{
     transform: scale(0.96);
      transform: rotate(360deg);
+}
+
+.logo_inicial{
+    height: 220px;
 }
 
 .relogio {
@@ -92,23 +95,30 @@ body{
 
 .botao{
     appearance: none;
-    border: none;
-    background-color: rgba(120, 130, 214, 0.863);
-    height: 180px;
-    width: 400px;
+    background-color: #0d0d0d;
+    border: 2px solid #e2a017;
+    color: #e2a017;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    height: 140px;
+    width: 340px;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px;
     align-items: center;
-    color: white;
-    font-size: clamp(14px, 8cqw, 28px); 
-    box-shadow: -12px 12px 15px rgba(0, 0, 0, 0.35);
-    border-radius: 3px;
+    padding: 10px;
+    
+    font-size: clamp(14px, 5cqw, 22px); 
+    border-radius: 5px;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
 .botao:hover{
-    background-color: rgba(103, 117, 241, 0.863);
+    background-color: rgba(78, 78, 69, 0.863);
     cursor: pointer;
 }
 
@@ -122,6 +132,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    color: white;
 }
 
 .display_flex{
@@ -596,6 +607,10 @@ appearance: none;
  background-color: white;
 }
 
+.color-white{
+    color: white;
+}
+
 .pad {
     padding-top: 130px;
 }
@@ -645,6 +660,14 @@ appearance: none;
     align-items: center;
 }
 
+.tela_inteira_sem_flex{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 .fundo_branco {
     background-color: white;
     padding: 20px;
@@ -661,7 +684,7 @@ appearance: none;
     padding: 20px;
     border-radius: 8px;
     width: 96%;
-    height: 77%;  
+    height: 500px; 
     margin-top: 150px;
     margin-left: 1%;
     color: white;
@@ -687,7 +710,6 @@ appearance: none;
 }
 
 .borda-animada {
-    /* Garante que os 3px fiquem dentro do tamanho original do elemento, sem expandi-lo */
     box-sizing: border-box; 
     border: 3px solid transparent;
     border-image: conic-gradient(from var(--angle), rgb(150, 150, 150), rgba(156, 107, 2, 0.7), rgb(146, 146, 146)) 1;
@@ -699,4 +721,12 @@ appearance: none;
     to {
         --angle: 360deg;
     }
+}
+
+.borda_debaixo_animada{
+    box-sizing: border-box; 
+    border-bottom: 3px solid transparent;
+    border-image: conic-gradient(from var(--angle), rgb(150, 150, 150), rgba(156, 107, 2, 0.7), rgb(146, 146, 146)) 1;
+    animation: rodarBorda 4s linear infinite;
+    font-family: sans-serif;
 }

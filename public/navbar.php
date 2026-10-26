@@ -15,12 +15,12 @@ if ($cargo === 'adm') {
 }
 ?>
 
-<div class="cabecalho">
+<div class="cabecalho borda_debaixo_animada">
 
 
     <a href="<?php echo htmlspecialchars($link_inicio); ?>">
         <img
-            src="../assets/img/Logo Atual.png"
+            src="../assets/img/nova_logo_amarela.png"
             alt="Logo Ferrorama"
             class="logo_cabecalho"
         >

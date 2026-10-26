@@ -22,20 +22,26 @@ require_once __DIR__ . '/proteger_adm.php';
     <header>
     </header>
 
-    <div class="justify-content-center align-items-center display_flex gap-200 tela_inteira">
+    <div class=" tela_inteira_sem_flex color-white">
+
+        <br><br><br>
 
         <div class="text-center mt-3">
-            <img src="../assets/img/Logo Atual.png" alt="Logo">
+            <img src="../assets/img/nova_logo_amarela.png" alt="Logo" class="logo_inicial">
         </div>
+
+        <br><br>
 
         <div>
             <div class="justify-content-center">
-                <h1><b>Bem-vindo, Administrador!<br></b></h1>
+                <h2><b>Bem-vindo, Administrador!<br></b></h2>
             </div>
 
             <div class="justify-content-center">
-                <h1><b>O que gostaria de ver?<br></b></h1>
+                <h2><b>O que gostaria de ver?<br></b></h2>
             </div>
+
+        <br>
 
             <div class="justify-content-center gap-5">
                 <button onclick="location.href='tela_inicial.php'" class="botao afundar">
@@ -50,8 +56,8 @@ require_once __DIR__ . '/proteger_adm.php';
             <br>
 
             <div class="justify-content-center gap-5">
-                <button onclick="location.href='perfil.php'" class="botao afundar">
-                    <b>PERFIL</b>
+                <button onclick="location.href='visualizar_rotas.php'" class="botao afundar">
+                    <b>ROTAS</b>
                 </button>
 
                 <button onclick="location.href='visualizar_cadastro.php'" class="botao afundar">

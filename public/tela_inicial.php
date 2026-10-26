@@ -81,7 +81,7 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
 
     <?php include "navbar.php"; ?>
 
-    <main class="container-fluid py-4">
+    <main class="container-fluid py-4 color-white">
 
         <?php if ($mensagem !== ''): ?>
             <div class="alert alert-success text-center">
@@ -114,13 +114,16 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
 
                         <br>
 
-                        Destino: <?= htmlspecialchars($trem['destino_trem']) ?>
+                        <div class="color-white">
+                            Destino: <?= htmlspecialchars($trem['destino_trem']) ?>
 
                         <br>
 
                         <?= htmlspecialchars(substr($trem['horario_partida'], 0, 5)) ?>
                         -
                         <?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5)) ?>
+                        </div>
+                        
 
                     </button>
 
