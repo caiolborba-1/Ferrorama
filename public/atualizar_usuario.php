@@ -3,7 +3,7 @@
 
 require_once '../infra/conexao.php';
 
-<<<<<<< HEAD
+
 $id = (int)$_POST["id"];
 $nome_usuario = $_POST["nome_usuario"];
 $email_usuario = $_POST["email_usuario"];
@@ -26,7 +26,7 @@ mysqli_stmt_close($stmt);
 
 header("Location: visualizar_cadastro.php");
 exit;
-=======
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header("Location: visualizar_cadastro.php");
     exit;
