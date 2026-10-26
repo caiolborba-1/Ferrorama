@@ -1,6 +1,7 @@
 
 <?php
-include('../infra/conexao.php');
+require_once __DIR__ . '/proteger_adm.php';
+require_once '../infra/conexao.php';
 
 $mensagem = '';
 
@@ -68,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $stmt->close();
                     $verificar->close();
                     $verificar_trem->close();
+
                     header("Location: visualizar_rotas.php");
                     exit;
                 }
@@ -88,6 +90,7 @@ $trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,6 +99,7 @@ $trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
     <link rel="stylesheet" href="../assets/styles/styles.css">
     <script src="../scripts/relogio_navbar.js" defer></script>
 </head>
+
 <body class="bg-light">
 
     <?php include "navbar.php"; ?>
@@ -105,7 +109,9 @@ $trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
             <h2 class="text-center mb-4">Cadastro de Rotas</h2>
 
             <?php if ($mensagem !== ''): ?>
-                <div class="alert alert-danger"><?= htmlspecialchars($mensagem) ?></div>
+                <div class="alert alert-danger">
+                    <?= htmlspecialchars($mensagem) ?>
+                </div>
             <?php endif; ?>
 
             <?php if ($trens && $trens->num_rows > 0): ?>
@@ -129,6 +135,7 @@ $trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
                         <label class="form-label">Trem vinculado</label>
                         <select name="id_trens" class="form-select" required>
                             <option value="">Selecione um trem</option>
+
                             <?php while ($trem = $trens->fetch_assoc()): ?>
                                 <option value="<?= (int)$trem['id'] ?>">
                                     <?= htmlspecialchars($trem['nome_trem']) ?> (ID <?= (int)$trem['id'] ?>)
@@ -147,7 +154,9 @@ $trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
                         <input type="datetime-local" name="data_criacao" class="form-control" required>
                     </div>
 
-                    <button type="submit" class="btn btn-primary w-100">Cadastrar Rota</button>
+                    <button type="submit" class="btn btn-primary w-100">
+                        Cadastrar Rota
+                    </button>
                 </form>
             <?php else: ?>
                 <div class="alert alert-warning">
@@ -155,7 +164,9 @@ $trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
                 </div>
             <?php endif; ?>
 
-            <a href="visualizar_rotas.php" class="btn btn-secondary mt-3">Visualizar Rotas</a>
+            <a href="visualizar_rotas.php" class="btn btn-secondary mt-3">
+                Visualizar Rotas
+            </a>
         </div>
     </main>
 

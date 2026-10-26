@@ -1,13 +1,14 @@
+
 <?php
-include("../infra/conexao.php");
+require_once __DIR__ . '/auth.php';
+require_once '../infra/conexao.php';
 
-
-if (!isset($_GET["id"])) {
-    header("Location: tela_inicial.php");
+if (!isset($_GET['id']) || !ctype_digit($_GET['id'])) {
+    header("Location: tela_usuario.php");
     exit;
 }
 
-$id = (int) $_GET["id"];
+$id = (int) $_GET['id'];
 
 $stmt = mysqli_prepare($conn, "SELECT * FROM trens WHERE id = ?");
 mysqli_stmt_bind_param($stmt, "i", $id);
@@ -16,8 +17,10 @@ mysqli_stmt_execute($stmt);
 $resultado = mysqli_stmt_get_result($stmt);
 $trem = mysqli_fetch_assoc($resultado);
 
+mysqli_stmt_close($stmt);
+
 if (!$trem) {
-    echo "Trem não encontrado.";
+    header("Location: tela_usuario.php");
     exit;
 }
 ?>
@@ -46,25 +49,25 @@ if (!$trem) {
         <div class="card shadow p-4 mt-4">
 
             <h3>
-                <?php echo htmlspecialchars($trem["nome_trem"]); ?>
+                <?= htmlspecialchars($trem['nome_trem'], ENT_QUOTES, 'UTF-8') ?>
             </h3>
 
             <p>
                 <strong>Destino:</strong>
-                <?php echo htmlspecialchars($trem["destino_trem"]); ?>
+                <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>
             </p>
 
             <p>
                 <strong>Horário de partida:</strong>
-                <?php echo substr($trem["horario_partida"], 0, 5); ?>
+                <?= htmlspecialchars(substr($trem['horario_partida'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
             </p>
 
             <p>
                 <strong>Horário de chegada:</strong>
-                <?php echo substr($trem["horario_chegada"], 0, 5); ?>
+                <?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
             </p>
 
-            <a href="tela_inicial.php" class="btn btn-primary">
+            <a href="tela_usuario.php" class="btn btn-primary">
                 Voltar
             </a>
 
@@ -73,4 +76,5 @@ if (!$trem) {
     </div>
 
 </body>
+
 </html>

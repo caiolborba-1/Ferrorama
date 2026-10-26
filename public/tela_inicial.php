@@ -1,7 +1,7 @@
 
 <?php
-session_start();
-include "../infra/conexao.php";
+require_once __DIR__ . '/auth.php';
+require_once '../infra/conexao.php';
 
 $cargo = $_SESSION['cargo'] ?? '';
 
@@ -106,7 +106,7 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
                     <button
                         type="button"
                         class="botao"
-                        onclick="location.href='tela_informacoes_trem.php?id=<?= (int)$trem['id'] ?>'">
+                        onclick="location.href='tela_informacoes_trem.php?id=<?= (int) $trem['id'] ?>'">
 
                         <strong>
                             <?= htmlspecialchars($trem['nome_trem']) ?>
