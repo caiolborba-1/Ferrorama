@@ -1,4 +1,3 @@
-
 <?php include ('../infra/conexao.php');
 
 
@@ -6,7 +5,7 @@ $sql = "SELECT * FROM usuario";
 
 $resultado = mysqli_query($conn, $sql);
 ?>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -17,49 +16,45 @@ $resultado = mysqli_query($conn, $sql);
     <title>Visualização de Cadastros</title>
 </head>
 
-<body class="justify-content-center align-items-center">
+<body>
 
-    <header class="position-absolute"> <?php include "navbar.php"; ?> </header>
+    <header> 
+        <?php include "navbar.php"; ?> 
+    </header>
 
-  <main class="container py-5">
+    <main class="container py-5">
 
-    <br> <br> <br>
+        <h1 class="text-center mb-4">Usuários Cadastrados</h1>
 
-    <h1 class="text-center mb-4">Usuários Cadastrados</h1>
-
-    <div class="table-responsive">
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Nome de Usuário</th>
-                    <th>E-mail</th>
-                    <th>Senha</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($usuario = $resultado->fetch_assoc()): ?>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
                     <tr>
-                        <td><?= htmlspecialchars($usuario['nome_usuario']) ?></td>
-                        <td><?= htmlspecialchars($usuario['email_usuario']) ?></td>
-                        <td class="password-mask">******</td>
-                        <td>
-                            <a href="editar_usuario.php?id=<?= (int)$usuario['id'] ?>" class="btn btn-primary btn-sm">Editar</a>
-                        </td>
-                        <td>
-                            <a href="excluir.php?id=<?= (int)$usuario['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir</a>
-                        </td>
+                        <th>Nome de Usuário</th>
+                        <th>E-mail</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
                     </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
-    </div>
+                </thead>
+                <tbody>
+                    <?php while ($usuario = $resultado->fetch_assoc()): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($usuario['nome_usuario']) ?></td>
+                            <td><?= htmlspecialchars($usuario['email_usuario']) ?></td>
+                            <td>
+                                <a href="editar_usuario.php?id=<?= (int)$usuario['id'] ?>" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                            <td>
+                                <a href="excluir.php?id=<?= (int)$usuario['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este usuário?');">Excluir</a>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
+        </div>
 
-    <a href="adicionar_usuario.php" class="btn btn-success">Adicionar Usuário</a>
-</main>
-    
-
+        <a href="adicionar_usuario.php" class="btn btn-success mt-3">Adicionar Usuário</a>
+    </main>
 
 </body>
 
