@@ -3,7 +3,7 @@
 session_set_cookie_params(2592000);
 session_start();
 
-require_once __DIR__ . '/proteger_adm.php';
+
 require_once '../infra/conexao.php';
 
 if (!isset($_GET['id']) || !ctype_digit($_GET['id'])) {
