@@ -1,36 +1,42 @@
-
 <?php
 require_once __DIR__ . '/proteger_adm.php';
 require_once '../infra/conexao.php';
 
 $mensagem = '';
 
+$sql_usuarios = "SELECT id, nome_usuario FROM usuario ORDER BY nome_usuario ASC";
+$result_usuarios = $conn->query($sql_usuarios);
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome_trem = trim($_POST['nome_trem'] ?? '');
     $destino_trem = trim($_POST['destino_trem'] ?? '');
     $horario_partida = $_POST['horario_partida'] ?? '';
     $horario_chegada = $_POST['horario_chegada'] ?? '';
+    $id_usuario = filter_input(INPUT_POST, 'id_usuario', FILTER_VALIDATE_INT);
 
     if (
         $nome_trem === '' ||
         $destino_trem === '' ||
+        !$id_usuario ||
         !preg_match('/^\d{2}:\d{2}$/', $horario_partida) ||
         !preg_match('/^\d{2}:\d{2}$/', $horario_chegada)
     ) {
         $mensagem = 'Preencha todos os campos corretamente.';
     } else {
         $sql = "INSERT INTO trens
-                (nome_trem, destino_trem, horario_partida, horario_chegada)
-                VALUES (?, ?, ?, ?)";
+                (usuario_trem, nome_trem, destino_trem, horario_partida, horario_chegada, id_usuario)
+                VALUES (?, ?, ?, ?, ?, ?)";
 
         $stmt = $conn->prepare($sql);
 
         $stmt->bind_param(
-            "ssss",
+            "issssi",
+            $id_usuario,
             $nome_trem,
             $destino_trem,
             $horario_partida,
-            $horario_chegada
+            $horario_chegada,
+            $id_usuario
         );
 
         if ($stmt->execute()) {
@@ -75,6 +81,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endif; ?>
 
             <form method="POST">
+
+                <div class="mb-3">
+                    <label class="form-label">Usuário Responsável</label>
+                    <select name="id_usuario" class="form-select" required>
+                        <option value="">Selecione um usuário...</option>
+                        <?php if ($result_usuarios && $result_usuarios->num_rows > 0): ?>
+                            <?php while ($usuario = $result_usuarios->fetch_assoc()): ?>
+                                <option value="<?= $usuario['id'] ?>">
+                                    <?= htmlspecialchars($usuario['nome_usuario'], ENT_QUOTES, 'UTF-8') ?>
+                                </option>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </select>
+                </div>
 
                 <div class="mb-3">
                     <label class="form-label">Nome do trem</label>
