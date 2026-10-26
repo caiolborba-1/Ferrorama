@@ -1,13 +1,7 @@
 
 
-<?php
-session_start();
-if (!isset($_SESSION['usuario'])) {
-    header("Location: login_usuario.php");
-    exit();
-}
-
-
+<<?php
+require_once __DIR__ . '/proteger_adm.php';
 ?>
 <html lang="en">
 
