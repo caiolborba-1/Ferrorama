@@ -19,14 +19,14 @@ body{
 }
 
 .cabecalho {
-    background-color: rgba(120, 130, 214, 0.863)!important;
-    height: 130px;
+    background-color: rgba(0, 0, 0, 0.863)!important;
+    height: 80px;
     display: flex;
     justify-content: left;
-    gap: 80px;
+    gap: 150px;
     align-items: center;
     color: white;
-    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 15px 5px rgba(126, 86, 1, 0.7);
     position: sticky;
     top: 0px;
     left: 0px;
@@ -44,7 +44,11 @@ body{
         }
 
         .botao_cabecalho:hover{
-                 background-color: rgba(103, 117, 241, 0.863);
+            color: rgb(228, 167, 0);
+            text-decoration: underline;
+            text-decoration-color:  rgb(228, 167, 0);
+            text-underline-offset: 6px;
+            text-decoration-thickness: 2px;
         }
 
 .botao_adicionar_trem{
@@ -113,7 +117,7 @@ body{
 }
 
 body{
-    background: linear-gradient(180deg, #9db6ee 0%, #E3EDFC 100%);
+    background: linear-gradient(180deg, #0a0a0a 0%, #2e2e2e 100%);
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -652,6 +656,17 @@ appearance: none;
     margin-left: 1%;
 }
 
+.fundo_preto{
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 8px;
+    width: 96%;
+    height: 77%;  
+    margin-top: 150px;
+    margin-left: 1%;
+    color: white;
+}
+
 .quadrado_perfil {
     width: 1300px;
     height: 450px;
@@ -663,4 +678,25 @@ appearance: none;
 
 .gap-200 {
     gap: 200px;
+}
+
+ @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.borda-animada {
+    /* Garante que os 3px fiquem dentro do tamanho original do elemento, sem expandi-lo */
+    box-sizing: border-box; 
+    border: 3px solid transparent;
+    border-image: conic-gradient(from var(--angle), rgb(150, 150, 150), rgba(156, 107, 2, 0.7), rgb(146, 146, 146)) 1;
+    animation: rodarBorda 4s linear infinite;
+    font-family: sans-serif;
+}
+
+@keyframes rodarBorda {
+    to {
+        --angle: 360deg;
+    }
 }

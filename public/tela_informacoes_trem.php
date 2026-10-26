@@ -15,7 +15,7 @@ mysqli_stmt_bind_param($stmt, "i", $id);
 mysqli_stmt_execute($stmt);
 
 $resultado = mysqli_stmt_get_result($stmt);
-$trem = mysqli_fetch_assoc($resultado);
+$trem = mysqli_fetchassoc($resultado);
 
 mysqli_stmt_close($stmt);
 
