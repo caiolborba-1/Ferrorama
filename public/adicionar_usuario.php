@@ -1,8 +1,4 @@
-
 <?php
-session_set_cookie_params(2592000);
-session_start();
-
 require_once __DIR__ . '/proteger_adm.php';
 require_once '../infra/conexao.php';
 
@@ -19,6 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $senha_usuario === ''
     ) {
         $mensagem = 'Por favor, preencha todos os campos.';
+    } elseif (!filter_var($email_usuario, FILTER_VALIDATE_EMAIL)) {
+        $mensagem = 'Informe um e-mail válido.';
     } else {
         $verificar = $conn->prepare(
             'SELECT id FROM usuario WHERE email_usuario = ?'
@@ -100,8 +98,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <?php include 'navbar.php'; ?>
 
-    <div class="justify-content-center align-items-center A tela_inteira">
-        <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+    <div class="justify-content-center align-items-center tela_inteira">
+        <div class="card shadow p-4 mx-auto" style="width: 100%; max-width: 400px;">
 
             <h3 class="text-center mb-4" id="titulo">
                 Adição de Usuário
@@ -120,6 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         name="nome_usuario"
                         class="form-control"
                         placeholder="Digite seu nome"
+                        maxlength="100"
                         required
                     >
                 </div>
@@ -164,6 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="alert alert-success text-center mt-3">
                     <?= htmlspecialchars($_SESSION['sucesso_cadastro']) ?>
                 </div>
+
                 <?php unset($_SESSION['sucesso_cadastro']); ?>
             <?php endif; ?>
 
