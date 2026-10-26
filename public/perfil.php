@@ -38,7 +38,7 @@ $resultado = $conn->query($sql);
 
 </header>
     
-    <div class="fundo_branco quadrado_perfil display_flex">
+    <div class="fundo_preto borda-animada display_flex">
     <div class=" display_flex">
        
             <h1>Perfil de Usuario</h1>

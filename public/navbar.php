@@ -36,7 +36,7 @@ if ($cargo === 'adm') {
         onclick="voltarPagina()"
         class="botao_cabecalho afundar"
     >
-        <b>VOLTAR</b>
+        <h5><b>VOLTAR</b></h5>
     </button>
 
     <?php if ($cargo === 'adm'): ?>
@@ -46,7 +46,7 @@ if ($cargo === 'adm') {
             onclick="location.href='tela_inicial_adm.php'"
             class="botao_cabecalho afundar"
         >
-            <b>INÍCIO ADM</b>
+            <h5><b>INÍCIO ADM</b></h5>
         </button>
 
         <button
@@ -54,7 +54,7 @@ if ($cargo === 'adm') {
             onclick="location.href='tela_inicial.php'"
             class="botao_cabecalho afundar"
         >
-            <b>TRENS</b>
+            <h5><b>TRENS</b></h5>
         </button>
 
         <button
@@ -62,7 +62,7 @@ if ($cargo === 'adm') {
             onclick="location.href='visualizar_sensores.php'"
             class="botao_cabecalho afundar"
         >
-            <b>SENSORES</b>
+            <h5><b>SENSORES</b></h5>
         </button>
 
         <button
@@ -70,7 +70,7 @@ if ($cargo === 'adm') {
             onclick="location.href='visualizar_rotas.php'"
             class="botao_cabecalho afundar"
         >
-            <b>ROTAS</b>
+            <h5><b>ROTAS</b></h5>
         </button>
 
         <button
@@ -78,7 +78,7 @@ if ($cargo === 'adm') {
             onclick="location.href='perfil.php'"
             class="botao_cabecalho afundar"
         >
-            <b>PERFIL</b>
+            <h5><b>PERFIL</b></h5>
         </button>
 
     <?php elseif ($cargo === 'usuario'): ?>
@@ -88,7 +88,7 @@ if ($cargo === 'adm') {
             onclick="location.href='tela_usuario.php'"
             class="botao_cabecalho afundar"
         >
-            <b>INÍCIO</b>
+            <h5><b>INÍCIO</b></h5>
         </button>
 
         <button
@@ -96,12 +96,10 @@ if ($cargo === 'adm') {
             onclick="location.href='perfil.php'"
             class="botao_cabecalho afundar"
         >
-            <b>PERFIL</b>
+            <h5><b>PERFIL</b></h5>
         </button>
 
     <?php endif; ?>
-
-    <div id="relogio" class="relogio">00:00:00</div>
 
 </div>
 
