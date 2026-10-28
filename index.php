@@ -43,7 +43,7 @@ unset($_SESSION['login_erro'], $_SESSION['sucesso_cadastro']);
     <main class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-5">
-                <div class="card shadow p-4">
+                <div class="card shadow p-4 fundo_preto borda-animada">
 
                     <h2 class="text-center mb-4">Entrar no Ferrorama</h2>
 
@@ -91,7 +91,7 @@ unset($_SESSION['login_erro'], $_SESSION['sucesso_cadastro']);
                             >
                         </div>
 
-                        <button type="submit" class="btn btn-primary w-100">
+                        <button type="submit" class="btn botao_brilhante cor_amarela color-white w-100">
                             Entrar
                         </button>
 

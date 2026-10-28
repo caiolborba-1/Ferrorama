@@ -143,19 +143,19 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
 
             <div class="acoes_adm">
 
-                <a href="tela_dos_trens_adm.php" class="btn btn-primary">
+                <a href="tela_dos_trens_adm.php" class="btn botao_brilhante cor_amarela color-white">
                     <strong>Adicionar Trem</strong>
                 </a>
 
-                <a href="visualizar_trens.php" class="btn btn-secondary">
+                <a href="visualizar_trens.php" class="btn cor_cinza borda-animada color-white">
                     <strong>Trens Cadastrados</strong>
                 </a>
 
-                <a href="cadastro_rotas.php" class="btn btn-success">
+                <a href="cadastro_rotas.php" class="btn botao_brilhante cor_amarela color-white">
                     <strong>Cadastrar Rota</strong>
                 </a>
 
-                <a href="visualizar_rotas.php" class="btn btn-dark">
+                <a href="visualizar_rotas.php" class="btn cor_cinza borda-animada color-white">
                     <strong>Rotas Cadastradas</strong>
                 </a>
 

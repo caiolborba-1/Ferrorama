@@ -49,7 +49,7 @@ $trens = $conn->query(
     <?php include "navbar.php"; ?>
 
     <main class="container py-5">
-        <div class="card shadow p-4 mx-auto" style="max-width: 600px;">
+        <div class="card shadow p-4 mx-auto fundo_preto borda-animada" style="max-width: 600px;">
 
             <h2 class="text-center mb-4">Editar Rota</h2>
 
@@ -165,13 +165,13 @@ $trens = $conn->query(
                     >
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">
+                <button type="submit" class="btn botao_brilhante cor_amarela color-white w-100">
                     Atualizar Rota
                 </button>
 
                 <a
                     href="visualizar_rotas.php"
-                    class="btn btn-secondary w-100 mt-2"
+                    class="btn botao_brilhante cor_cinza color-white w-100 mt-2"
                 >
                     Voltar
                 </a>

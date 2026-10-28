@@ -105,7 +105,7 @@ $trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
     <?php include "navbar.php"; ?>
 
     <main class="container py-5">
-        <div class="card shadow p-4 mx-auto" style="max-width: 600px;">
+        <div class="card shadow p-4 mx-auto fundo_preto borda-animada" style="max-width: 600px;">
             <h2 class="text-center mb-4">Cadastro de Rotas</h2>
 
             <?php if ($mensagem !== ''): ?>
@@ -154,7 +154,7 @@ $trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
                         <input type="datetime-local" name="data_criacao" class="form-control" required>
                     </div>
 
-                    <button type="submit" class="btn btn-primary w-100">
+                    <button type="submit" class="btn botao_brilhante cor_amarela color-white w-100">
                         Cadastrar Rota
                     </button>
                 </form>
@@ -164,7 +164,7 @@ $trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
                 </div>
             <?php endif; ?>
 
-            <a href="visualizar_rotas.php" class="btn btn-secondary mt-3">
+            <a href="visualizar_rotas.php" class="btn botao_brilhante cor_cinza color-white mt-3">
                 Visualizar Rotas
             </a>
         </div>

@@ -41,8 +41,12 @@ if (!$usuario) {
         <?php include "navbar.php"; ?>
     </header>
 
+    
     <main class="container py-5">
-        <div class="card shadow p-4 mx-auto" style="max-width: 500px;">
+
+        <br><br><br>
+
+        <div class="card shadow p-4 mx-auto fundo_preto borda-animada" style="max-width: 500px;">
 
             <h2 class="text-center mb-4">
                 Editando o usuário <?= htmlspecialchars($usuario['nome_usuario']) ?>!
@@ -117,11 +121,11 @@ if (!$usuario) {
                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">
+                <button type="submit" class="btn botao_brilhante cor_amarela color-white w-100">
                     Atualizar
                 </button>
 
-                <a href="visualizar_cadastro.php" class="btn btn-secondary w-100 mt-2">
+                <a href="visualizar_cadastro.php" class="btn botao_brilhante cor_cinza color-white w-100 mt-2">
                     Voltar
                 </a>
 

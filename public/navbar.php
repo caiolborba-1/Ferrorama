@@ -75,6 +75,14 @@ if ($cargo === 'adm') {
 
         <button
             type="button"
+            onclick="location.href='visualizar_cadastro.php'"
+            class="botao_cabecalho afundar"
+        >
+            <h5><b>USUARIOS</b></h5>
+        </button>
+
+        <button
+            type="button"
             onclick="location.href='perfil.php'"
             class="botao_cabecalho afundar"
         >

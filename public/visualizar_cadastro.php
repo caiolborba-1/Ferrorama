@@ -28,7 +28,7 @@ $resultado = mysqli_query($conn, $sql);
 
     <main class="container py-5">
 
-        <br><br><br><br><br><br>
+        <br><br><br>
 
         <h1 class="text-center mb-4">Usuários Cadastrados</h1>
 

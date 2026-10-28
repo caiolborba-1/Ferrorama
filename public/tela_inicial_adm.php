@@ -61,7 +61,7 @@ require_once __DIR__ . '/proteger_adm.php';
                 </button>
 
                 <button onclick="location.href='visualizar_cadastro.php'" class="botao afundar">
-                    <b>Usuários Cadastrados</b>
+                    <b>Usuários</b>
                 </button>
             </div>
         </div>

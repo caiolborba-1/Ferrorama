@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include "navbar.php"; ?>
 
     <main class="container py-5">
-        <div class="card shadow p-4 mx-auto" style="max-width: 500px;">
+        <div class="card shadow p-4 mx-auto fundo_preto borda-animada" style="max-width: 500px;">
 
             <h2 class="text-center mb-4">Cadastro de Trens</h2>
 
@@ -138,11 +138,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     >
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">
+                <button type="submit" class="btn w-100 botao_brilhante cor_amarela color-white">
                     Cadastrar Trem
                 </button>
 
-                <a href="visualizar_trens.php" class="btn btn-secondary w-100 mt-2">
+                <a href="visualizar_trens.php" class="btn w-100 mt-2 botao_brilhante color-white cor_cinza">
                     Visualizar Trens
                 </a>
 

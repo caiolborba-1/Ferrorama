@@ -42,7 +42,7 @@ $result_usuarios = $conn->query($sql_usuarios);
     <?php include "navbar.php"; ?>
 
     <main class="container py-5">
-        <div class="card shadow p-4 mx-auto" style="max-width: 500px;">
+        <div class="card shadow p-4 mx-auto fundo_preto borda-animada" style="max-width: 500px;">
             <h2 class="text-center mb-4">Editar Trem</h2>
 
             <form action="atualizar_trem.php" method="POST">
@@ -111,11 +111,11 @@ $result_usuarios = $conn->query($sql_usuarios);
                     >
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">
+                <button type="submit" class="btn botao_brilhante cor_amarela color-white w-100">
                     Atualizar Trem
                 </button>
 
-                <a href="visualizar_trens.php" class="btn btn-secondary w-100 mt-2">
+                <a href="visualizar_trens.php" class="btn botao_brilhante cor_cinza color-white w-100 mt-2">
                     Voltar
                 </a>
             </form>

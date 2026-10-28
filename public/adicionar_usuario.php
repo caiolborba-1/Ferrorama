@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include 'navbar.php'; ?>
 
     <div class="justify-content-center align-items-center tela_inteira">
-        <div class="card shadow p-4 mx-auto" style="width: 100%; max-width: 400px;">
+        <div class="card shadow p-4 mx-auto fundo_preto borda-animada" style="width: 100%; max-width: 400px;">
 
             <h3 class="text-center mb-4" id="titulo">
                 Adição de Usuário
@@ -153,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     >
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">
+                <button type="submit" class="btn botao_brilhante cor_amarela color-white w-100">
                     Cadastrar
                 </button>
 
