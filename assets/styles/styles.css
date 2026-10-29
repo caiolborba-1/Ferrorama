@@ -22,8 +22,8 @@ body{
     background-color: rgba(0, 0, 0, 0.863)!important;
     height: 80px;
     display: flex;
-    justify-content: left;
-    gap: 150px;
+    justify-content: center;
+    gap: 100px;
     align-items: center;
     color: white;
     position: sticky;
@@ -40,6 +40,9 @@ body{
                 transition: background-color 0.3s;
                 border: none;
                 color: white;
+                align-items: center;
+                display: flex;
+                justify-content: center;
         }
 
         .botao_cabecalho:hover{
@@ -71,8 +74,8 @@ body{
 }
 
 .logo_cabecalho{
-    height: 80px;
-    width: 130px;
+    height: 70px;
+    width: 220px;
     transition: transform 0.5s ease;
 }
 

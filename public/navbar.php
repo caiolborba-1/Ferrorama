@@ -20,7 +20,7 @@ if ($cargo === 'adm') {
 
     <a href="<?php echo htmlspecialchars($link_inicio); ?>">
         <img
-            src="../assets/img/nova_logo_amarela.png"
+            src="../assets/img/logo_texto.png"
             alt="Logo Ferrorama"
             class="logo_cabecalho"
         >
