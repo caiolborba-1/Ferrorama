@@ -1,3 +1,4 @@
+
 <?php
 require_once __DIR__ . '/proteger_adm.php';
 require_once '../infra/conexao.php';
@@ -8,6 +9,7 @@ $sql_usuarios = "SELECT id, nome_usuario FROM usuario ORDER BY nome_usuario ASC"
 $result_usuarios = $conn->query($sql_usuarios);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     $nome_trem = trim($_POST['nome_trem'] ?? '');
     $destino_trem = trim($_POST['destino_trem'] ?? '');
     $horario_partida = $_POST['horario_partida'] ?? '';
@@ -23,15 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ) {
         $mensagem = 'Preencha todos os campos corretamente.';
     } else {
+
         $sql = "INSERT INTO trens
-                (usuario_trem, nome_trem, destino_trem, horario_partida, horario_chegada, id_usuario)
-                VALUES (?, ?, ?, ?, ?, ?)";
+                (nome_trem, destino_trem, horario_partida, horario_chegada, id_usuario)
+                VALUES (?, ?, ?, ?, ?)";
 
         $stmt = $conn->prepare($sql);
 
         $stmt->bind_param(
-            "issssi",
-            $id_usuario,
+            "ssssi",
             $nome_trem,
             $destino_trem,
             $horario_partida,
@@ -45,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
 
-        $mensagem = 'Erro ao cadastrar o trem.';
+        $mensagem = 'Erro ao cadastrar o trem: ' . $stmt->error;
         $stmt->close();
     }
 }
@@ -62,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/styles/styles.css">
+
     <script src="../scripts/relogio_navbar.js" defer></script>
 </head>
 
@@ -70,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include "navbar.php"; ?>
 
     <main class="container py-5">
+
         <div class="card shadow p-4 mx-auto fundo_branco" style="max-width: 500px;">
 
             <h2 class="text-center mb-4">Cadastro de Trens</h2>
@@ -84,8 +88,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="mb-3">
                     <label class="form-label">Usuário Responsável</label>
+
                     <select name="id_usuario" class="form-select" required>
                         <option value="">Selecione um usuário...</option>
+
                         <?php if ($result_usuarios && $result_usuarios->num_rows > 0): ?>
                             <?php while ($usuario = $result_usuarios->fetch_assoc()): ?>
                                 <option value="<?= $usuario['id'] ?>">
@@ -93,6 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 </option>
                             <?php endwhile; ?>
                         <?php endif; ?>
+
                     </select>
                 </div>
 
@@ -103,8 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         name="nome_trem"
                         class="form-control"
                         maxlength="100"
-                        required
-                    >
+                        required>
                 </div>
 
                 <div class="mb-3">
@@ -114,8 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         name="destino_trem"
                         class="form-control"
                         maxlength="100"
-                        required
-                    >
+                        required>
                 </div>
 
                 <div class="mb-3">
@@ -124,8 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         type="time"
                         name="horario_partida"
                         class="form-control"
-                        required
-                    >
+                        required>
                 </div>
 
                 <div class="mb-3">
@@ -134,8 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         type="time"
                         name="horario_chegada"
                         class="form-control"
-                        required
-                    >
+                        required>
                 </div>
 
                 <button type="submit" class="btn w-100 botao_brilhante fundo_azul color-white">
@@ -147,7 +150,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </a>
 
             </form>
+
         </div>
+
     </main>
 
 </body>
