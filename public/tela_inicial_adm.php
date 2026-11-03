@@ -61,7 +61,7 @@ if (isset($_SESSION['usuario_id'])) {
             data-cidade="<?= htmlspecialchars($cidadeClima, ENT_QUOTES, 'UTF-8') ?>"
             data-uf="<?= htmlspecialchars($ufClima, ENT_QUOTES, 'UTF-8') ?>">
 
-<<<<<<< HEAD
+
             <h2 class="text-center mb-4">Clima da sua cidade</h2>
 
             <div id="conteudo-clima" class="text-center">
@@ -89,7 +89,7 @@ if (isset($_SESSION['usuario_id'])) {
         </div>
 
     </main>
-=======
+
         <div class="tres_colunas">   
 
             <a class="text-decoration-none" href="tela_inicial.php">
@@ -260,7 +260,7 @@ if (isset($_SESSION['usuario_id'])) {
         </div>
 
    </main>
->>>>>>> 7d66064df0aada6831a5c672abdb897233b60760
+
 
     <script src="../scripts/links_paginas.js"></script>
 
