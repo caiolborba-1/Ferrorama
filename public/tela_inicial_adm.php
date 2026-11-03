@@ -61,6 +61,7 @@ if (isset($_SESSION['usuario_id'])) {
             data-cidade="<?= htmlspecialchars($cidadeClima, ENT_QUOTES, 'UTF-8') ?>"
             data-uf="<?= htmlspecialchars($ufClima, ENT_QUOTES, 'UTF-8') ?>">
 
+<<<<<<< HEAD
             <h2 class="text-center mb-4">Clima da sua cidade</h2>
 
             <div id="conteudo-clima" class="text-center">
@@ -88,6 +89,178 @@ if (isset($_SESSION['usuario_id'])) {
         </div>
 
     </main>
+=======
+        <div class="tres_colunas">   
+
+            <a class="text-decoration-none" href="tela_inicial.php">
+                <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
+                
+                    <div class="">
+                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_trem.png" alt="simbolo_trem">
+
+                        <div class="justify-content-center">
+                            <div class="mini_botao fundo_azul color-white justify-content-center">
+                    
+                            <h4>TRENS</h4>
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+                </button>
+            </a>
+
+            
+            <a class="text-decoration-none" href="visualizar_rotas.php">
+                <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
+                
+                    <div class="">
+                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_rotas.png" alt="simbolo_rotas">
+
+                        <div class="justify-content-center">
+                            <div class="mini_botao fundo_azul color-white justify-content-center">
+                    
+                            <h4>ROTAS</h4>
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+                </button>
+            </a>
+            
+            <a class="text-decoration-none" href="visualizar_sensores.php">
+                <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
+                    
+                    <div class="">
+                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_sensores.png" alt="simbolo_sensores">
+
+                        <div class="justify-content-center">
+                            <div class="mini_botao fundo_azul color-white justify-content-center">
+                    
+                            <h4>SENSORES</h4>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </button>
+            </a>
+            
+
+        </div>
+
+        <br> <br>
+
+        <div class="tres_colunas">   
+            
+            <a class="text-decoration-none" href="tela_dos_trens_adm.php">   
+                <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
+                    
+                    <div class="">
+                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_adicionar_trem.png" alt="simbolo_trem">
+
+                        <div class="justify-content-center">
+                            <div class="mini_botao fundo_azul color-white justify-content-center align-items-center">
+                    
+                            <h6 class="align-items-center">ADICIONAR TRENS</h6>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </button>
+            </a>
+
+            <a class="text-decoration-none" href="cadastro_rotas.php">
+                <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
+                    
+                    <div class="">
+                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_adicionar_rotas.png" alt="simbolo_rotas">
+
+                        <div class="justify-content-center">
+                            <div class="mini_botao fundo_azul color-white justify-content-center">
+                    
+                            <h6>ADICIONAR ROTAS</h6>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </button>
+            </a>
+            
+            <a class="text-decoration-none" href="cadastrar_sensor.php">
+                <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
+                    
+                    <div class="">
+                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_adicionar_sensores.png" alt="simbolo_sensores">
+
+                        <div class="justify-content-center">
+                            <div class="mini_botao fundo_azul color-white justify-content-center">
+                    
+                            <h7>ADICIONAR SENSORES</h7>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </button>
+            </a>
+            
+
+        </div>
+
+        <br> <br>
+
+        <div class="duas_colunas"> 
+            
+            <div class="justify-content-center">
+                <a class="text-decoration-none" href="visualizar_cadastro.php">
+                    <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
+                    
+                    <div class="">
+                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_usuarios.png" alt="simbolo_sensores">
+
+                        <div class="justify-content-center">
+                            <div class="mini_botao fundo_azul color-white justify-content-center">
+                    
+                            <h4>USUARIOS</h4>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </button>
+                </a>
+                
+            </div>
+
+            <div class="justify-content-center">
+                
+                <a class="text-decoration-none" href="adicionar_usuario.php">
+                    <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
+                    
+                    <div class="">
+                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_adicionar_usuarios.png" alt="simbolo_sensores">
+
+                        <div class="justify-content-center">
+                            <div class="mini_botao fundo_azul color-white justify-content-center">
+                    
+                            <h7>ADICIONAR USUARIOS</h7>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </button>
+                </a>
+                
+            </div>
+        </div>
+
+   </main>
+>>>>>>> 7d66064df0aada6831a5c672abdb897233b60760
 
     <script src="../scripts/links_paginas.js"></script>
 
