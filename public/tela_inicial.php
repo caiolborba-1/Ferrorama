@@ -116,13 +116,13 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
                             <?= htmlspecialchars($trem['nome_trem'], ENT_QUOTES, 'UTF-8') ?>
                         </strong>
 
-                        <br><br>
+                        <br>
 
                         <div>
                             Destino:
                             <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>
 
-                            <br><br>
+                            <br>
 
                             <?= htmlspecialchars(substr($trem['horario_partida'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
                             -
