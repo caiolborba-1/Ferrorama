@@ -158,7 +158,7 @@ require_once __DIR__ . '/proteger_adm.php';
 
         <br> <br>
 
-        <div class="duas_colunas"> 
+        <div class="tres_colunas"> 
             
             <div class="justify-content-center">
                 <a class="text-decoration-none" href="visualizar_cadastro.php">

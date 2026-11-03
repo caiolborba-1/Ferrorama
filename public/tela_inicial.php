@@ -33,23 +33,6 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
     <script src="../scripts/relogio_navbar.js" defer></script>
 
     <style>
-        .duas_colunas {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 40px;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 10px 20px;
-        }
-
-        .duas_colunas .botao {
-            width: 100%;
-            min-height: 150px;
-            padding: 20px;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            overflow-wrap: anywhere;
-        }
 
         .tela_inicial {
             text-align: center;
@@ -93,6 +76,8 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
             </div>
         <?php endif; ?>
 
+        <?php if ($cargo === 'usuario'): ?>
+
         <div class="tela_inicial">
             <h1>Bem-vindo!</h1>
         </div>
@@ -100,6 +85,42 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
         <div class="tela_inicial">
             <h2>Veja os Horários dos Trens</h2>
         </div>
+        
+        <?php endif; ?>
+
+
+        <?php if ($cargo === 'adm'): ?>
+
+        <div class="tela_inicial">
+            <h2>Veja os Horários dos Trens</h2>
+        </div>
+        
+        <?php endif; ?>
+
+            <div class="d-flex justify-content-center">
+        <?php if ($cargo === 'adm'): ?>
+
+            <div class="acoes_adm_trens">
+
+                <a href="tela_dos_trens_adm.php" class="btn botao_brilhante fundo_azul color-white">
+                   </i><strong>Adicionar Trem</strong>
+                </a>
+
+                <a href="visualizar_trens.php" class="btn cor_cinza color-white">
+                    <strong>Visualizar Trens</strong>
+                </a>
+
+                <a href="cadastro_rotas.php" class="btn botao_brilhante fundo_azul color-white">
+                    <strong>Adicionar Rota</strong>
+                </a>
+
+                <a href="visualizar_rotas.php" class="btn cor_cinza color-white">
+                    <strong>Visualizar Rotas</strong>
+                </a>
+
+            </div>
+
+        <?php endif; ?>
 
         <?php if ($resultado && mysqli_num_rows($resultado) > 0): ?>
 
@@ -143,29 +164,7 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
 
         <?php endif; ?>
 
-        <?php if ($cargo === 'adm'): ?>
-
-            <div class="acoes_adm">
-
-                <a href="tela_dos_trens_adm.php" class="btn botao_brilhante cor_amarela color-white">
-                    <strong>Adicionar Trem</strong>
-                </a>
-
-                <a href="visualizar_trens.php" class="btn cor_cinza borda-animada color-white">
-                    <strong>Trens Cadastrados</strong>
-                </a>
-
-                <a href="cadastro_rotas.php" class="btn botao_brilhante cor_amarela color-white">
-                    <strong>Cadastrar Rota</strong>
-                </a>
-
-                <a href="visualizar_rotas.php" class="btn cor_cinza borda-animada color-white">
-                    <strong>Rotas Cadastradas</strong>
-                </a>
-
-            </div>
-
-        <?php endif; ?>
+        </div>
 
     </main>
 
