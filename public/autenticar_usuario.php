@@ -1,12 +1,13 @@
 
 <?php
+
 session_set_cookie_params(2592000);
 session_start();
 
 require_once '../infra/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../index.php');
+    header('Location: ../login.php');
     exit();
 }
 
@@ -15,7 +16,7 @@ $senha = $_POST['senha_usuario'] ?? '';
 
 if ($login === '' || $senha === '') {
     $_SESSION['login_erro'] = 'Preencha todos os campos.';
-    header('Location: ../index.php');
+    header('Location: ../login.php');
     exit();
 }
 
@@ -29,7 +30,7 @@ $stmt = $conn->prepare($sql);
 
 if (!$stmt) {
     $_SESSION['login_erro'] = 'Erro ao consultar o banco de dados.';
-    header('Location: ../index.php');
+    header('Location: ../login.php');
     exit();
 }
 
@@ -43,13 +44,13 @@ $stmt->close();
 
 if (!$usuario || !password_verify($senha, $usuario['senha_usuario'])) {
     $_SESSION['login_erro'] = 'Usuário/e-mail ou senha incorretos.';
-    header('Location:../index.php');
+    header('Location: ../login.php');
     exit();
 }
 
 if (!in_array($usuario['cargo'], ['adm', 'usuario'], true)) {
     $_SESSION['login_erro'] = 'Cargo de usuário inválido.';
-    header('Location: ../index.php');
+    header('Location: ../login.php');
     exit();
 }
 
@@ -68,4 +69,5 @@ if ($usuario['cargo'] === 'adm') {
 }
 
 exit();
+
 ?>

@@ -22,9 +22,11 @@ if ($cargo === 'adm') {
         align-items: center;
         width: 100%;
         padding: 8px 18px;
+        position: relative;
         gap: 10px;
     }
 
+    /* Logo */
     .cabecalho > a:first-child {
         flex-shrink: 0;
     }
@@ -34,26 +36,38 @@ if ($cargo === 'adm') {
         margin: 0;
     }
 
+    /* Botões do administrador */
     .grupo_adm {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 14px;
-        flex: 1;
+        gap: 28px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .grupo_adm .botao_cabecalho {
-        padding: 8px 12px;
+        padding: 9px 16px;
         white-space: nowrap;
     }
 
+    /* Perfil */
     .botao_perfil {
-        margin-left: 10px;
+        margin-left: auto;
+        margin-right: 45px;
         flex-shrink: 0;
     }
 
+    /* Espaçamento do usuário */
     .espacamento_nav {
         flex: 1;
+    }
+
+    /* Botão voltar do usuário */
+    .botao_voltar {
+        margin-left: 25px;
+        flex-shrink: 0;
     }
 
     @media (max-width: 900px) {
@@ -64,16 +78,25 @@ if ($cargo === 'adm') {
         }
 
         .grupo_adm {
+            position: static;
+            transform: none;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 16px;
+            order: 3;
+            width: 100%;
         }
 
         .espacamento_nav {
             display: none;
         }
 
+        .botao_voltar {
+            margin-left: 10px;
+        }
+
         .botao_perfil {
-            margin-left: 0;
+            margin-left: auto;
+            margin-right: 20px;
         }
     }
 </style>
@@ -139,11 +162,11 @@ if ($cargo === 'adm') {
 
     <?php elseif ($cargo === 'usuario'): ?>
 
-        <!-- BOTÃO VOLTAR -->
+        <!-- VOLTAR DO USUÁRIO -->
         <button
             type="button"
             onclick="voltarPagina()"
-            class="botao_cabecalho afundar"
+            class="botao_cabecalho afundar botao_voltar"
         >
             <h5><b>VOLTAR</b></h5>
         </button>
