@@ -54,6 +54,7 @@ $resultado = mysqli_query($conn, $sql);
             justify-content: center;
             align-items: center;
             text-align: center;
+            gap: 10px;
 
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             overflow-wrap: anywhere;
@@ -71,6 +72,20 @@ $resultado = mysqli_query($conn, $sql);
         .duas_colunas .botao:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .duas_colunas .botao strong {
+            font-size: 20px;
+            display: block;
+        }
+
+        .informacoes_trem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
         }
 
         .tela_inicial {
@@ -136,16 +151,20 @@ $resultado = mysqli_query($conn, $sql);
                             <?= htmlspecialchars($trem['nome_trem'], ENT_QUOTES, 'UTF-8') ?>
                         </strong>
 
-                        <br><br>
+                        <div class="informacoes_trem">
 
-                        Destino:
-                        <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>
+                            <span>
+                                Destino:
+                                <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>
+                            </span>
 
-                        <br><br>
+                            <span>
+                                <?= htmlspecialchars(substr($trem['horario_partida'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
+                                -
+                                <?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
+                            </span>
 
-                        <?= htmlspecialchars(substr($trem['horario_partida'], 0, 5)) ?>
-                        -
-                        <?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5)) ?>
+                        </div>
 
                     </button>
 
