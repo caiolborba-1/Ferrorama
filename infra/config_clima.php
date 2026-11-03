@@ -1,0 +1,4 @@
+
+<?php
+
+define('WEATHER_API_KEY', '4217ae4fa6564f28847205436260311UI');

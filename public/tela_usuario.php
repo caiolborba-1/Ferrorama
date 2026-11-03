@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -27,7 +28,10 @@ $resultado = mysqli_query($conn, $sql);
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/styles/styles.css">
+
     <script src="../scripts/relogio_navbar.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="../scripts/clima.js" defer></script>
 
     <style>
         .duas_colunas {
@@ -79,6 +83,19 @@ $resultado = mysqli_query($conn, $sql);
             <h1>Bem-vindo!</h1>
         </div>
 
+        <section
+            id="clima"
+            class="card shadow p-4 mx-auto my-5"
+            style="max-width: 850px;">
+
+            <h2 class="text-center mb-4">Clima da sua cidade</h2>
+
+            <div id="conteudo-clima" class="text-center">
+                Carregando informações do clima...
+            </div>
+
+        </section>
+
         <div class="tela_inicial">
             <h2>Veja os Horários dos Trens</h2>
         </div>
@@ -126,4 +143,3 @@ $resultado = mysqli_query($conn, $sql);
 
 </body>
 </html>
-```
