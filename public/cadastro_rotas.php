@@ -105,7 +105,7 @@ $trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
     <?php include "navbar.php"; ?>
 
     <main class="container py-5">
-        <div class="card shadow p-4 mx-auto fundo_preto borda-animada" style="max-width: 600px;">
+        <div class="card shadow p-4 mx-auto fundo_branco" style="max-width: 600px;">
             <h2 class="text-center mb-4">Cadastro de Rotas</h2>
 
             <?php if ($mensagem !== ''): ?>

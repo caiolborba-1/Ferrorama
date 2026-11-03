@@ -19,13 +19,12 @@ body{
 }
 
 .cabecalho {
-    background-color: rgba(0, 0, 0, 0.863)!important;
+    background-color: rgba(1, 14, 88, 0.863)!important;
     height: 80px;
     display: flex;
     justify-content: center;
     gap: 100px;
     align-items: center;
-    color: white;
     position: sticky;
     top: 0px;
     left: 0px;
@@ -88,6 +87,10 @@ body{
     height: 220px;
 }
 
+.logo_index{
+    height: 340px;
+}
+
 .relogio {
     color: #ffffff; 
     font-weight: bold;
@@ -98,8 +101,8 @@ body{
 
 .botao{
     appearance: none;
-    background-color: #0d0d0d;
-    border: 2px solid #e2a017;
+    background-color: #ffffff;
+    border: none;
     color: #e2a017;
     font-weight: bold;
     text-transform: uppercase;
@@ -121,7 +124,7 @@ body{
 }
 
 .botao:hover{
-    background-color: rgba(78, 78, 69, 0.863);
+    background-color: rgba(229, 229, 230, 0.863);
     cursor: pointer;
 }
 
@@ -130,12 +133,10 @@ body{
 }
 
 body{
-    background: linear-gradient(180deg, #0a0a0a 0%, #2e2e2e 100%);
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: white;
 }
 
 .display_flex{
@@ -675,11 +676,7 @@ appearance: none;
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    width: 96%;
-    height: 77%;  
-    margin-top: 150px;
-    margin-left: 1%;
+    box-shadow: 0 4px 12px rgba(1, 14, 88, 0.863);
 }
 
 .fundo_preto{
@@ -690,6 +687,10 @@ appearance: none;
     height: fit-content; 
     margin-left: 1%;
     color: white;
+}
+
+.fundo_azul{
+    background-color: rgba(1, 14, 88, 0.863)!important;
 }
 
 .quadrado_perfil {
@@ -714,7 +715,7 @@ appearance: none;
 .borda-animada {
     box-sizing: border-box; 
     border: 3px solid transparent;
-    border-image: conic-gradient(from var(--angle), rgb(150, 150, 150), rgba(156, 107, 2, 0.7), rgb(146, 146, 146)) 1;
+    border-image: conic-gradient(from var(--angle), rgb(150, 150, 150), rgba(214, 147, 1, 0.7), rgb(146, 146, 146)) 1;
     animation: rodarBorda 4s linear infinite;
     font-family: sans-serif;
 }
@@ -728,7 +729,7 @@ appearance: none;
 .borda_debaixo_animada{
     box-sizing: border-box; 
     border-bottom: 3px solid transparent;
-    border-image: conic-gradient(from var(--angle), rgb(150, 150, 150), rgba(156, 107, 2, 0.7), rgb(146, 146, 146)) 1;
+    border-image: conic-gradient(from var(--angle), rgba(1, 170, 128, 0.863), rgba(255, 174, 0, 0.7), rgba(1, 158, 206, 0.863)) 1;
     animation: rodarBorda 4s linear infinite;
     font-family: sans-serif;
 }

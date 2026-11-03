@@ -37,45 +37,52 @@ $resultado = $conn->query($sql);
     ?>
 
 </header>
-    
-    <div class="fundo_preto borda-animada display_flex">
+    <div>
+
     <div class=" display_flex">
-       
-            <h1>Perfil de Usuario</h1>
-       
+        
+        <h1>Perfil de Usuario</h1>
+        
     </div>
 
-    <br><br>
-
-    <div class="A">
-
-        <img src="../assets/img/usu.png" alt="" class="br">
-
-        <div class="">
-
-            <?php while ($usuario = $resultado->fetch_assoc()) { ?>
-
-                <h1>
-                    Nome: <?php echo htmlspecialchars($usuario["nome_usuario"]); ?>
-                </h1>
-
-                <h1>
-                    E-mail: <?php echo htmlspecialchars($usuario["email_usuario"]); ?>
-                </h1>
-
-                <h1>
-                    Senha:*****
-                </h1>
-
-                 
-
-            <?php } ?>
-                
-            <button class="btn btn-danger b" onclick="window.location.href='logout.php'">Sair da Sessão</button>
+        <div class="fundo_branco display_flex">
         
+        
+        
+
+        <br><br>
+
+        <div class="A">
+
+            <img src="../assets/img/usu.png" alt="" class="br">
+
+            <div class="">
+
+                <?php while ($usuario = $resultado->fetch_assoc()) { ?>
+
+                    <h1>
+                        Nome: <?php echo htmlspecialchars($usuario["nome_usuario"]); ?>
+                    </h1>
+
+                    <h1>
+                        E-mail: <?php echo htmlspecialchars($usuario["email_usuario"]); ?>
+                    </h1>
+
+                    <h1>
+                        Senha:*****
+                    </h1>
+
+                    
+
+                <?php } ?>
+                    
+                <button class="btn btn-danger b" onclick="window.location.href='logout.php'">Sair da Sessão</button>
+            
+            </div>
+
         </div>
 
-    </div>
+        </div>
 
     </div>
 </body>

@@ -42,7 +42,7 @@ $result_usuarios = $conn->query($sql_usuarios);
     <?php include "navbar.php"; ?>
 
     <main class="container py-5">
-        <div class="card shadow p-4 mx-auto fundo_preto borda-animada" style="max-width: 500px;">
+        <div class="card shadow p-4 mx-auto fundo_branco" style="max-width: 500px;">
             <h2 class="text-center mb-4">Editar Trem</h2>
 
             <form action="atualizar_trem.php" method="POST">

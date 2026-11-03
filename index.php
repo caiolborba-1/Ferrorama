@@ -37,13 +37,13 @@ unset($_SESSION['login_erro'], $_SESSION['sucesso_cadastro']);
 <body class="A margin">
 
     <div class="text-center mt-3">
-        <img src="assets/img/nova_logo_amarela.png" alt="Logo Ferrorama">
+        <img class="logo_index" src="assets/img/nova_logo_amarela.png" alt="Logo Ferrorama">
     </div>
 
     <main class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-5">
-                <div class="card shadow p-4 fundo_preto borda-animada">
+                <div class="card shadow p-4 fundo_branco">
 
                     <h2 class="text-center mb-4">Entrar no Ferrorama</h2>
 
@@ -91,7 +91,7 @@ unset($_SESSION['login_erro'], $_SESSION['sucesso_cadastro']);
                             >
                         </div>
 
-                        <button type="submit" class="btn botao_brilhante cor_amarela color-white w-100">
+                        <button type="submit" class="btn botao_brilhante fundo_azul color-white w-100">
                             Entrar
                         </button>
 

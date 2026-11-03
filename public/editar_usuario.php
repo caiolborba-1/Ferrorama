@@ -46,7 +46,7 @@ if (!$usuario) {
 
         <br><br><br>
 
-        <div class="card shadow p-4 mx-auto fundo_preto borda-animada" style="max-width: 500px;">
+        <div class="card shadow p-4 mx-auto fundo_branco" style="max-width: 500px;">
 
             <h2 class="text-center mb-4">
                 Editando o usuário <?= htmlspecialchars($usuario['nome_usuario']) ?>!

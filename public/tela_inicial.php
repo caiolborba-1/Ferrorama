@@ -81,7 +81,7 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
 
     <?php include "navbar.php"; ?>
 
-    <main class="container-fluid py-4 color-white">
+    <main class="container-fluid py-4">
 
         <?php if ($mensagem !== ''): ?>
             <div class="alert alert-success text-center">
@@ -105,7 +105,7 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
 
                     <button
                         type="button"
-                        class="botao"
+                        class="botao fundo_branco"
                         onclick="location.href='tela_informacoes_trem.php?id=<?= (int) $trem['id'] ?>'">
 
                         <strong>
@@ -114,7 +114,7 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
 
                         <br>
 
-                        <div class="color-white">
+                        <div class="">
                             Destino: <?= htmlspecialchars($trem['destino_trem']) ?>
 
                         <br>
