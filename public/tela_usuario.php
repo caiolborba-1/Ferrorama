@@ -47,9 +47,30 @@ $resultado = mysqli_query($conn, $sql);
         .duas_colunas .botao {
             width: 100%;
             min-height: 150px;
-            padding: 15px;
+            padding: 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             overflow-wrap: anywhere;
+            word-break: break-word;
+
+            background-color: #fff;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .duas_colunas .botao:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
         .tela_inicial {
@@ -112,14 +133,15 @@ $resultado = mysqli_query($conn, $sql);
                         onclick="location.href='tela_informacoes_trem.php?id=<?= (int)$trem['id'] ?>'">
 
                         <strong>
-                            <?= htmlspecialchars($trem['nome_trem']) ?>
+                            <?= htmlspecialchars($trem['nome_trem'], ENT_QUOTES, 'UTF-8') ?>
                         </strong>
 
-                        <br>
+                        <br><br>
 
-                        Destino: <?= htmlspecialchars($trem['destino_trem']) ?>
+                        Destino:
+                        <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>
 
-                        <br>
+                        <br><br>
 
                         <?= htmlspecialchars(substr($trem['horario_partida'], 0, 5)) ?>
                         -
