@@ -10,217 +10,219 @@ require_once __DIR__ . '/proteger_adm.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Início de Administrador</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/styles/styles.css">
+
     <script src="../scripts/relogio_navbar.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="../scripts/clima.js" defer></script>
 
-    <title>Início de Administrador</title>
+    <style>
+        .secao_clima {
+            max-width: 850px;
+            margin: 40px auto;
+        }
+
+        .secao_clima h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .secao_clima {
+                margin: 30px 15px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
     <header>
-
-    <?php include 'navbar.php' ?>
-
+        <?php include 'navbar.php'; ?>
     </header>
 
-   <main class="main_rotas container mt-5">
-
-        <br>
+    <main class="main_rotas container mt-5">
 
         <div class="tela_inicial">
             <h1>Bem-vindo adm!</h1>
         </div>
 
-        <br><br>
+        <!-- CLIMA -->
+        <section
+            id="clima"
+            class="card shadow p-4 secao_clima">
 
-        <div class="tres_colunas">   
+            <h2>Clima da sua cidade</h2>
+
+            <div id="conteudo-clima" class="text-center">
+                Carregando informações do clima...
+            </div>
+
+        </section>
+
+        <!-- PRIMEIRA LINHA -->
+        <div class="tres_colunas">
 
             <a class="text-decoration-none" href="tela_inicial.php">
-                <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
-                
-                    <div class="">
-                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_trem.png" alt="simbolo_trem">
+                <button type="button" class="botao_inicial_adm justify-content-center align-items-center">
+
+                    <div>
+                        <img class="logo_botao_inicial_adm" src="../assets/img/simbolo_trem.png" alt="simbolo_trem">
 
                         <div class="justify-content-center">
                             <div class="mini_botao fundo_azul color-white justify-content-center">
-                    
-                            <h4>TRENS</h4>
+                                <h4>TRENS</h4>
                             </div>
                         </div>
-                        
                     </div>
-                
+
                 </button>
             </a>
 
-            
             <a class="text-decoration-none" href="visualizar_rotas.php">
-                <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
-                
-                    <div class="">
-                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_rotas.png" alt="simbolo_rotas">
+                <button type="button" class="botao_inicial_adm justify-content-center align-items-center">
+
+                    <div>
+                        <img class="logo_botao_inicial_adm" src="../assets/img/simbolo_rotas.png" alt="simbolo_rotas">
 
                         <div class="justify-content-center">
                             <div class="mini_botao fundo_azul color-white justify-content-center">
-                    
-                            <h4>ROTAS</h4>
+                                <h4>ROTAS</h4>
                             </div>
                         </div>
-                        
                     </div>
-                
+
                 </button>
             </a>
-            
+
             <a class="text-decoration-none" href="visualizar_sensores.php">
-                <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
-                    
-                    <div class="">
-                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_sensores.png" alt="simbolo_sensores">
+                <button type="button" class="botao_inicial_adm justify-content-center align-items-center">
+
+                    <div>
+                        <img class="logo_botao_inicial_adm" src="../assets/img/simbolo_sensores.png" alt="simbolo_sensores">
 
                         <div class="justify-content-center">
                             <div class="mini_botao fundo_azul color-white justify-content-center">
-                    
-                            <h4>SENSORES</h4>
+                                <h4>SENSORES</h4>
                             </div>
                         </div>
-                        
                     </div>
-                    
+
                 </button>
             </a>
-            
 
         </div>
 
-        <br> <br>
+        <br><br>
 
-        <div class="tres_colunas">   
-            
-            <a class="text-decoration-none" href="tela_dos_trens_adm.php">   
-                <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
-                    
-                    <div class="">
-                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_adicionar_trem.png" alt="simbolo_trem">
+        <!-- SEGUNDA LINHA -->
+        <div class="tres_colunas">
+
+            <a class="text-decoration-none" href="tela_dos_trens_adm.php">
+                <button type="button" class="botao_inicial_adm justify-content-center align-items-center">
+
+                    <div>
+                        <img class="logo_botao_inicial_adm" src="../assets/img/simbolo_adicionar_trem.png" alt="simbolo_trem">
 
                         <div class="justify-content-center">
                             <div class="mini_botao fundo_azul color-white justify-content-center align-items-center">
-                    
-                            <h6 class="align-items-center">ADICIONAR TRENS</h6>
+                                <h6>ADICIONAR TRENS</h6>
                             </div>
                         </div>
-                        
                     </div>
-                    
+
                 </button>
             </a>
 
             <a class="text-decoration-none" href="cadastro_rotas.php">
-                <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
-                    
-                    <div class="">
-                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_adicionar_rotas.png" alt="simbolo_rotas">
+                <button type="button" class="botao_inicial_adm justify-content-center align-items-center">
+
+                    <div>
+                        <img class="logo_botao_inicial_adm" src="../assets/img/simbolo_adicionar_rotas.png" alt="simbolo_rotas">
 
                         <div class="justify-content-center">
                             <div class="mini_botao fundo_azul color-white justify-content-center">
-                    
-                            <h6>ADICIONAR ROTAS</h6>
+                                <h6>ADICIONAR ROTAS</h6>
                             </div>
                         </div>
-                        
                     </div>
-                    
+
                 </button>
             </a>
-            
+
             <a class="text-decoration-none" href="cadastrar_sensor.php">
-                <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
-                    
-                    <div class="">
-                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_adicionar_sensores.png" alt="simbolo_sensores">
+                <button type="button" class="botao_inicial_adm justify-content-center align-items-center">
+
+                    <div>
+                        <img class="logo_botao_inicial_adm" src="../assets/img/simbolo_adicionar_sensores.png" alt="simbolo_sensores">
 
                         <div class="justify-content-center">
                             <div class="mini_botao fundo_azul color-white justify-content-center">
-                    
-                            <h7>ADICIONAR SENSORES</h7>
+                                <h6>ADICIONAR SENSORES</h6>
                             </div>
                         </div>
-                        
                     </div>
-                    
+
                 </button>
             </a>
-            
 
         </div>
 
-        <br> <br>
+        <br><br>
 
-        <div class="tres_colunas"> 
-            
+        <!-- TERCEIRA LINHA -->
+        <div class="tres_colunas">
+
             <div class="justify-content-center">
                 <a class="text-decoration-none" href="visualizar_cadastro.php">
-                    <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
-                    
-                    <div class="">
-                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_usuarios.png" alt="simbolo_sensores">
+                    <button type="button" class="botao_inicial_adm justify-content-center align-items-center">
 
-                        <div class="justify-content-center">
-                            <div class="mini_botao fundo_azul color-white justify-content-center">
-                    
-                            <h4>USUARIOS</h4>
+                        <div>
+                            <img class="logo_botao_inicial_adm" src="../assets/img/simbolo_usuarios.png" alt="simbolo_usuarios">
+
+                            <div class="justify-content-center">
+                                <div class="mini_botao fundo_azul color-white justify-content-center">
+                                    <h4>USUARIOS</h4>
+                                </div>
                             </div>
                         </div>
-                        
-                    </div>
-                    
-                </button>
+
+                    </button>
                 </a>
-                
             </div>
 
             <div class="justify-content-center">
-                
                 <a class="text-decoration-none" href="adicionar_usuario.php">
-                    <button type="button"class="botao_inicial_adm  justify-content-center align-items-center">
-                    
-                    <div class="">
-                        <img class="logo_botao_inicial_adm"  src="../assets/img/simbolo_adicionar_usuarios.png" alt="simbolo_sensores">
+                    <button type="button" class="botao_inicial_adm justify-content-center align-items-center">
 
-                        <div class="justify-content-center">
-                            <div class="mini_botao fundo_azul color-white justify-content-center">
-                    
-                            <h7>ADICIONAR USUARIOS</h7>
+                        <div>
+                            <img class="logo_botao_inicial_adm" src="../assets/img/simbolo_adicionar_usuarios.png" alt="simbolo_usuarios">
+
+                            <div class="justify-content-center">
+                                <div class="mini_botao fundo_azul color-white justify-content-center">
+                                    <h6>ADICIONAR USUARIOS</h6>
+                                </div>
                             </div>
                         </div>
-                        
-                    </div>
-                    
-                </button>
+
+                    </button>
                 </a>
-                
             </div>
+
         </div>
 
-   </main>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+    </main>
 
-   <footer >
+    <br><br><br><br><br>
 
-        <?php include 'rodape.php' ?>
+    <footer>
+        <?php include 'rodape.php'; ?>
+    </footer>
 
-   </footer>
-    
-   
-   <script src="../scripts/links_paginas.js"></script>
+    <script src="../scripts/links_paginas.js"></script>
 
 </body>
-
 </html>
