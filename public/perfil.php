@@ -57,17 +57,24 @@ $resultado = $conn->query($sql);
                     <?php while ($usuario = $resultado->fetch_assoc()) { ?>
 
                         <h1>
-                            Nome: <?php echo htmlspecialchars($usuario["nome_usuario"]); ?>
+                            <b>Nome:</b> <?php echo htmlspecialchars($usuario["nome_usuario"]); ?>
                         </h1>
 
                         <h1>
-                            E-mail: <?php echo htmlspecialchars($usuario["email_usuario"]); ?>
+                            <b>E-mail:</b> <?php echo htmlspecialchars($usuario["email_usuario"]); ?>
                         </h1>
 
                         <h1>
-                            Senha:*****
+                            <b>Senha:</b> *****
                         </h1>
 
+                        <h1>
+                            <b>Cidade:</b> <?php echo htmlspecialchars($usuario["cidade_usuario"]); ?>
+                        </h1>
+
+                         <h1>
+                            <b>Cargo:</b> <?php echo htmlspecialchars($usuario["cargo"]); ?>
+                        </h1>
                     <?php } ?>
                         
                     <button class="btn btn-danger b" onclick="window.location.href='logout.php'">Sair da Sessão</button>

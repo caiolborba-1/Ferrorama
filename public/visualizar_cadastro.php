@@ -38,6 +38,8 @@ $resultado = mysqli_query($conn, $sql);
                     <tr>
                         <th>Nome de Usuário</th>
                         <th>E-mail</th>
+                        <th>Cidade</th>
+                        <th>Cargo</th>
                         <th>Editar</th>
                         <th>Excluir</th>
                     </tr>
@@ -54,6 +56,12 @@ $resultado = mysqli_query($conn, $sql);
 
                                 <td>
                                     <?= htmlspecialchars($usuario['email_usuario']) ?>
+                                </td>
+                                <td>
+                                    <?= htmlspecialchars($usuario['cidade_usuario']) ?>
+                                </td>
+                                <td>
+                                    <?= htmlspecialchars($usuario['cargo']) ?>
                                 </td>
                                 <td>
                                     <a
