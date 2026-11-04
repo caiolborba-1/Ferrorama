@@ -7,7 +7,7 @@ session_start();
 require_once '../infra/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../login.php');
+    header('Location: login.php');
     exit();
 }
 
@@ -16,7 +16,7 @@ $senha = $_POST['senha_usuario'] ?? '';
 
 if ($login === '' || $senha === '') {
     $_SESSION['login_erro'] = 'Preencha todos os campos.';
-    header('Location: ../login.php');
+    header('Location: login.php');
     exit();
 }
 
@@ -30,7 +30,7 @@ $stmt = $conn->prepare($sql);
 
 if (!$stmt) {
     $_SESSION['login_erro'] = 'Erro ao consultar o banco de dados.';
-    header('Location: ../login.php');
+    header('Location: login.php');
     exit();
 }
 
@@ -44,13 +44,13 @@ $stmt->close();
 
 if (!$usuario || !password_verify($senha, $usuario['senha_usuario'])) {
     $_SESSION['login_erro'] = 'Usuário/e-mail ou senha incorretos.';
-    header('Location: ../login.php');
+    header('Location: login.php');
     exit();
 }
 
 if (!in_array($usuario['cargo'], ['adm', 'usuario'], true)) {
     $_SESSION['login_erro'] = 'Cargo de usuário inválido.';
-    header('Location: ../login.php');
+    header('Location: login.php');
     exit();
 }
 
