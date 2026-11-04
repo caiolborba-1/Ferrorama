@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -28,7 +29,6 @@ $resultado = mysqli_query($conn, $sql);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/styles/styles.css">
 
-    <script src="../scripts/relogio_navbar.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="../scripts/clima.js" defer></script>
 
@@ -62,7 +62,7 @@ $resultado = mysqli_query($conn, $sql);
             background-color: #fff;
             border: none;
             border-radius: 8px;
- 
+
             cursor: pointer;
             transition: 0.3s;
         }
@@ -92,9 +92,54 @@ $resultado = mysqli_query($conn, $sql);
             padding: 0 15px;
         }
 
+        /* Card do clima */
+        #clima {
+            width: 100%;
+            max-width: 750px;
+            margin: 20px auto;
+        }
+
+        #clima h2 {
+            font-size: 22px;
+        }
+
+        #conteudo-clima .clima-detalhes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        #conteudo-clima .clima-icone img {
+            width: 65px;
+            height: 65px;
+        }
+
+        #conteudo-clima .clima-temperatura {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        #conteudo-clima .clima-condicao {
+            font-size: 17px;
+        }
+
+        #conteudo-clima .clima-item {
+            font-size: 14px;
+        }
+
         @media (max-width: 768px) {
             .duas_colunas {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px;
+            }
+
+            #clima {
+                max-width: 95%;
+            }
+
+            #conteudo-clima .clima-detalhes {
                 gap: 15px;
             }
         }
@@ -119,10 +164,9 @@ $resultado = mysqli_query($conn, $sql);
 
         <section
             id="clima"
-            class="card shadow p-4 mx-auto my-5"
-            style="max-width: 850px;">
+            class="card shadow p-3 mx-auto my-5">
 
-            <h2 class="text-center mb-4">Clima da sua cidade</h2>
+            <h2 class="text-center mb-2">Clima da sua cidade</h2>
 
             <div id="conteudo-clima" class="text-center">
                 Carregando informações do clima...
@@ -140,7 +184,10 @@ $resultado = mysqli_query($conn, $sql);
 
                 <?php while ($trem = mysqli_fetch_assoc($resultado)): ?>
 
-                    <button type="button" class="botao fundo_branco" onclick="location.href='tela_informacoes_trem.php?id=<?= (int)$trem['id'] ?>'">
+                    <button
+                        type="button"
+                        class="botao fundo_branco"
+                        onclick="location.href='tela_informacoes_trem.php?id=<?= (int)$trem['id'] ?>'">
 
                         <strong>
                             <?= htmlspecialchars($trem['nome_trem'], ENT_QUOTES, 'UTF-8') ?>
@@ -176,15 +223,16 @@ $resultado = mysqli_query($conn, $sql);
         <?php endif; ?>
 
     </main>
-              <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   
-    <footer>
 
-        <?php include 'rodape.php' ?>
-        </footer>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer>
+        <?php include 'rodape.php'; ?>
+    </footer>
+
 </body>
 </html>
