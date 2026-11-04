@@ -154,7 +154,7 @@ $trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
                         <input type="datetime-local" name="data_criacao" class="form-control" required>
                     </div>
 
-                    <button type="submit" class="btn botao_brilhante cor_amarela color-white w-100">
+                    <button type="submit" class="btn botao_brilhante cor_amarela fundo_azul color-white w-100">
                         Cadastrar Rota
                     </button>
                 </form>
@@ -168,6 +168,9 @@ $trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
                 Visualizar Rotas
             </a>
         </div>
+
+        <br><br>
+
     </main>
 
     <footer>
