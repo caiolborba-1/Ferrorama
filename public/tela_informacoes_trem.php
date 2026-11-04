@@ -76,9 +76,19 @@ if (!$trem) {
                 <?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
             </p>
 
-            <a href="tela_usuario.php" class="btn btn-primary">
-                Voltar
-            </a>
+            <?php if ($cargo === 'usuario'): ?>
+
+                <a href="tela_usuario.php" class="btn btn-primary">
+                    Voltar
+                </a>
+
+            <?php else: ?>
+
+                <a href="tela_inicial.php" class="btn btn-primary">
+                    Voltar
+                </a>
+
+            <?php endif; ?>
 
         </div>
 
