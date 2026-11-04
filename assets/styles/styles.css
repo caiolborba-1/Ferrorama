@@ -860,6 +860,15 @@ appearance: none;
     left: 150%; 
   }
 }
+.main_rotas_tela_usuario {
+        min-height: 48vh !important; 
+        padding-bottom: 0px; 
+      }
+.main_rotas_tela_dos_trens_adm {
+        min-height: 78vh !important; 
+        padding-bottom: 0px; 
+      }
+
 .main_rotas_perfil {
         min-height: 70vh !important; 
         padding-bottom: 0px; 

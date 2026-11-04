@@ -48,7 +48,7 @@ $trens = $conn->query(
 
     <?php include "navbar.php"; ?>
 
-    <main class="container py-5">
+    <main class="main_rotas_tela_dos_trens_adm container mt-5">
         <div class="card shadow p-4 mx-auto fundo_branco" style="max-width: 600px;">
 
             <h2 class="text-center mb-4">Editar Rota</h2>

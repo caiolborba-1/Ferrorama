@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <?php include "navbar.php"; ?>
 
-    <main class="container py-5">
+    <main class="main_rotas_tela_dos_trens_adm container mt-5">
 
         <div class="card shadow p-4 mx-auto fundo_branco" style="max-width: 500px;">
 

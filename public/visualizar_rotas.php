@@ -32,7 +32,7 @@ $resultado = $conn->query($sql);
 
     <?php include "navbar.php"; ?>
 
-    <main class="main_rotas_visualizar_trens container mt-5">
+    <main class="main_rotas_tela_dos_trens_adm container mt-5">
 
         <h1 class="text-center mb-4">Rotas Cadastradas</h1>
 

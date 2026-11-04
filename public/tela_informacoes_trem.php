@@ -51,7 +51,7 @@ if (!$trem) {
 
     <?php include 'navbar.php'; ?>
 
-    <div class="container mt-5">
+    <div class="main_rotas_tela_dos_trens_adm container mt-5">
 
         <h1>Informações do Trem</h1>
 
