@@ -18,7 +18,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 cache: 'no-store'
             });
 
-            const dados = await resposta.json();
+            const texto = await resposta.text();
+
+            let dados;
+
+            try {
+                dados = JSON.parse(texto);
+            } catch (erro) {
+                console.error('Resposta recebida do PHP:', texto);
+
+                throw new Error(
+                    'O PHP retornou uma resposta inválida. Verifique o Console (F12).'
+                );
+            }
 
             if (!resposta.ok) {
                 throw new Error(
@@ -26,24 +38,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 );
             }
 
-            if (!dados.cidade || dados.temperatura === undefined) {
+            if (
+                !dados.cidade ||
+                dados.temperatura === undefined ||
+                !dados.icone
+            ) {
                 throw new Error('A API não retornou os dados esperados.');
             }
 
             conteudo.innerHTML = `
-                <h4></h4>
+                <h4 class="mb-2"></h4>
 
                 <div class="clima-icone">
-                    <img
-                        alt=""
-                        width="100"
-                        height="100"
-                    >
+                    <img alt="" width="100" height="100">
                 </div>
 
                 <div class="clima-temperatura"></div>
 
-                <h5></h5>
+                <h5 class="clima-condicao"></h5>
 
                 <div class="clima-detalhes">
 
@@ -59,32 +71,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 </div>
 
-                <p class="text-muted mt-3 mb-0"></p>
+                <p class="clima-atualizacao text-muted mt-3 mb-0"></p>
 
                 <p class="text-muted mb-0">
                     Informações fornecidas pela WeatherAPI.
                 </p>
             `;
 
-            const elementos = conteudo.children;
-
-            elementos[0].textContent = `${dados.cidade} - ${dados.estado}`;
+            conteudo.querySelector('h4').textContent =
+                `${dados.cidade} - ${dados.estado}`;
 
             const imagem = conteudo.querySelector('.clima-icone img');
+
             imagem.src = 'https:' + dados.icone;
             imagem.alt = dados.condicao;
 
             conteudo.querySelector('.clima-temperatura').textContent =
                 `${Math.round(dados.temperatura)}°C`;
 
-            elementos[2].textContent = dados.condicao;
+            conteudo.querySelector('.clima-condicao').textContent =
+                dados.condicao;
 
             const detalhes = conteudo.querySelectorAll('.clima-item p');
 
-            detalhes[0].textContent = `${Math.round(dados.sensacao)}°C`;
-            detalhes[1].textContent = `${dados.umidade}%`;
+            detalhes[0].textContent =
+                `${Math.round(dados.sensacao)}°C`;
 
-            elementos[4].textContent =
+            detalhes[1].textContent =
+                `${dados.umidade}%`;
+
+            conteudo.querySelector('.clima-atualizacao').textContent =
                 `Última atualização: ${dados.atualizacao}`;
 
         } catch (erro) {
