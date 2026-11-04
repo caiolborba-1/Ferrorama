@@ -93,6 +93,12 @@ $resultado = mysqli_query($conn, $sql);
 
     </main>
 
+      <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
     <footer>
 
         <?php include 'rodape.php' ?>
