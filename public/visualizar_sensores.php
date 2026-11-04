@@ -23,8 +23,8 @@ require_once __DIR__ . '/proteger_adm.php';
         <?php include 'navbar.php'; ?>
     </header>
 
-    <main class="container-fluid py-4">
-
+    <main class="main_rotas_sensores container-m5">
+        <br><br><br>
         <div class="text-center mb-4">
             <h1><b>SENSORES</b></h1>
         </div>

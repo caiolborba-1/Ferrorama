@@ -860,6 +860,14 @@ appearance: none;
     left: 150%; 
   }
 }
+.main_rotas_velocidade {
+        min-height: 90vh !important; 
+        padding-bottom: 0px; 
+      }
+.main_rotas_sensores {
+        min-height: 82vh !important; 
+        padding-bottom: 0px; 
+      }
 .main_rotas_tela_usuario {
         min-height: 48vh !important; 
         padding-bottom: 0px; 
