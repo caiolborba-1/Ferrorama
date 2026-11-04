@@ -206,6 +206,11 @@ require_once __DIR__ . '/proteger_adm.php';
         </div>
 
    </main>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
 
    <footer>
 

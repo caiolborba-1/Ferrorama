@@ -28,7 +28,7 @@ $resultado = $conn->query($sql);
 
     <?php include "navbar.php"; ?>
 
-    <main class="container py-5">
+    <main class="main_rotas container mt-5">
 
         <h1 class="text-center mb-4">Trens Cadastrados</h1>
 
