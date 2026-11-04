@@ -25,11 +25,20 @@ $resultado = $conn->query($sql);
     <script src="../scripts/relogio_navbar.js" defer></script>
 </head>
 
+<style>
+    /* O ponto (.) indica que estamos estilizando a classe que você colocou no <main> */
+    .main_rotas {
+        min-height: 115vh !important; /* Força o conteúdo a ser maior que a tela (115% da altura da tela) */
+        padding-bottom: 80px; 
+    }
+</style>
+
+
 <body>
 
     <?php include "navbar.php"; ?>
 
-    <main class="container py-5">
+    <main class="main_rotas container mt-5">
 
         <h1 class="text-center mb-4">Rotas Cadastradas</h1>
 
@@ -133,16 +142,7 @@ $resultado = $conn->query($sql);
         </a>
 
     </main>
-    <br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br>
+    
 
     <footer>
 
