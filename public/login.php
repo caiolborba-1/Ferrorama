@@ -37,7 +37,7 @@ unset($_SESSION['login_erro'], $_SESSION['sucesso_cadastro']);
 <body class="A margin">
 
     <div class="text-center mt-3">
-        <img class="logo_index" src="../assets/img/nova_logo_amarela.png" alt="Logo Ferrorama">
+        <img class="logo_index" src="../assets/img/logo colorida fundo branco.png" alt="Logo Ferrorama">
     </div>
 
     <main class="container mt-5">
