@@ -74,7 +74,7 @@ require_once __DIR__ . '/proteger_adm.php';
         <?php include 'navbar.php'; ?>
     </header>
 
-    <main class="main_rotas container mt-5">
+    <main class="main_rotas_tela_dos_trens_adm container mt-5">
 
         <div class="tela_inicial">
             <h1>Bem-vindo adm!</h1>

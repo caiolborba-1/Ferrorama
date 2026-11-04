@@ -156,7 +156,7 @@ $resultado = mysqli_query($conn, $sql);
 
     <?php include "navbar.php"; ?>
 
-    <main class="main_rotas container mt-5">
+    <main class="main_rotas_tela_usuario container mt-5">
 
         <div class="tela_inicial">
             <h1>Bem-vindo!</h1>
