@@ -28,7 +28,7 @@ $resultado = $conn->query($sql);
 </head>
 
 
-<body class="d-flex flex-column min-vh-100 align-items-center justify-content-center">
+<body class="d-flex flex-column min-vh-100 align-items-center justify-content-">
 
 <header class="w-100">
 
