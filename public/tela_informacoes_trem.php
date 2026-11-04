@@ -40,7 +40,14 @@ if (!$trem) {
     <title>Informações do Trem</title>
 </head>
 
-<body>
+
+<style>
+
+
+    
+</style>
+
+<body
 
     <?php include "navbar.php"; ?>
 
@@ -75,13 +82,11 @@ if (!$trem) {
 
         </div>
 
+        
+
     </div>
 
-    <footer>
-
-        <?php include 'rodape.php' ?>
-
-   </footer>
+    
 
 </body>
 

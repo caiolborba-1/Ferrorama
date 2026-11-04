@@ -143,7 +143,7 @@ $resultado = mysqli_query($conn, $sql);
 
                     <button
                         type="button"
-                        class="botao"
+                        class="botao fundo_branco"
                         onclick="location.href='tela_informacoes_trem.php?id=<?= (int)$trem['id'] ?>'">
 
                         <strong>

@@ -28,68 +28,64 @@ $resultado = $conn->query($sql);
 </head>
 
 
-<body class="align-items-center justify-content-center">
+<body class="d-flex flex-column min-vh-100">
 
-<header class="position-absolute">
+<header class="w-100">
 
     <?php
     include "navbar.php";
     ?>
 
 </header>
-    <div>
 
-    <div class=" display_flex">
-        
-        <h1>Perfil de Usuario</h1>
-        
-    </div>
+    <main class="main_rotas container mt-5 ">
+
+        <div class="display_flex">
+            
+            <h1>Perfil de Usuario</h1>
+            
+        </div>
 
         <div class="fundo_branco display_flex">
-        
-        
-        
 
-        <br><br>
+            <div class="A">
 
-        <div class="A">
+                <img src="../assets/img/usu.png" alt="" class="br">
 
-            <img src="../assets/img/usu.png" alt="" class="br">
+                <div>
 
-            <div class="">
+                    <?php while ($usuario = $resultado->fetch_assoc()) { ?>
 
-                <?php while ($usuario = $resultado->fetch_assoc()) { ?>
+                        <h1>
+                            Nome: <?php echo htmlspecialchars($usuario["nome_usuario"]); ?>
+                        </h1>
 
-                    <h1>
-                        Nome: <?php echo htmlspecialchars($usuario["nome_usuario"]); ?>
-                    </h1>
+                        <h1>
+                            E-mail: <?php echo htmlspecialchars($usuario["email_usuario"]); ?>
+                        </h1>
 
-                    <h1>
-                        E-mail: <?php echo htmlspecialchars($usuario["email_usuario"]); ?>
-                    </h1>
+                        <h1>
+                            Senha:*****
+                        </h1>
 
-                    <h1>
-                        Senha:*****
-                    </h1>
+                    <?php } ?>
+                        
+                    <button class="btn btn-danger b" onclick="window.location.href='logout.php'">Sair da Sessão</button>
+                
+                </div>
 
-                    
-
-                <?php } ?>
-                    
-                <button class="btn btn-danger b" onclick="window.location.href='logout.php'">Sair da Sessão</button>
-            
             </div>
 
         </div>
 
-        </div>
+    </main>
 
-    </div>
+    <footer class="w-100 mt-auto">
 
-    
+        <?php include "rodape.php"; ?>
+
+    </footer>
 
 </body>
-
-    
 
 </html>

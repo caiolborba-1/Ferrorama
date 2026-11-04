@@ -863,6 +863,6 @@ appearance: none;
 }
 
  .main_rotas {
-        min-height: 115vh !important; 
-        padding-bottom: 70px; 
+        min-height: 90vh !important; 
+        padding-bottom: 0px; 
       }
