@@ -133,6 +133,16 @@ $resultado = $conn->query($sql);
         </a>
 
     </main>
+    <br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br>
 
     <footer>
 
