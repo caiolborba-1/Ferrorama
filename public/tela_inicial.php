@@ -64,6 +64,8 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
     </style>
 </head>
 
+
+
 <body>
 
     <header>
@@ -71,7 +73,7 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
     </header>
     
 
-    <main class="container-fluid py-4">
+    <main class="main_rotas container mt-5">
 
         <?php if ($mensagem !== ''): ?>
             <div class="alert alert-success text-center">

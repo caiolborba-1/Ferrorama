@@ -26,7 +26,7 @@ $resultado = mysqli_query($conn, $sql);
         <?php include "navbar.php"; ?>
     </header>
 
-    <main class="container py-5">
+    <main class="main_rotas container mt-5">
 
         <br><br><br>
 

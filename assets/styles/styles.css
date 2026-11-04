@@ -861,3 +861,8 @@ appearance: none;
     left: 150%; 
   }
 }
+
+ .main_rotas {
+        min-height: 115vh !important; 
+        padding-bottom: 70px; 
+      }

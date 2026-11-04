@@ -17,6 +17,7 @@ require_once __DIR__ . '/proteger_adm.php';
     <title>Início de Administrador</title>
 </head>
 
+
 <body>
 
     <header>
@@ -25,7 +26,7 @@ require_once __DIR__ . '/proteger_adm.php';
 
     </header>
 
-   <main class="container-fluid py-4">
+   <main class="main_rotas container mt-5">
 
         <br>
 
