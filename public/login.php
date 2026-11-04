@@ -102,11 +102,5 @@ unset($_SESSION['login_erro'], $_SESSION['sucesso_cadastro']);
         </div>
     </main>
 
-    <footer>
-
-        <?php include 'rodape.php' ?>
-
-   </footer>
-
 </body>
 </html>
