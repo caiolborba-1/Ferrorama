@@ -62,7 +62,6 @@ $resultado = mysqli_query($conn, $sql);
             background-color: #fff;
             border: none;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 
             cursor: pointer;
             transition: 0.3s;
@@ -141,10 +140,7 @@ $resultado = mysqli_query($conn, $sql);
 
                 <?php while ($trem = mysqli_fetch_assoc($resultado)): ?>
 
-                    <button
-                        type="button"
-                        class="botao fundo_branco"
-                        onclick="location.href='tela_informacoes_trem.php?id=<?= (int)$trem['id'] ?>'">
+                    <button type="button" class="botao fundo_branco" onclick="location.href='tela_informacoes_trem.php?id=<?= (int)$trem['id'] ?>'">
 
                         <strong>
                             <?= htmlspecialchars($trem['nome_trem'], ENT_QUOTES, 'UTF-8') ?>

@@ -47,9 +47,9 @@ if (!$trem) {
     
 </style>
 
-<body
+<body>
 
-    <?php include "navbar.php"; ?>
+    <?php include 'navbar.php'; ?>
 
     <div class="container mt-5">
 
@@ -76,7 +76,7 @@ if (!$trem) {
                 <?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
             </p>
 
-            <a href="tela_inicial.php" class="btn btn-primary">
+            <a href="tela_usuario.php" class="btn btn-primary">
                 Voltar
             </a>
 
@@ -86,7 +86,11 @@ if (!$trem) {
 
     </div>
 
-    
+    <footer>
+
+        <?php include 'rodape.php'; ?>
+
+    </footer>
 
 </body>
 

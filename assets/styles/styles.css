@@ -155,10 +155,9 @@ header {
 }
 
 .botao:hover{
-    background-color: rgba(229, 229, 230, 0.863);
     cursor: pointer;
     transform: translateY(-3px);
-    box-shadow: rgba(1, 14, 88, 0.863);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .botao:active{
