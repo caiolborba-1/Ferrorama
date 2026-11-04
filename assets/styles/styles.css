@@ -42,12 +42,12 @@ header {
 
 .rodape{
 
-    height: 300px;
+    
     background-color: #010e58 !important;
-    gap: 100px;
-    padding: 1rem;
-    flex-shrink: 0; 
-
+    justify-content: space-between;
+    align-items: center;
+    gap: 500px;
+    
 
 }
 
@@ -863,6 +863,42 @@ appearance: none;
 }
 
  .main_rotas {
-        min-height: 76vh !important; 
+        min-height: 74vh !important; 
         padding-bottom: 0px; 
       }
+
+footer {
+     
+     flex-direction: column;
+        text-align: center;
+        position: ;
+        bottom: 0;
+
+ }
+
+
+
+ footer {
+           background-color: #010e58 !important;
+            border-top: 1px solid #24436c;
+            padding: 25px 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+footer img {
+  width: 190px;
+}
+
+
+footer p {
+    color: #d5deeb;
+    margin: 0;
+    text-align: center;
+}
+
+.direitos {
+    font-size: 12px;
+}

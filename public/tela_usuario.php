@@ -112,7 +112,7 @@ $resultado = mysqli_query($conn, $sql);
 
     <?php include "navbar.php"; ?>
 
-    <main class="container-fluid py-4">
+    <main class="main_rotas container mt-5">
 
         <div class="tela_inicial">
             <h1>Bem-vindo!</h1>
@@ -180,6 +180,15 @@ $resultado = mysqli_query($conn, $sql);
         <?php endif; ?>
 
     </main>
+              <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   
+    <footer>
 
+        <?php include 'rodape.php' ?>
+        </footer>
 </body>
 </html>

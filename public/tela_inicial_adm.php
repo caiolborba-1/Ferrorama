@@ -212,7 +212,7 @@ require_once __DIR__ . '/proteger_adm.php';
    <br>
    <br>
 
-   <footer>
+   <footer >
 
         <?php include 'rodape.php' ?>
 
