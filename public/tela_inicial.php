@@ -73,7 +73,7 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
     </header>
     
 
-    <main class="main_rotas container mt-5">
+    <main class="main_rotas_tela_inicial container mt-5">
 
         <?php if ($mensagem !== ''): ?>
             <div class="alert alert-success text-center">

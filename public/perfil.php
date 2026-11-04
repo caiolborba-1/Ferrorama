@@ -28,7 +28,7 @@ $resultado = $conn->query($sql);
 </head>
 
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 align-items-center justify-content-center">
 
 <header class="w-100">
 
@@ -38,7 +38,7 @@ $resultado = $conn->query($sql);
 
 </header>
 
-    <main class="main_rotas container mt-5 ">
+    <main class="main_rotas_perfil container mt-5 ">
 
         <div class="display_flex">
             

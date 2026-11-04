@@ -26,9 +26,9 @@ $resultado = mysqli_query($conn, $sql);
         <?php include "navbar.php"; ?>
     </header>
 
-    <main class="main_rotas container mt-5">
+    <main class="main_rotas_cadastro_trens container mt-1">
 
-        <br><br><br>
+        <br><br><br><br><br>
 
         <h1 class="text-center mb-4">Usuários Cadastrados</h1>
 
@@ -93,11 +93,7 @@ $resultado = mysqli_query($conn, $sql);
 
     </main>
 
-      <br>
-   <br>
-   <br>
-   <br>
-   <br>
+      
 
     <footer>
 

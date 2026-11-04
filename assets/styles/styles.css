@@ -739,6 +739,7 @@ appearance: none;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(1, 14, 88, 0.863);
+    width: fit-content; 
 }
 
 .fundo_preto{
@@ -860,9 +861,28 @@ appearance: none;
     left: 150%; 
   }
 }
+.main_rotas_perfil {
+        min-height: 70vh !important; 
+        padding-bottom: 0px; 
+      }
+
+.main_rotas_cadastro_trens {
+        min-height: 90vh !important; 
+        padding-bottom: 0px; 
+      }
+
+.main_rotas_visualizar_trens {
+        min-height: 78vh !important; 
+        padding-bottom: 0px; 
+      }
+
+.main_rotas_tela_inicial {
+        min-height: 77vh !important; 
+        padding-bottom: 0px; 
+      }
 
  .main_rotas {
-        min-height: 74vh !important; 
+        min-height: 90vh !important; 
         padding-bottom: 0px; 
       }
 
