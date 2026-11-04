@@ -111,6 +111,7 @@ try {
 
     if (isset($http_response_header[0])) {
         preg_match('/\s(\d{3})\s/', $http_response_header[0], $matches);
+
         $status = isset($matches[1]) ? (int) $matches[1] : 0;
     }
 

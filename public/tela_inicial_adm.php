@@ -21,18 +21,48 @@ require_once __DIR__ . '/proteger_adm.php';
 
     <style>
         .secao_clima {
-            max-width: 850px;
-            margin: 40px auto;
+            max-width: 550px;
+            margin: 15px auto;
+            padding: 10px !important;
         }
 
         .secao_clima h2 {
             text-align: center;
-            margin-bottom: 25px;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        #conteudo-clima .clima-icone img {
+            width: 45px;
+            height: 45px;
+        }
+
+        #conteudo-clima .clima-temperatura {
+            font-size: 24px;
+        }
+
+        #conteudo-clima .clima-condicao {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        #conteudo-clima .clima-detalhes {
+            gap: 20px;
+        }
+
+        #conteudo-clima .clima-item {
+            font-size: 12px;
+        }
+
+        #conteudo-clima .clima-atualizacao {
+            font-size: 11px;
+            margin-top: 5px !important;
         }
 
         @media (max-width: 768px) {
             .secao_clima {
-                margin: 30px 15px;
+                width: 95%;
+                margin: 15px auto;
             }
         }
     </style>
@@ -62,8 +92,9 @@ require_once __DIR__ . '/proteger_adm.php';
             </div>
 
         </section>
+        <br>
 
-        <!-- PRIMEIRA LINHA -->
+        
         <div class="tres_colunas">
 
             <a class="text-decoration-none" href="tela_inicial.php">
@@ -118,7 +149,7 @@ require_once __DIR__ . '/proteger_adm.php';
 
         <br><br>
 
-        <!-- SEGUNDA LINHA -->
+        
         <div class="tres_colunas">
 
             <a class="text-decoration-none" href="tela_dos_trens_adm.php">
@@ -173,7 +204,7 @@ require_once __DIR__ . '/proteger_adm.php';
 
         <br><br>
 
-        <!-- TERCEIRA LINHA -->
+        
         <div class="tres_colunas">
 
             <div class="justify-content-center">
