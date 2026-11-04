@@ -32,49 +32,49 @@ require_once __DIR__ . '/proteger_adm.php';
         <div class="tres_colunas">
 
             <div>
-                <button onclick="location.href='sensores_velocidade.php'" class="botao">
+                <button onclick="location.href='sensores_velocidade.php'" class="botao fundo_branco">
                     Velocidade
                 </button>
 
                 <br><br>
 
-                <button onclick="location.href='sensores_falhas.php'" class="botao">
+                <button onclick="location.href='sensores_falhas.php'" class="botao fundo_branco">
                     Falhas
                 </button>
 
                 <br><br>
 
-                <button onclick="location.href='sensores_pressao_oleo.php'" class="botao">
+                <button onclick="location.href='sensores_pressao_oleo.php'" class="botao fundo_branco">
                     Pressão do óleo
                 </button>
             </div>
 
             <div>
-                <button onclick="location.href='sensores_temperatura.php'" class="botao">
+                <button onclick="location.href='sensores_temperatura.php'" class="botao fundo_branco">
                     Temperatura
                 </button>
 
                 <br><br>
 
-                <button onclick="location.href='sensores_combustivel.php'" class="botao">
+                <button onclick="location.href='sensores_combustivel.php'" class="botao fundo_branco">
                     Combustível
                 </button>
 
                 <br><br>
 
-                <button onclick="location.href='sensores_frenagem.php'" class="botao">
+                <button onclick="location.href='sensores_frenagem.php'" class="botao fundo_branco">
                     Frenagem
                 </button>
             </div>
 
             <div>
-                <button onclick="location.href='visualizar_sensores_cadastrados.php'" class="botao">
+                <button onclick="location.href='visualizar_sensores_cadastrados.php'" class="botao fundo_branco">
                     Sensores Cadastrados
                 </button>
 
                 <br><br>
 
-                <button onclick="location.href='cadastrar_sensor.php'" class="botao">
+                <button onclick="location.href='cadastrar_sensor.php'" class="botao fundo_branco">
                     Cadastrar Sensor
                 </button>
             </div>
