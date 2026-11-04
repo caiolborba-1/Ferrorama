@@ -62,7 +62,7 @@ $resultado = mysqli_query($conn, $sql);
             background-color: #fff;
             border: none;
             border-radius: 8px;
-
+ 
             cursor: pointer;
             transition: 0.3s;
         }
