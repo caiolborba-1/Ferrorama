@@ -6,7 +6,12 @@ CREATE TABLE usuario (
     nome_usuario VARCHAR(100) NOT NULL,
     email_usuario VARCHAR(100) NOT NULL UNIQUE,
     senha_usuario VARCHAR(255) NOT NULL,
-    cargo ENUM('usuario', 'adm') NOT NULL DEFAULT 'usuario'
+    cargo ENUM('usuario', 'adm') NOT NULL DEFAULT 'usuario',
+    cep_usuario VARCHAR(10) NULL,
+    logradouro_usuario VARCHAR(255) NULL,
+    bairro_usuario VARCHAR(100) NULL,
+    cidade_usuario VARCHAR(100) NULL,
+    uf_usuario CHAR(2) NULL
 );
 
 CREATE TABLE sensor (
