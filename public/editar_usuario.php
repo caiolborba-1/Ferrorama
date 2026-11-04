@@ -246,5 +246,11 @@ if (!$usuario) {
         }
     </script>
 
+    <footer>
+
+        <?php include 'rodape.php' ?>
+
+   </footer>
+
 </body>
 </html>

@@ -122,5 +122,11 @@ $result_usuarios = $conn->query($sql_usuarios);
         </div>
     </main>
 
+    <footer>
+
+        <?php include 'rodape.php' ?>
+
+   </footer>
+
 </body>
 </html>

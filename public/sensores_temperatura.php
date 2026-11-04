@@ -194,6 +194,12 @@ require_once __DIR__ . '/proteger_adm.php';
         }
     </script>
 
+    <footer>
+
+        <?php include 'rodape.php' ?>
+
+   </footer>
+
 </body>
 
 </html>

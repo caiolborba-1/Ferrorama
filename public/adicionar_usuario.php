@@ -496,5 +496,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         });
     </script>
 
+    <footer>
+
+        <?php include 'rodape.php' ?>
+
+    </footer>
+
 </body>
 </html>

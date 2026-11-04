@@ -75,6 +75,12 @@ if (!$trem) {
 
     </div>
 
+    <footer>
+
+        <?php include 'rodape.php' ?>
+
+   </footer>
+
 </body>
 
 </html>

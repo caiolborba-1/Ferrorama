@@ -27,13 +27,13 @@ require_once __DIR__ . '/proteger_adm.php';
 
    <main class="container-fluid py-4">
 
-        <br><br>
+        <br>
 
         <div class="tela_inicial">
             <h1>Bem-vindo adm!</h1>
         </div>
 
-        <br><br><br>
+        <br><br>
 
         <div class="tres_colunas">   
 
@@ -206,7 +206,14 @@ require_once __DIR__ . '/proteger_adm.php';
 
    </main>
 
-    <script src="../scripts/links_paginas.js"></script>
+   <footer>
+
+        <?php include 'rodape.php' ?>
+
+   </footer>
+    
+   
+   <script src="../scripts/links_paginas.js"></script>
 
 </body>
 

@@ -170,5 +170,11 @@ $trens = $conn->query("SELECT id, nome_trem FROM trens ORDER BY nome_trem");
         </div>
     </main>
 
+    <footer>
+
+        <?php include 'rodape.php' ?>
+
+   </footer>
+
 </body>
 </html>

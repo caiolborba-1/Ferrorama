@@ -19,7 +19,7 @@ body{
 }
 
 .cabecalho {
-    background-color: rgba(1, 14, 88, 0.863)!important;
+    background-color: #010e58 !important;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -32,6 +32,34 @@ body{
     z-index: 1000 !important;
     font: normal normal bold 20px/1.4 "Arial";
 
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.rodape{
+    margin-top: 60px;
+    height: 300px;
+    background-color: #010e58 !important;
+    gap: 100px;
+    bottom: 0px;
+}
+
+.logo_rodape{
+    width: 120px;
+    height: 70px;
+}
+
+.whatsapp_rodape{
+    width: 120px;
+    height: 100px;
+}
+
+.texto_rodape{
+    width: 1300px;
 }
 
  .botao_cabecalho{
@@ -161,6 +189,7 @@ body{
 
 body{
     min-height: 100vh;
+    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -724,6 +753,14 @@ appearance: none;
     background-color: rgba(1, 14, 88, 0.863)!important;
 }
 
+.fundo_amarelo{
+    background-color: #dda711;
+}
+
+.fundo_amarelo:hover{
+    background-color: #8f6d0f;
+}
+
 .quadrado_perfil {
     width: 1300px;
     height: 450px;
@@ -760,6 +797,14 @@ appearance: none;
 .borda_debaixo_animada{
     box-sizing: border-box; 
     border-bottom: 3px solid transparent;
+    border-image: conic-gradient(from var(--angle), rgba(1, 170, 128, 0.863), rgba(255, 174, 0, 0.7), rgba(1, 158, 206, 0.863)) 1;
+    animation: rodarBorda 4s linear infinite;
+    font-family: sans-serif;
+}
+
+.borda_decima_animada{
+    box-sizing: border-box; 
+    border-top: 5px solid transparent;
     border-image: conic-gradient(from var(--angle), rgba(1, 170, 128, 0.863), rgba(255, 174, 0, 0.7), rgba(1, 158, 206, 0.863)) 1;
     animation: rodarBorda 4s linear infinite;
     font-family: sans-serif;

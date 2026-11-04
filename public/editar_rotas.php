@@ -180,5 +180,11 @@ $trens = $conn->query(
         </div>
     </main>
 
+    <footer>
+
+        <?php include 'rodape.php' ?>
+
+   </footer>
+
 </body>
 </html>

@@ -134,6 +134,12 @@ $resultado = $conn->query($sql);
 
     </main>
 
+    <footer>
+
+        <?php include 'rodape.php' ?>
+
+   </footer>
+
 </body>
 
 </html>

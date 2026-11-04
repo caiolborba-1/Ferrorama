@@ -66,7 +66,10 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
 
 <body>
 
-    <?php include "navbar.php"; ?>
+    <header>
+        <?php include "navbar.php"; ?>
+    </header>
+    
 
     <main class="container-fluid py-4">
 
@@ -106,7 +109,7 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
                    </i><strong>Adicionar Trem</strong>
                 </a>
 
-                <a href="visualizar_trens.php" class="btn cor_cinza color-white">
+                <a href="visualizar_trens.php" class="btn fundo_amarelo color-white">
                     <strong>Visualizar Trens</strong>
                 </a>
 
@@ -114,7 +117,7 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
                     <strong>Adicionar Rota</strong>
                 </a>
 
-                <a href="visualizar_rotas.php" class="btn cor_cinza color-white">
+                <a href="visualizar_rotas.php" class="btn fundo_amarelo color-white">
                     <strong>Visualizar Rotas</strong>
                 </a>
 
@@ -167,6 +170,12 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
         </div>
 
     </main>
+
+    <footer>
+
+        <?php include 'rodape.php' ?>
+
+   </footer>
 
 </body>
 </html>
