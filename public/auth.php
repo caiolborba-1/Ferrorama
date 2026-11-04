@@ -8,6 +8,6 @@ if (session_status() === PHP_SESSION_NONE) {
 if (!isset($_SESSION['usuario_id'])) {
     $_SESSION['login_erro'] = 'Você precisa estar logado para acessar esta página.';
 
-    header('Location: ../index.php');
+    header('Location: login.php');
     exit();
 }

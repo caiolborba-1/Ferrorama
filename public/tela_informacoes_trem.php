@@ -1,11 +1,12 @@
 
 <?php
+
 require_once __DIR__ . '/auth.php';
 require_once '../infra/conexao.php';
 
 if (!isset($_GET['id']) || !ctype_digit($_GET['id'])) {
-    header("Location: tela_usuario.php");
-    exit;
+    header("Location: tela_inicial.php");
+    exit();
 }
 
 $id = (int) $_GET['id'];
@@ -20,9 +21,10 @@ $trem = mysqli_fetch_assoc($resultado);
 mysqli_stmt_close($stmt);
 
 if (!$trem) {
-    header("Location: tela_usuario.php");
-    exit;
+    header("Location: tela_inicial.php");
+    exit();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +69,7 @@ if (!$trem) {
                 <?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
             </p>
 
-            <a href="tela_usuario.php" class="btn btn-primary">
+            <a href="tela_inicial.php" class="btn btn-primary">
                 Voltar
             </a>
 
