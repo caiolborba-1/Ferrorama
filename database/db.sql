@@ -48,3 +48,4 @@ CREATE TABLE rotas (
         FOREIGN KEY (id_trens)
         REFERENCES trens(id)
 );
+
