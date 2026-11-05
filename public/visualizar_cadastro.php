@@ -33,7 +33,7 @@ $resultado = mysqli_query($conn, $sql);
         <h1 class="text-center mb-4">Usuários Cadastrados</h1>
 
         <div class="table-responsive">
-            <table class="table table-bordered table-striped">
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Nome de Usuário</th>

@@ -37,7 +37,7 @@ $resultado = $conn->query($sql);
         <h1 class="text-center mb-4">Rotas Cadastradas</h1>
 
         <div class="table-responsive">
-            <table class="table table-bordered table-striped">
+            <table class="table table-striped">
 
                 <thead>
                     <tr>

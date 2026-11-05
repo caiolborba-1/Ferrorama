@@ -46,9 +46,9 @@ $resultado = $conn->query($sql);
             
         </div>
 
-        <div class="fundo_branco display_flex">
+        <div class="fundo_branco">
 
-            <div class="A">
+            <div class="">
 
                 <img src="../assets/img/usu.png" alt="" class="br">
 
@@ -56,27 +56,29 @@ $resultado = $conn->query($sql);
 
                     <?php while ($usuario = $resultado->fetch_assoc()) { ?>
 
-                        <h1>
+                        <h3 class="linhas_perfil">
                             <b>Nome:</b> <?php echo htmlspecialchars($usuario["nome_usuario"]); ?>
-                        </h1>
+                        </h3>
 
-                        <h1>
+                        <h3 class="linhas_perfil">
                             <b>E-mail:</b> <?php echo htmlspecialchars($usuario["email_usuario"]); ?>
-                        </h1>
+                        </h3>
 
-                        <h1>
+                        <h3 class="linhas_perfil">
                             <b>Senha:</b> *****
-                        </h1>
+                        </h3>
 
-                        <h1>
+                        <h3 class="linhas_perfil">
                             <b>Cidade:</b> <?php echo htmlspecialchars($usuario["cidade_usuario"]); ?>
-                        </h1>
+                        </h3>
 
-                         <h1>
+                         <h3 class="linhas_perfil">
                             <b>Cargo:</b> <?php echo htmlspecialchars($usuario["cargo"]); ?>
-                        </h1>
+                        </h3>
                     <?php } ?>
                         
+                    <br>
+
                     <button class="btn btn-danger b" onclick="window.location.href='logout.php'">Sair da Sessão</button>
                 
                 </div>

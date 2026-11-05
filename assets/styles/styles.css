@@ -683,9 +683,9 @@ appearance: none;
 
 .br {
     border-radius: 1000px;
-    width: 200px;
-    height: 200px;
-    margin-right: 40px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 40px;
 }
 
 .space-evenly {
@@ -911,7 +911,7 @@ footer {
 
  }
 
-
+/* Rodapé */
 
  footer {
            background-color: #010e58 !important;
@@ -936,4 +936,21 @@ footer p {
 
 .direitos {
     font-size: 12px;
+}
+
+
+/* Fim Rodapé */
+
+.linhas_perfil {
+    border-bottom: 2px solid #000000;
+}
+
+th{
+    background-color: #010e58 !important;
+    color: white !important;
+    border-radius: 10px;
+}
+
+width-100 {
+    width: 100%;
 }
