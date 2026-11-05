@@ -1,4 +1,3 @@
-
 <?php
 
 session_set_cookie_params(2592000);
@@ -42,7 +41,31 @@ $usuario = $resultado->fetch_assoc();
 
 $stmt->close();
 
-if (!$usuario || !password_verify($senha, $usuario['senha_usuario'])) {
+$senha_valida = false;
+
+if ($usuario) {
+    $senha_db = $usuario['senha_usuario'];
+
+    // 1. Tenta validar via Bcrypt (novo formato)
+    if (password_verify($senha, $senha_db)) {
+        $senha_valida = true;
+    } 
+    // 2. Se falhar, tenta validar a senha original/antiga (texto puro)
+    elseif ($senha === $senha_db) {
+        $senha_valida = true;
+
+        // Migração automática: gera o hash Bcrypt e atualiza no banco
+        $novo_hash = password_hash($senha, PASSWORD_BCRYPT);
+        $update_stmt = $conn->prepare("UPDATE usuario SET senha_usuario = ? WHERE id = ?");
+        if ($update_stmt) {
+            $update_stmt->bind_param('si', $novo_hash, $usuario['id']);
+            $update_stmt->execute();
+            $update_stmt->close();
+        }
+    }
+}
+
+if (!$usuario || !$senha_valida) {
     $_SESSION['login_erro'] = 'Usuário/e-mail ou senha incorretos.';
     header('Location: login.php');
     exit();

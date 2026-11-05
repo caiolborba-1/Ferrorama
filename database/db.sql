@@ -49,3 +49,24 @@ CREATE TABLE rotas (
         REFERENCES trens(id)
 );
 
+INSERT INTO usuario (
+    nome_usuario,
+    email_usuario,
+    senha_usuario,
+    cargo,
+    cep_usuario,
+    logradouro_usuario,
+    bairro_usuario,
+    cidade_usuario,
+    uf_usuario
+) VALUES (
+    'Administrador',
+    'adm@padrao.com',
+    '$2y$10$UnI.67aA7NvgE.Q9L5H3sO9.sA71a1c/27.m5C7iJ8z5H11234567',
+    'adm',
+    '89201-000',
+    'Rua das Palmeiras',
+    'Centro',
+    'Joinville',
+    'SC'
+);
