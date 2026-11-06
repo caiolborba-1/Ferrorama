@@ -685,7 +685,6 @@ appearance: none;
     border-radius: 1000px;
     width: 100px;
     height: 100px;
-    margin-bottom: 40px;
 }
 
 .space-evenly {
@@ -948,9 +947,13 @@ footer p {
 th{
     background-color: #010e58 !important;
     color: white !important;
-    border-radius: 10px;
 }
 
 width-100 {
     width: 100%;
+}
+
+.nome_perfil {
+    border-radius: 10px;
+    padding: 5px;
 }

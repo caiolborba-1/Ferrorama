@@ -32,7 +32,7 @@ $resultado = $conn->query($sql);
 
         <h1 class="text-center mb-4">Trens Cadastrados</h1>
 
-        <div class="table-responsive">
+        <div class="table-responsive rounded-3">
             <table class="table table-striped">
 
                 <thead>

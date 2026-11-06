@@ -50,15 +50,14 @@ $resultado = $conn->query($sql);
 
             <div class="">
 
-                <img src="../assets/img/usu.png" alt="" class="br">
+            <?php while ($usuario = $resultado->fetch_assoc()) { ?>
+                <div class="d-flex padding mb-5 3rem align-items-center fundo_azul color-white nome_perfil">
+                    <img src="../assets/img/usu.png" alt="" class="br mr-5">
+                     <h1><?php echo htmlspecialchars($usuario["nome_usuario"]); ?></h1>
+                </div>
+                
 
                 <div>
-
-                    <?php while ($usuario = $resultado->fetch_assoc()) { ?>
-
-                        <h3 class="linhas_perfil">
-                            <b>Nome:</b> <?php echo htmlspecialchars($usuario["nome_usuario"]); ?>
-                        </h3>
 
                         <h3 class="linhas_perfil">
                             <b>E-mail:</b> <?php echo htmlspecialchars($usuario["email_usuario"]); ?>
@@ -75,13 +74,15 @@ $resultado = $conn->query($sql);
                          <h3 class="linhas_perfil">
                             <b>Cargo:</b> <?php echo htmlspecialchars($usuario["cargo"]); ?>
                         </h3>
-                    <?php } ?>
+                    
                         
                     <br>
 
                     <button class="btn btn-danger b" onclick="window.location.href='logout.php'">Sair da Sessão</button>
                 
                 </div>
+
+            <?php } ?>
 
             </div>
 
