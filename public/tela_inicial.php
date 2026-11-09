@@ -155,6 +155,8 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
                             <?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
                         </div>
 
+                        <img src="../assets/img/Trem1.jpg" alt="Trem" class="img-fluid mt-2" style="max-width: 100%; height: auto;">
+
                     </button>
 
                 <?php endwhile; ?>
