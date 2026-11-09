@@ -18,6 +18,20 @@ mysqli_stmt_execute($stmt);
 $resultado = mysqli_stmt_get_result($stmt);
 $trem = mysqli_fetch_assoc($resultado);
 
+$stmt = mysqli_prepare($conn, "SELECT * FROM rotas WHERE id_trens = ?");
+mysqli_stmt_bind_param($stmt, "i", $id);
+mysqli_stmt_execute($stmt);
+
+$resultado = mysqli_stmt_get_result($stmt);
+$rotas = mysqli_fetch_assoc($resultado);
+
+$stmt = mysqli_prepare($conn, "SELECT * FROM usuario WHERE id = ?");
+mysqli_stmt_bind_param($stmt, "i", $id);
+mysqli_stmt_execute($stmt);
+
+$resultado = mysqli_stmt_get_result($stmt);
+$usuario = mysqli_fetch_assoc($resultado);
+
 mysqli_stmt_close($stmt);
 
 if (!$trem) {
@@ -64,6 +78,22 @@ if (!$trem) {
             <p>
                 <strong>Destino:</strong>
                 <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>
+            </p>
+
+            <p>
+                <strong>Rota:</strong>
+                <?php
+                if ($rotas) {
+                    echo $rotas['descricao_rota'];
+                } else {
+                    echo "Nenhuma rota anexada.";
+                }
+                ?>
+            </p>
+
+            <p>
+                <strong>Usuario Responsável:</strong>
+                <?= htmlspecialchars($usuario['nome_usuario'], ENT_QUOTES, 'UTF-8') ?>
             </p>
 
             <p>
