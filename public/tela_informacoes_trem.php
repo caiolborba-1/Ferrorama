@@ -93,7 +93,14 @@ if (!$trem) {
 
             <p>
                 <strong>Usuario Responsável:</strong>
-                <?= htmlspecialchars($usuario['nome_usuario'], ENT_QUOTES, 'UTF-8') ?>
+                
+                <?php               
+                if ($usuario) {
+                    echo $usuario['nome_usuario'];
+                } else {
+                    echo "Nenhuma usuario vinculado.";
+                }
+                ?>
             </p>
 
             <p>
