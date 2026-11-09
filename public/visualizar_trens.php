@@ -2,12 +2,25 @@
 require_once __DIR__ . '/proteger_adm.php';
 require_once '../infra/conexao.php';
 
-$sql = "SELECT t.*, u.nome_usuario 
-        FROM trens t 
-        INNER JOIN usuario u ON t.id_usuario = u.id 
+$sql = "SELECT 
+            t.*,
+            u.nome_usuario,
+            COALESCE(r.total_rotas, 0) AS total_rotas,
+            r.nomes_rotas
+        FROM trens t
+        INNER JOIN usuario u ON t.id_usuario = u.id
+        LEFT JOIN (
+            SELECT
+                id_trens,
+                COUNT(*) AS total_rotas,
+                GROUP_CONCAT(nome_rota SEPARATOR ', ') AS nomes_rotas
+            FROM rotas
+            GROUP BY id_trens
+        ) r ON r.id_trens = t.id
         ORDER BY t.id DESC";
 
 $resultado = $conn->query($sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +53,7 @@ $resultado = $conn->query($sql);
                         <th>ID</th>
                         <th>Nome do Trem</th>
                         <th>Usuário Responsável</th>
+                        <th>Rota Vinculada</th>
                         <th>Destino</th>
                         <th>Partida</th>
                         <th>Chegada</th>
@@ -66,6 +80,18 @@ $resultado = $conn->query($sql);
                                 </td>
 
                                 <td>
+                                    <?php if ((int) $trem['total_rotas'] > 0): ?>
+
+                                    <?= htmlspecialchars($trem['nomes_rotas'], ENT_QUOTES, 'UTF-8') ?>
+
+                                    <?php else: ?>
+
+                                          Nenhuma rota vinculada
+
+                                     <?php endif; ?>
+                                </td>
+
+                                <td>
                                     <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>
                                 </td>
 
@@ -86,6 +112,20 @@ $resultado = $conn->query($sql);
                                 </td>
 
                                 <td>
+                                    <?php 
+
+                                        if ((int) $trem['total_rotas'] > 0):
+
+                                    ?>
+                                    <button
+                                        type="button"
+                                        class="btn btn-secondary btn-sm"
+                                        disabled
+                                        title="Não é possível excluir este trem, pois ele está associado a uma rota.">
+                                        Excluir
+                                    </button>
+
+                                    <?php else: ?>
                                     <form
                                         action="excluir_trem.php"
                                         method="POST"
@@ -100,6 +140,7 @@ $resultado = $conn->query($sql);
                                             Excluir
                                         </button>
                                     </form>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
 
