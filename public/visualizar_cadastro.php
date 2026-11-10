@@ -5,7 +5,8 @@ require_once '../infra/conexao.php';
 
 $sql = "SELECT
             u.*,
-            COUNT(t.id) AS total_trens
+            COUNT(t.id) AS total_trens,
+            GROUP_CONCAT(t.nome_trem SEPARATOR ', ') AS nomes_trens
         FROM usuario u
         LEFT JOIN trens t ON t.id_usuario = u.id
         GROUP BY u.id
@@ -47,6 +48,7 @@ $resultado = mysqli_query($conn, $sql);
                         <th>Nome de Usuário</th>
                         <th>E-mail</th>
                         <th>Cidade</th>
+                        <th>Trêns Responsáveis</th>
                         <th>Cargo</th>
                         <th>Editar</th>
                         <th>Excluir</th>
@@ -69,6 +71,17 @@ $resultado = mysqli_query($conn, $sql);
                                 <td>
                                     <?= htmlspecialchars($usuario['cidade_usuario']) ?>
                                 </td>
+
+                                <td>
+                                    <?php if ((int) $usuario['total_trens'] > 0): ?>
+
+                                     <?= htmlspecialchars($usuario['nomes_trens'], ENT_QUOTES, 'UTF-8') ?>
+
+                                     <?php else: ?>
+
+                                          Nenhum trem vinculado
+
+                                     <?php endif; ?></td>
 
                                 <td>
                                     <?= htmlspecialchars($usuario['cargo']) ?>
