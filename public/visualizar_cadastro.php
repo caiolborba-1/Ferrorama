@@ -1,8 +1,16 @@
+
 <?php
 require_once __DIR__ . '/proteger_adm.php';
 require_once '../infra/conexao.php';
 
-$sql = "SELECT * FROM usuario";
+$sql = "SELECT
+            u.*,
+            COUNT(t.id) AS total_trens
+        FROM usuario u
+        LEFT JOIN trens t ON t.id_usuario = u.id
+        GROUP BY u.id
+        ORDER BY u.id DESC";
+
 $resultado = mysqli_query($conn, $sql);
 ?>
 
@@ -57,12 +65,15 @@ $resultado = mysqli_query($conn, $sql);
                                 <td>
                                     <?= htmlspecialchars($usuario['email_usuario']) ?>
                                 </td>
+
                                 <td>
                                     <?= htmlspecialchars($usuario['cidade_usuario']) ?>
                                 </td>
+
                                 <td>
                                     <?= htmlspecialchars($usuario['cargo']) ?>
                                 </td>
+
                                 <td>
                                     <a
                                         href="editar_usuario.php?id=<?= (int) $usuario['id'] ?>"
@@ -72,12 +83,26 @@ $resultado = mysqli_query($conn, $sql);
                                 </td>
 
                                 <td>
-                                    <a
-                                        href="excluir.php?id=<?= (int) $usuario['id'] ?>"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('Tem certeza que deseja excluir este usuário?');">
-                                        Excluir
-                                    </a>
+                                    <?php if ((int) $usuario['total_trens'] > 0): ?>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-secondary btn-sm"
+                                            disabled
+                                            title="Não é possível excluir este usuário, pois ele está associado a um trem.">
+                                            Excluir
+                                        </button>
+
+                                    <?php else: ?>
+
+                                        <a
+                                            href="excluir.php?id=<?= (int) $usuario['id'] ?>"
+                                            class="btn btn-danger btn-sm"
+                                            onclick="return confirm('Tem certeza que deseja excluir este usuário?');">
+                                            Excluir
+                                        </a>
+
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
@@ -85,7 +110,7 @@ $resultado = mysqli_query($conn, $sql);
                     <?php else: ?>
 
                         <tr>
-                            <td colspan="5" class="text-center">
+                            <td colspan="6" class="text-center">
                                 Nenhum usuário cadastrado.
                             </td>
                         </tr>
@@ -105,7 +130,7 @@ $resultado = mysqli_query($conn, $sql);
 
         <?php include 'rodape.php' ?>
 
-   </footer>
+    </footer>
 
 </body>
 
