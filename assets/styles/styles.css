@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 .erro {
@@ -187,10 +188,16 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .display_flex{
-    display: flex;
+    display: flex !important;
+}
+
+.flex-direction-row{
+    flex-direction: row !important;
 }
 
 .tres_colunas{
@@ -855,54 +862,13 @@ appearance: none;
     left: 150%; 
   }
 }
-.main_rotas_velocidade {
-        min-height: 90vh !important; 
-        padding-bottom: 0px; 
-      }
-.main_rotas_sensores {
-        min-height: 82vh !important; 
-        padding-bottom: 0px; 
-      }
-.main_rotas_tela_usuario {
-        min-height: 48vh !important; 
-        padding-bottom: 0px; 
-      }
-.main_rotas_tela_dos_trens_adm {
-        min-height: 78vh !important; 
-        padding-bottom: 0px; 
-      }
-
-.main_rotas_perfil {
-        min-height: 70vh !important; 
-        padding-bottom: 0px; 
-      }
-
-.main_rotas_cadastro_trens {
-        min-height: 90vh !important; 
-        padding-bottom: 0px; 
-      }
-
-.main_rotas_visualizar_trens {
-        min-height: 78vh !important; 
-        padding-bottom: 0px; 
-      }
-
-.main_rotas_tela_inicial {
-        min-height: 77vh !important; 
-        padding-bottom: 0px; 
-      }
-
- .main_rotas {
-        min-height: 90vh !important; 
-        padding-bottom: 0px; 
-      }
 
 footer {
      
-     flex-direction: column;
-        text-align: center;
-        position: ;
-        bottom: 0;
+    flex-direction: column;
+    text-align: center;
+    position: ;
+    bottom: 0;
 
  }
 
@@ -916,6 +882,8 @@ footer {
             justify-content: space-between;
             align-items: center;
             gap: 20px;
+            width: 100%;
+            margin-top: auto;
         }
 
 footer img {
@@ -958,4 +926,8 @@ width-100 {
     width: 100%;
     object-fit: cover;    
     object-position: center;
+}
+
+main{
+    flex: 1;
 }

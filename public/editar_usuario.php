@@ -166,7 +166,7 @@ if (!$usuario) {
                 </div>
 
                 <div class="d-flex gap-2">
-                    <button type="submit" class="btn btn-primary w-100">
+                    <button type="submit" class="btn w-100 fundo_azul botao_brilhante color-white">
                         Atualizar
                     </button>
 
@@ -246,7 +246,7 @@ if (!$usuario) {
         }
     </script>
 
-    <footer>
+    <footer class="w-100 mt-auto">
 
         <?php include 'rodape.php' ?>
 

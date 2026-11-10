@@ -154,7 +154,13 @@ $resultado = mysqli_query($conn, $sql);
 
 <body>
 
-    <?php include "navbar.php"; ?>
+    <header class="w-100">
+
+        <?php
+            include "navbar.php";
+        ?>
+
+    </header>
 
     <main class="main_rotas_tela_usuario container mt-5">
 

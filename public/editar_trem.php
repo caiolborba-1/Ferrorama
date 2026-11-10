@@ -111,13 +111,17 @@ $result_usuarios = $conn->query($sql_usuarios);
                     >
                 </div>
 
-                <button type="submit" class="btn botao_brilhante cor_amarela color-white w-100">
-                    Atualizar Trem
-                </button>
+                <div class="d-flex gap-2">
 
-                <a href="visualizar_trens.php" class="btn botao_brilhante cor_cinza color-white w-100 mt-2">
-                    Voltar
-                </a>
+                    <button type="submit" class="btn botao_brilhante fundo_azul color-white w-100 mt-2">
+                        Atualizar Trem
+                    </button>
+
+                    <a href="visualizar_trens.php" class="btn botao_brilhante cor_cinza color-white w-100 mt-2">
+                        Voltar
+                    </a>
+
+                </div>
             </form>
         </div>
     </main>

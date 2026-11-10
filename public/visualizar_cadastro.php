@@ -101,9 +101,7 @@ $resultado = mysqli_query($conn, $sql);
 
     </main>
 
-    <br><br>
-
-    <footer>
+    <footer class="w-100 mt-0">
 
         <?php include 'rodape.php' ?>
 

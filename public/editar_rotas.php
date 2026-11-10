@@ -48,7 +48,7 @@ $trens = $conn->query(
 
     <?php include "navbar.php"; ?>
 
-    <main class="main_rotas_tela_dos_trens_adm container mt-5">
+    <main class="main_rotas_tela_dos_trens_adm container mt-5 pb-5">
         <div class="card shadow p-4 mx-auto fundo_branco" style="max-width: 600px;">
 
             <h2 class="text-center mb-4">Editar Rota</h2>
@@ -165,17 +165,19 @@ $trens = $conn->query(
                     >
                 </div>
 
-                <button type="submit" class="btn botao_brilhante cor_amarela color-white w-100">
-                    Atualizar Rota
-                </button>
+                <div class="d-flex gap-2">
 
-                <a
-                    href="visualizar_rotas.php"
-                    class="btn botao_brilhante cor_cinza color-white w-100 mt-2"
-                >
-                    Voltar
-                </a>
+                    <button type="submit" class="btn botao_brilhante fundo_azul color-white w-100 mt-2">
+                        Atualizar Rota
+                    </button>
 
+                    <a
+                        href="visualizar_rotas.php"
+                        class="btn botao_brilhante cor_cinza color-white w-100 mt-2">
+                        Voltar
+                    </a>
+
+                </div>
             </form>
         </div>
     </main>
