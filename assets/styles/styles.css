@@ -138,18 +138,10 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     
-    height: 140px;
-    width: 340px;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    
+    height: 180px;
+    width: 400px;
     font-size: clamp(14px, 5cqw, 22px); 
     border-radius: 5px;
-    box-shadow: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
@@ -740,6 +732,10 @@ appearance: none;
     box-shadow: 0 4px 12px rgba(1, 14, 88, 0.863);
 }
 
+.padding-0{
+    padding: 0px !important;
+}
+
 .fundo_preto{
     background-color: rgb(0, 0, 0);
     padding: 20px;
@@ -956,4 +952,10 @@ width-100 {
 .nome_perfil {
     border-radius: 10px;
     padding: 5px;
+}
+
+.imagem_trem_botao{
+    width: 100%;
+    object-fit: cover;    
+    object-position: center;
 }

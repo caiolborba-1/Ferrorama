@@ -30,7 +30,9 @@ $resultado = $conn->query($sql);
 
 <body>
 
-    <?php include "navbar.php"; ?>
+    <header>
+        <?php include "navbar.php"; ?>
+    </header>
 
     <main class="main_rotas_tela_dos_trens_adm container mt-5">
 
