@@ -134,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function () {
             detalhes[1].textContent =
                 `${dados.umidade}%`;
 
-            // Horário informado pela WeatherAPI
             conteudo.querySelector('.clima-atualizacao').textContent =
                 `Dados meteorológicos atualizados em: ${dados.atualizacao}`;
 
@@ -168,10 +167,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Primeira consulta
+   
     carregarClima();
 
-    // Atualização automática
+    
     setInterval(carregarClima, 30000);
 
 });

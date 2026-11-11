@@ -123,7 +123,7 @@ try {
         ]);
     }
 
-    // Identifica o código HTTP
+  
     $status = 0;
 
     if (isset($http_response_header[0])) {
@@ -147,7 +147,7 @@ try {
         ]);
     }
 
-    // Retorna somente os dados necessários
+   
     responder(200, [
         'cidade' => $dados['location']['name'],
         'estado' => $uf,

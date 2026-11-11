@@ -940,8 +940,8 @@ width-100 {
     padding: 5px;
 }
 
-<<<<<<< HEAD
-=======
+
+
 .imagem_trem_botao{
     width: 100%;
     object-fit: cover;    
@@ -950,22 +950,16 @@ width-100 {
 
 main{
     flex: 1;
-<<<<<<< HEAD
+
 }  
 .imgtrem{
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-=======
+
 }
 
 .botao_voltar_trens{
     width: 600px;
-<<<<<<< HEAD
 }
->>>>>>> 26dd621b658909308d91c10ead8d087408cdb8cd
-=======
->>>>>>> 26dd621b658909308d91c10ead8d087408cdb8cd
-}
->>>>>>> f0ee498304c00ae970b064e8c0be949ff5c1050c

@@ -209,7 +209,7 @@ require_once __DIR__ . '/proteger_adm.php';
 
         </div>
 
-<<<<<<< HEAD
+
         <br><br>
 
         <div class="tres_colunas">
@@ -252,8 +252,7 @@ require_once __DIR__ . '/proteger_adm.php';
 
         </div>
 
-=======
->>>>>>> 26dd621b658909308d91c10ead8d087408cdb8cd
+
     </main>
 
     <br><br><br><br><br>
