@@ -36,6 +36,10 @@ if ($cargo === 'adm') {
         margin: 0;
     }
 
+    h5 {
+        margin: 0;
+    }
+
     /* Botões do administrador */
     .grupo_adm {
         display: flex;
@@ -101,7 +105,7 @@ if ($cargo === 'adm') {
     }
 </style>
 
-<div class="cabecalho borda_debaixo_animada">
+<div class="cabecalho borda_debaixo_animada ">
 
     <!-- LOGO -->
     <a href="<?= htmlspecialchars($link_inicio, ENT_QUOTES, 'UTF-8') ?>">

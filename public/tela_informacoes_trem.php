@@ -63,69 +63,119 @@ if (!$trem) {
 
 <body>
 
-    <?php include 'navbar.php'; ?>
+    <header>
+        <?php include 'navbar.php'; ?>
+    </header>
 
     <div class="main_rotas_tela_dos_trens_adm container mt-5">
 
         <h1>Informações do Trem</h1>
 
-        <div class="card shadow p-4 mt-4">
+        <div class="card shadow p-4 mt-4 mb-5 fundo_azul_escuro">
 
-            <h3>
-                <?= htmlspecialchars($trem['nome_trem'], ENT_QUOTES, 'UTF-8') ?>
-            </h3>
+        <div class="p-2 color-white mb-3 borda_esquerda_titulo">
 
-            <p>
-                <strong>Destino:</strong>
-                <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>
-            </p>
+            <h2>
+                <b>
+                    <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>                    
+                </b>
+            </h2>
 
-            <p>
-                <strong>Rota:</strong>
-                <?php
-                if ($rotas) {
-                    echo $rotas['descricao_rota'];
-                } else {
-                    echo "Nenhuma rota anexada.";
-                }
-                ?>
-            </p>
+        </div>
 
-            <p>
-                <strong>Usuario Responsável:</strong>
-                
-                <?php               
-                if ($usuario) {
-                    echo $usuario['nome_usuario'];
-                } else {
-                    echo "Nenhuma usuario vinculado.";
-                }
-                ?>
-            </p>
+            <div class="d-flex width-100 gap-5">
 
-            <p>
-                <strong>Horário de partida:</strong>
-                <?= htmlspecialchars(substr($trem['horario_partida'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
-            </p>
+                <div>
+                    <div class="tabelas_informacoes_trem shadow card fundo_azul color-white">
+                    
+                    <h5>
+                        <strong>Nome do Trem:</strong>
+                    </h5>
 
-            <p>
-                <strong>Horário de chegada:</strong>
-                <?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
-            </p>
+                    <h3>
+                        
+                        <?= htmlspecialchars($trem['nome_trem'], ENT_QUOTES, 'UTF-8') ?>
+                    </h3>
 
-            <?php if ($cargo === 'usuario'): ?>
+                    <br>
 
-                <a href="tela_usuario.php" class="btn btn-primary">
-                    Voltar
-                </a>
+                    <h5>
+                        <strong>Destino do Trem:</strong>
+                    </h5>
 
-            <?php else: ?>
+                    <h3>
+                        
+                        <?php
+                        if ($rotas) {
+                            echo $rotas['descricao_rota'];
+                        } else {
+                            echo "Nenhuma rota anexada.";
+                        }
+                        ?>
+                    </h3>
 
-                <a href="tela_inicial.php" class="btn btn-primary">
-                    Voltar
-                </a>
+                    <br>
 
-            <?php endif; ?>
+                    <h5>
+                        <strong>Usuario Responsável:</strong>
+
+                    </h5>
+                    <h3>
+                        
+                        <?php               
+                        if ($usuario) {
+                            echo $usuario['nome_usuario'];
+                        } else {
+                            echo "Nenhuma usuario vinculado.";
+                        }
+                        ?>
+                    </h3>
+
+                    <br>
+
+                    <h5>
+                        <strong>Horário de partida:</strong>
+                    </h5>
+
+                    <h3>
+                        <?= htmlspecialchars(substr($trem['horario_partida'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
+                    </h3>
+
+                    <br>
+
+                    <h5>
+                        <strong>Horário de chegada:</strong>
+                    </h5>
+
+                    <h3>
+                        <?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
+                    </h3>
+
+                </div>
+            
+                <?php if ($cargo === 'usuario'): ?>
+
+                    <a href="tela_usuario.php" class="btn fundo_amarelo color-white botao_voltar_trens">
+                        Voltar
+                    </a>
+
+                <?php else: ?>
+
+                    <a href="tela_inicial.php" class="btn fundo_amarelo color-white botao_voltar_trens">
+                        Voltar
+                    </a>
+
+                <?php endif; ?>
+
+            </div>
+
+            <div class="tabelas_informacoes_trem shadow card fundo_azul color-white mb-0">
+
+               Muitas coisas bla bla 
+
+            </div>
+
+            </div>
 
         </div>
 
