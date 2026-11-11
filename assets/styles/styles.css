@@ -74,6 +74,7 @@ header {
                 align-items: center;
                 display: flex;
                 justify-content: center;
+                align-items: center;
         }
 
         .botao_cabecalho:hover{
@@ -98,6 +99,19 @@ header {
     font-size: clamp(14px, 8cqw, 28px); 
     box-shadow: -12px 12px 15px rgba(0, 0, 0, 0.35);
     border-radius: 3px;
+}
+
+.tabelas_informacoes_trem{
+    width: 600px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid #ffbd00;
+}
+
+.borda_esquerda_titulo{
+    border-left: 5px solid #ffbd00;
 }
 
 .botao_adicionar_trem:hover{
@@ -757,6 +771,10 @@ appearance: none;
     background-color: rgba(1, 14, 88, 0.863)!important;
 }
 
+.fundo_azul_escuro{
+    background-color: rgba(1, 12, 71, 0.863)!important;
+}
+
 .fundo_amarelo{
     background-color: #dda711;
 }
@@ -930,4 +948,8 @@ width-100 {
 
 main{
     flex: 1;
+}
+
+.botao_voltar_trens{
+    width: 600px;
 }
