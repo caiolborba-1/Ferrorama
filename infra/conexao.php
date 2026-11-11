@@ -5,7 +5,7 @@
     $password = "";
     $database = "ferrorama";
     $port = 3307;
-    $conn = mysqli_connect($host, $user, $password, $database, $port=3307);
+    $conn = mysqli_connect($host, $user, $password, $database);
 
 
 

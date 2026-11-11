@@ -15,6 +15,18 @@ require_once '../infra/conexao.php';
 
 $sql = "SELECT * FROM trens ORDER BY id DESC";
 $resultado = mysqli_query($conn, $sql);
+
+function getImagemTremAleatoria() {
+    $imagens = [
+        "../assets/img/Trem1.jpg",
+        "../assets/img/Trem 2.jpg",
+        "../assets/img/Trem 3.jpeg",
+        "../assets/img/Trem 4.jpg"
+    ];
+    
+    // rand(0, 3) escolhe um índice entre 0 e 3
+    return $imagens[rand(0, count($imagens) - 1)];
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,68 +41,11 @@ $resultado = mysqli_query($conn, $sql);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/styles/styles.css">
 
+    <script src="../scripts/randomizar_imagem_trem.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="../scripts/clima.js" defer></script>
 
     <style>
-        .duas_colunas {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 40px;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 10px 20px;
-        }
-
-        .duas_colunas .botao {
-            width: 100%;
-            min-height: 150px;
-            padding: 20px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            gap: 10px;
-
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            overflow-wrap: anywhere;
-            word-break: break-word;
-
-            background-color: #fff;
-            border: none;
-            border-radius: 8px;
-
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .duas_colunas .botao:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .duas_colunas .botao strong {
-            font-size: 20px;
-            display: block;
-        }
-
-        .informacoes_trem {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-        }
-
-        .tela_inicial {
-            text-align: center;
-            margin: 25px auto;
-            padding: 0 15px;
-        }
 
         /* Card do clima */
         #clima {
@@ -192,27 +147,18 @@ $resultado = mysqli_query($conn, $sql);
 
                     <button
                         type="button"
-                        class="botao fundo_branco"
-                        onclick="location.href='tela_informacoes_trem.php?id=<?= (int)$trem['id'] ?>'">
+                        class="botao fundo_branco padding-0 overflow-hidden"
+                        onclick="location.href='tela_informacoes_trem.php?id=<?= (int) $trem['id'] ?>'">
 
-                        <strong>
-                            <?= htmlspecialchars($trem['nome_trem'], ENT_QUOTES, 'UTF-8') ?>
-                        </strong>
-
-                        <div class="informacoes_trem">
-
-                            <span>
-                                Destino:
-                                <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>
-                            </span>
-
-                            <span>
-                                <?= htmlspecialchars(substr($trem['horario_partida'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
-                                -
-                                <?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
-                            </span>
-
+                        <div class="w-100 h-25 align-items-center justify-content-center p-2 fundo_azul color-white">
+                            <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>
                         </div>
+
+                        <div class="w-100 h-75">
+                            <div class="imagem_trem_botao h-100" id="lista-trens"><img class="imgtrem" src="<?= getImagemTremAleatoria() ?>" alt="Ícone de Trem" ></div>
+                        </div>
+                        
+                        
 
                     </button>
 
@@ -230,11 +176,7 @@ $resultado = mysqli_query($conn, $sql);
 
     </main>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br><br>
 
     <footer>
         <?php include 'rodape.php'; ?>

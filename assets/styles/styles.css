@@ -963,3 +963,84 @@ main{
 .botao_voltar_trens{
     width: 600px;
 }
+
+/* Animação do Trem */
+
+ .ferrovia-container {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    font-family: sans-serif;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  }
+
+  .trilho-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 400px;
+    overflow: visible;
+  }
+
+  /* Placa da Estação posicionada logo abaixo da reta central */
+  .estacao {
+    position: absolute;
+    top: 204px; /* Fica exatamente na margem do trilho em y=185 */
+    left: 200px;
+    transform: translateX(-50%);
+    z-index: 2;
+    background: #fff;
+    border: 2px solid #ff0000;
+    padding: 5px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #222;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /* Locomotiva / Ponto principal */
+  .trem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 12px;
+    background-color: #ffbb00;
+    border: 2px solid #222;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgb(252, 0, 0);
+
+    /* O percurso agora começa e termina bem em frente à Estação (x=200, y=185) */
+    offset-path: path("M 200,185 L 250,185 C 300,185 300,90 360,90 L 420,90 C 460,90 460,170 410,190 L 340,215 C 300,230 310,275 360,275 L 420,275 C 465,275 465,355 400,355 L 260,355 C 210,355 220,285 170,285 L 90,285 C 35,285 35,355 90,355 L 130,355 C 160,355 160,320 120,320 L 65,320 C 25,320 25,220 75,200 C 115,185 20,140 40,85 C 50,60 55,50 70,50 L 210,50 C 260,50 260,120 210,120 L 140,120 C 90,120 90,185 150,185 L 200,185 Z");
+    
+    /* 16s no total: ~14s andando + ~2s parado na estação */
+    animation: andar-e-parar 16s infinite;
+  }
+
+  @keyframes andar-e-parar {
+    0% {
+      offset-distance: 0%;
+      animation-timing-function: ease-in; /* Sai devagar acelerando da estação */
+    }
+    12% {
+      offset-distance: 10%;
+      animation-timing-function: linear;  /* Mantém velocidade constante na pista */
+    }
+    76% {
+      offset-distance: 90%;
+      animation-timing-function: ease-out; /* Começa a frear antes da estação */
+    }
+    87% {
+      offset-distance: 100%; /* Chega exatamente na frente da Estação (100% = 0%) */
+    }
+    100% {
+      offset-distance: 100%; /* Fica parado até reiniciar o ciclo */
+    }
+  }

@@ -2,7 +2,9 @@
 
 session_start();
 
+require_once __DIR__ . '/auth.php';
 include("../infra/conexao.php");
+
 
 $id = $_SESSION["usuario_id"];
 

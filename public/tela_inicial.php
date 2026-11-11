@@ -120,19 +120,19 @@ function getImagemTremAleatoria() {
 
             <div class="acoes_adm_trens">
 
-                <a href="tela_dos_trens_adm.php" class="btn botao_brilhante fundo_azul color-white">
+                <a href="tela_dos_trens_adm.php" class="btn btn-success color-white">
                    </i><strong>Adicionar Trem</strong>
                 </a>
 
-                <a href="visualizar_trens.php" class="btn fundo_amarelo color-white">
+                <a href="visualizar_trens.php" class="btn btn-secondary color-white">
                     <strong>Visualizar Trens</strong>
                 </a>
 
-                <a href="cadastro_rotas.php" class="btn botao_brilhante fundo_azul color-white">
+                <a href="cadastro_rotas.php" class="btn btn-success color-white">
                     <strong>Adicionar Rota</strong>
                 </a>
 
-                <a href="visualizar_rotas.php" class="btn fundo_amarelo color-white">
+                <a href="visualizar_rotas.php" class="btn btn-secondary color-white">
                     <strong>Visualizar Rotas</strong>
                 </a>
 
