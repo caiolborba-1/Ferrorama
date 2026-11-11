@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 .erro {
@@ -73,6 +74,7 @@ header {
                 align-items: center;
                 display: flex;
                 justify-content: center;
+                align-items: center;
         }
 
         .botao_cabecalho:hover{
@@ -97,6 +99,19 @@ header {
     font-size: clamp(14px, 8cqw, 28px); 
     box-shadow: -12px 12px 15px rgba(0, 0, 0, 0.35);
     border-radius: 3px;
+}
+
+.tabelas_informacoes_trem{
+    width: 600px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid #ffbd00;
+}
+
+.borda_esquerda_titulo{
+    border-left: 5px solid #ffbd00;
 }
 
 .botao_adicionar_trem:hover{
@@ -138,18 +153,10 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     
-    height: 140px;
-    width: 340px;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    
+    height: 180px;
+    width: 400px;
     font-size: clamp(14px, 5cqw, 22px); 
     border-radius: 5px;
-    box-shadow: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
@@ -195,10 +202,16 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .display_flex{
-    display: flex;
+    display: flex !important;
+}
+
+.flex-direction-row{
+    flex-direction: row !important;
 }
 
 .tres_colunas{
@@ -740,6 +753,10 @@ appearance: none;
     box-shadow: 0 4px 12px rgba(1, 14, 88, 0.863);
 }
 
+.padding-0{
+    padding: 0px !important;
+}
+
 .fundo_preto{
     background-color: rgb(0, 0, 0);
     padding: 20px;
@@ -752,6 +769,10 @@ appearance: none;
 
 .fundo_azul{
     background-color: rgba(1, 14, 88, 0.863)!important;
+}
+
+.fundo_azul_escuro{
+    background-color: rgba(1, 12, 71, 0.863)!important;
 }
 
 .fundo_amarelo{
@@ -859,54 +880,13 @@ appearance: none;
     left: 150%; 
   }
 }
-.main_rotas_velocidade {
-        min-height: 90vh !important; 
-        padding-bottom: 0px; 
-      }
-.main_rotas_sensores {
-        min-height: 82vh !important; 
-        padding-bottom: 0px; 
-      }
-.main_rotas_tela_usuario {
-        min-height: 48vh !important; 
-        padding-bottom: 0px; 
-      }
-.main_rotas_tela_dos_trens_adm {
-        min-height: 78vh !important; 
-        padding-bottom: 0px; 
-      }
-
-.main_rotas_perfil {
-        min-height: 70vh !important; 
-        padding-bottom: 0px; 
-      }
-
-.main_rotas_cadastro_trens {
-        min-height: 90vh !important; 
-        padding-bottom: 0px; 
-      }
-
-.main_rotas_visualizar_trens {
-        min-height: 78vh !important; 
-        padding-bottom: 0px; 
-      }
-
-.main_rotas_tela_inicial {
-        min-height: 77vh !important; 
-        padding-bottom: 0px; 
-      }
-
- .main_rotas {
-        min-height: 90vh !important; 
-        padding-bottom: 0px; 
-      }
 
 footer {
      
-     flex-direction: column;
-        text-align: center;
-        position: ;
-        bottom: 0;
+    flex-direction: column;
+    text-align: center;
+    position: ;
+    bottom: 0;
 
  }
 
@@ -920,6 +900,8 @@ footer {
             justify-content: space-between;
             align-items: center;
             gap: 20px;
+            width: 100%;
+            margin-top: auto;
         }
 
 footer img {
@@ -958,3 +940,19 @@ width-100 {
     padding: 5px;
 }
 
+<<<<<<< HEAD
+=======
+.imagem_trem_botao{
+    width: 100%;
+    object-fit: cover;    
+    object-position: center;
+}
+
+main{
+    flex: 1;
+}
+
+.botao_voltar_trens{
+    width: 600px;
+}
+>>>>>>> 26dd621b658909308d91c10ead8d087408cdb8cd

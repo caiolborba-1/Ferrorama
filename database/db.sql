@@ -43,7 +43,7 @@ CREATE TABLE rotas (
     trem_rota VARCHAR(100) NOT NULL,
     duracao_rota FLOAT NOT NULL,
     data_criacao DATETIME NOT NULL,
-    id_trens INT NOT NULL,
+    id_trens INT NOT NULL UNIQUE,
     CONSTRAINT fk_rotas_trens
         FOREIGN KEY (id_trens)
         REFERENCES trens(id)

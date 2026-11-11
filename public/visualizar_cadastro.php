@@ -1,8 +1,17 @@
+
 <?php
 require_once __DIR__ . '/proteger_adm.php';
 require_once '../infra/conexao.php';
 
-$sql = "SELECT * FROM usuario";
+$sql = "SELECT
+            u.*,
+            COUNT(t.id) AS total_trens,
+            GROUP_CONCAT(t.nome_trem SEPARATOR ', ') AS nomes_trens
+        FROM usuario u
+        LEFT JOIN trens t ON t.id_usuario = u.id
+        GROUP BY u.id
+        ORDER BY u.id DESC";
+
 $resultado = mysqli_query($conn, $sql);
 ?>
 
@@ -22,13 +31,13 @@ $resultado = mysqli_query($conn, $sql);
 
 <body>
 
-    <header class="position-absolute">
+    <header>
         <?php include "navbar.php"; ?>
     </header>
 
     <main class="main_rotas_cadastro_trens container mt-1">
 
-        <br><br><br><br><br>
+        <br><br>
 
         <h1 class="text-center mb-4">Usuários Cadastrados</h1>
 
@@ -39,6 +48,7 @@ $resultado = mysqli_query($conn, $sql);
                         <th>Nome de Usuário</th>
                         <th>E-mail</th>
                         <th>Cidade</th>
+                        <th>Trêns Responsáveis</th>
                         <th>Cargo</th>
                         <th>Editar</th>
                         <th>Excluir</th>
@@ -57,12 +67,26 @@ $resultado = mysqli_query($conn, $sql);
                                 <td>
                                     <?= htmlspecialchars($usuario['email_usuario']) ?>
                                 </td>
+
                                 <td>
                                     <?= htmlspecialchars($usuario['cidade_usuario']) ?>
                                 </td>
+
+                                <td>
+                                    <?php if ((int) $usuario['total_trens'] > 0): ?>
+
+                                     <?= htmlspecialchars($usuario['nomes_trens'], ENT_QUOTES, 'UTF-8') ?>
+
+                                     <?php else: ?>
+
+                                          Nenhum trem vinculado
+
+                                     <?php endif; ?></td>
+
                                 <td>
                                     <?= htmlspecialchars($usuario['cargo']) ?>
                                 </td>
+
                                 <td>
                                     <a
                                         href="editar_usuario.php?id=<?= (int) $usuario['id'] ?>"
@@ -72,12 +96,26 @@ $resultado = mysqli_query($conn, $sql);
                                 </td>
 
                                 <td>
-                                    <a
-                                        href="excluir.php?id=<?= (int) $usuario['id'] ?>"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('Tem certeza que deseja excluir este usuário?');">
-                                        Excluir
-                                    </a>
+                                    <?php if ((int) $usuario['total_trens'] > 0): ?>
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-secondary btn-sm"
+                                            disabled
+                                            title="Não é possível excluir este usuário, pois ele está associado a um trem.">
+                                            Excluir
+                                        </button>
+
+                                    <?php else: ?>
+
+                                        <a
+                                            href="excluir.php?id=<?= (int) $usuario['id'] ?>"
+                                            class="btn btn-danger btn-sm"
+                                            onclick="return confirm('Tem certeza que deseja excluir este usuário?');">
+                                            Excluir
+                                        </a>
+
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
@@ -85,7 +123,7 @@ $resultado = mysqli_query($conn, $sql);
                     <?php else: ?>
 
                         <tr>
-                            <td colspan="5" class="text-center">
+                            <td colspan="6" class="text-center">
                                 Nenhum usuário cadastrado.
                             </td>
                         </tr>
@@ -101,13 +139,11 @@ $resultado = mysqli_query($conn, $sql);
 
     </main>
 
-      
-
-    <footer>
+    <footer class="w-100 mt-0">
 
         <?php include 'rodape.php' ?>
 
-   </footer>
+    </footer>
 
 </body>
 

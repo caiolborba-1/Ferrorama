@@ -137,20 +137,20 @@ require_once __DIR__ . '/proteger_adm.php';
                 </button>
             </a>
 
-            <a class="text-decoration-none" href="visualizar_sensores.php">
-                <button type="button" class="botao_inicial_adm justify-content-center align-items-center">
+            <a class="text-decoration-none" href="visualizar_cadastro.php">
+                    <button type="button" class="botao_inicial_adm justify-content-center align-items-center">
 
-                    <div>
-                        <img class="logo_botao_inicial_adm" src="../assets/img/simbolo_sensores.png" alt="simbolo_sensores">
+                        <div>
+                            <img class="logo_botao_inicial_adm" src="../assets/img/simbolo_usuarios.png" alt="simbolo_usuarios">
 
-                        <div class="justify-content-center">
-                            <div class="mini_botao fundo_azul color-white justify-content-center">
-                                <h4>SENSORES</h4>
+                            <div class="justify-content-center">
+                                <div class="mini_botao fundo_azul color-white justify-content-center">
+                                    <h4>USUARIOS</h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </button>
+                    </button>
             </a>
 
         </div>
@@ -191,15 +191,15 @@ require_once __DIR__ . '/proteger_adm.php';
                 </button>
             </a>
 
-            <a class="text-decoration-none" href="cadastrar_sensor.php">
+            <a class="text-decoration-none" href="adicionar_usuario.php">
                 <button type="button" class="botao_inicial_adm justify-content-center align-items-center">
 
                     <div>
-                        <img class="logo_botao_inicial_adm" src="../assets/img/simbolo_adicionar_sensores.png" alt="simbolo_sensores">
+                        <img class="logo_botao_inicial_adm" src="../assets/img/simbolo_adicionar_usuarios.png" alt="simbolo_usuarios">
 
                         <div class="justify-content-center">
                             <div class="mini_botao fundo_azul color-white justify-content-center">
-                                <h6>ADICIONAR SENSORES</h6>
+                                <h6>ADICIONAR USUARIOS</h6>
                             </div>
                         </div>
                     </div>
@@ -209,6 +209,7 @@ require_once __DIR__ . '/proteger_adm.php';
 
         </div>
 
+<<<<<<< HEAD
         <br><br>
 
         <div class="tres_colunas">
@@ -251,6 +252,8 @@ require_once __DIR__ . '/proteger_adm.php';
 
         </div>
 
+=======
+>>>>>>> 26dd621b658909308d91c10ead8d087408cdb8cd
     </main>
 
     <br><br><br><br><br>

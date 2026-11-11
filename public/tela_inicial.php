@@ -30,6 +30,7 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/styles/styles.css">
 
+    <script src="../scripts/randomizar_imagem_trem.js"></script>
     <script src="../scripts/relogio_navbar.js" defer></script>
 
     <style>
@@ -135,25 +136,17 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
 
                     <button
                         type="button"
-                        class="botao fundo_branco"
+                        class="botao fundo_branco padding-0 overflow-hidden"
                         onclick="location.href='tela_informacoes_trem.php?id=<?= (int) $trem['id'] ?>'">
 
-                        <strong>
-                            <?= htmlspecialchars($trem['nome_trem'], ENT_QUOTES, 'UTF-8') ?>
-                        </strong>
-
-                        <br>
-
-                        <div>
-                            Destino:
+                        <div class="w-100 h-25 align-items-center justify-content-center p-2 fundo_azul color-white">
                             <?= htmlspecialchars($trem['destino_trem'], ENT_QUOTES, 'UTF-8') ?>
-
-                            <br>
-
-                            <?= htmlspecialchars(substr($trem['horario_partida'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
-                            -
-                            <?= htmlspecialchars(substr($trem['horario_chegada'], 0, 5), ENT_QUOTES, 'UTF-8') ?>
                         </div>
+
+                        <div class="w-100 h-75">
+                            <div class="imagem_trem_botao h-100" id="lista-trens"></div>
+                        </div>
+                        
 
                     </button>
 
