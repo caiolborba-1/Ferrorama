@@ -4,6 +4,8 @@
 ob_start();
 
 header('Content-Type: application/json; charset=utf-8');
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
 
 session_start();
 
@@ -25,6 +27,7 @@ function responder($status, $dados)
 
 try {
 
+    // Verifica o usuário conectado
     if (
         !isset($_SESSION['usuario_id']) ||
         !isset($_SESSION['cargo']) ||
@@ -38,21 +41,29 @@ try {
     require_once __DIR__ . '/../infra/config_clima.php';
     require_once __DIR__ . '/../infra/conexao.php';
 
-    if (!defined('WEATHER_API_KEY') || empty(trim(WEATHER_API_KEY))) {
+    // Verifica a chave
+    if (
+        !defined('WEATHER_API_KEY') ||
+        trim(WEATHER_API_KEY) === '' ||
+        WEATHER_API_KEY === 'COLOQUE_SUA_CHAVE_NOVA_AQUI'
+    ) {
         responder(500, [
-            'erro' => 'A chave da API de clima não está configurada.'
+            'erro' => 'Configure corretamente a chave da WeatherAPI.'
         ]);
     }
 
+    // Busca a cidade do usuário conectado
     $id_usuario = (int) $_SESSION['usuario_id'];
 
     $stmt = $conn->prepare(
-        "SELECT cidade_usuario, uf_usuario FROM usuario WHERE id = ?"
+        "SELECT cidade_usuario, uf_usuario
+         FROM usuario
+         WHERE id = ?"
     );
 
     if (!$stmt) {
         responder(500, [
-            'erro' => 'Erro ao consultar os dados do usuário.'
+            'erro' => 'Erro ao preparar consulta do usuário.'
         ]);
     }
 
@@ -78,20 +89,25 @@ try {
     $cidade = trim($cidade);
     $uf = strtoupper(trim($uf));
 
-    $localizacao = $cidade . ', ' . $uf;
+    // Monta a localização
+    $localizacao = $cidade . ', ' . $uf . ', Brazil';
 
+    // Monta a URL da WeatherAPI
     $url = 'https://api.weatherapi.com/v1/current.json?' .
         http_build_query([
             'key' => trim(WEATHER_API_KEY),
             'q' => $localizacao,
-            'lang' => 'pt'
+            'lang' => 'pt',
+            'aqi' => 'no'
         ]);
 
+    // Configuração da conexão
     $contexto = stream_context_create([
         'http' => [
             'method' => 'GET',
             'timeout' => 15,
-            'ignore_errors' => true
+            'ignore_errors' => true,
+            'header' => "Accept: application/json\r\n"
         ],
         'ssl' => [
             'verify_peer' => true,
@@ -103,10 +119,11 @@ try {
 
     if ($resposta === false) {
         responder(502, [
-            'erro' => 'Não foi possível conectar à WeatherAPI. Verifique a conexão e a configuração allow_url_fopen.'
+            'erro' => 'Não foi possível conectar à WeatherAPI. Verifique a conexão do servidor.'
         ]);
     }
 
+    // Identifica o código HTTP
     $status = 0;
 
     if (isset($http_response_header[0])) {
@@ -122,12 +139,15 @@ try {
         !is_array($dados) ||
         !isset($dados['current'], $dados['location'])
     ) {
+        $mensagem = $dados['error']['message'] ??
+            'Não foi possível obter os dados meteorológicos.';
+
         responder(502, [
-            'erro' => $dados['error']['message'] ??
-                'Não foi possível obter os dados do clima.'
+            'erro' => $mensagem
         ]);
     }
 
+    // Retorna somente os dados necessários
     responder(200, [
         'cidade' => $dados['location']['name'],
         'estado' => $uf,
@@ -141,8 +161,9 @@ try {
 
 } catch (Throwable $erro) {
 
-    responder(500, [
-        'erro' => 'Erro interno no clima.php: ' . $erro->getMessage()
-    ]);
+    error_log('Erro no clima.php: ' . $erro->getMessage());
 
+    responder(500, [
+        'erro' => 'Ocorreu um erro interno ao consultar o clima.'
+    ]);
 }
