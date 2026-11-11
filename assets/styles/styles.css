@@ -930,4 +930,10 @@ width-100 {
 
 main{
     flex: 1;
+}  
+.imgtrem{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
