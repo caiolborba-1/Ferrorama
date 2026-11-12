@@ -70,3 +70,5 @@ INSERT INTO usuario (
     'Joinville',
     'SC'
 );
+
+ALTER TABLE trens ADD COLUMN imagem_trem VARCHAR(255) DEFAULT NULL;

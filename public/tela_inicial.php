@@ -16,6 +16,18 @@ $mensagem = '';
 if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
     $mensagem = 'Trem excluído com sucesso!';
 }
+
+function getImagemTremAleatoria() {
+    $imagens = [
+        "../assets/img/Trem1.jpg",
+        "../assets/img/Trem 2.jpg",
+        "../assets/img/Trem 3.jpeg",
+        "../assets/img/Trem 4.jpg"
+    ];
+    
+    // rand(0, 3) escolhe um índice entre 0 e 3
+    return $imagens[rand(0, count($imagens) - 1)];
+}
 ?>
 
 <!DOCTYPE html>
@@ -108,19 +120,19 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
 
             <div class="acoes_adm_trens">
 
-                <a href="tela_dos_trens_adm.php" class="btn botao_brilhante fundo_azul color-white">
+                <a href="tela_dos_trens_adm.php" class="btn btn-success color-white">
                    </i><strong>Adicionar Trem</strong>
                 </a>
 
-                <a href="visualizar_trens.php" class="btn fundo_amarelo color-white">
+                <a href="visualizar_trens.php" class="btn btn-secondary color-white">
                     <strong>Visualizar Trens</strong>
                 </a>
 
-                <a href="cadastro_rotas.php" class="btn botao_brilhante fundo_azul color-white">
+                <a href="cadastro_rotas.php" class="btn btn-success color-white">
                     <strong>Adicionar Rota</strong>
                 </a>
 
-                <a href="visualizar_rotas.php" class="btn fundo_amarelo color-white">
+                <a href="visualizar_rotas.php" class="btn btn-secondary color-white">
                     <strong>Visualizar Rotas</strong>
                 </a>
 
@@ -144,8 +156,9 @@ if (isset($_GET['mensagem']) && $_GET['mensagem'] === 'excluido') {
                         </div>
 
                         <div class="w-100 h-75">
-                            <div class="imagem_trem_botao h-100" id="lista-trens"></div>
+                            <div class="imagem_trem_botao h-100" id="lista-trens"><img class="imgtrem" src="<?= getImagemTremAleatoria() ?>" alt="Ícone de Trem" ></div>
                         </div>
+                        
                         
 
                     </button>

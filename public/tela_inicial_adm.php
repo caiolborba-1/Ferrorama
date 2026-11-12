@@ -20,51 +20,59 @@ require_once __DIR__ . '/proteger_adm.php';
     <script src="../scripts/clima.js" defer></script>
 
     <style>
+
+        /* Card do clima - mesmo estilo da tela do usuário */
         .secao_clima {
-            max-width: 550px;
-            margin: 15px auto;
-            padding: 10px !important;
+            width: 100%;
+            max-width: 750px;
+            margin: 20px auto;
+            padding: 16px !important;
         }
 
         .secao_clima h2 {
+            font-size: 22px;
             text-align: center;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        #conteudo-clima .clima-icone img {
-            width: 45px;
-            height: 45px;
-        }
-
-        #conteudo-clima .clima-temperatura {
-            font-size: 24px;
-        }
-
-        #conteudo-clima .clima-condicao {
-            font-size: 14px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         #conteudo-clima .clima-detalhes {
-            gap: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        #conteudo-clima .clima-icone img {
+            width: 65px;
+            height: 65px;
+        }
+
+        #conteudo-clima .clima-temperatura {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        #conteudo-clima .clima-condicao {
+            font-size: 17px;
         }
 
         #conteudo-clima .clima-item {
-            font-size: 12px;
-        }
-
-        #conteudo-clima .clima-atualizacao {
-            font-size: 11px;
-            margin-top: 5px !important;
+            font-size: 14px;
         }
 
         @media (max-width: 768px) {
+
             .secao_clima {
-                width: 95%;
-                margin: 15px auto;
+                max-width: 95%;
             }
+
+            #conteudo-clima .clima-detalhes {
+                gap: 15px;
+            }
+
         }
+
     </style>
 </head>
 
@@ -92,9 +100,9 @@ require_once __DIR__ . '/proteger_adm.php';
             </div>
 
         </section>
+
         <br>
 
-        
         <div class="tres_colunas">
 
             <a class="text-decoration-none" href="tela_inicial.php">
@@ -149,7 +157,6 @@ require_once __DIR__ . '/proteger_adm.php';
 
         <br><br>
 
-        
         <div class="tres_colunas">
 
             <a class="text-decoration-none" href="tela_dos_trens_adm.php">
@@ -201,6 +208,9 @@ require_once __DIR__ . '/proteger_adm.php';
             </a>
 
         </div>
+
+
+        <br><br>
 
     </main>
 
