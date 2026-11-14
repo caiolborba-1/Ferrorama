@@ -31,7 +31,7 @@ Proteger o sistema: Filtrar e limpar os dados que vêm do navegador antes de env
 Em vez de colocar diretamente os dados do usuário dentro da consulta SQL, usamos um espaço reservado (?, por exemplo) e enviamos os valores separadamente.
 Exemplo
 
-![alt text](image.png)
+![alt text](../assets/img/image.png)
 *O ( ? ) seSrá substituído pelo valor informado pelo usuário.*
 
 # Por que são importantes?
