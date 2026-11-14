@@ -21,6 +21,7 @@ CREATE TABLE trens (
     destino_trem VARCHAR(100) NOT NULL,
     horario_partida TIME NOT NULL,
     horario_chegada TIME NOT NULL,
+    imagem_trem VARCHAR(255) DEFAULT NULL;
     id_usuario INT NOT NULL,
     CONSTRAINT fk_trens_usuario
         FOREIGN KEY (id_usuario)
@@ -62,5 +63,3 @@ INSERT INTO usuario (
     'Joinville',
     'SC'
 );
-
-ALTER TABLE trens ADD COLUMN imagem_trem VARCHAR(255) DEFAULT NULL;
