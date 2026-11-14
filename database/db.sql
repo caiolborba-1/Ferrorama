@@ -14,14 +14,6 @@ CREATE TABLE usuario (
     uf_usuario CHAR(2) NULL
 );
 
-CREATE TABLE sensor (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome_sensor VARCHAR(100) NOT NULL,
-    localizacao_sensor VARCHAR(100) NOT NULL,
-    tipo_sensor VARCHAR(50) NOT NULL,
-    trem_alocado_sensor VARCHAR(100) NOT NULL
-);
-
 CREATE TABLE trens (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_trem INT NOT NULL,
