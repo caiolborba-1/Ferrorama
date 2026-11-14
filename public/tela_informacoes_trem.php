@@ -100,7 +100,7 @@ if (!$trem) {
                     <br>
 
                     <h5>
-                        <strong>Destino do Trem:</strong>
+                        <strong>Descrição da Rota:</strong>
                     </h5>
 
                     <h3>
