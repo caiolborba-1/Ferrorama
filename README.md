@@ -234,66 +234,6 @@ Possui acesso às funcionalidades disponibilizadas para usuários cadastrados, r
 
 O acesso às páginas administrativas é restrito a usuários autenticados com as permissões necessárias.
 
-## Estrutura do projeto
-
-O projeto está organizado em diretórios para facilitar a separação dos arquivos e a manutenção do código:
-
-```text
-
-Ferrorama/
-
-│
-
-├── assets/
-
-│   ├── img/
-
-│   └── styles/
-
-│
-
-├── infra/
-
-│   └── conexao.php
-
-│
-
-├── public/
-
-│   ├── adicionar_usuario.php
-
-│   ├── atualizar_rotas.php
-
-│   └── ...
-
-│
-
-├── scripts/
-
-│   └── ...
-
-│
-
-├── README.md
-
-└── ...
-
-```
-
-A estrutura apresentada representa os principais diretórios conhecidos do projeto. Outros arquivos e páginas PHP estão organizados conforme as funcionalidades desenvolvidas.
-
-## Integrantes
-
-Equipe responsável pelo desenvolvimento do Ferrorama SA:
-
-- Caio Luiz Borba;
-
-- Matheus Tomczak;
-
-- Felipe Zuquetti Pereira;
-
-- Henrique Lombardi.
-
 ## Próximas etapas
 
 As próximas etapas do desenvolvimento incluem:
