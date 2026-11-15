@@ -10,31 +10,23 @@ O transporte ferroviário necessita de acompanhamento constante para garantir a 
 
 A falta de monitoramento centralizado pode dificultar a identificação de falhas, atrasar manutenções e aumentar os riscos de acidentes e problemas operacionais.
 
-O Ferrorama SA busca solucionar esse problema por meio de uma plataforma que centraliza informações coletadas por sensores IoT, facilitando o acompanhamento das condições ferroviárias e a identificação de possíveis irregularidades.
+O Ferrorama SA busca solucionar esse problema por meio de uma plataforma que centraliza o gerenciamento de trens, rotas e usuários, facilitando a organização das operações ferroviárias. O sistema também utiliza APIs para identificar a localidade informada pelo usuário a partir do CEP e consultar a previsão do tempo correspondente.
 
 ## Função do sistema
 
-O Ferrorama SA tem como objetivo monitorar, em tempo real, os dados coletados pelos sensores IoT instalados nas locomotivas e nos trilhos ferroviários, ajudando a melhorar o controle operacional, a segurança e a eficiência do transporte ferroviário.
+O Ferrorama SA tem como objetivo gerenciar o transporte ferroviário por meio do cadastro e gerenciamento de trens, rotas e usuários, ajudando a melhorar a organização e o controle operacional. O sistema também conta com APIs para identificar uma localidade com base no CEP informado e apresentar a previsão do tempo dessa região.
 
 Atualmente, o projeto também tem como foco o desenvolvimento visual das telas, a organização das funcionalidades e a implementação das operações do sistema.
 
-A plataforma foi planejada para receber, processar e exibir informações dos sensores, como:
+A plataforma também utiliza duas APIs para disponibilizar informações complementares:
 
-- Temperatura do motor;
-- Pressão do óleo;
-- Velocidade da locomotiva;
-- Frenagem;
-- Nível de combustível;
-- Rotação;
-- Vibração dos trilhos;
-- Integridade da via;
-- Carga por eixo;
-- Temperatura dos trilhos;
-- Localização geográfica dos trens e sensores.
+- API de CEP, que identifica a localidade correspondente ao CEP informado pelo usuário;
 
-O sistema também deverá identificar possíveis falhas, riscos e comportamentos anormais nos componentes das locomotivas e na estrutura ferroviária, emitindo alertas para auxiliar na prevenção de acidentes e problemas operacionais.
+- API de previsão do tempo, que consulta e apresenta as condições climáticas com base na localidade identificada.
 
-Além do monitoramento, a plataforma contará com recursos de cadastro e gerenciamento de usuários, sensores e locomotivas, armazenamento de dados e geração de relatórios para auxiliar na análise de desempenho e no planejamento da manutenção preventiva.
+A consulta de CEP permite identificar a localidade informada pelo usuário, enquanto a API de previsão do tempo apresenta as condições climáticas correspondentes a essa região.
+
+Além disso, a plataforma contará com recursos de cadastro e gerenciamento de usuários, trens e rotas, armazenamento de dados e geração de relatórios para auxiliar na organização e no acompanhamento das operações ferroviárias.
 
 A interface será organizada e responsiva, facilitando a visualização das informações por administradores, operadores ferroviários e equipes técnicas.
 
@@ -42,12 +34,18 @@ A interface será organizada e responsiva, facilitando a visualização das info
 
 Os principais objetivos do Ferrorama SA são:
 
-- Centralizar as informações coletadas pelos sensores IoT;
-- Facilitar o acompanhamento das condições das locomotivas;
-- Monitorar a integridade e as condições dos trilhos;
-- Identificar possíveis falhas e situações de risco;
-- Organizar o gerenciamento de usuários, trens e sensores;
+- Centralizar as informações de gerenciamento de trens, rotas e usuários;
+
+- Facilitar o gerenciamento e o acompanhamento dos trens;
+
+- Organizar e visualizar as rotas ferroviárias;
+
+- Consultar a localidade por meio do CEP e apresentar a previsão do tempo correspondente;
+
+- Organizar o gerenciamento de usuários, trens e rotas;
+
 - Apresentar informações de maneira visual e organizada;
+
 - Auxiliar na prevenção de problemas operacionais e na manutenção preventiva.
 
 ## Identidade visual
@@ -65,30 +63,48 @@ Também foi incluído um trilho ferroviário ondulado abaixo do nome, reforçand
 Os requisitos funcionais descrevem as funcionalidades que o sistema deverá oferecer.
 
 | Código | Requisito funcional |
+
 |---|---|
-| RF01 | O sistema deve receber dados dos sensores IoT, incluindo temperatura do motor, pressão do óleo, velocidade, frenagem, nível de combustível e rotação. |
-| RF02 | O sistema deve receber dados dos sensores de vibração, integridade da via, carga por eixo e temperatura dos trilhos. |
-| RF03 | O sistema deve processar os dados recebidos com precisão e latência inferior a 1 segundo. |
-| RF04 | O sistema deve registrar a localização geográfica dos dados recebidos. |
+
+| RF01 | O sistema deve permitir que o usuário informe um CEP para consultar sua localidade por meio de uma API. |
+
+| RF02 | O sistema deve consultar uma API de previsão do tempo utilizando a localidade identificada pelo CEP. |
+
+| RF03 | O sistema deve apresentar os dados de localização e previsão do tempo retornados pelas APIs. |
+
+| RF04 | O sistema deve permitir o cadastro e o gerenciamento de trens e rotas ferroviárias. |
+
 | RF05 | O sistema deve exibir em um mapa a localização dos trens e seus respectivos estados de desempenho. |
-| RF06 | O sistema deve exibir um mapa dos trilhos e suas condições atuais, destacando possíveis anomalias. |
+
+| RF06 | O sistema deve exibir as rotas ferroviárias de maneira organizada, permitindo a visualização das informações relacionadas a elas. |
+
 | RF07 | O sistema deve permitir que o usuário realize login utilizando nome e senha. |
-| RF08 | O sistema deve permitir o cadastro de sensores com nome, localização, tipo de dado monitorado e trem associado. |
+
+| RF08 | O sistema deve permitir o cadastro e o gerenciamento de usuários, trens e rotas. |
 
 ## Regras de negócio
 
 As regras de negócio definem as condições e restrições que devem ser respeitadas durante o funcionamento do sistema.
 
 | Código | Regra de negócio |
+
 |---|---|
+
 | RN01 | O sistema deve permitir acesso somente a usuários cadastrados. |
+
 | RN02 | Caso o nome de usuário ou a senha estejam incorretos, o acesso deve ser negado. |
+
 | RN03 | Somente usuários autenticados e com as permissões necessárias podem acessar as telas administrativas. |
-| RN04 | Não podem existir sensores duplicados com o mesmo nome e a mesma localização. |
-| RN05 | Todo sensor cadastrado deve estar associado a um trem. |
-| RN06 | Cada sensor deve possuir um identificador único, nome, localização e vínculo com um trem. |
+
+| RN04 | O CEP informado deve ser validado antes da consulta à API de previsão do tempo. |
+
+| RN05 | A consulta da previsão do tempo deve utilizar a localidade retornada pela API de CEP. |
+
+| RN06 | Caso o CEP não seja encontrado ou seja inválido, o sistema deve informar o usuário e não realizar a consulta meteorológica com dados inválidos. |
+
 | RN07 | Após um login válido de um administrador, o sistema deve direcioná-lo para a tela inicial administrativa. |
-| RN08 | As locomotivas em operação devem permanecer sob monitoramento contínuo enquanto estiverem ativas. |
+
+| RN08 | As informações de trens e rotas devem ser mantidas organizadas e disponíveis para consulta conforme as permissões de acesso. |
 
 ## Desenvolvimento
 
@@ -101,24 +117,37 @@ O projeto conta com um vídeo de apresentação que explica as funções de cada
 O projeto utiliza tecnologias de desenvolvimento web para construir a interface e implementar as funcionalidades do sistema.
 
 - HTML e CSS para a estrutura e a aparência das páginas;
+
 - JavaScript para funcionalidades interativas;
+
 - PHP para a lógica do sistema no servidor;
+
 - MySQL/MariaDB para o armazenamento e gerenciamento dos dados;
+
 - Bootstrap 5.3.3 para auxiliar na criação de uma interface responsiva;
+
 - Chart.js para exibição de gráficos;
-- Sensores IoT como fonte dos dados previstos para o monitoramento ferroviário.
+
+- APIs externas para consulta de CEP e previsão do tempo.
 
 ## Requisitos para execução
 
 Para executar o projeto em ambiente local, são necessários:
 
 - Computador com Windows ou Linux;
+
 - XAMPP ou ambiente equivalente;
+
 - Servidor Apache;
+
 - PHP;
+
 - MySQL ou MariaDB;
+
 - Navegador atualizado;
+
 - Visual Studio Code ou outro editor de código;
+
 - Git para clonar o repositório.
 
 ## Instalação e configuração
@@ -126,14 +155,23 @@ Para executar o projeto em ambiente local, são necessários:
 Siga os passos abaixo para configurar o ambiente de desenvolvimento:
 
 1. Instale o XAMPP.
+
 2. Inicie os serviços Apache e MySQL pelo painel do XAMPP.
+
 3. Acesse a pasta `htdocs`, localizada no diretório de instalação do XAMPP.
+
 4. Abra o terminal nessa pasta.
+
 5. Clone o repositório do projeto:
-   ```bash
-   git clone https://github.com/caiolborba-1/Ferrorama.git
-   ```
+
+   ```bash
+
+   git clone https://github.com/caiolborba-1/Ferrorama.git
+
+   ```
+
 6. Abra a pasta do projeto no Visual Studio Code.
+
 7. Verifique as configurações de conexão com o banco de dados no arquivo `infra/conexao.php`.
 
 ### Configuração do banco de dados
@@ -143,10 +181,15 @@ O projeto utiliza MySQL/MariaDB para armazenar as informações de usuários, ad
 Para configurar o banco de dados:
 
 1. Inicie o MySQL pelo XAMPP.
+
 2. Acesse o phpMyAdmin pelo navegador: `http://localhost/phpmyadmin`
+
 3. Crie ou selecione o banco de dados utilizado pelo projeto.
+
 4. Importe o arquivo SQL disponibilizado no repositório, caso esteja disponível.
+
 5. Confira as configurações de conexão no arquivo `infra/conexao.php`.
+
 6. Verifique se as credenciais e o nome do banco de dados estão configurados corretamente.
 
 ## Executando o sistema
@@ -154,12 +197,18 @@ Para configurar o banco de dados:
 Após realizar a instalação e a configuração:
 
 1. Inicie os serviços Apache e MySQL pelo XAMPP.
+
 2. Certifique-se de que o projeto está dentro da pasta `htdocs`.
+
 3. Abra o navegador.
+
 4. Acesse o endereço local:
-   ```
-   http://localhost:8080/nome_da_sua_pasta/Ferrorama/
-   ```
+
+   ```
+
+   http://localhost:8080/nome_da_sua_pasta/Ferrorama/
+
+   ```
 
 O endereço pode variar conforme a configuração da porta do Apache e a localização da pasta do projeto.
 
@@ -172,8 +221,11 @@ O sistema prevê diferentes perfis de acesso, com permissões específicas para 
 Responsável pelo gerenciamento das funcionalidades administrativas do sistema, incluindo:
 
 - Gerenciamento de usuários;
+
 - Gerenciamento de trens;
-- Gerenciamento de sensores;
+
+- Gerenciamento de rotas ferroviárias;
+
 - Acesso às telas administrativas.
 
 ### Usuário
@@ -187,25 +239,45 @@ O acesso às páginas administrativas é restrito a usuários autenticados com a
 O projeto está organizado em diretórios para facilitar a separação dos arquivos e a manutenção do código:
 
 ```text
+
 Ferrorama/
+
 │
+
 ├── assets/
-│   ├── img/
-│   └── styles/
+
+│   ├── img/
+
+│   └── styles/
+
 │
+
 ├── infra/
-│   └── conexao.php
+
+│   └── conexao.php
+
 │
+
 ├── public/
-│   ├── adicionar_usuario.php
-│   ├── atualizar_rotas.php
-│   └── ...
+
+│   ├── adicionar_usuario.php
+
+│   ├── atualizar_rotas.php
+
+│   └── ...
+
 │
+
 ├── scripts/
-│   └── ...
+
+│   └── ...
+
 │
+
 ├── README.md
+
 └── ...
+
 ```
 
 A estrutura apresentada representa os principais diretórios conhecidos do projeto. Outros arquivos e páginas PHP estão organizados conforme as funcionalidades desenvolvidas.
@@ -215,8 +287,11 @@ A estrutura apresentada representa os principais diretórios conhecidos do proje
 Equipe responsável pelo desenvolvimento do Ferrorama SA:
 
 - Caio Luiz Borba;
+
 - Matheus Tomczak;
+
 - Felipe Zuquetti Pereira;
+
 - Henrique Lombardi.
 
 ## Próximas etapas
@@ -224,13 +299,20 @@ Equipe responsável pelo desenvolvimento do Ferrorama SA:
 As próximas etapas do desenvolvimento incluem:
 
 - Integrar o cadastro e o login ao banco de dados do Ferrorama;
+
 - Revisar as páginas PHP e integrar as funcionalidades ao sistema;
+
 - Utilizar consultas preparadas (*prepared statements*) para executar operações no banco de dados com mais segurança;
+
 - Revisar e melhorar o visual das páginas;
-- Implementar o cadastro e o gerenciamento de sensores;
-- Desenvolver as telas de monitoramento dos trens e dos trilhos;
-- Preparar a exibição de alertas e relatórios de desempenho;
-- Avançar na integração dos dados dos sensores IoT.
+
+- Aprimorar o cadastro e o gerenciamento de trens e rotas;
+
+- Desenvolver e aprimorar as telas de gerenciamento e visualização dos trens e das rotas;
+
+- Preparar a exibição de relatórios e informações operacionais;
+
+- Integrar e aprimorar as APIs de consulta de CEP e previsão do tempo.
 
 ## Limitações conhecidas
 
@@ -238,10 +320,12 @@ Atualmente, o projeto ainda está em desenvolvimento. Algumas funcionalidades de
 
 Entre as principais limitações estão:
 
-- A integração completa com os sensores IoT ainda está pendente;
-- O monitoramento em tempo real depende da integração com os dispositivos e do recebimento dos dados;
-- As funcionalidades de identificação automática de anomalias e emissão de alertas ainda precisam ser desenvolvidas;
+- As consultas dependem da disponibilidade das APIs externas de CEP e previsão do tempo;
+
+- A identificação da localidade depende do CEP informado e do retorno da API de consulta;
+
+- A previsão do tempo depende da disponibilidade da API meteorológica e da conexão com a internet;
+
 - A geração de relatórios de desempenho está prevista para etapas futuras.
 
 A disponibilidade das funcionalidades depende do andamento da implementação do projeto.
-
