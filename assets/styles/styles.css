@@ -114,6 +114,14 @@ header {
     border-left: 5px solid #ffbd00;
 }
 
+.borda_esquerda_titulo_azul{
+    border-left: 5px solid #010e58;
+}
+
+.borda_direita_titulo_azul{
+    border-right: 5px solid #010e58;
+}
+
 .botao_adicionar_trem:hover{
     background-color: rgba(103, 117, 241, 0.863);
 }
@@ -1044,3 +1052,159 @@ main{
       offset-distance: 100%; /* Fica parado até reiniciar o ciclo */
     }
   }
+
+.titulo_section{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    font-size: xx-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.section_apresentacao{
+    align-items: center;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    padding: 30px;
+    background-image: url('../img/paisagem_trem.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+}
+
+.div_apresentacao{
+    display: flex;
+    height: 400px;
+    width: 700px;
+    border-radius: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+
+.logo_apresentacao{
+    height: 400px;
+}
+
+.section_sobre{
+    align-items: center;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.div_maior{
+    width: 1600px;
+    height: 100%;
+}
+
+.div_sobre{
+    height: 200px;
+    width: 1200px;
+    color: white;
+    padding: 20px;
+    text-align: start;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sombra_embaixo_esquerda{
+    box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.3);
+
+}
+
+.sombra_embaixo_direita{
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.section_funcionalidades{
+    height: 700px;
+    background-color: #010e58 !important;
+    display: flex;
+    justify-content: center;
+}
+
+.div_funcao{
+    width: 400px;
+    padding: 30px;
+    border-radius: 30px;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+    background-color: #010a42ab;
+}
+
+.linha_vertical{
+    width: 1px;
+    background-color: white;
+    height: 100%;
+    border: 1px solid white;
+
+}
+
+.section_beneficios{
+    align-items: center;
+    padding-top: 0px !important;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    background-image: url(../img/fundo_trem.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.escadinha{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 400px;
+}
+
+.div_escadinha{
+    display: flex;
+    height: 130px;
+    width: 400px;
+    border-radius: 30px;
+    border: 2px solid #010e58;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.creditos{
+    display: flex;
+    height: 400px;
+    background-color: #010e58;
+    justify-content: center;
+    padding: 20px;
+}
+
+.imagem_creditos{
+    border-radius: 90px;
+    height: 160px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.botao_acessar{
+    background-color: #ffbb00;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.botao_acessar:hover{
+    box-shadow: 0 4px 12px rgba(252, 252, 252, 0.863);
+    transform: translateY(-3px);
+}

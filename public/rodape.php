@@ -1,7 +1,22 @@
-
 <div class="d-flex rodape ">
     <div>
-        <img  class="logo_rodape" src="../assets/img/logo branco sem fundo.png" alt="Logo Ferrorama">
+        <?php
+            if(empty($_SESSION)){
+        ?>
+
+            <img  class="logo_rodape" src="assets/img/logo branco sem fundo.png" alt="Logo Ferrorama">
+        
+        <?php
+            } else {
+        ?>
+
+            <img  class="logo_rodape" src="../assets/img/logo branco sem fundo.png" alt="Logo Ferrorama">
+    
+        <?php
+            }
+        ?>
+        
+
     </div>
 
     <div>

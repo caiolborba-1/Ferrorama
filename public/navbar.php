@@ -11,7 +11,7 @@ if ($cargo === 'adm') {
 } elseif ($cargo === 'usuario') {
     $link_inicio = 'tela_usuario.php';
 } else {
-    $link_inicio = '../index.php';
+    $link_inicio = 'index.php';
 }
 
 ?>
@@ -110,9 +110,15 @@ if ($cargo === 'adm') {
     <!-- LOGO -->
     <a href="<?= htmlspecialchars($link_inicio, ENT_QUOTES, 'UTF-8') ?>">
         <img
-            src="../assets/img/nova_logo_texto.png"
-            alt="Logo Ferrorama"
-            class="logo_cabecalho"
+            <?php if(empty($_SESSION)){ ?>
+                src="assets/img/nova_logo_texto.png"
+                alt="Logo Ferrorama"
+                class="logo_cabecalho tela_index_logo"
+            <?php } else { ?>
+                src="../assets/img/nova_logo_texto.png"
+                alt="Logo Ferrorama"
+                class="logo_cabecalho"
+            <?php } ?>
         >
     </a>
 
@@ -184,6 +190,52 @@ if ($cargo === 'adm') {
             class="botao_cabecalho afundar botao_perfil"
         >
             <h5><b>PERFIL</b></h5>
+        </button>
+
+    <?php else: ?>
+
+        <div class="grupo_adm">
+
+            <button
+                type="button"
+                onclick="location.href='#inicio'"
+                class="botao_cabecalho afundar"
+            >
+                <h5><b>INÍCIO</b></h5>
+            </button>
+
+            <button
+                type="button"
+                onclick="location.href='#sobre'"
+                class="botao_cabecalho afundar"
+            >
+                <h5><b>SOBRE</b></h5>
+            </button>
+
+            <button
+                type="button"
+                onclick="location.href='#funcionalidades'"
+                class="botao_cabecalho afundar"
+            >
+                <h5><b>FUNCIONALIDADES</b></h5>
+            </button>
+
+            <button
+                type="button"
+                onclick="location.href='#beneficios'"
+                class="botao_cabecalho afundar"
+            >
+                <h5><b>BENEFICIOS</b></h5>
+            </button>
+
+        </div>
+
+        <button
+            type="button"
+            onclick="location.href='public/login.php'"
+            class="botao_cabecalho afundar botao_perfil"
+        >
+            <h5><b>ACESSAR →</b></h5>
         </button>
 
     <?php endif; ?>
